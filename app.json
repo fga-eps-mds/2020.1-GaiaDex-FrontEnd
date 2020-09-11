@@ -1,0 +1,12 @@
+{
+  "name": "floradex",
+  "displayName": "floradex",
+  "expo": {
+    "name": "floradex",
+    "slug": "floradex",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
