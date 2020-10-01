@@ -44,6 +44,16 @@ const styles = StyleSheet.create({
        borderRadius:25,
        zIndex:1
     },
+    backgroundMenu:{
+        width:largura,
+        height: altura*6/11,
+        marginTop:altura*5/11,
+        justifyContent: 'center',
+        height:largura,
+        backgroundColor:'#FCEFF9',
+        borderRadius:25,
+        zIndex:1
+     },
     ItemTopLeft:{
         margin:1,
         width:(largura-100)/2,

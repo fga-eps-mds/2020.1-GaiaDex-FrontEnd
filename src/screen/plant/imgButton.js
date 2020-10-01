@@ -8,7 +8,7 @@ const largura = Dimensions.get("screen").width;
 const altura = Dimensions.get("screen").height;
 
 
-export default function ImgButton({ text, onPress ,source, icon }) {
+export default function ImgButton({ text, onPress ,source, icon}) {
     return(
         <TouchableOpacity onPress={onPress}>
             <View style={styles.button}>
@@ -23,19 +23,18 @@ export default function ImgButton({ text, onPress ,source, icon }) {
     )
 }
 
-
 const styles = StyleSheet.create({
     imagem:{
         margin:1,
         width:(largura-100)/2,
-        height:(largura-130)/2,
+        height: (largura-130)/2,
         justifyContent: 'center',
         alignItems: 'center',
     },
     button: {
         margin:1,
-        width:(largura-100)/2,
-        height:(largura-130)/2,
+        width: (largura-100)/2,
+        height: (largura-130)/2,
         backgroundColor: 'rgba(0,0,0,0)',
         
         
@@ -56,4 +55,4 @@ const styles = StyleSheet.create({
     }
 
 
-})
+});
