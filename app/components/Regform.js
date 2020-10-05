@@ -24,6 +24,9 @@ export default function Regform() {
       <TextInput style={styles.textinput} placeholder='Sua senha:'
       securyTextEntry={true} underlineColorAndroid={'transparent'}/>
 
+      <TextInput style={styles.textinput} placeholder='Sua senha novamente:'
+      securyTextEntry={true} underlineColorAndroid={'transparent'}/>
+
       <TouchableOpacity style={styles.button}>
         <Text style={styles.btntext}>Confirmar</Text>
       </TouchableOpacity>
