@@ -7,7 +7,7 @@ import Login from './app/components/Login'
 export default function App() {
   return (
     <View style={styles.container}>
-      <Login/>
+      <Regform/>
       <StatusBar style="auto" />
     </View>
   );
