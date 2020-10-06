@@ -4,11 +4,12 @@ import { Platform, StyleSheet, Text, View, StatusBar as sBar} from 'react-native
 import Regform from './app/components/Regform';
 import Login from './app/components/Login';
 import ChangeRegform from './app/components/ChangeRegform';
+import DeleteMyAccount from './app/components/DeleteMyAccount'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <ChangeRegform/>
+      <DeleteMyAccount/>
       <StatusBar style="auto" />
     </View>
   );
