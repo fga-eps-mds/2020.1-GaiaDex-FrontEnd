@@ -37,22 +37,20 @@ const styles = StyleSheet.create({
     background:{
        width:largura,
        height: altura*6/11,
-       marginTop:-25,
+       //marginTop:-25,
        justifyContent: 'center',
-       height:largura,
        backgroundColor:'#FCEFF9',
-       borderRadius:25,
+       //borderRadius:25,
        zIndex:1
     },
     backgroundMenu:{
         width:largura,
-        height: altura*6/11,
-        marginTop:altura*5/11,
-        justifyContent: 'center',
-        height:largura,
-        backgroundColor:'#FCEFF9',
-        borderRadius:25,
-        zIndex:1
+       height: altura*6/11,
+       //marginTop:altura*1/80,
+       //justifyContent: 'center',
+       backgroundColor:'#FCEFF9',
+       //borderRadius:25,
+       zIndex:1
      },
     ItemTopLeft:{
         margin:1,
@@ -80,6 +78,7 @@ const styles = StyleSheet.create({
 
     },
     TabContainer:{
+        marginTop : altura*1/80,
         width:largura-96,
         alignSelf: 'center',
         flexDirection: 'row',
@@ -98,7 +97,7 @@ const styles = StyleSheet.create({
         borderRadius:10,       
     },
     buttonForum:{
-        marginTop:20,
+        marginTop:altura*1/80,   
     },
     plantText:{
         color:'white',
@@ -136,6 +135,20 @@ const styles = StyleSheet.create({
         backgroundColor:'rgba(1,1,1,0.4)',
         marginTop:largura/5,
         height:largura/15,
+    },
+    iconButton:{
+        width:(largura)/8,
+        height:(altura)/20,
+        marginRight:-20,
+    },
+    usage:{
+        marginTop:altura*1/80,
+        marginBottom:altura*1/6,
+        margin:(largura/12),
+        
+    },
+    tabNavigator:{
+        backgroundColor:'#FCEFF9',
     }
 });
 

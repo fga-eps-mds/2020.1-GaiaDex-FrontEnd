@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { View, Alert} from 'react-native';
+import { View, Alert, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import styles from './styles';
 import ImgButton from './imgButton';
@@ -22,10 +22,14 @@ function aleta(){
   
 }
 
-const Header = () =>(
+const Header = ({onPress}) =>(
     <View style = {styles.header}>
-            <ImgButton text = '' onPress ={aleta} icon = 'arrowleft'/>
+        <TouchableOpacity style={styles.iconButton} onPress={onPress}>
+            <Icon name="arrowleft" size={24} style = { styles.icon }/>  
+        </TouchableOpacity>   
+        <TouchableOpacity style={styles.iconButton}>
             <Icon name="sharealt" size={24} style = { styles.icon }/>
+        </TouchableOpacity>   
     </View>
 );
 
