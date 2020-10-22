@@ -12,86 +12,6 @@ import { Platform,
     TouchableOpacity
 } from 'react-native';
 
-const Header = Styled.Text`
-  
-  font-style: normal;
-  font-weight: 600;
-
-  
-  color: #F2E0F5;
-`
-
-const InputField = Styled.TextInput`
-  input[type=text],[type=password] {
-    height: 8%;
-    width:83%;
-    margin-left: 8.5%;
-    margin-right: 8.5%;
-    background: rgba(36, 37, 40, 0.1);
-    border-radius: 20px;
-    border: transparent;
-    
-    font-style: normal;
-    font-weight: 500;
-    
-    
-    color: #3C3C3C;
-  }
-`
-
-const LoginText = Styled.Text`
-  
-  font-style: normal;
-  font-weight: 600;
-
-  
-  color: #242528;
-`
-
-const Touch = Styled.TouchableOpacity`
-  #circle {
-    border-radius: 100%;
-    width: 8.5vw;
-    height: 8.5vw;
-    background: #4D525A;
-  }
-`
-
-const ButtonFacebookGoogle = Styled.TouchableOpacity`
-  height: 6.20%;
-  width: 83%;
-  margin-left: 8.5%;
-  margin-right: 8.5%;
-  background: #38143E;
-  border: 0.95px solid #E15A97;
-
-  border-radius: 10px;
-`
-
-const TextFacebookGoogle = Styled.Text`
-  
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  
-  text-align: center;
-  letter-spacing: 0.1px;
-  color: #F2E0F5;
-`
-
-const Text_Register_Forget_Password = Styled.Text`
-  
-  font-style: normal;
-  font-weight: 600;
-
-  
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #242528;
-
-`
-
 /*
 linhas apagadas:
 -const Header = styled.Text`
@@ -119,6 +39,86 @@ linhas apagadas:
 */ 
 
 export default function Regform() {
+  const Header = Styled.Text`
+  
+  font-style: normal;
+  font-weight: 600;
+
+  
+  color: #F2E0F5;
+  `
+
+  const InputField = Styled.TextInput`
+    input[type=text],[type=password] {
+      height: 8%;
+      width:83%;
+      margin-left: 8.5%;
+      margin-right: 8.5%;
+      background: rgba(36, 37, 40, 0.1);
+      border-radius: 20px;
+      border: transparent;
+      
+      font-style: normal;
+      font-weight: 500;
+      
+      
+      color: #3C3C3C;
+    }
+  `
+
+  const LoginText = Styled.Text`
+    
+    font-style: normal;
+    font-weight: 600;
+
+    
+    color: #242528;
+  `
+
+  const Touch = Styled.TouchableOpacity`
+    #circle {
+      border-radius: 100%;
+      width: 8.5vw;
+      height: 8.5vw;
+      background: #4D525A;
+    }
+  `
+
+  const ButtonFacebookGoogle = Styled.TouchableOpacity`
+    height: 6.20%;
+    width: 83%;
+    margin-left: 8.5%;
+    margin-right: 8.5%;
+    background: #38143E;
+    border: 0.95px solid #E15A97;
+
+    border-radius: 10px;
+  `
+
+  const TextFacebookGoogle = Styled.Text`
+    
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    
+    text-align: center;
+    letter-spacing: 0.1px;
+    color: #F2E0F5;
+  `
+
+  const Text_Register_Forget_Password = Styled.Text`
+    
+    font-style: normal;
+    font-weight: 600;
+
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #242528;
+
+  `
+
   return (
     <View alignSelf = 'stretch'>
 
