@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import Svg, { Path } from "react-native-svg";
-import styled from 'styled-components/native'
+import Styled from 'styled-components/native'
 import { Platform, 
     StyleSheet, 
     Text,
@@ -12,7 +12,7 @@ import { Platform,
     TouchableOpacity
 } from 'react-native';
 
-const Header = styled.Text`
+const Header = Styled.Text`
   
   font-style: normal;
   font-weight: 600;
@@ -21,7 +21,7 @@ const Header = styled.Text`
   color: #F2E0F5;
 `
 
-const InputField = styled.TextInput`
+const InputField = Styled.TextInput`
   input[type=text],[type=password] {
     height: 8%;
     width:83%;
@@ -39,7 +39,7 @@ const InputField = styled.TextInput`
   }
 `
 
-const LoginText = styled.Text`
+const LoginText = Styled.Text`
   
   font-style: normal;
   font-weight: 600;
@@ -48,7 +48,7 @@ const LoginText = styled.Text`
   color: #242528;
 `
 
-const Touch = styled.Button`
+const Touch = Styled.TouchableOpacity`
   #circle {
     border-radius: 100%;
     width: 8.5vw;
@@ -57,7 +57,7 @@ const Touch = styled.Button`
   }
 `
 
-const ButtonFacebookGoogle = styled.Button`
+const ButtonFacebookGoogle = Styled.TouchableOpacity`
   height: 6.20%;
   width: 83%;
   margin-left: 8.5%;
@@ -68,7 +68,7 @@ const ButtonFacebookGoogle = styled.Button`
   border-radius: 10px;
 `
 
-const TextFacebookGoogle = styled.Text`
+const TextFacebookGoogle = Styled.Text`
   
   font-style: normal;
   font-weight: 500;
@@ -79,7 +79,7 @@ const TextFacebookGoogle = styled.Text`
   color: #F2E0F5;
 `
 
-const Text_Register_Forget_Password = styled.Text`
+const Text_Register_Forget_Password = Styled.Text`
   
   font-style: normal;
   font-weight: 600;
@@ -120,7 +120,7 @@ linhas apagadas:
 
 export default function Regform() {
   return (
-    <View style={styles.Regform}>
+    <View alignSelf = 'stretch'>
 
       <Header>Seja bem-vindo</Header>
 
@@ -171,11 +171,11 @@ export default function Regform() {
   );
 }
 
-const styles = StyleSheet.create({
+/*const styles = StyleSheet.create({
   Regform: {
     alignSelf: 'stretch',
   },
-  /*header: {
+  header: {
     fontFamily: 'Inter',
     fontStyle: 'normal',
     fontWeight: '600',
@@ -243,5 +243,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#242528',
     //boxShadow: 'inset 0 -0.5vw 0 white, inset 0 -1.2vw 0 #19BB53',
-  }*/
-});
+  }
+});*/
