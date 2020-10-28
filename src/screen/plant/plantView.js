@@ -1,6 +1,6 @@
-import React, {Component, Fragment, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
-import { View, Modal, Text, Image, ScrollView, Button, Dimensions, StyleSheet, ImageBackground} from 'react-native';
+import { View } from 'react-native';
 import styles from './styles';
 import Perfil from './perfil';
 import Menu from './menu';
@@ -8,7 +8,7 @@ import Menu from './menu';
 export default function PlantView(){
     const enderecoIpv4 = '192.168.15.5'; //inserir o endereço o ip do localhost
     const porta = '2000'; // inserir a porta em que o backend esta rodando
-    const plantID = '5f6a5686ff24eb47d5193274'; //inserir o id da planta  ser exibido
+    const plantID = '5f99a845bfcec6002792d1ef'; //inserir o id da planta  ser exibido
     const [plant, setPlant] = useState({})
 
     useEffect(()=>{
