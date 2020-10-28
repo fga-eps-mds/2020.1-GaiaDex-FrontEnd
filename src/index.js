@@ -1,8 +1,8 @@
 import { apisAreAvailable } from 'expo';
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar} from 'expo-status-bar';
 import React from 'react';
 import { render } from 'react-dom';
-import { StyleSheet, Text, View, ScrollView, Alert } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Alert, StatusBar as sBar } from 'react-native';
 import { color, greaterThan } from 'react-native-reanimated';
 import PlantView from './screen/plant/plantView'
 import Regform from './../app/components/Regform';
@@ -14,7 +14,8 @@ import Login from './../app/components/Login';
 export default function App() {
   return (
     <View>
-      <Login />
-    </ View>
+      <Login/>
+      <StatusBar style="auto" />
+    </View>
   );
 }
