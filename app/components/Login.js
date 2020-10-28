@@ -10,6 +10,10 @@ import { Platform,
 } from 'react-native';
 import Svg from 'react-native-svg';
 import Path from 'react-native-path';
+import { Dimensions } from 'react-native';
+
+const windowHeight = Dimensions.get('window').height;
+const windowWidth = Dimensions.get('window').width;
 
 export default function Login() {
   const CircleArrow = props => (
@@ -43,76 +47,98 @@ export default function Login() {
 
   return (
     <View style={styles.container}>
-      {/* <View style={styles.login1}> */}
-        <Text style={styles.header}>Seja bem-vindo</Text>
-      {/* </View> */}
+
+      <View style={styles.circle3}/>
+      <View style={styles.circle2}/>
+      <View style={styles.circle1}/>
+
+      <Text style={styles.header}>Seja bem-vindo</Text>
       
-      {/* <View style={styles.login2}> */}
-        <TextInput style={styles.textinput} placeholder='Seu e-mail:'
-        underlineColorAndroid={'transparent'}/>
+      <TextInput style={styles.textinput} placeholder='Seu e-mail:'
+      underlineColorAndroid={'transparent'}/>
 
-        <TextInput style={styles.textinput} placeholder='Sua senha:'
-        securyTextEntry={true} underlineColorAndroid={'transparent'}/>
+      <TextInput style={styles.textinput} placeholder='Sua senha:'
+      securyTextEntry={true} underlineColorAndroid={'transparent'}/>
 
-        <View style={styles.direction}>
-          <Text style={styles.txtLogin}>Login</Text>
+      <View style={styles.direction}>
+        <Text style={styles.txtLogin}>Login</Text>
 
-          <TouchableOpacity style={styles.btnLogin}>
+        <TouchableOpacity style={styles.btnLogin}>
                       
-          </TouchableOpacity>
-        </View>
+        </TouchableOpacity>
+      </View>
 
-        <TouchableOpacity style={styles.btnFbGoogle}>
-          <Text style={styles.txtBtnFbGoogle}>Fazer login com o Facebook</Text>
+      <TouchableOpacity style={styles.btnFbGoogle}>
+        <Text style={styles.txtBtnFbGoogle}>Fazer login com o Facebook</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.btnFbGoogle}>
+        <Text style={styles.txtBtnFbGoogle}>Fazer login com o Google</Text>
+      </TouchableOpacity>
+
+      <View style={styles.direction}>
+        <TouchableOpacity>
+          <Text style={styles.txtBtnOthers}>Cadastro</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.btnFbGoogle}>
-          <Text style={styles.txtBtnFbGoogle}>Fazer login com o Google</Text>
+        <TouchableOpacity>
+          <Text style={styles.txtBtnOthers}>Esqueci a senha</Text>
         </TouchableOpacity>
-
-        <View style={styles.direction}>
-          <TouchableOpacity>
-            <Text style={styles.txtBtnOthers}>Cadastro</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Text style={styles.txtBtnOthers}>Esqueci a senha</Text>
-          </TouchableOpacity>
-        </View>
+      </View>
           
-        <StatusBar style="auto" />
-      {/* </View> */}
+      <StatusBar style="auto" />
+      
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    //flex: 1,
-    height: '100%',
-    width: '100%',
+    flex: 0,
+    height: windowHeight + sBar.currentHeight,
+    width: windowWidth,
     backgroundColor: '#f2d9e6',
     alignItems: 'stretch',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     paddingLeft: '8.5%',
     paddingRight: '8.5%',
     paddingTop: Platform.OS === "android" ? sBar.currentHeight : 0,
   },
-  login1: {
-    //flex: 1,
-    flexDirection: 'column',
+  circle1: {
+    position: 'absolute',
+    width: 382.49+ 50,
+    height: 382.49+ 50,
+    left: -156.65,
+    top: -300.62,
+    borderRadius: 382.49+ 50,
+    backgroundColor: '#0582CA',
   },
-  login2: {
-    //flex: 5,
-    flexDirection: 'column',
+  circle2: {
+    position: 'absolute',
+    width: 673+ 50,
+    height: 673+ 50,
+    left: -177,
+    top: -416,
+    borderRadius: 673+ 50,
+    backgroundColor: '#541E5C',
+  },
+  circle3: {
+    position: 'absolute',
+    width: 382 + 50,
+    height: 382+ 50,
+    left: 226,
+    top: -35,
+    borderRadius: 382+ 50,
+    backgroundColor: '#19BB53',
   },
   header: {
+    flex: 1,
     fontStyle: 'normal',
     fontWeight: '600',
-    fontSize: 40,
-    lineHeight: 50,
+    fontSize: 60,
+    lineHeight: 60,
     color: '#F2E0F5',
-    position: 'relative'
+    marginTop: windowHeight/7.25,
     /*paddingBottom: 10,
     marginBottom: 40,
     borderBottomColor: '#5a008c',
@@ -122,6 +148,8 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     height: '8%',
     width: '100%',
+    paddingLeft: 30,
+    paddingRight: 30,
     //marginLeft: '2.5%',
     //marginRight: '2.5%',
     backgroundColor: '#e4b4cd',
@@ -191,5 +219,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     letterSpacing: 0.1,
     color: '#242528',
+    marginBottom: 40,
   },
 });
