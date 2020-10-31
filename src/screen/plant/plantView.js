@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+// import {IPV4, PORT} from 'react-native-dotenv'
 
 import { View } from 'react-native';
 import styles from './styles';
@@ -6,14 +7,14 @@ import Perfil from './perfil';
 import Menu from './menu';
 
 export default function PlantView(){
-    const enderecoIpv4 = '192.168.15.5'; //inserir o endereço o ip do localhost
-    const porta = '2000'; // inserir a porta em que o backend esta rodando
+    // const IPV4 = '192.168.15.5'; //endereco do backend
+    // const PORT = '2000'; //porta do backend
     const plantID = '5f99a845bfcec6002792d1ef'; //inserir o id da planta  ser exibido
     const [plant, setPlant] = useState({})
 
     useEffect(()=>{
     const lerDados = async() => {
-        const dadosHTTP = await fetch(`http://${enderecoIpv4}:${porta}/plant/${plantID}`);
+        const dadosHTTP = await fetch(`http://${process.env.IPV4}:${process.env.PORT}/plant/${plantID}`);
         const dadosJson = await dadosHTTP.json();
         setPlant(dadosJson.plant); 
         console.log(dadosJson);
