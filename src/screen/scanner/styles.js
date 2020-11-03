@@ -48,23 +48,24 @@ const styles = StyleSheet.create({
     },
     imagem: { 
         height: altura*1/4, 
-        width: largura - 40,
+        width: largura - largura/25,
         borderRadius: 20,
-        marginHorizontal: 20,
     },
     titulo:{
         fontSize: 20,
         marginVertical: largura/20,
         alignSelf: 'flex-start',
-        marginLeft: largura/50,
+        marginHorizontal: largura/50,
     },
     lista:{
         backgroundColor: '#E5C2EB',
         marginVertical: largura/60,
         marginHorizontal: largura/50,
+        borderRadius: 20,
     },
     textList: {
         marginVertical: largura/240,
+        marginHorizontal: largura/50,
     }
 });
 

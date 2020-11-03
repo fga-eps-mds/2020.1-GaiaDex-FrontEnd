@@ -5,21 +5,48 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import styles from './styles';
 
-const Item = ({ scientifcName, commonName, score }) => (
-    <TouchableOpacity style={styles.lista}>
-        <Text style = {styles.textList}>Nome cientifico: {scientifcName}</Text>
-        <Text style = {styles.textList}>Nomes comum: {commonName}</Text>
-        <Text style = {styles.textList}>Score: {score}</Text>
+const register = async(plant) => {
+    try{
+        console.log('nome scientifico ', plant.species.scientificNameWithoutAuthor);
+        console.log('genero ', plant.species.genus.scientificNameWithoutAuthor);
+        console.log('familia ', plant.species.family.scientificNameWithoutAuthor);
+        console.log('common_name ', plant.species.commonNames[0]);
+        console.log('gbifID ', plant.gbif.id);
+        const data = await fetch(`http://${process.env.IPV4}:${process.env.PORT}/plant/register`, {
+            method: 'POST',
+            headers:{
+                'Content-Type':'application/json',
+            },
+            body: JSON.stringify({
+                scientificName: plant.species.scientificNameWithoutAuthor,
+                gender_name: plant.species.genus.scientificNameWithoutAuthor,
+                family_name: plant.species.family.scientificNameWithoutAuthor,
+                common_name: plant.species.commonNames[0],
+                gbifID: plant.gbif.id,
+            })
+        });
+        const response = await data.json();
+        //navegar pagina minha planta com id do response.id
+    }catch(err){
+        console.log(err);
+    }
+}
+
+const Item = ({ item }) => (
+    <TouchableOpacity 
+        style={styles.lista}
+        onPress={ () => {register(item)} }
+    >
+        <Text style = {styles.textList}>Nome cientifico: {item.species.scientificNameWithoutAuthor}</Text>
+        <Text style = {styles.textList}>Nomes comum: {item.species.commonNames.join(', ')}</Text>
+        <Text style = {styles.textList}>Score: {item.score}</Text>
     </TouchableOpacity>
 )
 
 export default function({setOpen, capturedPhoto, plants}){
-    console.log('Log do results ',plants);
     const renderItem = ({ item }) => (
-        <Item 
-            scientifcName = {item.species.scientificNameWithoutAuthor}
-            commonName = {item.species.commonNames.join(', ')}
-            score = {item.score}
+        <Item
+            item = {item}
         />
     );
     return(
@@ -34,7 +61,7 @@ export default function({setOpen, capturedPhoto, plants}){
                 style={styles.imagem}
                 source={{uri: capturedPhoto}}
             />
-            <Text style={styles.titulo}>Esses são o resultado para a sua foto:</Text>
+            <Text style={styles.titulo}>Esses são os resultados para a sua foto:</Text>
             <FlatList
                 data = {plants}
                 renderItem = {renderItem}

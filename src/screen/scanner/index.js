@@ -19,8 +19,6 @@ export default function camera(){
     const [open, setOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [plants, setPlants] = useState(null);
-    // const IPV4 = '192.168.15.5'; //endereco do backend
-    // const PORT = '2000'; //porta do backend
 
     useEffect(() =>{
         (async () => { //seta permissao
