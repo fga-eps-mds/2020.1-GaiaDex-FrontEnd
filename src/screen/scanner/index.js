@@ -68,7 +68,6 @@ export default function camera(){
                 setOpen(true);
                 setIsLoading(false);
             } catch (err){
-                console.log('ehh vida de gado')
                 console.log(err)
                 setIsLoading(false);
                 return(
@@ -121,7 +120,7 @@ export default function camera(){
                     transparent={false}
                     visible={open}
                 >
-                    <Result setOpen = {setOpen} capturedPhoto = {capturedPhoto} plant = {plants}/>
+                    <Result setOpen = {setOpen} capturedPhoto = {capturedPhoto} plants = {plants}/>
                 </Modal>
             }
         </View>
