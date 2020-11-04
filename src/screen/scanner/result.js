@@ -7,11 +7,6 @@ import styles from './styles';
 
 const register = async(plant) => {
     try{
-        console.log('nome scientifico ', plant.species.scientificNameWithoutAuthor);
-        console.log('genero ', plant.species.genus.scientificNameWithoutAuthor);
-        console.log('familia ', plant.species.family.scientificNameWithoutAuthor);
-        console.log('common_name ', plant.species.commonNames[0]);
-        console.log('gbifID ', plant.gbif.id);
         const data = await fetch(`http://${process.env.IPV4}:${process.env.PORT}/plant/register`, {
             method: 'POST',
             headers:{
