@@ -6,10 +6,8 @@ import styles from './styles';
 import Perfil from './perfil';
 import Menu from './menu';
 
-export default function PlantView(){
-    // const IPV4 = '192.168.15.5'; //endereco do backend
-    // const PORT = '2000'; //porta do backend
-    const plantID = '5f99a845bfcec6002792d1ef'; //inserir o id da planta  ser exibido
+export default function PlantView({ navigation }){
+    const plantID = navigation.getParam('itemID', '5f99a845bfcec6002792d1ef'); // Recebe ID da planta a ser exibida ou apresenta valor default
     const [plant, setPlant] = useState({})
 
     useEffect(()=>{
