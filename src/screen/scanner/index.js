@@ -19,6 +19,11 @@ export default function camera(){
     const [open, setOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [plants, setPlants] = useState(null);
+    const [plantType, setPlantType] = useState(true);
+    const falshTypes = ['off','auto','on','torch','flash-off','flash-auto','flash','flashlight']
+    const [flash, setFlash] = useState(0);
+
+    //console.log('inicial ', plantType);
 
     useEffect(() =>{
         (async () => { //seta permissao
@@ -36,11 +41,14 @@ export default function camera(){
         })();
     }, []);
 
-    const mudarCamera = () => {
+    const switchCamera = () => {
         setType(
             type === Camera.Constants.Type.back ?
             Camera.Constants.Type.front : Camera.Constants.Type.back
         );
+    }
+    const switchFlash = () => {
+        setFlash( (flash + 1) % 4 );
     }
     const takePhoto = async() => {
         if(camRef){
@@ -56,7 +64,7 @@ export default function camera(){
                     body: JSON.stringify({
                         filename: "planta",
                         mime: "jpg",
-                        plantType: "flower",
+                        plantType: plantType ? "flower" : "leaf",
                         data: data.base64
                     })
                 });
@@ -86,6 +94,9 @@ export default function camera(){
             }
         }
     }
+    const switchPlantType = () => {
+        setPlantType(!plantType);
+    }
     return (
         <View style={styles.container}>
             {isLoading &&
@@ -97,19 +108,36 @@ export default function camera(){
                 style = {styles.camera}
                 type = {type}
                 ref={camRef}
+                flashMode = {falshTypes[flash]}
             >
             <View style={styles.botoesConteinerTop}>
+                <TouchableOpacity
+                    style={styles.buttonFlip}
+                    onPress={ switchFlash }
+                >
+                    <MaterialCommunityIcons
+                        name={falshTypes[ flash + 4 ]}
+                        size={36}
+                        color='#FFF'
+                    />
+                </TouchableOpacity>
                 <TouchableOpacity 
-                    style={styles.botaoFlip}
-                    onPress={ mudarCamera }
+                    style={styles.buttonFlip}
+                    onPress={ switchCamera }
                 >
                     <Icon name='camerao' size={36} color="#FFF"/>
                 </TouchableOpacity>
             </View>
             </Camera>
             <View style={styles.botoesConteinerBottom}>
+                <TouchableOpacity style={plantType ? styles.buttonActived : styles.buttonDisabled} onPress={ !plantType ? switchPlantType : () => {}}>
+                    <Text>Flor</Text>
+                </TouchableOpacity>
                 <TouchableOpacity onPress={takePhoto}>
                     <MaterialCommunityIcons name="circle-slice-8" size={largura/4} color="#19BB53" />
+                </TouchableOpacity>
+                <TouchableOpacity style={!plantType ? styles.buttonActived : styles.buttonDisabled} onPress={ plantType ? switchPlantType : () => {}}>
+                    <Text>Folha</Text>
                 </TouchableOpacity>
             </View>
             {capturedPhoto &&

@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import { Dimensions } from 'react-native';
+import Constants from "expo-constants";
 
 const largura = Dimensions.get("screen").width;
 const altura = Dimensions.get("screen").height;
@@ -9,6 +10,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#F2E0F5',
         justifyContent: 'center',
+        paddingTop: Constants.statusBarHeight,
     },
     loadingContainer: {
         zIndex: 5000,
@@ -32,13 +34,30 @@ const styles = StyleSheet.create({
         position: 'absolute',
         alignSelf: 'flex-end',
     },
-    botaoFlip: {
+    buttonFlip: {
         marginRight: 20,
     },
     botoesConteinerBottom: {
         flex: 1,
-        alignSelf: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+    },
+    buttonDisabled:{
+        backgroundColor: '#E5C2EB',
+        height: largura/12,
+        width: largura/6,
+        alignItems: 'center',
         justifyContent: 'center',
+        borderRadius: 10,
+    },
+    buttonActived:{
+        backgroundColor: '#28E269',
+        height: largura/12,
+        width: largura/6,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 10,
     },
     result: {
         flex: 1,
