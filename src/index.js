@@ -14,7 +14,7 @@ import Login from './../app/components/Login';
 export default function App() {
   return (
     <View>
-      <Login/>
+      <Regform/>
       <StatusBar style="auto" />
     </View>
   );
