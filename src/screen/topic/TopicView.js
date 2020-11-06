@@ -35,6 +35,8 @@ export default function TopicView(){
     const [newComment, setNewComment] = useState({});
     const [isEditing, setIsEditing] = useState(false);
     const [commentText,setCommentText] = useState('');
+    const [isLiked, setIsLiked] = useState(false);
+    const [isDisliked, setDisIsLiked] = useState(false);
     useEffect(() => {
         fetch('http://192.168.0.40:3000/topic/find/5fa473db6ad7aa001cb7654a')
           .then((response) => response.json())
@@ -66,8 +68,10 @@ export default function TopicView(){
                 text:commentText,
                 })
             };
-            fetch(`http://${enderecoIpv4}:${porta}/comment/create/${topic._id}/${topic.user_id}`,requestOptions)
+            fetch(`http://${enderecoIpv4}:${porta}/comment/create/${topic._id}/${topic?.user?._id}`,requestOptions)
                 .then(response => response.json())
+                .then(data => setTopic(data))
+                .then(() => setIsNewComment(true))
                 .catch((error) => console.error(error))
            
       }
@@ -75,9 +79,10 @@ export default function TopicView(){
         const requestOptions = {
             method:'POST',
             };
-            fetch(`http://${enderecoIpv4}:${porta}/topic/like/${topicID}`,requestOptions)
+            fetch(`http://${enderecoIpv4}:${porta}/topic/like/5fa473db6ad7aa001cb7654a`,requestOptions)
                 .then(response => response.json())
                 .then(data => setTopic(data))
+                .then(() => {setIsLiked(true);setDisIsLiked(false)})
 
       }
       const deslikeTopic = async() => {
@@ -86,7 +91,8 @@ export default function TopicView(){
             };
             fetch(`http://${enderecoIpv4}:${porta}/topic/dislike/${topicID}`,requestOptions)
                 .then(response => response.json())
-                .then(data => setTopic(data))   
+                .then(data => setTopic(data))
+                .then(() => {setIsLiked(false);setDisIsLiked(true)})   
       }
       
 
@@ -108,7 +114,7 @@ export default function TopicView(){
     }    
       return(
           <KeyboardAvoidingView style={styles.containerMaster}>
-                <Header />
+                <Header title={topic?.plant?.common_name}/>
                 <View style={styles.container}>
                     <View style={styles.UserDiv}>
                         <Image
@@ -148,9 +154,17 @@ export default function TopicView(){
                         }
                         <View style={styles.topicContainer} >
                             <View style={styles.topicDivLikes}>
-                                <AntDesign name="arrowup" size={18} color="black" onPress={() => likeTopic() }/>
-                                    <Text>{topic.likes - topic.dislikes}</Text>
-                                <AntDesign name="arrowdown" size={18} color="black" onPress={() => deslikeTopic() }/>
+                                {!isLiked ?
+                                    <>
+                                    <AntDesign name="arrowup" size={18} color="black" onPress={() => likeTopic() }/>
+                                        <Text>{topic.likes - topic.dislikes}</Text>
+                                    </>    
+                                    :
+                                    <>    
+                                    <AntDesign name="arrowdown" size={18} color="black" onPress={() => deslikeTopic() }/>
+                                        <Text>{topic.likes - topic.dislikes}</Text>
+                                    </>    
+                                }
                             </View>
                             <View style={styles.commentIcon}>
                                 <Feather name="edit" size={18} color="black" onPress={() => setIsEditing(!isEditing) }/>
@@ -175,8 +189,8 @@ export default function TopicView(){
                             isNewComment?
                             <FlatList
                                 data={topic.comments}
-                                keyExtractor={item => item._id}
-                                renderItem={({item}) => <Topics  username={item.user.username} description={item.text}/> }
+                                keyExtractor={item => item?._id}
+                                renderItem={({item}) => <Topics  username={item?.user?.username} description={item?.text}/> }
                             />
                             :
                             <View style={styles.commentContent}>
