@@ -336,13 +336,13 @@ const styles = StyleSheet.create({
                         <View style={styles.cdIcons}>
                             <Image
                                 style={styles.cdIcon}
-                                source={require('../../assents/regar.png')}/>
+                                source={require('../../assets/regar.png')}/>
                             <Image
                                 style={styles.cdIcon}
-                                source={require('../../assents/fertilizar.png')}/>
+                                source={require('../../assets/fertilizar.png')}/>
                             <Image
                                 style={styles.cdIcon}
-                                source={require('../../assents/colher.png')}/>
+                                source={require('../../assets/colher.png')}/>
                             
                         </View>
                     </View>

@@ -5,6 +5,7 @@ export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
+<<<<<<< HEAD
       <Button
         title="TopicView"
         onPress={() =>
@@ -23,6 +24,9 @@ export default function Home({ navigation }) {
           navigation.push('Plant', { itemID: '5fac44f7d3986500906e1b40' })
         }
       />
+=======
+      <Button title='Zeca' onPress={() => navigation.push('Plant', {itemID: '5fa1fd4971a080001cc61aff'})}/>
+>>>>>>> 7f25c52 (Rename assets folder)
     </View>
   );
 }
@@ -34,4 +38,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 7f25c52 (Rename assets folder)
