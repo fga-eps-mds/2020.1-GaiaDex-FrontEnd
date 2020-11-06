@@ -20,29 +20,30 @@ import {
 } from '@expo/vector-icons';
 import Header from './header'
 import { TextInput } from 'react-native-gesture-handler';
+
+import AvatarUser from '../../assets/AvatarUser.png';
+
 const largura = Dimensions.get("screen").width;
 const altura = Dimensions.get("screen").height;
 
 export default function TopicView(){
 
-    const enderecoIpv4 = '192.168.0.40'; //inserir o endereço o ip do localhost
+    const enderecoIpv4 = '192.168.18.7'; //inserir o endereço o ip do localhost
     const porta = '3000'; // inserir a porta em que o backend esta rodando
-    const topicID = '5fa473db6ad7aa001cb7654a'; //inserir o id da planta  ser exibido
+    const topicID = '5fa56d06904f9400289e158a'; //inserir o id da planta  ser exibido
     const [topic, setTopic] = useState({})
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');   
     const [isNewComment, setIsNewComment] = useState(true);
-    const [newComment, setNewComment] = useState({});
     const [isEditing, setIsEditing] = useState(false);
     const [commentText,setCommentText] = useState('');
     const [isLiked, setIsLiked] = useState(false);
-    const [isDisliked, setDisIsLiked] = useState(false);
+
     useEffect(() => {
-        fetch('http://192.168.0.40:3000/topic/find/5fa473db6ad7aa001cb7654a')
+        fetch(`http://${enderecoIpv4}:${porta}/topic/find/${topicID}`)
           .then((response) => response.json())
           .then((json) => setTopic(json.topic))
           .catch((error) => console.error(error))
       }, []);
+    
     const putTopic = async() => {
       const requestOptions = {
           method:'PUT',
@@ -56,6 +57,7 @@ export default function TopicView(){
           };
           fetch(`http://${enderecoIpv4}:${porta}/topic/update/${topic._id}`,requestOptions)
               .then(response => response.json())
+              .then(() => setIsEditing(!isEditing))
               .catch((error) => console.error(error))         
     }
     const postComment = async() => {
@@ -79,30 +81,44 @@ export default function TopicView(){
         const requestOptions = {
             method:'POST',
             };
-            fetch(`http://${enderecoIpv4}:${porta}/topic/like/5fa473db6ad7aa001cb7654a`,requestOptions)
-                .then(response => response.json())
-                .then(data => setTopic(data))
-                .then(() => {setIsLiked(true);setDisIsLiked(false)})
-
-      }
-      const deslikeTopic = async() => {
+            fetch(`http://${enderecoIpv4}:${porta}/topic/like/${topicID}`,requestOptions)
+                .then(res => {
+                    if (res.ok) {
+                        const likes = topic.likes + 1
+                        setTopic({...topic, likes});
+                        setIsLiked(!isLiked)
+                    }})
+                .then(err => {
+                    console.log(err)
+                    alert("Não foi possível realizar a ação")
+                })
+    }
+    const deslikeTopic = async() => {
         const requestOptions = {
             method:'POST',
             };
             fetch(`http://${enderecoIpv4}:${porta}/topic/dislike/${topicID}`,requestOptions)
-                .then(response => response.json())
-                .then(data => setTopic(data))
-                .then(() => {setIsLiked(false);setDisIsLiked(true)})   
-      }
+                .then(res => {
+                    if (res.ok) {
+                        const dislikes = topic.dislikes + 1
+                        setTopic({...topic, dislikes});
+                        setIsLiked(!isLiked)
+                    }})
+                .catch(err => {
+                    console.log(err)
+                    alert("Não foi possível realizar a ação")
+                })
+    }
       
 
 
-      function Topics({description, username}){
+      function Comment({description, username}){
         return(
             <View style={styles.commentItemDiv}>
                 <Image
                     style={styles.imgUserComment}
-                    defaultSource={require('../../assents/AvatarUser.png')}
+                    source={{uri: topic?.user?.profile_picture}}
+                    defaultSource={AvatarUser}
                     />
                 <ScrollView>
                     <Text style={styles.commentDescription}>{username}</Text>
@@ -114,13 +130,13 @@ export default function TopicView(){
     }    
       return(
           <KeyboardAvoidingView style={styles.containerMaster}>
-                <Header title={topic?.plant?.common_name}/>
+                <Header title={topic?.plant?.scientificName}/>
                 <View style={styles.container}>
                     <View style={styles.UserDiv}>
                         <Image
                             style={styles.imgUser}
                             source={{uri: topic?.user?.profile_picture}}
-                            defaultSource={require('../../assents/AvatarUser.png')}
+                            defaultSource={AvatarUser}
                         />
                         <View>
                             <Text style={styles.nameUser}>{topic?.user?.username}</Text>
@@ -154,17 +170,8 @@ export default function TopicView(){
                         }
                         <View style={styles.topicContainer} >
                             <View style={styles.topicDivLikes}>
-                                {!isLiked ?
-                                    <>
-                                    <AntDesign name="arrowup" size={18} color="black" onPress={() => likeTopic() }/>
+                                    <AntDesign name={!isLiked ? "arrowup" : "arrowdown"} size={18} color="black" onPress={() => !isLiked ? likeTopic() : deslikeTopic() }/>
                                         <Text>{topic.likes - topic.dislikes}</Text>
-                                    </>    
-                                    :
-                                    <>    
-                                    <AntDesign name="arrowdown" size={18} color="black" onPress={() => deslikeTopic() }/>
-                                        <Text>{topic.likes - topic.dislikes}</Text>
-                                    </>    
-                                }
                             </View>
                             <View style={styles.commentIcon}>
                                 <Feather name="edit" size={18} color="black" onPress={() => setIsEditing(!isEditing) }/>
@@ -190,7 +197,7 @@ export default function TopicView(){
                             <FlatList
                                 data={topic.comments}
                                 keyExtractor={item => item?._id}
-                                renderItem={({item}) => <Topics  username={item?.user?.username} description={item?.text}/> }
+                                renderItem={({item}) => <Comment  username={item?.user?.username} description={item?.text}/> }
                             />
                             :
                             <View style={styles.commentContent}>
