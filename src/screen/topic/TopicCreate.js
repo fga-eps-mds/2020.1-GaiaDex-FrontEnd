@@ -56,7 +56,7 @@ export default function TopicCreate(){
                     <Image
                         style={styles.imgUser}
                         source={{uri: plant.profile_picture}}
-                        defaultSource={require('../../assents/AvatarUser.png')}
+                        defaultSource={require('../../assets/AvatarUser.png')}
                     />
                     <Text style={styles.nameUser}>{plant.common_name}</Text>     
                 </View>
