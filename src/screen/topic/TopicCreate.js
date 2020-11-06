@@ -69,7 +69,8 @@ export default function TopicCreate(){
                 </View>
                 <View>
                     <TextInput 
-                        multiline={true} 
+                        blurOnSubmit
+                        multiline
                         style={styles.topicComment} 
                         placeholder={'Conteudo do post...'}
                         onChangeText={(val) => setDescription(val)}

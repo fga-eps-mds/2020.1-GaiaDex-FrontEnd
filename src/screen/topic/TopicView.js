@@ -1,6 +1,23 @@
-import React ,{useState, useEffect}from 'react';
-import { View, Text, Image, StyleSheet, Dimensions, ScrollView, FlatList, TouchableOpacity} from 'react-native';
-import { AntDesign, FontAwesome, Feather, Entypo } from '@expo/vector-icons';
+import 
+    React,
+    {useState, useEffect}
+from 'react';
+import { 
+    View,
+    Text,
+    Image,
+    StyleSheet, 
+    Dimensions, 
+    ScrollView, 
+    FlatList,
+    TouchableOpacity, 
+    KeyboardAvoidingView
+} from 'react-native';
+import { 
+    AntDesign,
+    Feather,
+    Entypo 
+} from '@expo/vector-icons';
 import Header from './header'
 import { TextInput } from 'react-native-gesture-handler';
 const largura = Dimensions.get("screen").width;
@@ -16,8 +33,8 @@ export default function TopicView(){
     const [description, setDescription] = useState('');   
     const [isNewComment, setIsNewComment] = useState(true);
     const [newComment, setNewComment] = useState({});
-    const [isEditing, setIsEditing] = useState(true);
-    
+    const [isEditing, setIsEditing] = useState(false);
+    const [commentText,setCommentText] = useState('');
     useEffect(() => {
         fetch('http://192.168.0.40:3000/topic/find/5fa473db6ad7aa001cb7654a')
           .then((response) => response.json())
@@ -46,11 +63,10 @@ export default function TopicView(){
                 'Content-Type':'application/json'
             },
             body:JSON.stringify({
-                title:topic.title,
-                description:topic.description
+                text:commentText,
                 })
             };
-            fetch(`http://${enderecoIpv4}:${porta}/topic/update/${topic._id}`,requestOptions)
+            fetch(`http://${enderecoIpv4}:${porta}/comment/create/${topic._id}/${topic.user_id}`,requestOptions)
                 .then(response => response.json())
                 .catch((error) => console.error(error))
            
@@ -91,7 +107,7 @@ export default function TopicView(){
         )
     }    
       return(
-          <View style={styles.containerMaster}>
+          <KeyboardAvoidingView style={styles.containerMaster}>
                 <Header />
                 <View style={styles.container}>
                     <View style={styles.UserDiv}>
@@ -126,7 +142,7 @@ export default function TopicView(){
                             <View style={{marginTop:10}}>
                                 <TextInput style={styles.topicDivTitle} defaultValue={topic?.title} onChangeText={(title) => setTopic({...topic,title})}></TextInput>
                                 </View>
-                                <TextInput multiline style={styles.topicDescriptionInput} defaultValue={topic?.description} onChangeText={(description) => setTopic({...topic,description})}></TextInput>
+                                <TextInput blurOnSubmit multiline style={styles.topicDescriptionInput} defaultValue={topic?.description} onChangeText={(description) => setTopic({...topic,description})}></TextInput>
                                 <TouchableOpacity style={styles.saveButton} onPress={() => putTopic()}><Text style={styles.saveButtonText}>salvar</Text></TouchableOpacity>
                         </>
                         }
@@ -137,7 +153,7 @@ export default function TopicView(){
                                 <AntDesign name="arrowdown" size={18} color="black" onPress={() => deslikeTopic() }/>
                             </View>
                             <View style={styles.commentIcon}>
-                                <FontAwesome name="comment-o" size={15} color="black" onPress={() => setIsEditing(!isEditing) }/>
+                                <Feather name="edit" size={18} color="black" onPress={() => setIsEditing(!isEditing) }/>
                             </View>
                             <View style={styles.shareIcon}>
                                 <Feather name="corner-up-right" size={15} color="black" />
@@ -164,14 +180,14 @@ export default function TopicView(){
                             />
                             :
                             <View style={styles.commentContent}>
-                                <TextInput multiline style={styles.commentDescriptionInput} defaultValue={topic?.description} onChangeText={(description) => setTopic({...topic,description})}></TextInput>
-                                <TouchableOpacity style={styles.saveButton} onPress={() => putTopic()}><Text style={styles.saveButtonText}>salvar</Text></TouchableOpacity>
+                                <TextInput blurOnSubmit multiline style={styles.commentDescriptionInput} placeholder={'Escreva um comentário ...'} onChangeText={(val) => setCommentText(val)}></TextInput>
+                                <TouchableOpacity style={styles.saveButton} onPress={() => postComment()}><Text style={styles.saveButtonText}>salvar</Text></TouchableOpacity>
                             </View>
                         }
                         </View>
                     </View>
                 
-        </View>        
+        </KeyboardAvoidingView>        
       );
   };
 const styles = StyleSheet.create({
