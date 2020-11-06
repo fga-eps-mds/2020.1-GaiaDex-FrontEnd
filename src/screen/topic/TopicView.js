@@ -3,7 +3,6 @@ import {
   View,
   Text,
   Image,
-  Dimensions,
   ScrollView,
   FlatList,
   TouchableOpacity,
