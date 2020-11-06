@@ -44,7 +44,7 @@ export default function TopicView(){
           .catch((error) => console.error(error))
       }, []);
     
-    const putTopic = async() => {
+    const putTopic = async () => {
       const requestOptions = {
           method:'PUT',
           headers: {
@@ -60,7 +60,8 @@ export default function TopicView(){
               .then(() => setIsEditing(!isEditing))
               .catch((error) => console.error(error))         
     }
-    const postComment = async() => {
+
+    const postComment = async () => {
         const requestOptions = {
             method:'POST',
             headers: {
@@ -76,28 +77,25 @@ export default function TopicView(){
                 .then(() => setIsNewComment(true))
                 .catch((error) => console.error(error))
            
-      }
-    const likeTopic = async() => {
-        const requestOptions = {
-            method:'POST',
-            };
-            fetch(`http://${enderecoIpv4}:${porta}/topic/like/${topicID}`,requestOptions)
+    }
+
+    const likeTopic = async (type, id = null) => {
+        const options = {
+            topic: () => {
+                fetch(`http://${enderecoIpv4}:${porta}/topic/like/${topicID}`,{method: 'POST'})
                 .then(res => {
                     if (res.ok) {
                         const likes = topic.likes + 1
                         setTopic({...topic, likes});
                         setIsLiked(!isLiked)
                     }})
-                .then(err => {
+                .catch(err => {
                     console.log(err)
                     alert("Não foi possível realizar a ação")
                 })
-    }
-    const deslikeTopic = async() => {
-        const requestOptions = {
-            method:'POST',
-            };
-            fetch(`http://${enderecoIpv4}:${porta}/topic/dislike/${topicID}`,requestOptions)
+            },
+            comment: () => {
+                fetch(`http://${enderecoIpv4}:${porta}/topic/dislike/${topicID}`,{method: 'POST'})
                 .then(res => {
                     if (res.ok) {
                         const dislikes = topic.dislikes + 1
@@ -108,6 +106,41 @@ export default function TopicView(){
                     console.log(err)
                     alert("Não foi possível realizar a ação")
                 })
+            }
+        }
+        if (options[type]) options[type]()
+    }
+
+    const deslikeTopic = async (type, id = null) => {
+        const options = {
+            topic: () => {
+                fetch(`http://${enderecoIpv4}:${porta}/topic/dislike/${topicID}`,{method: 'POST'})
+                .then(res => {
+                    if (res.ok) {
+                        const dislikes = topic.dislikes + 1
+                        setTopic({...topic, dislikes});
+                        setIsLiked(!isLiked)
+                    }})
+                .catch(err => {
+                    console.log(err)
+                    alert("Não foi possível realizar a ação")
+                })
+            },
+            comment: () => {
+                fetch(`http://${enderecoIpv4}:${porta}/topic/dislike/${topicID}`,{method: 'POST'})
+                .then(res => {
+                    if (res.ok) {
+                        const dislikes = topic.dislikes + 1
+                        setTopic({...topic, dislikes});
+                        setIsLiked(!isLiked)
+                    }})
+                .catch(err => {
+                    console.log(err)
+                    alert("Não foi possível realizar a ação")
+                })
+            }
+        }
+        if (options[type]) options[type]()
     }
       
 
@@ -170,7 +203,7 @@ export default function TopicView(){
                         }
                         <View style={styles.topicContainer} >
                             <View style={styles.topicDivLikes}>
-                                    <AntDesign name={!isLiked ? "arrowup" : "arrowdown"} size={18} color="black" onPress={() => !isLiked ? likeTopic() : deslikeTopic() }/>
+                                    <AntDesign name={!isLiked ? "arrowup" : "arrowdown"} size={18} color="black" onPress={() => !isLiked ? likeTopic('topic',topicID) : deslikeTopic('topic',topicID) }/>
                                         <Text>{topic.likes - topic.dislikes}</Text>
                             </View>
                             <View style={styles.commentIcon}>
@@ -179,9 +212,8 @@ export default function TopicView(){
                             <View style={styles.shareIcon}>
                                 <Feather name="corner-up-right" size={15} color="black" />
                                 <Text style={{fontSize:10}}>Compartilhar</Text>
-                            </View>    
-
-                        </View>  
+                            </View>
+                        </View>
                     </View>
                 </View>
                     <TouchableOpacity style={styles.commentsBarDiv} onPress={() => setIsNewComment(!isNewComment)}>
@@ -202,7 +234,9 @@ export default function TopicView(){
                             :
                             <View style={styles.commentContent}>
                                 <TextInput blurOnSubmit multiline style={styles.commentDescriptionInput} placeholder={'Escreva um comentário ...'} onChangeText={(val) => setCommentText(val)}></TextInput>
-                                <TouchableOpacity style={styles.saveButton} onPress={() => postComment()}><Text style={styles.saveButtonText}>salvar</Text></TouchableOpacity>
+                                <TouchableOpacity style={styles.saveButton} onPress={() => postComment()}>
+                                    <Text style={styles.saveButtonText}>salvar</Text>
+                                </TouchableOpacity>
                             </View>
                         }
                         </View>
