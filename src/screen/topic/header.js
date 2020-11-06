@@ -59,43 +59,43 @@ import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 const largura = Dimensions.get("screen").width;
 const altura = Dimensions.get("screen").height;
 
-export default function Header(){
+export default function Header({isButton}){
     return(
-            <View style={styles.header}>
+        <View style={styles.header}>
+            <View style={{flex:1}}>
                 <AntDesign name="left" size={24} color="white" />
-                <Text style={{color:"white",fontSize:18}}>Cenoura</Text>
-                <TouchableOpacity style={styles.publicarDiv} onPress={() => postTopic()} >
-                    <MaterialCommunityIcons name="send" size={24} color="white" style={{marginRight:20}} /> 
-                    <Text style={styles.publicarText}>PUBLICAR</Text>
-                </TouchableOpacity> 
             </View>
+            <View style={{flex:1}}>
+                <Text style={{color:"white",fontSize:18,alignSelf:'center'}}>Cenoura</Text>
+            </View>
+             <View style={{flex:1}}> 
+            </View>    
+        </View>
     )
 };
 const styles = StyleSheet.create({
     header: {
         backgroundColor:'black',
-        flexDirection: 'row',
-        width:largura,
+        flex:1.5,
+        flexDirection:'row',
         alignItems:'center',
-        justifyContent:'center',
-        paddingTop:10,
-        flex:1,
-        marginBottom:10,   
+        alignContent:'space-between',
+        paddingTop:15
+   
     },
     publicarDiv:{
-        flexDirection:"row-reverse",
+        flexDirection:'row',
+        alignItems:"center",
+        justifyContent:'center',
         alignSelf:'center',
-        flex:1
     },
     publicarText:{
-        marginTop:2.5,
-        marginRight:20,
+        marginRight:5,
         color:'white',
         fontSize:15,
         fontWeight: '100',
     },
     backButton:{
-        padding:10
     }
 });
 >>>>>>> 470bf07 (adding topic view)
