@@ -8,7 +8,6 @@ import PlantView from './screen/plant/plantView'
 import Regform from './../app/components/regform';
 import Login from './../app/components/login';
 
-
 export default function App() {
   return (
     <View>

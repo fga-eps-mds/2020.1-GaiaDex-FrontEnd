@@ -1,44 +1,101 @@
 {
   "main": "index.js",
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "web": "expo start --web",
+    "android": "yarn run prestorybook && react-native run-android",
+    "ios": "yarn run prestorybook && react-native run-ios",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint .",
+    "prestorybook": "rnstl",
+    "storybook": "start-storybook -p 7007",
+    "build-react": "webpack --mode production",
+    "start-storybook-web": "./node_modules/@storybook/react/bin/index.js",
+    "build-storybook-web": "./node_modules/@storybook/react/bin/build.js",
+    "storybook-web": "yarn run start-storybook-web",
+    "web": "expo start --web",
+    "build:storybook-web": "yarn run build-storybook-web"
   },
   "dependencies": {
-    "@react-native-community/masked-view": "^0.1.10",
+    "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/bottom-tabs": "^5.9.1",
     "@react-navigation/native": "^5.7.5",
     "@react-navigation/stack": "^5.9.3",
+    "@svgr/webpack": "^5.4.0",
     "apisauce": "^1.1.2",
     "expo": "~39.0.2",
     "expo-cli": "^3.27.12",
-    "expo-splash-screen": "~0.6.0",
+    "expo-splash-screen": "~0.6.1",
     "expo-status-bar": "~1.0.2",
-    "expo-updates": "~0.3.2",
+    "expo-updates": "~0.3.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-native": "~0.63.2",
+    "react-native": "0.63.3",
     "react-native-gesture-handler": "~1.7.0",
-    "react-native-path": "0.0.5",
     "react-native-reanimated": "~1.13.0",
-    "react-native-safe-area-context": "^3.1.8",
+    "react-native-safe-area-context": "3.1.4",
     "react-native-screens": "~2.10.1",
-    "react-native-svg": "^12.1.0",
+    "react-native-svg": "12.1.0",
+    "react-native-svg-transformer": "^0.14.3",
     "react-native-unimodules": "~0.11.0",
-    "react-native-web": "~0.13.12",
-    "styled-components": "^5.2.0"
+    "react-native-web": "^0.14.7",
+    "styled-components": "^5.2.0",
+    "url-loader": "^4.1.1"
   },
   "devDependencies": {
-    "@babel/core": "~7.9.0",
-    "babel-jest": "~25.2.6",
-    "jest": "~25.2.6",
-    "react-test-renderer": "~16.13.1"
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/runtime": "^7.8.4",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-essentials": "^6.0.28",
+    "@storybook/addon-knobs": "^5.3",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addon-ondevice-actions": "^5.3.23",
+    "@storybook/addon-ondevice-knobs": "^5.3.23",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/react": "^5.3.19",
+    "@storybook/react-native": "^5.3.19",
+    "@storybook/react-native-server": "^5.3.19",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^25.1.0",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.5.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "eslint-plugin-react-native": "^3.8.1",
+    "html-webpack-plugin": "^4.3.0",
+    "jest": "^25.1.0",
+    "jest-expo": "^39.0.0",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "prettier": "^2.0.5",
+    "react-dom": "^16.13.1",
+    "react-is": "^17.0.1",
+    "react-native-storybook-loader": "^2.0.2",
+    "react-test-renderer": "16.13.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/__mocks__/globalMock.js"
+    ]
+  },
+  "config": {
+    "react-native-storybook-loader": {
+      "searchDir": [
+        "./app/components"
+      ],
+      "pattern": "**/*.stories.js",
+      "outputFile": "./storybook/storyLoader.js"
+    }
   },
   "private": true
 }
