@@ -18,25 +18,25 @@ export default function Menu({usage}){
                 <View style={styles.TabContainer}>
                     <ImgButton 
                         text="Descrição" 
-                        source={require("../../assents/descricao.png")} 
+                        source={require("../../assets/descricao.png")} 
                         onPress={() => {navigation.dispatch(CommonActions.navigate({name:'Descrição'}))}} 
                         icon = 'filetext1'
                     />
                     <ImgButton 
                         text="Galeria" 
-                        source={require("../../assents/galeria.png")} 
+                        source={require("../../assets/galeria.png")} 
                         onPress={() => {navigation.dispatch(CommonActions.navigate({name:'Galeria'}))}} 
                         icon = 'picture'
                     />
                     <ImgButton 
                         text="Guia de Cultivo" 
-                        source={require("../../assents/guiadecultivo.png")} 
+                        source={require("../../assets/guiadecultivo.png")} 
                         onPress={() => {navigation.dispatch(CommonActions.navigate({name:'Guia de cultivo'}))}} 
                         icon = 'book'
                     />                      
                     <ImgButton 
                         text="Usos" 
-                        source={require("../../assents/usos.png")} 
+                        source={require("../../assets/usos.png")} 
                         onPress={() => {navigation.dispatch(CommonActions.navigate({name:'Usos'}))}} 
                         icon = 'bulb1'
                     />
