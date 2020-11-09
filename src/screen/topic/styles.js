@@ -4,6 +4,101 @@ import { Dimensions } from 'react-native';
 const largura = Dimensions.get("screen").width;
 const altura = Dimensions.get("screen").height;
 const styles = StyleSheet.create({
+    TopicCreateheader: {
+        backgroundColor:'black',
+        flexDirection: 'row',
+        width:largura,
+        alignItems:'center',
+        justifyContent:'center',
+        paddingTop:10,
+        flex:0.8,
+        marginBottom:10,   
+    },
+    TopicCreatepublicarDiv:{
+        flexDirection:"row-reverse",
+        alignSelf:'center',
+        flex:1
+    },
+    TopicCreatepublicarText:{
+        marginTop:2.5,
+        marginRight:20,
+        color:'white',
+        fontSize:15,
+        fontWeight: '100',
+    },
+    TopicCreatebackButton:{
+        padding:10
+    },
+    TopicCreateUserDiv: {
+        flexDirection: 'row',
+        flex:1,
+        marginBottom:30,   
+    },
+    TopicCreateimgUser : {
+        width:largura/5,
+        height:largura/5,
+        borderRadius:50,
+        
+        
+    },
+    TopicCreatenameUser : {
+        fontSize:18,
+        fontWeight:'bold',
+        paddingTop:10,
+        paddingLeft:5
+        
+    },
+    TopicCreatetopicComment: {
+        backgroundColor: '#D6DADF',
+        borderRadius: 10,
+        height: altura/2.1,
+        textAlignVertical:'top',
+        paddingLeft:20,
+        paddingTop:10
+    },
+    TopicCreatetituloTopic: {
+        backgroundColor: '#D6DADF',
+        borderRadius: 10,
+        height: altura/15,
+        paddingLeft:20,
+    },
+    TopicCreatetituloDiv: {
+        backgroundColor: 'skyblue',
+        marginBottom:altura/20,
+        borderRadius: 10
+    },
+    TopicCreatecontainer: {
+        flexDirection: 'column',
+        justifyContent: 'center',
+        flexWrap:'nowrap' ,
+        flex:8,
+        width: largura/1.2,
+        alignSelf:'center'
+        
+    },
+    TopicCreatemasterView: {
+        flexDirection: 'column',
+        justifyContent: 'center',
+        flexWrap:'nowrap' ,
+        flex:1,
+        width: largura,
+        alignSelf:'center'
+        
+    },
+    TopicCreatescrollView: {
+        height:altura/16,
+        marginLeft:10
+    },
+    TopicCreatescrollDiv: {
+        backgroundColor:'#19BB53',
+        borderRadius:10,
+        marginTop:20,
+        marginBottom:40,
+        width:largura
+    },
+    TopicCreateicon2:{
+        marginLeft:5,
+    },
     UserDiv: {
         flexDirection: 'row',
         flex:0.6,

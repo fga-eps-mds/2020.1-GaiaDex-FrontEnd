@@ -41,6 +41,7 @@ export default function TopicView(){
         fetch(`http://${enderecoIpv4}:${porta}/topic/find/${topicID}`)
           .then((response) => response.json())
           .then((json) => setTopic(json.topic))
+          .then(() => {if(topic?.title == 'Esse tópico foi deletado'){setIsDeletd(true)}})
           .catch((error) => console.error(error))
       }, []);
     
