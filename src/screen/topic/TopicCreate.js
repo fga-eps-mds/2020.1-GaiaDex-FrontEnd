@@ -4,19 +4,14 @@ import {
   Text,
   Image,
   TextInput,
-  StyleSheet,
   ScrollView,
   TouchableOpacity,
   KeyboardAvoidingView,
-  Dimensions,
 } from 'react-native';
 
 import { MaterialCommunityIcons, AntDesign, Entypo } from '@expo/vector-icons';
 import styles from './styles';
 import { getPlant, createTopic } from '../../services/backEnd';
-
-const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
 
 export default function TopicCreate() {
   // variaveis vindas do router
