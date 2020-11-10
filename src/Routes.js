@@ -6,16 +6,16 @@ import PlantView from './screen/plant/plantView';
 
 const AppStack = createStackNavigator(
   { 
-    Plant: {
-      screen: PlantView,
-      path: 'Plant',
+    Scanner: {
+      screen: Scanner,
+      path: 'Scanner',
       navigationOptions: {
         headerShown: false
       }
     },
-    Scanner: {
-      screen: Scanner,
-      path: 'Scanner',
+    Plant: {
+      screen: PlantView,
+      path: 'Plant',
       navigationOptions: {
         headerShown: false
       }

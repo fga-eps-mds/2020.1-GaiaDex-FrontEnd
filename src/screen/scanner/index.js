@@ -23,8 +23,6 @@ export default function camera(){
     const falshTypes = ['off','auto','on','torch','flash-off','flash-auto','flash','flashlight']
     const [flash, setFlash] = useState(0);
 
-    //console.log('inicial ', plantType);
-
     useEffect(() =>{
         (async () => { //seta permissao
             const {status} = await Camera.requestPermissionsAsync();
@@ -81,12 +79,7 @@ export default function camera(){
                         "Erro ao Reconhecer",
                         "Não foi possivel recohecer sua foto",
                         [
-                            {
-                            text: "Cancel",
-                            onPress: () => console.log("Cancel Pressed"),
-                            style: "cancel"
-                            },
-                            { text: "OK", onPress: () => console.log("OK Pressed") }
+                            { text: "OK" }
                         ],
                         { cancelable: false }
                     )

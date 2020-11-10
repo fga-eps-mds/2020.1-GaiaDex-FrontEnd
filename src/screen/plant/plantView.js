@@ -15,7 +15,6 @@ export default function PlantView({ navigation }){
         const dadosHTTP = await fetch(`http://${process.env.IPV4}:${process.env.PORT}/plant/${plantID}`);
         const dadosJson = await dadosHTTP.json();
         setPlant(dadosJson.plant); 
-        console.log(dadosJson);
     }
     lerDados();    
     },[]);
