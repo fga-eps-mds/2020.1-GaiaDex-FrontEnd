@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Platform, StyleSheet, Text, View, StatusBar as sBar} from 'react-native';
-import Login from './src/components/Login';
+import Login from './src/containers/Login/Login';
 
 export default function App() {
   return (
