@@ -23,12 +23,12 @@ export default function PlantView({ navigation }) {
   return (
     <View style={styles.container}>
       <Perfil
-        foto={plant.profile_picture}
-        nomeComum={plant.common_name}
-        nomeScientifico={plant.scientificName}
-        contador={plant.collection_count}
+        foto={plant?.profile_picture}
+        nomeComum={plant?.common_name}
+        nomeScientifico={plant?.scientificName}
+        contador={plant?.collection_count}
       />
-      <Menu usage={plant.usage} />
+      <Menu usage={plant?.usage} />
     </View>
   );
 }

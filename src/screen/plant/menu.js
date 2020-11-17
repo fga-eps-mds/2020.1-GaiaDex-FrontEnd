@@ -18,7 +18,7 @@ export default function Menu({ usage }) {
         <View style={styles.TabContainer}>
           <ImgButton
             text="Descrição"
-            source={require('../../assents/descricao.png')}
+            source={require('../../assets/descricao.png')}
             onPress={() => {
               navigation.dispatch(
                 CommonActions.navigate({ name: 'Descrição' })
@@ -28,7 +28,7 @@ export default function Menu({ usage }) {
           />
           <ImgButton
             text="Galeria"
-            source={require('../../assents/galeria.png')}
+            source={require('../../assets/galeria.png')}
             onPress={() => {
               navigation.dispatch(CommonActions.navigate({ name: 'Galeria' }));
             }}
@@ -36,7 +36,7 @@ export default function Menu({ usage }) {
           />
           <ImgButton
             text="Guia de Cultivo"
-            source={require('../../assents/guiadecultivo.png')}
+            source={require('../../assets/guiadecultivo.png')}
             onPress={() => {
               navigation.dispatch(
                 CommonActions.navigate({ name: 'Guia de cultivo' })
@@ -46,7 +46,7 @@ export default function Menu({ usage }) {
           />
           <ImgButton
             text="Usos"
-            source={require('../../assents/usos.png')}
+            source={require('../../assets/usos.png')}
             onPress={() => {
               navigation.dispatch(CommonActions.navigate({ name: 'Usos' }));
             }}
