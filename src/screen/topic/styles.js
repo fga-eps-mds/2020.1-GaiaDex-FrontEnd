@@ -234,14 +234,28 @@ const styles = StyleSheet.create({
     },
     commentItemDiv:{
         backgroundColor:'white',
-        flexDirection:'row',
+        flexDirection:'column',
         alignSelf:'center',
         width:largura/1.1,
-        height:altura/8,
+        height:altura/7,
         marginVertical:5,
         borderRadius:5,
         paddingTop:10,
         paddingLeft:10
+    },
+    commentUser:{
+        flexDirection:'row', 
+    },
+    commentContainer:{
+        flexDirection: 'row',
+        alignSelf:'flex-end',   
+        flex:4,
+        backgroundColor:'white',
+        maxHeight:altura/30,
+        borderRadius:8,
+        alignItems:'center',
+        justifyContent: 'space-between',
+        width:largura/1.8
     },
     imgUserComment:{
         marginLeft:10,
@@ -262,7 +276,7 @@ const styles = StyleSheet.create({
         paddingLeft:10
     },
     commentDescription:{
-        fontSize:9,
+        fontSize:10,
         fontWeight:'300',
         paddingTop:5,
         paddingLeft:10
