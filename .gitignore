@@ -1,5 +1,4 @@
 .vscode/
-.expo
 
 # OSX
 #
@@ -64,3 +63,6 @@ buck-out/
 # Storybook
 /storybook/storyLoader.js
 storybook-static
+__tests__
+.env
+.expo
