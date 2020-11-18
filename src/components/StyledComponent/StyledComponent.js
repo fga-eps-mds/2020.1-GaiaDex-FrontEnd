@@ -4,7 +4,7 @@ import styled from 'styled-components/native'
 const Base = styled.View`
   height: 200px;
   width: 200px;
-  background-color: papayawhip;
+  background-color: black;
 `
 
 const Text = styled.Text`
