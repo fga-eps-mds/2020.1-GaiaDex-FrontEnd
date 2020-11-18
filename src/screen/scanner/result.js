@@ -11,27 +11,13 @@ import {
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import styles from './styles';
+import {ENDPOINTS} from '../../settings'
 
 const register = async (plant) => {
   try {
-    const data = await fetch(
-      `http://${process.env.IPV4}:${process.env.PORT}/plant/register`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          scientificName: plant.species.scientificNameWithoutAuthor,
-          gender_name: plant.species.genus.scientificNameWithoutAuthor,
-          family_name: plant.species.family.scientificNameWithoutAuthor,
-          common_name: plant.species.commonNames[0],
-          gbifID: plant.gbif.id,
-        }),
-      }
-    );
-    const response = await data.json();
-    // navegar pagina minha planta com id do response.id
+    registerPlant(plant)
+    // .then();
+    // redirecionar para pagina minha planta com id do response.id
   } catch (err) {
     console.log(err);
   }
