@@ -64,6 +64,11 @@ export const ENDPOINTS = {
         route: (commentID) => `/comment/dislike/${commentID}`,
         method: `POST`
       } 
+    },
+    scanner:{
+      route: `/scanner/`,
+      method: `POST`,
+      body:(scannerBody) => scannerBody
     }
   },
 };
