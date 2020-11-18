@@ -80,11 +80,11 @@ export default function camera() {
           mime: 'jpg',
           plantType: plantType ? 'flower' : 'leaf',
           data: data.base64,
-        }
+        };
         scannerPlant(body)
-        .then(res => setPlants(res.results))
-        .then(setOpen(true))
-        .then(setIsLoading(false))
+          .then((res) => setPlants(res.results))
+          .then(setOpen(true))
+          .then(setIsLoading(false));
       } catch (err) {
         console.log(err);
         setIsLoading(false);

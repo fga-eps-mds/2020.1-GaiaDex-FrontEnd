@@ -1,6 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Platform, StyleSheet, Text, View, StatusBar as sBar} from 'react-native';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+  StatusBar as sBar,
+} from 'react-native';
 import Login from './src/containers/Login/Login';
 
 export default function App() {
@@ -20,6 +26,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingLeft: 60,
     paddingRight: 60,
-    paddingTop: Platform.OS === "android" ? sBar.currentHeight : 0,
+    paddingTop: Platform.OS === 'android' ? sBar.currentHeight : 0,
   },
 });

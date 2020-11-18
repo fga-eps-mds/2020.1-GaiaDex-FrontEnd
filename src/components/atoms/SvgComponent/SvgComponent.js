@@ -1,6 +1,6 @@
-import React from 'react'
-import starUrl, { ReactComponent as Star } from './../../../assets/Search.svg'
-import { View } from 'react-native'
+import React from 'react';
+import { View } from 'react-native';
+import starUrl, { ReactComponent as Star } from '../../../assets/Search.svg';
 
 function SvgComponent(props) {
   return (
@@ -8,7 +8,7 @@ function SvgComponent(props) {
       <img src={starUrl} alt="star" width="14" height="14" />
       <Star />
     </View>
-  )
+  );
 }
 
-export default SvgComponent
+export default SvgComponent;

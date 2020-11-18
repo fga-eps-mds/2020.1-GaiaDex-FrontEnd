@@ -4,12 +4,12 @@ export const ENDPOINTS = {
     auth: {
       signup: {
         route: `/auth/signup`,
-        method: `POST`
+        method: `POST`,
       },
       login: {
         route: `/auth/login`,
-        method: `POST`
-      }
+        method: `POST`,
+      },
     },
     plant: {
       register: {
@@ -18,12 +18,12 @@ export const ENDPOINTS = {
       },
       getPlant: {
         route: (plantID) => `/plant/${plantID}`,
-        method: `GET`
+        method: `GET`,
       },
       getAllPlants: {
         route: `/plant/`,
-        method: `GET`
-      }
+        method: `GET`,
+      },
     },
     topic: {
       create: {
@@ -34,41 +34,41 @@ export const ENDPOINTS = {
         route: (topicID) => `/topic/update/${topicID}`,
         method: `PUT`,
       },
-      like:{
+      like: {
         route: (topicID) => `/topic/like/${topicID}`,
-        method: `POST`
+        method: `POST`,
       },
-      dislike:{
+      dislike: {
         route: (topicID) => `/topic/dislike/${topicID}`,
-        method: `POST`
-      }
+        method: `POST`,
+      },
     },
     comment: {
       create: {
         route: (commentID) => `/comment/create/${commentID}`,
-        method: `POST`
+        method: `POST`,
       },
       update: {
         route: (commentID) => `/comment/update/${commentID}`,
-        method: `PUT`
+        method: `PUT`,
       },
-      delete:{
+      delete: {
         route: (commentID) => `/comment/delete/${commentID}`,
-        method: `DELETE`
+        method: `DELETE`,
       },
-      like:{
+      like: {
         route: (commentID) => `/comment/like/${commentID}`,
-        method: `POST`
+        method: `POST`,
       },
-      dislike:{
+      dislike: {
         route: (commentID) => `/comment/dislike/${commentID}`,
-        method: `POST`
-      } 
+        method: `POST`,
+      },
     },
-    scanner:{
+    scanner: {
       route: `/scanner/`,
       method: `POST`,
-      body:(scannerBody) => scannerBody
-    }
+      body: (scannerBody) => scannerBody,
+    },
   },
 };

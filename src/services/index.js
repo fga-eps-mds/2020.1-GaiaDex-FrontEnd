@@ -1,1 +1,1 @@
-export * from './backEnd'
+export * from './backEnd';

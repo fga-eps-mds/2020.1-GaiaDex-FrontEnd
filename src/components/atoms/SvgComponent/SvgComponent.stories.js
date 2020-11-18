@@ -1,6 +1,6 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react-native'
+import React from 'react';
+import { storiesOf } from '@storybook/react-native';
 
-import SvgComponent from './SvgComponent'
+import SvgComponent from './SvgComponent';
 
-storiesOf('SvgComponent', module).add('example', () => <SvgComponent />)
+storiesOf('SvgComponent', module).add('example', () => <SvgComponent />);

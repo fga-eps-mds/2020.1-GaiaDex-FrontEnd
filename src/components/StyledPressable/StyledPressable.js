@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components/native'
+import React from 'react';
+import styled from 'styled-components/native';
 
 const PressableBase = styled.TouchableOpacity`
   height: 50px;
@@ -7,18 +7,18 @@ const PressableBase = styled.TouchableOpacity`
   background-color: red;
   justify-content: center;
   align-items: center;
-`
+`;
 
 const Text = styled.Text`
   color: white;
-`
+`;
 
 function StyledPressable() {
   return (
     <PressableBase>
       <Text>Button</Text>
     </PressableBase>
-  )
+  );
 }
 
-export default StyledPressable
+export default StyledPressable;
