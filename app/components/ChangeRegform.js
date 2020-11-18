@@ -9,9 +9,8 @@ import { Platform,
     TouchableOpacity
 } from 'react-native';
 import styles from './componentStyles'
-import {CircleArrow, FacebookIcon, GoogleIcon} from './svgs';
 
-export default function regform() {
+export default function Regform() {
 
   return (
     <View style={styles.containerRegform}>
@@ -19,7 +18,7 @@ export default function regform() {
       <View style={styles.circle4}/>
       <View style={styles.circle5}/>
 
-      <Text style={styles.headerRegform}>Criar Conta</Text>
+      <Text style={styles.headerLogin}>Alterar meus Dados:</Text>
       
       <TextInput style={styles.textinputRegform} placeholder='Nome:'
       underlineColorAndroid={'transparent'}/>

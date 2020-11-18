@@ -9,9 +9,8 @@ import { Platform,
     TouchableOpacity
 } from 'react-native';
 import styles from './componentStyles'
-import {CircleArrow, FacebookIcon, GoogleIcon} from './svgs';
 
-export default function login() {
+export default function Login() {
 
   return (
     <View style={styles.containerLogin}>
