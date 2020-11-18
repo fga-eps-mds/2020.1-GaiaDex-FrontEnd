@@ -15,6 +15,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Result from './result';
 import styles from './styles';
+import { scannerPlant } from '../../services';
 
 const largura = Dimensions.get('screen').width;
 const altura = Dimensions.get('screen').height;
@@ -26,7 +27,7 @@ export default function camera() {
   const [capturedPhoto, setCapturedPhoto] = useState(null);
   const [open, setOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [plants, setPlants] = useState(null);
+  const [plants, setPlants] = useState([]);
   const [plantType, setPlantType] = useState(true);
   const falshTypes = [
     'off',
@@ -74,26 +75,16 @@ export default function camera() {
           quality: 0.5,
         });
         setCapturedPhoto(data.uri);
-        const response = await fetch(
-          `http://${process.env.IPV4}:${process.env.PORT}/scanner/`,
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              filename: 'planta',
-              mime: 'jpg',
-              plantType: plantType ? 'flower' : 'leaf',
-              data: data.base64,
-            }),
-          }
-        );
-        if (!response.ok) throw { message: 'error in fetch' };
-        const plant = await response.json();
-        setPlants(plant.results);
-        setOpen(true);
-        setIsLoading(false);
+        const body = {
+          filename: 'planta',
+          mime: 'jpg',
+          plantType: plantType ? 'flower' : 'leaf',
+          data: data.base64,
+        }
+        scannerPlant(body)
+        .then(res => setPlants(res.results))
+        .then(setOpen(true))
+        .then(setIsLoading(false))
       } catch (err) {
         console.log(err);
         setIsLoading(false);
