@@ -12,8 +12,8 @@ export default function TopicCreate(){
     //variaveis vindas do router
   const enderecoIpv4 = '192.168.0.40'; //inserir o endereço o ip do localhost
   const porta = '3000'; // inserir a porta em que o backend esta rodando
-  const plantID = '5fa1972a48e67b002a635954'; //inserir o id da planta  ser exibido
-  const userID = '5fa9ca3478c0dd001c049390';
+  const plantID = '5fac37ad7843f3001cf63d5f'; //inserir o id da planta  ser exibido
+  const userID = '5fac4a7ed3986500906e1b42';
 
   //consts post
   const [plant, setPlant] = useState({});
