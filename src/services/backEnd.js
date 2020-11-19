@@ -1,7 +1,9 @@
 import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from 'react';
 import { ENDPOINTS, getToken, setToken } from '../settings';
 
-const baseHeaders = (token = '') => ({
+const Usertoken =
+  'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYWMzNjUyNzg0M2YzMDAxY2Y2M2Q1ZSIsImlhdCI6MTYwNTgxMjI3NiwiZXhwIjoxNjA1ODk4Njc2fQ.wVNYLk2TweJBJI7qA-cZOPEVbudSWIJ_rg2RhCcF35I';
+const baseHeaders = (token = Usertoken) => ({
   authtoken: token,
   'Content-Type': 'application/json',
   Accept: 'application/json',
