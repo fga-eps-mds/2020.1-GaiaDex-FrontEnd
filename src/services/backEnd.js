@@ -19,6 +19,7 @@ export const getUserLogado = () => {
   });
 };
 
+
 export const UserLogin = (User) => {
   const USER = ENDPOINTS.API.auth;
   return new Promise((resolve, reject) => {
@@ -90,13 +91,75 @@ export const UserDelete = () => {
   });
 };
 
-export const createTopic = (topicID) => {
+export const createTopic = (topicID, userID, topicBody) => {
   const TOPIC = ENDPOINTS.API.topic;
   return new Promise((resolve, reject) => {
-    fetch(ENDPOINTS.API.base_url + TOPIC.create.route(topicID), {
+    fetch(ENDPOINTS.API.base_url + TOPIC.create.route(topicID, userID), {
       method: TOPIC.create.method,
-      headers: baseHeaders(window.localStorage.getItem('token')),
+      headers: baseHeaders(),
+      body: JSON.stringify({
+        title: topicBody.title,
+        description: topicBody.description,
+      }),
     })
+      .then((res) => res.json())
+      .then(resolve)
+      .then(reject);
+  });
+};
+export const getTopic = (topicID) => {
+  const TOPIC = ENDPOINTS.API.topic;
+  return new Promise((resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + TOPIC.getTopic.route(topicID), {
+      method: TOPIC.getTopic.method,
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+export const updateTopic = (topicID, body) => {
+  const TOPIC = ENDPOINTS.API.topic;
+  return new Promise((resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + TOPIC.update.route(topicID), {
+      method: TOPIC.update.method,
+      headers: baseHeaders(),
+      body: JSON.stringify({
+        title: body.title,
+        description: body.description,
+      }),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+export const likeTopic = (topicID) => {
+  const TOPIC = ENDPOINTS.API.topic;
+  console.log('aki');
+  return new Promise((resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + TOPIC.like.route(topicID), {
+      method: TOPIC.like.method,
+      headers: baseHeaders(),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res))
+      .then(resolve)
+      .catch(reject);
+  });
+};
+
+export const createComment = (commentID, userID, topicBody) => {
+  const COMMENT = ENDPOINTS.API.comment;
+  return new Promise((resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + COMMENT.create.route(commentID, userID), {
+      method: COMMENT.create.method,
+      headers: baseHeaders(),
+      body: JSON.stringify({
+        text: topicBody.text,
+      }),
+    })
+      .then((res) => res.json())
       .then(resolve)
       .then(reject);
   });

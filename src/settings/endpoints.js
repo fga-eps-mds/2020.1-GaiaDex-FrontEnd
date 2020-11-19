@@ -42,27 +42,34 @@ export const ENDPOINTS = {
       },
     },
     topic: {
+      getTopic: {
+        route: (topicID) => `/topic/find/${topicID}`,
+        method: `GET`,
+      },
       create: {
-        route: (topicID) => `/topic/create/${topicID}`,
+        route: (plantID, userID) => `/topic/create/${plantID}/${userID}`,
         method: `POST`,
+        body: (topicBody) => topicBody,
       },
       update: {
         route: (topicID) => `/topic/update/${topicID}`,
         method: `PUT`,
+        body: (topicBody) => topicBody,
       },
       like: {
         route: (topicID) => `/topic/like/${topicID}`,
         method: `POST`,
       },
       dislike: {
-        route: (topicID) => `/topic/dislike/${topicID}`,
+        route: (plantID) => `/topic/dislike/${plantID}`,
         method: `POST`,
       },
     },
     comment: {
       create: {
-        route: (commentID) => `/comment/create/${commentID}`,
+        route: (commentID, userID) => `/comment/create/${commentID}/${userID}`,
         method: `POST`,
+        body: (commentBody) => commentBody,
       },
       update: {
         route: (commentID) => `/comment/update/${commentID}`,

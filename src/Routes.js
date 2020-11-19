@@ -8,6 +8,9 @@ import Update from './screen/login/updateUser';
 import DeleteMyAccount from './screen/login/deleteMyAccount';
 import MyProfile from './screen/myProfile';
 import PlantCard from './screen/cardPlant/cardPlant';
+import Home from './screen/home/Home';
+import TopicView from './screen/topic/TopicView';
+import TopicCreate from './screen/topic/TopicCreate';
 
 const AuthStack = createStackNavigator({
   Login: {
@@ -40,6 +43,7 @@ const AuthStack = createStackNavigator({
   },
 });
 
+
 const AppStack = createStackNavigator({
   MyProfile: {
     screen: MyProfile,
@@ -47,10 +51,38 @@ const AppStack = createStackNavigator({
     navigationOptions: {
       headerShown: false,
     },
+  },  
+  Home: {
+    screen: Home,
+    path: 'Home',
+    navigationOptions: {
+      headerShown: false,
+    },
   },
   PlantCard: {
     screen: PlantCard,
     path: 'PlantCard',
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  TopicView: {
+    screen: TopicView,
+    path: 'TopicView',
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  TopicCreate: {
+    screen: TopicCreate,
+    path: 'TopicCreate',
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  Scanner: {
+    screen: Scanner,
+    path: 'Scanner',
     navigationOptions: {
       headerShown: false,
     },
