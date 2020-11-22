@@ -4,6 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Scanner from './screen/scanner';
 import PlantView from './screen/plant/plantView';
 
+
 const AppStack = createStackNavigator({
   Scanner: {
     screen: Scanner,
