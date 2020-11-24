@@ -23,6 +23,44 @@ export const UserLogin = (User) => {
   })
 }
 
+export const UserSignup = (User) => {
+  const USER = ENDPOINTS.API.auth;
+  return new Promise((resolve, reject) => {
+      fetch(ENDPOINTS.API.base_url + USER.signup.route,{
+          method: USER.signup.method,
+          headers: baseHeaders(),
+          body:JSON.stringify({
+            username: User.username,
+            email: User.email,
+            password: User.password,
+            passwordConfirmation: User.password,
+          }),
+      })
+      .then(res => res.json())
+      .then(resolve)
+      .then(reject)
+  })
+}
+
+export const UserUpdate = (User) => {
+  const USER = ENDPOINTS.API.auth;
+  return new Promise((resolve, reject) => {
+      fetch(ENDPOINTS.API.base_url + USER.update.route,{
+          method: USER.update.method,
+          headers: baseHeaders(),
+          body:JSON.stringify({
+            username: User.username,
+            email: User.email,
+            password: User.password,
+            passwordConfirmation: User.password,
+          }),
+      })
+      .then(res => res.json())
+      .then(resolve)
+      .then(reject)
+  })
+}
+
 export const createTopic = (topicID) => {
     const TOPIC = ENDPOINTS.API.topic
     return new Promise((resolve, reject) => {

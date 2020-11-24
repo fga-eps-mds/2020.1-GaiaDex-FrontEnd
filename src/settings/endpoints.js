@@ -1,15 +1,21 @@
 export const ENDPOINTS = {
   API: {
-    base_url: `http://192.168.0.40:3000`,
+    base_url: `http://192.168.0.100:3000`,
     auth: {
+      update: {
+        route: `/auth/update`,
+        method: `POST`,
+        body: (userBody) => userBody,
+      },
       signup: {
         route: `/auth/signup`,
         method: `POST`,
+        body: (userBody) => userBody,
       },
       login: {
         route: `/auth/login`,
         method: `POST`,
-        body: (userBody) => userBody
+        body: (userBody) => userBody,
       }
     },
     plant: {
