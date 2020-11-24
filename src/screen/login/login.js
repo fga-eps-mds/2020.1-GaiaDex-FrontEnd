@@ -6,6 +6,7 @@ import {
   StatusBar as sBar,
   TextInput,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 import { Value } from 'react-native-reanimated';
 import styles from './style';
@@ -20,6 +21,14 @@ export default function Login({navigation}) {
       'password': senha,
     }
     UserLogin(user)
+    .then(res => {
+      if(res.Error){
+        Alert.alert('Usuário ou Senha invalidos')
+      }
+      else{
+        navigation.push('Scanner')
+      }
+    })
   }
 
   return (

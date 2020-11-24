@@ -1,6 +1,6 @@
 export const ENDPOINTS = {
   API: {
-    base_url: `http://192.168.18.7:3000`,
+    base_url: `http://192.168.0.40:3000`,
     auth: {
       signup: {
         route: `/auth/signup`,
