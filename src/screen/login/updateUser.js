@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import styles from './style';
 
-export default function Update() {
+export default function Update({navigation}) {
   return (
     <View style={styles.containerRegform}>
       <View style={styles.circle4} />
@@ -56,7 +56,7 @@ export default function Update() {
         </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.push('Login')}>
         <Text style={styles.txtBtnOthersRegform}>Login</Text>
       </TouchableOpacity>
 

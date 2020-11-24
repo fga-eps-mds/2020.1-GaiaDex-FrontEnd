@@ -6,5 +6,5 @@ import Scanner from './screen/scanner';
 import Signup from './screen/login/signup'
 
 export default function App() {
-  return <Login />;
+  return <Routes />;
 }

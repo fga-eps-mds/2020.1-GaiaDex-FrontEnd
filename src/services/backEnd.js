@@ -6,6 +6,22 @@ const baseHeaders = (token = '') => ({
   'Content-Type': 'application/json',
   Accept: 'application/json',
 })
+export const UserLogin = (User) => {
+  const USER = ENDPOINTS.API.auth;
+  return new Promise((resolve, reject) => {
+      fetch(ENDPOINTS.API.base_url + USER.login.route,{
+          method: USER.login.method,
+          headers: baseHeaders(),
+          body:JSON.stringify({
+            email: User.email,
+            password: User.password,
+          }),
+      })
+      .then(res => res.json())
+      .then(resolve)
+      .then(reject)
+  })
+}
 
 export const createTopic = (topicID) => {
     const TOPIC = ENDPOINTS.API.topic

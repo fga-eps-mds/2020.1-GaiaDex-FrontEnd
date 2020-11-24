@@ -4,11 +4,12 @@ export const ENDPOINTS = {
     auth: {
       signup: {
         route: `/auth/signup`,
-        method: `POST`
+        method: `POST`,
       },
       login: {
         route: `/auth/login`,
-        method: `POST`
+        method: `POST`,
+        body: (userBody) => userBody
       }
     },
     plant: {

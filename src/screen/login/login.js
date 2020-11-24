@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {useEffect, useState } from 'react';
 import {
   Text,
   View,
@@ -7,9 +7,21 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
+import { Value } from 'react-native-reanimated';
 import styles from './style';
+import { UserLogin } from '../../services/backEnd'
 
-export default function Login() {
+export default function Login({navigation}) {
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const login = () => {
+    const user = {
+      'email': email,
+      'password': senha,
+    }
+    UserLogin(user)
+  }
+
   return (
     <View style={styles.containerLogin}>
       <View style={styles.circle3} />
@@ -22,6 +34,7 @@ export default function Login() {
         style={styles.textinputLogin}
         placeholder="Seu e-mail:"
         underlineColorAndroid="transparent"
+        onChangeText={(valor) => setEmail(valor)}
       />
 
       <TextInput
@@ -29,12 +42,13 @@ export default function Login() {
         placeholder="Sua senha:"
         secureTextEntry
         underlineColorAndroid="transparent"
+        onChangeText={(valor) => setSenha(valor)}
       />
 
       <View style={styles.direction}>
         <Text style={styles.midTxt}>Login</Text>
 
-        <TouchableOpacity style={styles.midBtn} />
+        <TouchableOpacity style={styles.midBtn} onPress={() => login()}/>
       </View>
 
       <TouchableOpacity style={styles.btnFbGoogleLogin}>
@@ -48,11 +62,11 @@ export default function Login() {
       </TouchableOpacity>
 
       <View style={styles.direction}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.push('Signup')}>
           <Text style={styles.txtBtnOthersLogin}>Cadastro</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.push('Update')}>
           <Text style={styles.txtBtnOthersLogin}>Esqueci a senha</Text>
         </TouchableOpacity>
       </View>
