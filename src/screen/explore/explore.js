@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import styles from './style';
-import MenuBar from './menuBar';
+import MenuBar from '../../assets/components/menuBar';
 import { EvilIcons } from '@expo/vector-icons';
 import { getUser } from '../../services/backEnd';
 import { FlatList } from 'react-native-gesture-handler';

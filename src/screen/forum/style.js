@@ -12,52 +12,65 @@ const styles = StyleSheet.create({
     backgroundColor: '#F2E0F5',
     paddingTop: Constants.statusBarHeight,
   },
-  exploreContainer:{
+  forumContainer:{
     flexDirection: 'row',
     alignSelf:"center",
     width:largura/1.1,
-    flex:0.22,
+    flex:0.20,
     justifyContent:"space-between",
     alignContent:'center',
     alignItems:'center',
   },
-  exploreText:{
+  forumText:{
     fontSize:40,
     fontWeight:'600',
     color:'#31353A',
+    
   },
-  popularContainer:{
+  myforumsContainer:{
     flexDirection: 'column',
     alignSelf:"center",
     width:largura/1.1,
-    flex:0.32,
+    flex:0.28,
     justifyContent:"flex-start",
   },
-  popularTabs:{
+  myforumsTabs:{
     flexDirection:"row",
+    justifyContent:'space-between',
     flex:0.2,
+    paddingRight:10,
   },
-  popularTab:{
+  myforumsTab:{
     fontSize:22,
     fontWeight:'400',
+    color:'#31353A',
     textDecorationLine: "underline",
     textDecorationStyle: "solid",
     textDecorationColor: "#000"
   },
-  popularContent:{
+  myforumsContent:{
     flex:0.8,
   },
   FavoritePlant:{
-    width:largura/2.7,
-    flex:1,
-    flexDirection:'column-reverse',
-    borderRadius:20,
+    width:largura/3.9,
+    flexDirection:'column',
     marginRight:15,
-    backgroundColor:'brown',
+    marginTop:15,
+  },
+  FavoriteTopicImg:{
+    flex:0.95,
+    width:'100%',
+    alignSelf:"center",
+    borderRadius:60,
+    backgroundColor:'black',
+  },
+  FavoriteTopicText:{
+    fontSize:10,
+    color:'#31353A',
+    textAlign:'center',
   },
   plantInfo:{
     backgroundColor:'rgba(52, 9, 37, 0.91)',
-    flex:0.3,
     borderBottomRightRadius:20,
     borderBottomLeftRadius:20,
     width:largura/2.7,
@@ -68,39 +81,74 @@ const styles = StyleSheet.create({
     fontSize:13,
     color:'white',
   },
-  myPlantsContainer:{
+  topPostContainer:{
     flexDirection: 'column',
     alignSelf:"center",
     width:largura/1.1,
-    flex:0.235,
+    flex:0.58,
     justifyContent:'flex-start',
   },
-  myPlantsText:{
-    paddingTop:30,
+  topPostText:{
+    paddingTop:20,
     color:'#31353A',
     fontSize:26,
     fontWeight:'600',
+    textDecorationLine: "underline",
+    textDecorationStyle: "solid",
+    textDecorationColor: "#000"
   },
-  myplantPlant:{
-    marginTop:10,
-    width:largura/5,
+  topPostPlant:{
+    marginTop:15,
+    height:altura/3.6,
+    width:largura/1.1,
     flexDirection:'column-reverse',
     borderRadius:20,
     marginRight:15,
     backgroundColor:'brown',
   },
-  myplantInfo:{
-    backgroundColor:'rgba(52, 9, 37, 0.91)',
-    flex:0.4,
+  topPostInfo:{
+    backgroundColor:'rgba(27, 116, 33, 0.91)',
+    flex:0.5,
     borderBottomRightRadius:20,
     borderBottomLeftRadius:20,
-    width:largura/5,
+    width:largura/1.1,
     alignSelf:'center',
   },
-  plantText: {
+  postTitle: {
     padding:5,
-    fontSize:13,
+    flex:0.2,
+    fontSize:16,
     color:'white',
   },
+  postDescription: {
+    padding:5,
+    flex:0.2,
+    fontSize:12,
+    color:'white',
+  },
+  postData: {
+    padding:6,
+    flex:0.1,
+    fontSize:8,
+    color:'white',
+  },
+  posStatus:{
+    flex:0.5,
+    paddingHorizontal:15,
+    flexDirection:'row',
+    borderBottomRightRadius:20,
+    borderBottomLeftRadius:20,
+    backgroundColor:'rgba(12, 54, 18, 0.96)',
+    justifyContent:'space-between',
+    alignItems:'center',
+  },
+  postLikes:{
+    flex:0.4,
+    flexDirection:'row',
+    justifyContent:'space-around',
+    alignItems:'center',
+  },
+  
+
 });
 export default styles;
