@@ -133,7 +133,8 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   scrollViewDescription: {
-    maxHeight: altura / 4.4,
+    marginTop:5,
+    maxHeight: altura / 8,
   },
   imgDescription: {
     alignSelf: 'center',
@@ -148,6 +149,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     justifyContent: 'center',
     margin: 10,
+    marginBottom:0,
   },
   saveButton: {
     backgroundColor: '#D8A3E0',
@@ -176,6 +178,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#D6DADF',
     maxHeight: altura / 20,
     borderRadius: 8,
+    marginTop:20,
     alignItems: 'center',
     justifyContent: 'space-between',
   },
@@ -236,44 +239,6 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     borderRadius: 5,
     paddingTop: 10,
-    paddingLeft: 10,
-  },
-  commentUser: {
-    flexDirection: 'row',
-  },
-  commentContainer: {
-    flexDirection: 'row',
-    alignSelf: 'flex-end',
-    flex: 4,
-    backgroundColor: 'white',
-    maxHeight: altura / 30,
-    borderRadius: 8,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    width: largura / 1.8,
-  },
-  imgUserComment: {
-    marginLeft: 10,
-    width: largura / 8,
-    height: largura / 8,
-    borderRadius: 50,
-  },
-  commentUsername: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    paddingTop: 5,
-    paddingLeft: 10,
-  },
-  commentData: {
-    fontSize: 7,
-    fontWeight: '200',
-    paddingTop: 5,
-    paddingLeft: 10,
-  },
-  commentDescription: {
-    fontSize: 10,
-    fontWeight: '300',
-    paddingTop: 5,
     paddingLeft: 10,
   },
   container: {

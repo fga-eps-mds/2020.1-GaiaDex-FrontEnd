@@ -13,26 +13,32 @@ import { TextInput } from 'react-native-gesture-handler';
 import Header from './header';
 import styles from './styles';
 import AvatarUser from '../../assets/AvatarUser.png';
-import { getTopic, updateTopic, createComment } from '../../services';
+import { getTopic, updateTopic, createComment, likeTopic, dislikeTopic } from '../../services/backEnd';
+import Comments from './comment/comment';
 
 export default function TopicView({ navigation }) {
-  const userLogado = '5fac4a7ed3986500906e1b42';
-  const topicID = navigation.getParam('itemID', '5fb41f30faf0b2002ee511ce'); // inserir o id da planta  ser exibido
+  const userLogado = '5fbdecd033a94200270ce251';
+  const topicID = navigation.getParam('itemID', '5fbdf52b188a320045f53a6f'); // inserir o id da planta  ser exibido
   const [topic, setTopic] = useState({});
   const [isNewComment, setIsNewComment] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
   const [isEditable, setIsEditable] = useState(true);
   const [commentText, setCommentText] = useState('');
   const [topicisLiked, setTopicIsLiked] = useState(false);
+  const [topicisNotLiked, setTopicIsNotLiked] = useState(false);
   const [commentisLiked, setcommentIsLiked] = useState(false);
   const [isDeletd, setIsDeletd] = useState(false);
-
   useEffect(() => {
     getTopic(topicID)
       .then((res) => setTopic(res))
       .then(() => {
         if (topic?.title == 'Topico Deletado') {
           setIsDeletd(true);
+        }
+      })
+      .then(() =>{
+        if (topic?.user?._id == userLogado) {
+         setIsEditable(true);
         }
       });
   }, []);
@@ -62,13 +68,14 @@ export default function TopicView({ navigation }) {
       .then(() => setIsNewComment(true));
   };
 
-  const likeTopic = async (type, id = null) => {
+  const like = async (type, id = null) => {
     const options = {
       topic: () => {
-        likeTopic(topic?._id).then((data) => {
-          const { likes } = data;
-          setTopic({ ...topic, likes });
-          setTopicIsLiked(!topicisLiked);
+          likeTopic(topic?._id).then(res => {
+          const { likes } = res;
+          setTopic({ ...topic,likes})
+          setTopicIsLiked(true);
+          setTopicIsNotLiked(false);
         });
       },
       comment: () => {
@@ -91,26 +98,15 @@ export default function TopicView({ navigation }) {
     if (options[type]) options[type]();
   };
 
-  const deslikeTopic = async (type, id = null) => {
+  const deslike = async (type, id = null) => {
     const options = {
       topic: () => {
-        fetch(`http://${enderecoIpv4}:${porta}/topic/dislike/${id}`, {
-          method: 'POST',
-          headers: {
-            authtoken:
-              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYWMzNjUyNzg0M2YzMDAxY2Y2M2Q1ZSIsImlhdCI6MTYwNTYzNjk4OCwiZXhwIjoxNjA1NzIzMzg4fQ.4Ovb-9SvV7D10y-reqGPHRaP4AS05Do_lAJXTwMpoOM',
-          },
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            const { likes } = data;
-            setTopic({ ...topic, likes });
-            setTopicIsLiked(!topicisLiked);
-          })
-          .catch((err) => {
-            console.log(err);
-            alert('Não foi possível realizar a ação');
-          });
+          dislikeTopic(topic?._id).then(res => {
+          const { likes } = res;
+          setTopic({ ...topic,likes})
+          setTopicIsLiked(false);
+          setTopicIsNotLiked(true);
+        });
       },
       comment: () => {
         fetch(`http://${enderecoIpv4}:${porta}/comment/dislike/${id}`, {
@@ -124,8 +120,6 @@ export default function TopicView({ navigation }) {
             }
           })
           .catch((err) => {
-            '';
-
             console.log(err);
             alert('Não foi possível realizar a ação');
           });
@@ -133,51 +127,7 @@ export default function TopicView({ navigation }) {
     };
     if (options[type]) options[type]();
   };
-  function Comment({ description, username, id, likes }) {
-    return (
-      <View style={styles.commentItemDiv}>
-        <View style={styles.commentUser}>
-          <Image
-            style={styles.imgUserComment}
-            source={{ uri: topic?.user?.profile_picture }}
-            defaultSource={AvatarUser}
-          />
-          <ScrollView>
-            <Text style={styles.commentUsername}>{username}</Text>
-            <Text style={styles.commentDescription}>{description}</Text>
-            <Text style={styles.commentData}>2 horas atrás</Text>
-          </ScrollView>
-        </View>
-        <View style={styles.commentContainer}>
-          <View style={styles.topicDivLikes}>
-            <AntDesign
-              name={!commentisLiked ? 'arrowup' : 'arrowdown'}
-              size={17}
-              color="black"
-              onPress={() =>
-                !commentisLiked
-                  ? likeTopic('comment', id)
-                  : deslikeTopic('comment', id)
-              }
-            />
-            <Text>{likes}</Text>
-          </View>
-          <View style={styles.commentIcon}>
-            <Feather
-              name="edit"
-              size={17}
-              color="black"
-              onPress={() => !isDeletd && setIsEditing(!isEditing)}
-            />
-          </View>
-          <View style={styles.shareIcon}>
-            <Feather name="corner-up-right" size={17} color="black" />
-            <Text style={{ fontSize: 10 }}>Compartilhar</Text>
-          </View>
-        </View>
-      </View>
-    );
-  }
+  
   return (
     <KeyboardAvoidingView style={styles.containerMaster}>
       <Header
@@ -240,6 +190,7 @@ export default function TopicView({ navigation }) {
                   />
                 )}
               </ScrollView>
+              {!!isEditable && (
               <Feather
                 style={styles.deleteButton}
                 onPress={() => deleteTopic()}
@@ -247,21 +198,24 @@ export default function TopicView({ navigation }) {
                 size={24}
                 color="black"
               />
+              )}
             </>
           )}
           <View style={styles.topicContainer}>
             <View style={styles.topicDivLikes}>
               <AntDesign
-                name={!topicisLiked ? 'arrowup' : 'arrowdown'}
+                name={'arrowup'}
                 size={18}
-                color="black"
-                onPress={() =>
-                  !topicisLiked
-                    ? likeTopic('topic', topicID)
-                    : deslikeTopic('topic', topicID)
-                }
+                color={topicisLiked ?'red':'black'}
+                onPress={() =>like('topic', topicID)}
               />
               <Text>{topic?.likes?.length}</Text>
+              <AntDesign
+                name={'arrowdown'}
+                size={18}
+                color={topicisNotLiked ?'red':'black'}
+                onPress={() => deslike('topic', topicID)}
+              />
             </View>
             {!!isEditable && (
               <View style={styles.commentIcon}>
@@ -297,18 +251,7 @@ export default function TopicView({ navigation }) {
       <View style={styles.commentsListDiv}>
         <View style={styles.commentsList}>
           {isNewComment ? (
-            <FlatList
-              data={topic?.comments}
-              keyExtractor={(item) => item?._id}
-              renderItem={({ item }) => (
-                <Comment
-                  id={item?._id}
-                  username={item?.user?.username}
-                  description={item?.text}
-                  likes={item?.likes?.length}
-                />
-              )}
-            />
+            <Comments topic={topic} like={like} deslike={deslike} topicisLiked={topicisLiked}/>
           ) : (
             <View style={styles.commentContent}>
               <TextInput

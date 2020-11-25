@@ -136,14 +136,24 @@ export const updateTopic = (topicID, body) => {
 };
 export const likeTopic = (topicID) => {
   const TOPIC = ENDPOINTS.API.topic;
-  console.log('aki');
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + TOPIC.like.route(topicID), {
       method: TOPIC.like.method,
       headers: baseHeaders(),
     })
       .then((res) => res.json())
-      .then((res) => console.log(res))
+      .then(resolve)
+      .catch(reject);
+  });
+};
+export const dislikeTopic = (topicID) => {
+  const TOPIC = ENDPOINTS.API.topic;
+  return new Promise((resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + TOPIC.dislike.route(topicID), {
+      method: TOPIC.dislike.method,
+      headers: baseHeaders(),
+    })
+      .then((res) => res.json())
       .then(resolve)
       .catch(reject);
   });

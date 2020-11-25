@@ -15,15 +15,15 @@ const altura = Dimensions.get('screen').height;
 export default function Header({ title, onPress }) {
   return (
     <View style={styles.header}>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 0.1 }}>
         <AntDesign name="left" size={24} color="white" onPress={onPress} />
       </View>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 0.9 }}>
         <Text style={{ color: 'white', fontSize: 18, alignSelf: 'center' }}>
           {title}
         </Text>
       </View>
-      <View style={{ flex: 1 }} />
+  
     </View>
   );
 }

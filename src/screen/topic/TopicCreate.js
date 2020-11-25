@@ -13,7 +13,7 @@ import { MaterialCommunityIcons, AntDesign, Entypo } from '@expo/vector-icons';
 import styles from './styles';
 import { getPlant, createTopic } from '../../services/backEnd';
 
-export default function TopicCreate() {
+export default function TopicCreate({ navigation }) {
   // variaveis vindas do router
   const enderecoIpv4 = '192.168.0.40'; // inserir o endereço o ip do localhost
   const porta = '3000'; // inserir a porta em que o backend esta rodando
@@ -34,7 +34,7 @@ export default function TopicCreate() {
       title,
       description,
     };
-    createTopic(plantID, userID, body).then((res) => console.log(res));
+    createTopic(plantID, userID, body).then((res) => navigation.push('TopicView',{itemID:res?.topic?._id}));
   };
   return (
     <KeyboardAvoidingView style={styles.TopicCreatemasterView}>
