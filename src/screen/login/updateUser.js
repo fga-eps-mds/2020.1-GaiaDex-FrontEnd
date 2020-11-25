@@ -9,7 +9,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import { UserUpdate } from '../../services';
+import { UserUpdate } from '../../services/backEnd';
 import styles from './style';
 
 export default function Update({navigation}) {

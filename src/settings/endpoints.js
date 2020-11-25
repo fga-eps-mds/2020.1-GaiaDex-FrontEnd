@@ -1,7 +1,13 @@
+
 export const ENDPOINTS = {
   API: {
     base_url: `http://192.168.0.100:3000`,
     auth: {
+      delete: {
+        route: `/auth/update`,
+        method: `PUT`,
+        body: (userBody) => userBody,
+      },
       update: {
         route: `/auth/update`,
         method: `POST`,
@@ -16,7 +22,7 @@ export const ENDPOINTS = {
         route: `/auth/login`,
         method: `POST`,
         body: (userBody) => userBody,
-      }
+      },
     },
     plant: {
       register: {

@@ -61,6 +61,19 @@ export const UserUpdate = (User) => {
   })
 }
 
+export const UserDelete = () => {
+  const USER = ENDPOINTS.API.auth;
+  return new Promise((resolve, reject) => {
+      fetch(ENDPOINTS.API.base_url + USER.delete.route,{
+          method: USER.delete.method,
+          headers: baseHeaders(),
+      })
+      .then(res => res.json())
+      .then(resolve)
+      .then(reject)
+  })
+}
+
 export const createTopic = (topicID) => {
     const TOPIC = ENDPOINTS.API.topic
     return new Promise((resolve, reject) => {

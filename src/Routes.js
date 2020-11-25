@@ -6,6 +6,8 @@ import PlantView from './screen/plant/plantView';
 import Login from './screen/login/login';
 import Signup from './screen/login/signup'
 import Update from './screen/login/updateUser'
+import DeleteMyAccount from './screen/login/deleteMyAccount'
+
 
 
 const AppStack = createStackNavigator({
@@ -26,6 +28,13 @@ const AppStack = createStackNavigator({
   Update: {
     screen: Update,
     path: 'Update',
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  Delete: {
+    screen: DeleteMyAccount,
+    path: 'Delete',
     navigationOptions: {
       headerShown: false,
     },

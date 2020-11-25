@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
-import { Value } from 'react-native-reanimated';
 import styles from './style';
 import { UserLogin } from '../../services/backEnd'
 
@@ -78,6 +77,7 @@ export default function Login({navigation}) {
         <TouchableOpacity onPress={() => navigation.push('Update')}>
           <Text style={styles.txtBtnOthersLogin}>Esqueci a senha</Text>
         </TouchableOpacity>
+
       </View>
 
       <StatusBar style="auto" />

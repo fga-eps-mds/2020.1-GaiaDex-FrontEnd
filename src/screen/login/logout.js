@@ -3,26 +3,25 @@ import { Alert, View, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import styles from './style';
 
-function pressLogout() {
-  Alert.alert(
-    'Logout',
-    'Deseja desconectar sua conta?',
-    [
-      {
-        text: 'Cancelar',
-        onPress: () => console.log('Cancelou'),
-        style: 'cancel',
-      },
-      {
-        text: 'Sair',
-        onPress: () => console.log('Saiu'),
-      },
-    ],
-    { cancelable: false }
-  );
-}
-
-export default function Logout() {
+export default function Logout({navigation}) {
+  function pressLogout() {
+    Alert.alert(
+      'Logout',
+      'Deseja desconectar sua conta?',
+      [
+        {
+          text: 'Cancelar',
+          style: 'cancel',
+        },
+        {
+          text: 'Sair',
+          onPress: () => navigation.push('Signup'),
+        },
+      ],
+      { cancelable: false }
+    );
+  }
+  //Use: '<Logout navigation={navigation}/>' to call the button
   return (
     <View>
       <TouchableOpacity onPress={() => pressLogout()}>
