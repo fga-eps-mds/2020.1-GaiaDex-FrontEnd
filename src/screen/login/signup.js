@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 import { UserSignup } from '../../services/backEnd';
 import styles from './style';
+import { AntDesign } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 export default function Signup({navigation}) {
   const [username, setUsername] = useState('');
@@ -64,20 +66,27 @@ export default function Signup({navigation}) {
 
       <View style={styles.direction}>
         <Text style={styles.midTxt}>Cadastro</Text>
-
-        <TouchableOpacity style={styles.midBtn} onPress={() => signup()}/>
+        <TouchableOpacity style={styles.midBtn} onPress={() => signup()}>
+          <AntDesign name="arrowright" size={35} color="white" style={styles.arrow}/>
+        </TouchableOpacity>
       </View>
 
       <TouchableOpacity style={styles.btnFbGoogleRegform}>
-        <Text style={styles.txtBtnFbGoogleRegform}>
-          Fazer login com o Facebook
-        </Text>
+        <View style={styles.viewbtnFbGoogle}>
+          <Entypo name="facebook" size={24} color="#38143E" style={styles.iconBtnFbGoogle}/>
+          <Text style={styles.txtBtnFbGoogleRegform}>
+            Fazer login com o Facebook
+          </Text>
+        </View >
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.btnFbGoogleRegform}>
-        <Text style={styles.txtBtnFbGoogleRegform}>
-          Fazer login com o Google
-        </Text>
+        <View style={styles.viewbtnFbGoogle}>
+          <AntDesign name="google" size={24} color="#38143E" style={styles.iconBtnFbGoogle}/>
+          <Text style={styles.txtBtnFbGoogleRegform}>
+            Fazer login com o Google
+          </Text>
+        </View>
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() => navigation.push('Login')}>

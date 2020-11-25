@@ -167,12 +167,21 @@ const styles = StyleSheet.create({
     backgroundColor: '#4D525A',
     padding: 35,
     alignItems: 'center',
+    justifyContent: 'center',
     alignSelf: 'flex-end',
     marginBottom: 20,
     /* alignSelf: 'stretch',
         alignItems: 'center',
         padding: 20,
         marginTop: 30, */
+  },
+  arrow: {
+    position: 'absolute',
+  },
+  viewbtnFbGoogle: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    marginTop: '3.90%',
   },
   btnFbGoogleLogin: {
     height: '6.20%',
@@ -194,6 +203,11 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 10,
   },
+  iconBtnFbGoogle: {
+    //justifyContent: 'flex-start',
+    paddingLeft: '7.5%',
+    paddingRight: '12.5%',
+  },
   txtBtnFbGoogleLogin: {
     fontStyle: 'normal',
     fontWeight: '500',
@@ -202,7 +216,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     letterSpacing: 0.1,
     color: '#F2E0F5',
-    marginTop: '3%',
   },
   txtBtnFbGoogleRegform: {
     fontStyle: 'normal',
@@ -212,7 +225,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     letterSpacing: 0.1,
     color: '#38143E',
-    marginTop: '3%',
   },
   txtBtnOthersLogin: {
     fontStyle: 'normal',
