@@ -10,6 +10,10 @@ export const ENDPOINTS = {
         route: `/auth/update`,
         method: `POST`,
         body: (userBody) => userBody,
+      }, 
+      findOne:{
+        route: (userID) => `/auth/user/${userID}`,
+        method: `GET`
       },
       signup: {
         route: `/auth/signup`,

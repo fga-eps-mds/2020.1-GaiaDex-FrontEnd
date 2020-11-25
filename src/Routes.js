@@ -12,6 +12,7 @@ import TopicView from './screen/topic/TopicView';
 import TopicCreate from './screen/topic/TopicCreate';
 import Config from './screen/config/config';
 import Collection from './screen/collection/collection';
+import Explore from './screen/explore/explore';
 
 const AuthStack = createStackNavigator({
   Login: {
@@ -44,6 +45,7 @@ const AuthStack = createStackNavigator({
   },
 });
 
+
 const AppStack = createStackNavigator({
   MyProfile: {
     screen: MyProfile,
@@ -62,6 +64,13 @@ const AppStack = createStackNavigator({
   Config: {
     screen: Config,
     path: 'Config',
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  Explore: {
+    screen: Explore,
+    path: 'Explore',
     navigationOptions: {
       headerShown: false,
     },
@@ -104,6 +113,7 @@ const Routes = createSwitchNavigator(
   {
     initialRouteName: 'AuthStack',
   }
+  
 );
 
 export default createAppContainer(Routes);
