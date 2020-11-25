@@ -1,7 +1,7 @@
 
 export const ENDPOINTS = {
   API: {
-    base_url: `http://192.168.0.100:3000`,
+    base_url: `http://192.168.0.40:3000`,
     auth: {
       delete: {
         route: `/auth/update`,
