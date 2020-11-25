@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import styles from './style';
 import MenuBar from '../../assets/components/menuBar';
 import { EvilIcons, Ionicons, FontAwesome5, AntDesign } from '@expo/vector-icons';
@@ -8,20 +8,20 @@ import { FlatList } from 'react-native-gesture-handler';
  
 export default function Forum({ navigation }){
      const [user, setUser] = useState({})
-     const userID = '5fb6ae9a66149b0050db65a1';
+     const userID = '5fbea6cdd061ca0027f417a3';
      useEffect(() => {
         getUser(userID)
         .then(res => setUser(res))
       }, []);
 
       const Favorite = ({ item }) => (
-        <View style={styles.FavoritePlant}>
-            <View style={styles.FavoriteTopicImg}></View>
-            <Text style={styles.FavoriteTopicText}>{item?.plant}</Text>
-        </View>
+        <TouchableOpacity style={styles.FavoritePlant} onPress={() => navigation.push('Plant', { itemID: item?.plant?._id })}>
+            <ImageBackground source={{ uri: item?.plant?.profilePicture }} style={styles.FavoriteTopicImg} imageStyle={{ borderRadius: 100 }}></ImageBackground>
+            <Text style={styles.FavoriteTopicText}>{item?.title}</Text>
+        </TouchableOpacity>
       );
       const TopPost = ({ item }) => (
-        <View style={styles.topPostPlant}>
+        <ImageBackground source={{ uri: item?.plant?.profilePicture }} style={styles.topPostBack} imageStyle={{ borderRadius: 20 }}><View style={styles.topPostPlant}>
             <View style={styles.topPostInfo}>
                 <Text numberOfLines={1} style={styles.postTitle}>{item?.title}</Text>
                 <Text numberOfLines={2} style={styles.postDescription}>{item?.description}</Text>
@@ -34,8 +34,10 @@ export default function Forum({ navigation }){
                         <AntDesign name="arrowdown" size={20} color="white" />
                     </View>
                 </View>
+                
             </View>
         </View>
+        </ImageBackground>
       );
      return(
          <View style={styles.container}>

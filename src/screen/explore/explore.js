@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import styles from './style';
 import MenuBar from '../../assets/components/menuBar';
 import { EvilIcons } from '@expo/vector-icons';
@@ -8,25 +8,29 @@ import { FlatList } from 'react-native-gesture-handler';
  
 export default function Explore({ navigation }){
      const [user, setUser] = useState({})
-     const userID = '5fb6ae9a66149b0050db65a1';
+     const userID = '5fbea6cdd061ca0027f417a3';
      useEffect(() => {
         getUser(userID)
         .then(res => setUser(res))
       }, []);
 
       const Favorite = ({ item }) => (
-        <View style={styles.FavoritePlant}>
-            <View style={styles.plantInfo}>
-                <Text style={styles.plantText}>{item?.scientificName}</Text>
-            </View>
-        </View>
+        <TouchableOpacity style={styles.FavoritePlant} onPress={() => navigation.push('Plant', { itemID: item?._id })}>
+            <ImageBackground source={{ uri: item?.profilePicture }} style={styles.FavoritePlantImg} imageStyle={{ borderRadius: 30 }}>
+                <View style={styles.plantInfo}>
+                    <Text style={styles.plantText}>{item?.scientificName}</Text>
+                </View>
+            </ImageBackground>
+        </TouchableOpacity>
       );
       const MyPlant = ({ item }) => (
-        <View style={styles.myplantPlant}>
-            <View style={styles.myplantInfo}>
-                <Text style={styles.plantText}>{item?.scientificName}</Text>
-            </View>
-        </View>
+        <TouchableOpacity style={styles.myplantPlant} onPress={() => navigation.push('Plant', { itemID: item?.plant?._id })}>
+            <ImageBackground source={{ uri: item?.plant?.profilePicture }} style={styles.FavoritePlantImg} imageStyle={{ borderRadius: 20 }}>
+                <View style={styles.myplantInfo}>
+                    <Text style={styles.plantText}>{item?.nickname}</Text>
+                </View>
+            </ImageBackground>
+        </TouchableOpacity>
       );
      return(
          <View style={styles.container}>
@@ -56,7 +60,7 @@ export default function Explore({ navigation }){
                 <Text style={styles.myPlantsText}>Minhas Plantas</Text>
                 <FlatList
                     horizontal
-                    data={user?.favorites}
+                    data={user?.myPlants}
                     keyExtractor={(item) => item?._id}
                     renderItem={({ item }) => (
                         <MyPlant
