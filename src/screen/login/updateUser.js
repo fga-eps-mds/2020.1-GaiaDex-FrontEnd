@@ -52,14 +52,15 @@ export default function Update({navigation}) {
       <TextInput
         style={styles.textinputRegform}
         placeholder="Seu e-mail:"
-        securyTextEntry
         underlineColorAndroid="transparent"
         onChangeText={(valor) => setEmail(valor)}
       />
 
       <TextInput
         style={styles.textinputRegform}
+        secureTextEntry
         placeholder="Senha:"
+        secureTextEntry
         underlineColorAndroid="transparent"
         onChangeText={(valor) => setSenha(valor)}
       />

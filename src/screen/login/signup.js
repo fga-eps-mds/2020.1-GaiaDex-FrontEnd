@@ -52,7 +52,6 @@ export default function Signup({navigation}) {
       <TextInput
         style={styles.textinputRegform}
         placeholder="Seu e-mail:"
-        securyTextEntry
         underlineColorAndroid="transparent"
         onChangeText={(valor) => setEmail(valor)}
       />
@@ -60,6 +59,7 @@ export default function Signup({navigation}) {
       <TextInput
         style={styles.textinputRegform}
         placeholder="Senha:"
+        secureTextEntry
         underlineColorAndroid="transparent"
         onChangeText={(valor) => setSenha(valor)}
       />
