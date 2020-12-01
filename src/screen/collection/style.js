@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
  plant:{
     flex: 0.45,
     width: largura/1.2,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginBottom: '10%'
  },
  plantBackground: {
     flex: 1,

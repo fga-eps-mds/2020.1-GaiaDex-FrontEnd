@@ -93,5 +93,12 @@ export const ENDPOINTS = {
       method: `POST`,
       body: (scannerBody) => scannerBody,
     },
-  },
+      body:(scannerBody) => scannerBody
+    },
+    favorites: {
+      list:{
+        route: (userId) => `/favorites/list/${userId}`,
+        method: `GET`,
+      },
+    },
 };
