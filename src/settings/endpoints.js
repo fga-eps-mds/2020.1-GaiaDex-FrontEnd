@@ -1,15 +1,28 @@
+
 export const ENDPOINTS = {
   API: {
-    base_url: `http://192.168.18.7:3000`,
+    base_url: `http://192.168.0.40:3000`,
     auth: {
+      delete: {
+        route: `/auth/update`,
+        method: `PUT`,
+        body: (userBody) => userBody,
+      },
+      update: {
+        route: `/auth/update`,
+        method: `POST`,
+        body: (userBody) => userBody,
+      },
       signup: {
         route: `/auth/signup`,
-        method: `POST`
+        method: `POST`,
+        body: (userBody) => userBody,
       },
       login: {
         route: `/auth/login`,
-        method: `POST`
-      }
+        method: `POST`,
+        body: (userBody) => userBody,
+      },
     },
     plant: {
       register: {

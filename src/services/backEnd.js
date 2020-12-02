@@ -1,11 +1,80 @@
 import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from 'react'
 import { ENDPOINTS } from '../settings'
 
+const Usertoken =
+  'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYWMzNjUyNzg0M2YzMDAxY2Y2M2Q1ZSIsImlhdCI6MTYwNTgxMjI3NiwiZXhwIjoxNjA1ODk4Njc2fQ.wVNYLk2TweJBJI7qA-cZOPEVbudSWIJ_rg2RhCcF35I';
 const baseHeaders = (token = '') => ({
   authtoken: token,
   'Content-Type': 'application/json',
   Accept: 'application/json',
 })
+export const UserLogin = (User) => {
+  const USER = ENDPOINTS.API.auth;
+  return new Promise((resolve, reject) => {
+      fetch(ENDPOINTS.API.base_url + USER.login.route,{
+          method: USER.login.method,
+          headers: baseHeaders(),
+          body:JSON.stringify({
+            email: User.email,
+            password: User.password,
+          }),
+      })
+      .then(res => res.json())
+      .then(resolve)
+      .then(reject)
+  })
+}
+
+export const UserSignup = (User) => {
+  const USER = ENDPOINTS.API.auth;
+  return new Promise((resolve, reject) => {
+      fetch(ENDPOINTS.API.base_url + USER.signup.route,{
+          method: USER.signup.method,
+          headers: baseHeaders(),
+          body:JSON.stringify({
+            username: User.username,
+            email: User.email,
+            password: User.password,
+            passwordConfirmation: User.password,
+          }),
+      })
+      .then(res => res.json())
+      .then(resolve)
+      .then(reject)
+  })
+}
+
+export const UserUpdate = (User) => {
+  const USER = ENDPOINTS.API.auth;
+  return new Promise((resolve, reject) => {
+      fetch(ENDPOINTS.API.base_url + USER.update.route,{
+          method: USER.update.method,
+          headers: baseHeaders(),
+          body:JSON.stringify({
+            username: User.username,
+            email: User.email,
+            password: User.password,
+            passwordConfirmation: User.password,
+          }),
+      })
+      .then(res => res.json())
+      .then(resolve)
+      .then(reject)
+  })
+}
+
+export const UserDelete = () => {
+  const USER = ENDPOINTS.API.auth;
+  return new Promise((resolve, reject) => {
+      fetch(ENDPOINTS.API.base_url + USER.delete.route,{
+          method: USER.delete.method,
+          headers: baseHeaders(),
+      })
+      .then(res => res.json())
+      .then(resolve)
+      .then(reject)
+  })
+}
 
 export const createTopic = (topicID) => {
     const TOPIC = ENDPOINTS.API.topic
