@@ -4,13 +4,11 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Scanner from './screen/scanner';
 import PlantView from './screen/plant/plantView';
 import Login from './screen/login/login';
-import Signup from './screen/login/signup'
-import Update from './screen/login/updateUser'
-import DeleteMyAccount from './screen/login/deleteMyAccount'
+import Signup from './screen/login/signup';
+import Update from './screen/login/updateUser';
+import DeleteMyAccount from './screen/login/deleteMyAccount';
 
-
-
-const AppStack = createStackNavigator({
+const AuthStack = createStackNavigator({
   Login: {
     screen: Login,
     path: 'Login',
@@ -24,7 +22,7 @@ const AppStack = createStackNavigator({
     navigationOptions: {
       headerShown: false,
     },
-  }, 
+  },
   Update: {
     screen: Update,
     path: 'Update',
@@ -39,6 +37,9 @@ const AppStack = createStackNavigator({
       headerShown: false,
     },
   },
+});
+
+const AppStack = createStackNavigator({
   Scanner: {
     screen: Scanner,
     path: 'Scanner',
@@ -57,10 +58,11 @@ const AppStack = createStackNavigator({
 
 const Routes = createSwitchNavigator(
   {
+    AuthStack,
     AppStack,
   },
   {
-    initialRouteName: 'AppStack',
+    initialRouteName: 'AuthStack',
   }
 );
 
