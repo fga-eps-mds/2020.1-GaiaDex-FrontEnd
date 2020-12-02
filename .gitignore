@@ -1,4 +1,5 @@
 node_modules
 .vscode/
 __tests__
-
+.env
+.expo
