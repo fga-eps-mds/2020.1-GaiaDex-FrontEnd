@@ -22,7 +22,8 @@ export default function Favorite({ navigation }){
 
         <View style={styles.plant}>
             
-            <ImageBackground source={{uri : item?.profilePicture}} style={styles.plantBackground} imageStyle={{ borderRadius: 30 }}></ImageBackground>
+            <ImageBackground source={{uri : item?.profilePicture}} style={styles.plantBackground} imageStyle={{ borderRadius: 30 }}>
+            </ImageBackground>
             
 
             <View style={styles.plantDescription}>
@@ -32,10 +33,14 @@ export default function Favorite({ navigation }){
                 <Text numberOfLines={2} style={styles.plantDescriptionText}>
                     { item?.usage }
                 </Text>
-
-                <View style={styles.plantButton}>
-                <Entypo name="chevron-right" size={24} color="white" />
-                </View>
+                <View style={styles.plantButtonDiv}>
+                    <TouchableOpacity style={styles.plantButton} onPress={() => navigation.push('Plant',{ itemID: item?._id } )}>
+                        <Entypo name="chevron-right" size={24} color="white" />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.deleteButton} onPress={() => navigation.push('Plant',{ itemID: item?._id } )}>
+                        <AntDesign name="delete" size={20} color="white" />
+                    </TouchableOpacity>
+                </View>    
             </View>
         </View>
     );

@@ -71,9 +71,20 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center'
  },
+ plantButtonDiv:{
+    flexDirection:'row',
+    width: '100%',
+    height: '50%',
+    alignSelf: 'flex-start',
+    margin: 5,
+    marginTop: '4%',
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'space-around',
+ },
  plantButton: {
     width: '45%',
-    height: '45%',
+    height: '80%',
     backgroundColor: 'orange',
     alignSelf: 'flex-start',
     margin: 5,
@@ -81,6 +92,21 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
+ },
+ deleteButton:{
+   width: '45%',
+   height: '80%',
+   backgroundColor: 'red',
+   alignSelf: 'flex-start',
+   margin: 5,
+   marginTop: '5%',
+   borderRadius: 10,
+   alignItems: 'center',
+   justifyContent: 'center',
+},
+ deleteButtonText:{
+    fontSize:12,
+    color:'white',
  }
 });
 export default styles;
