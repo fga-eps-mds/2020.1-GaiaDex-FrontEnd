@@ -4,8 +4,11 @@ import {
     Switch,
     Text,
 } from 'react-native';
-import Header from './header';
+
 import styles from './styles';
+import DeleteMyAccount from '../login/deleteMyAccount';
+import Logout from '../login/logout';
+import Header from './header';
 
 export default function Config({ navigation }){
     const [commentIsEnabled, setCommentIsEnabled] = useState(false);
@@ -48,6 +51,10 @@ export default function Config({ navigation }){
                         onValueChange={likeToggleSwitch}
                         value={likeIsEnabled}
                     />
+                </View>
+                <View style={[styles.notification,{marginTop:"10%"}]}>
+                    <Logout navigation={navigation}/>
+                    <DeleteMyAccount navigation={navigation}/>
                 </View>
             </View>
             

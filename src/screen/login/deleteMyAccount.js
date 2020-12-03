@@ -34,8 +34,8 @@ export default function DeleteMyAccount({ navigation }) {
 
   return (
     <View>
-      <TouchableOpacity onPress={() => pressDelete()}>
-        <Text style={styles.txtBtnOthersLogin}>Deletar minha conta</Text>
+      <TouchableOpacity style={[styles.btnButtonLogoutDelete, { borderWidth:1,borderColor:'red' }]} onPress={() => pressDelete()}>
+        <Text style={styles.txtBtnDeleteLogout}>Deletar minha conta</Text>
       </TouchableOpacity>
     </View>
   );
