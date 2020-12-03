@@ -45,10 +45,25 @@ const styles = StyleSheet.create({
         // backgroundColor: "#13A448",
         backgroundColor: "#19BB53",
         width: largura*10/11,
-        height: 100,
+        height: 114,
         marginHorizontal: (largura - largura*10/11)/2,
-        marginVertical: (altura/2)-50,
+        marginVertical: (altura/2)-57,
         borderRadius: 20,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+    },
+    sumaryComponents:{
+        height: 100,
+        width: largura*10/33,
+        paddingTop: 25,
+        alignItems: "center",
+    },
+    minhasAtividades:{
+        marginTop: 75,
+        marginLeft: (largura - largura*10/11)/2,
+        fontSize: 18,
+        fontWeight: "600",
     },
 });
 
