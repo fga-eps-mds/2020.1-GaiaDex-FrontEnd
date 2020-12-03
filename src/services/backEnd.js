@@ -279,14 +279,14 @@ export const registerPlant = (plant) => {
   })
 }
 
-export const getFavorites = (userId) => { 
+export const delFavorite = (plantID) => { 
   const FAVORITES = ENDPOINTS.API.favorites;
-  return new Promise((resolve, reject) => {
+  return new Promise(async(resolve, reject) => {
     fetch(
-      ENDPOINTS.API.base_url + FAVORITES.list.route(userId),
+      ENDPOINTS.API.base_url + FAVORITES.delete.route(plantID),
       {
-        method: FAVORITES.list.method,
-        headers: baseHeaders(),
+        method: FAVORITES.delete.method,
+        headers: baseHeaders(await getToken()),
       }
     )
     .then(res => res.json())
@@ -294,14 +294,14 @@ export const getFavorites = (userId) => {
     .catch(reject);
   })
 }
-export const deleteFavorite = (userId, plantID) => { 
+export const getFavorites = () => { 
   const FAVORITES = ENDPOINTS.API.favorites;
-  return new Promise((resolve, reject) => {
+  return new Promise(async(resolve, reject) => {
     fetch(
-      ENDPOINTS.API.base_url + FAVORITES.delete.route(userId, plantID),
+      ENDPOINTS.API.base_url + FAVORITES.list.route,
       {
-        method: FAVORITES.delete.method,
-        headers: baseHeaders(),
+        method: FAVORITES.list.method,
+        headers: baseHeaders(await getToken()),
       }
     )
     .then(res => res.json())

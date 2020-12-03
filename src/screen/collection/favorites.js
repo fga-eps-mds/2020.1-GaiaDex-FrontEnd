@@ -2,24 +2,25 @@ import React ,{ useState, useEffect }from 'react';
 import { View, Text, FlatList, TouchableOpacity, ImageBackground } from 'react-native';
 import styles from './style';
 import { AntDesign, EvilIcons, Entypo } from '@expo/vector-icons'
-import { getFavorites, getUserLogado, deleteFavorite } from '../../services/backEnd'
+import { getFavorites, getUserLogado, delFavorite } from '../../services/backEnd'
 import MenuBar from '../../assets/components/menuBar'
 
 export default function Favorite({ navigation }){
 
     const [favorites, setFavorites] = useState({});
+    const [user, setUser] = useState({});
 
     useEffect(() => {
-        const userId = navigation.getParam('itemId', '5fc81149c4020a001c545c09');;
-        getFavorites(userId)
+        getUserLogado()
+        .then(res => setUser(res))
+        getFavorites(user?._id)
         .then( data => {
-            console.log(data);
             setFavorites(data.favorites);
         })
     }, []); 
 
-    const deleteFavorite = async(favoriteId) => {
-        await deleteFavorite(userId, favoriteId)
+    const deleteFavorite = (favoriteId) => {
+        delFavorite(favoriteId)
         .then(res => setFavorites(res.favorites))
     }
 

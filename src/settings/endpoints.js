@@ -97,11 +97,11 @@ export const ENDPOINTS = {
     },
     favorites: {
       list:{
-        route: (userId) => `/favorites/list/${userId}`,
+        route: `/favorites/list`,
         method: `GET`,
       },
       delete:{
-        route: (userId, plantId) => `/delete/${userId}/${plantId}`,
+        route: (plantId) => `/favorites/delete/${plantId}`,
         method: `DELETE`,
       },
     },
