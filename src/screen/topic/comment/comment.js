@@ -12,7 +12,7 @@ import AvatarUser from '../../../assets/AvatarUser.png';
 import { updateComment, deleteComment } from '../../../services/backEnd';
 import styles from './style';
 
-export default function Comments({ topic, setTopic, user, topicisLiked, like, deslike }){
+export default function Comments({ topic, setTopic, user, like, deslike }){
     function Comment({ description, username, userID, id, likes }) {
       let [isEditing, setIsEditing] = useState(false);
       let [topicEditing, setTopicEditing] = useState('');

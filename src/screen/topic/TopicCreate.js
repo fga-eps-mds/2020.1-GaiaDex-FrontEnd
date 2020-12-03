@@ -14,7 +14,7 @@ import styles from './styles';
 import { getPlant, createTopic, getUserLogado } from '../../services/backEnd';
 
 export default function TopicCreate({ navigation }) {
-  const plantID = '5fc843b413d9b0001c1ad57b'; // inserir o id da planta  ser exibido
+  const plantID = '5fcc41578e5b3100955db205'; // inserir o id da planta  ser exibido
 
   // consts post
   const [user, setUser] = useState({});
@@ -35,7 +35,7 @@ export default function TopicCreate({ navigation }) {
     createTopic(plantID, body).then((res) => navigation.push('TopicView', { itemID: res?.topic?._id}));
   };
   return (
-    <KeyboardAvoidingView style={styles.TopicCreatemasterView}>
+    <View style={styles.TopicCreatemasterView}>
       <View style={styles.TopicCreateheader}>
         <AntDesign name="left" size={24} color="white" />
         <Text style={{ color: 'white', fontSize: 15 }}>
@@ -82,27 +82,9 @@ export default function TopicCreate({ navigation }) {
           />
         </View>
         <View style={styles.TopicCreatescrollDiv}>
-          <ScrollView style={styles.TopicCreatescrollView} horizontal>
-            <AntDesign name="link" size={35} color="black" />
-            <AntDesign name="areachart" size={35} color="black" />
-            <AntDesign name="linechart" size={35} color="black" />
-            <AntDesign name="filter" size={35} color="black" />
-            <AntDesign name="mail" size={35} color="black" />
-            <AntDesign name="save" size={35} color="black" />
-            <AntDesign name="videocamera" size={35} color="black" />
-            <AntDesign name="picture" size={35} color="black" />
-            <AntDesign name="qrcode" size={35} color="black" />
-            <AntDesign name="tags" size={35} color="black" />
-            <AntDesign name="enviromento" size={35} color="black" />
-            <AntDesign name="mail" size={35} color="black" />
-            <AntDesign name="mail" size={35} color="black" />
-            <AntDesign name="mail" size={35} color="black" />
-            <AntDesign name="mail" size={35} color="black" />
-            <AntDesign name="mail" size={35} color="black" />
-            <AntDesign name="mail" size={35} color="black" />
-          </ScrollView>
+         
         </View>
       </View>
-    </KeyboardAvoidingView>
+    </View>
   );
 }
