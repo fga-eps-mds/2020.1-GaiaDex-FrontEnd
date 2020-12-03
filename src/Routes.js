@@ -87,13 +87,6 @@ const AppStack = createStackNavigator({
       headerShown: false,
     },
   },
-  Scanner: {
-    screen: Scanner,
-    path: 'Scanner',
-    navigationOptions: {
-      headerShown: false,
-    },
-  },
 });
 
 const Routes = createSwitchNavigator(
