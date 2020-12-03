@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
  container:{
      flex:1,
      flexDirection:'column',
+     backgroundColor:'#F2E0F5',
  },
  header:{
      flex: 0.25,
@@ -38,35 +39,35 @@ const styles = StyleSheet.create({
  },
  plant:{
     flex: 0.45,
+    maxHeight:altura/3,
     width: largura/1.2,
     flexDirection: 'row',
     marginBottom: '10%'
  },
  plantBackground: {
     flex: 1,
-    backgroundColor: 'green',
  }, 
  plantDescription:{
     flex: 1,
     backgroundColor: '#59A44D',
     fontWeight: '600',
-    height: '40%',
+    height: '50%',
     alignSelf: 'center',
-    marginTop: '25%',
-    borderTopRightRadius: 30,
-    borderBottomRightRadius: 30,
+    marginTop: '10%',
+    borderTopRightRadius: 20,
+    borderBottomRightRadius: 20,
     flexDirection: 'column',
     alignItems: 'center',
     padding: 10,
  },
  plantDescriptionTitle: {
-    fontSize: 17,
+    fontSize: 14,
     color:'white',
     paddingBottom: 5,
     textAlign: 'center'
  },
  plantDescriptionText:{
-    fontSize: 15,
+    fontSize: 12,
     color: 'white',
     textAlign: 'center'
  },
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'orange',
     alignSelf: 'flex-start',
     margin: 5,
-    marginTop: '10%',
+    marginTop: '5%',
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
