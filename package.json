@@ -77,13 +77,16 @@
     "jest-environment-enzyme": "^7.1.2",
     "jest-environment-node": "^26.6.1",
     "jest-enzyme": "^7.1.2",
+    "jest-expo": "^39.0.0",
     "lint-staged": "^10.5.1",
     "prettier": "^2.1.2",
     "react-test-renderer": "~16.13.1"
   },
   "jest": {
-    "preset": "react-native",
-    "setupFilesAfterEnv": ["jest-enzyme"],
+    "preset": "jest-expo",
+    "setupFilesAfterEnv": [
+      "jest-enzyme"
+    ],
     "testEnvironment": "enzyme"
   },
   "private": true
