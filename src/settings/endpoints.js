@@ -2,6 +2,10 @@ export const ENDPOINTS = {
   API: {
     base_url: `http://192.168.0.10:3000`,
     auth: {
+      user:{
+        route: `/auth/user`,
+        method: `GET`,
+      },
       delete: {
         route: `/auth/delete`,
         method: `DELETE`,

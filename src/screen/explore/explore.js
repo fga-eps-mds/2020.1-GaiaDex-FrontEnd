@@ -3,14 +3,13 @@ import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import styles from './style';
 import MenuBar from '../../assets/components/menuBar';
 import { EvilIcons } from '@expo/vector-icons';
-import { getUser } from '../../services/backEnd';
+import { getUserLogado } from '../../services/backEnd';
 import { FlatList } from 'react-native-gesture-handler';
  
 export default function Explore({ navigation }){
      const [user, setUser] = useState({})
-     const userID = '5fbea6cdd061ca0027f417a3';
      useEffect(() => {
-        getUser(userID)
+        getUserLogado()
         .then(res => setUser(res))
       }, []);
 

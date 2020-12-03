@@ -11,7 +11,7 @@ import {
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import styles from './styles';
-import { ENDPOINTS } from '../../settings';
+import { registerPlant } from '../../services';
 
 const register = async (plant) => {
   try {
