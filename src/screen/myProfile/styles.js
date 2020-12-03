@@ -15,7 +15,8 @@ const styles = StyleSheet.create({
         alignItems:"center",
         flexDirection: "row",
         justifyContent: "space-between",
-        marginHorizontal: 10,
+        alignSelf: "center",
+        width: largura/1.2,
     },
     perfilText: {
         fontSize: altura/20,
@@ -34,7 +35,13 @@ const styles = StyleSheet.create({
         width: largura*3/8,
         borderRadius: largura*3/16,
         marginLeft: largura/2 - largura*3/16,
-        marginTop: altura*2/11 - largura*3/16,
+        marginTop: altura*2/11 - largura*3/16 - largura*1/8,
+    },
+    name:{
+        color: "#E5E5E5",
+        fontSize: 13,
+        textAlign: "center",
+        marginTop: 7,
     },
     frameDown:{
         flex: 1,
@@ -42,7 +49,6 @@ const styles = StyleSheet.create({
     },
     sumary:{
         position: "absolute",
-        // backgroundColor: "#13A448",
         backgroundColor: "#19BB53",
         width: largura*10/11,
         height: 114,

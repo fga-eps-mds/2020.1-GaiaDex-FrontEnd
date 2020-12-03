@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, Dimensions, ImageBackground} from 'react-native'
 import { EvilIcons, FontAwesome, Entypo } from '@expo/vector-icons';
+import MenuBar from './../../assets/components/menuBar'
 import styles from './styles'
 
 const altura = Dimensions.get('screen').height;
@@ -20,6 +21,8 @@ function myProfile(){
                     <View style={styles.photoView}>
 
                     </View>
+                    <Text style={styles.name}>João Carlos, 26</Text>
+                    <Text style={styles.name}>joao_carlos@gmail.com</Text>
                 </ImageBackground>
             </View>
             <View style={styles.frameDown}>
@@ -48,6 +51,7 @@ function myProfile(){
                     <Text style={{marginTop:10, color: "#E5E5E5"}}>Plantas</Text>
                 </View>
             </View>
+            <MenuBar/>
         </>
     )
 }
