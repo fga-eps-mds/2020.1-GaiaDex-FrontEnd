@@ -11,36 +11,34 @@ import {
 
 import { MaterialCommunityIcons, AntDesign, Entypo } from '@expo/vector-icons';
 import styles from './styles';
-import { getPlant, createTopic } from '../../services/backEnd';
+import { getPlant, createTopic, getUserLogado } from '../../services/backEnd';
 
 export default function TopicCreate({ navigation }) {
-  // variaveis vindas do router
-  const enderecoIpv4 = '192.168.0.40'; // inserir o endereço o ip do localhost
-  const porta = '3000'; // inserir a porta em que o backend esta rodando
-  const plantID = '5fac37ad7843f3001cf63d5f'; // inserir o id da planta  ser exibido
-  const userID = '5fac4a7ed3986500906e1b42';
+  const plantID = '5fc843b413d9b0001c1ad57b'; // inserir o id da planta  ser exibido
 
   // consts post
+  const [user, setUser] = useState({});
   const [plant, setPlant] = useState({});
-  const [postId, setPostId] = useState(null);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
   useEffect(() => {
+    getUserLogado().then(res => setUser(res))
     getPlant(plantID).then((res) => setPlant(res.plant));
   }, []);
   const postTopic = async () => {
+    console.log(title,description)
     const body = {
       title,
       description,
     };
-    createTopic(plantID, userID, body).then((res) => navigation.push('TopicView',{itemID:res?.topic?._id}));
+    createTopic(plantID, body).then((res) => navigation.push('TopicView', { itemID: res?.topic?._id}));
   };
   return (
     <KeyboardAvoidingView style={styles.TopicCreatemasterView}>
       <View style={styles.TopicCreateheader}>
         <AntDesign name="left" size={24} color="white" />
-        <Text style={{ color: 'white', fontSize: 18 }}>
+        <Text style={{ color: 'white', fontSize: 15 }}>
           {plant?.scientificName}
         </Text>
         <TouchableOpacity
@@ -64,7 +62,7 @@ export default function TopicCreate({ navigation }) {
             defaultSource={require('../../assets/AvatarUser.png')}
           />
           <Text style={styles.TopicCreatenameUser}>
-            {plant?.user?.username ? plant?.user?.username : 'username'}
+            {user?.username ? user?.username : 'username'}
           </Text>
         </View>
         <View style={styles.TopicCreatetituloDiv}>

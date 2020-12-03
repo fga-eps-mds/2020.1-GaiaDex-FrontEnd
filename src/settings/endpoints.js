@@ -47,7 +47,7 @@ export const ENDPOINTS = {
         method: `GET`,
       },
       create: {
-        route: (plantID, userID) => `/topic/create/${plantID}/${userID}`,
+        route: (plantID) => `/topic/create/${plantID}`,
         method: `POST`,
         body: (topicBody) => topicBody,
       },
@@ -67,13 +67,14 @@ export const ENDPOINTS = {
     },
     comment: {
       create: {
-        route: (commentID, userID) => `/comment/create/${commentID}/${userID}`,
+        route: (commentID) => `/comment/create/${commentID}`,
         method: `POST`,
         body: (commentBody) => commentBody,
       },
       update: {
         route: (commentID) => `/comment/update/${commentID}`,
         method: `PUT`,
+        body: (commentBody) => commentBody,
       },
       delete: {
         route: (commentID) => `/comment/delete/${commentID}`,

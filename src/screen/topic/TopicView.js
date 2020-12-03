@@ -4,7 +4,6 @@ import {
   Text,
   Image,
   ScrollView,
-  FlatList,
   TouchableOpacity,
   KeyboardAvoidingView,
 } from 'react-native';
@@ -13,12 +12,21 @@ import { TextInput } from 'react-native-gesture-handler';
 import Header from './header';
 import styles from './styles';
 import AvatarUser from '../../assets/AvatarUser.png';
-import { getTopic, updateTopic, createComment, likeTopic, dislikeTopic } from '../../services/backEnd';
+import { 
+  getTopic, 
+  updateTopic, 
+  createComment, 
+  likeTopic, 
+  dislikeTopic,
+  likeComment,
+  dislikeComment,
+  getUserLogado, 
+} from '../../services/backEnd';
 import Comments from './comment/comment';
 
 export default function TopicView({ navigation }) {
-  const userLogado = '5fbdecd033a94200270ce251';
-  const topicID = navigation.getParam('itemID', '5fbdf52b188a320045f53a6f'); // inserir o id da planta  ser exibido
+  const topicID = navigation.getParam('itemID', '5fc8fd6d2911e1001c6210e0');
+  const [user, setUser] = useState({});
   const [topic, setTopic] = useState({});
   const [isNewComment, setIsNewComment] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
@@ -29,6 +37,9 @@ export default function TopicView({ navigation }) {
   const [commentisLiked, setcommentIsLiked] = useState(false);
   const [isDeletd, setIsDeletd] = useState(false);
   useEffect(() => {
+    getUserLogado()
+      .then(res => setUser(res));
+
     getTopic(topicID)
       .then((res) => setTopic(res))
       .then(() => {
@@ -37,7 +48,7 @@ export default function TopicView({ navigation }) {
         }
       })
       .then(() =>{
-        if (topic?.user?._id == userLogado) {
+        if (topic?.user?._id == user?._id) {
          setIsEditable(true);
         }
       });
@@ -63,7 +74,7 @@ export default function TopicView({ navigation }) {
     const commentBody = {
       text: commentText,
     };
-    createComment(topic._id, userLogado, commentBody)
+    createComment(topic._id, commentBody)
       .then((res) => setTopic(res))
       .then(() => setIsNewComment(true));
   };
@@ -79,20 +90,11 @@ export default function TopicView({ navigation }) {
         });
       },
       comment: () => {
-        fetch(`http://${enderecoIpv4}:${porta}/comment/like/${id}`, {
-          method: 'POST',
-        })
-          .then((res) => {
-            if (res.ok) {
-              const likes = topic?.comments[0].likes + 1;
-              setTopic({ ...topic.comments, comments });
-              setcommentIsLiked(!commentisLiked);
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-            alert('Não foi possível realizar a ação');
-          });
+        likeComment(id).then(res => {
+          const { comments } = res;
+          setTopic({ ...topic,comments})
+         
+        });
       },
     };
     if (options[type]) options[type]();
@@ -109,20 +111,11 @@ export default function TopicView({ navigation }) {
         });
       },
       comment: () => {
-        fetch(`http://${enderecoIpv4}:${porta}/comment/dislike/${id}`, {
-          method: 'POST',
-        })
-          .then((res) => {
-            if (res.ok) {
-              const dislikes = topic.commentsdislikes + 1;
-              setTopic({ ...topic, comments, dislikes });
-              setcommentIsLiked(!commentisLiked);
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-            alert('Não foi possível realizar a ação');
-          });
+        dislikeComment(id).then(res => {
+          const { comments } = res;
+          setTopic({ ...topic,comments})
+         
+        });
       },
     };
     if (options[type]) options[type]();
@@ -251,7 +244,7 @@ export default function TopicView({ navigation }) {
       <View style={styles.commentsListDiv}>
         <View style={styles.commentsList}>
           {isNewComment ? (
-            <Comments topic={topic} like={like} deslike={deslike} topicisLiked={topicisLiked}/>
+            <Comments topic={topic} setTopic={setTopic} user={user} like={like} deslike={deslike} topicisLiked={topicisLiked}/>
           ) : (
             <View style={styles.commentContent}>
               <TextInput

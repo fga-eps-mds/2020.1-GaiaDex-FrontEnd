@@ -40,6 +40,19 @@ export const UserLogin = (User) => {
   });
 };
 
+export const getUserLogado = () => {
+  const USER = ENDPOINTS.API.auth;
+  return new Promise(async(resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + USER.getUser.route, {
+      method: USER.getUser.method,
+      headers: baseHeaders(await getToken()),
+    })
+      .then(res => res.json())
+      .then(resolve)
+      .then(reject);
+  });
+};
+
 export const UserSignup = (User) => {
   const USER = ENDPOINTS.API.auth;
   return new Promise((resolve, reject) => {
@@ -91,12 +104,12 @@ export const UserDelete = () => {
   });
 };
 
-export const createTopic = (topicID, userID, topicBody) => {
+export const createTopic = (topicID, topicBody) => {
   const TOPIC = ENDPOINTS.API.topic;
-  return new Promise((resolve, reject) => {
-    fetch(ENDPOINTS.API.base_url + TOPIC.create.route(topicID, userID), {
+  return new Promise(async(resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + TOPIC.create.route(topicID), {
       method: TOPIC.create.method,
-      headers: baseHeaders(),
+      headers: baseHeaders(await getToken()),
       body: JSON.stringify({
         title: topicBody.title,
         description: topicBody.description,
@@ -136,10 +149,10 @@ export const updateTopic = (topicID, body) => {
 };
 export const likeTopic = (topicID) => {
   const TOPIC = ENDPOINTS.API.topic;
-  return new Promise((resolve, reject) => {
+  return new Promise(async(resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + TOPIC.like.route(topicID), {
       method: TOPIC.like.method,
-      headers: baseHeaders(),
+      headers: baseHeaders(await getToken()),
     })
       .then((res) => res.json())
       .then(resolve)
@@ -148,10 +161,10 @@ export const likeTopic = (topicID) => {
 };
 export const dislikeTopic = (topicID) => {
   const TOPIC = ENDPOINTS.API.topic;
-  return new Promise((resolve, reject) => {
+  return new Promise(async(resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + TOPIC.dislike.route(topicID), {
       method: TOPIC.dislike.method,
-      headers: baseHeaders(),
+      headers: baseHeaders(await getToken()),
     })
       .then((res) => res.json())
       .then(resolve)
@@ -159,12 +172,12 @@ export const dislikeTopic = (topicID) => {
   });
 };
 
-export const createComment = (commentID, userID, topicBody) => {
+export const createComment = (commentID, topicBody) => {
   const COMMENT = ENDPOINTS.API.comment;
-  return new Promise((resolve, reject) => {
-    fetch(ENDPOINTS.API.base_url + COMMENT.create.route(commentID, userID), {
+  return new Promise(async(resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + COMMENT.create.route(commentID), {
       method: COMMENT.create.method,
-      headers: baseHeaders(),
+      headers: baseHeaders(await getToken()),
       body: JSON.stringify({
         text: topicBody.text,
       }),
@@ -172,6 +185,58 @@ export const createComment = (commentID, userID, topicBody) => {
       .then((res) => res.json())
       .then(resolve)
       .then(reject);
+  });
+};
+
+export const updateComment = (commentID, topicBody) => {
+  const COMMENT = ENDPOINTS.API.comment;
+  return new Promise(async(resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + COMMENT.update.route(commentID), {
+      method: COMMENT.update.method,
+      headers: baseHeaders(await getToken()),
+      body: JSON.stringify({
+        text: topicBody.text,
+      }),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .then(reject);
+  });
+};
+export const deleteComment = (commentID, topicBody) => {
+  const COMMENT = ENDPOINTS.API.comment;
+  return new Promise(async(resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + COMMENT.delete.route(commentID), {
+      method: COMMENT.delete.method,
+      headers: baseHeaders(await getToken()),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .then(reject);
+  });
+};
+export const likeComment = (commentID) => {
+  const COMMENT = ENDPOINTS.API.comment;
+  return new Promise(async(resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + COMMENT.like.route(commentID), {
+      method: COMMENT.like.method,
+      headers: baseHeaders(await getToken()),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+export const dislikeComment = (CommentID) => {
+  const COMMENT = ENDPOINTS.API.comment;
+  return new Promise(async(resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + COMMENT.dislike.route(CommentID), {
+      method: COMMENT.dislike.method,
+      headers: baseHeaders(await getToken()),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
   });
 };
 
@@ -209,10 +274,10 @@ export const scannerPlant = (scannerBody) => {
 
 export const registerPlant = (plant) => {
   const PLANT = ENDPOINTS.API.plant;
-  return new Promise((resolve, reject) => {
+  return new Promise(async(resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + PLANT.register, {
       method: PLANT.register.method,
-      headers: baseHeaders(window.localStorage).getItem('token'),
+      headers: baseHeaders(await getToken()),
       body: {
         scienctificName: plant.species.scientificNameWithoutAuthor,
         genderName: plant.species.genus.scientificNameWithoutAuthor,

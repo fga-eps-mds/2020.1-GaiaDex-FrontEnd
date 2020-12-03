@@ -9,11 +9,47 @@ import {
 import { AntDesign, Feather } from '@expo/vector-icons';
 import { TextInput } from 'react-native-gesture-handler';
 import AvatarUser from '../../../assets/AvatarUser.png';
-import { getTopic } from '../../../services/backEnd';
+import { updateComment, deleteComment } from '../../../services/backEnd';
 import styles from './style';
 
-export default function Comments({ topic ,topicisLiked, like, deslike }){
-    function Comment({ description, username, id, likes }) {
+export default function Comments({ topic, setTopic, user, topicisLiked, like, deslike }){
+    function Comment({ description, username, userID, id, likes }) {
+      let [isEditing, setIsEditing] = useState(false);
+      let [topicEditing, setTopicEditing] = useState('');
+      let [newDescription, setNewDescription] = useState('');
+
+      const putComment = async () => {
+        const commentBody = {
+          text: newDescription,
+        };
+        await updateComment(id, commentBody)
+          .then((res) => {
+            const { comments } = res;
+            setTopic({ ...topic,comments})
+          })
+      };
+      const delComment = async () => {
+        await deleteComment(id)
+          .then((res) => {
+            const { comments } = res;
+            setTopic({ ...topic,comments})
+          })
+      };
+      
+      
+      const EditComment = (state) =>{
+        if(state){
+          putComment().then(() => {
+            setIsEditing(false);
+            setTopicEditing('');
+          })
+        }
+        else{
+          setIsEditing(true);
+          setTopicEditing(id);
+        }
+      }
+      
         return (
           <View style={styles.commentItemDiv}>
             <View style={styles.commentUser}>
@@ -24,47 +60,60 @@ export default function Comments({ topic ,topicisLiked, like, deslike }){
               />
               <ScrollView>
                 <Text style={styles.commentUsername}>{username}</Text>
-                <Text style={styles.commentDescription}>{description}</Text>
+                {!(topicEditing == id) ? (
+                  <Text style={styles.commentDescription}>{description}</Text>
+                  ) : (
+                  <TextInput 
+                    blurOnSubmit
+                    multiline
+                    style={styles.commentDescription} 
+                    defaultValue={description} 
+                    onChangeText={(text) => setNewDescription(text)}></TextInput>
+                  )
+                }
                 <Text style={styles.commentData}>2 horas atrás</Text>
               </ScrollView>
             </View>
+            
             <View style={styles.commentContainer}>
               <View style={styles.topicDivLikes}>
                 <AntDesign
                   name='arrowup'
                   size={17}
-                  color={topicisLiked ?'red':'black'}
-                  onPress={() =>
-                    !commentisLiked
-                      ? like('comment', id)
-                      : deslike('comment', id)
-                  }
+                  color={'black'}
+                  onPress={() =>like('comment', id)}
                 />
                 <Text>{likes}</Text>
                 <AntDesign
                   name='arrowdown'
                   size={17}
-                  color={topicisLiked ?'red':'black'}
-                  onPress={() =>
-                    !commentisLiked
-                      ? like('comment', id)
-                      : deslike('comment', id)
-                  }
+                  color={'black'}
+                  onPress={() => deslike('comment', id)}
                 />
               </View>
+              {(user?._id == userID) && (
+                <>
               <View style={styles.commentIcon}>
                 <Feather
                   name="edit"
                   size={17}
-                  color="black"
-                  onPress={() => !isDeletd && setIsEditing(!isEditing)}
+                  color={isEditing ? 'green': 'black'}
+                  onPress={() => EditComment(isEditing)}
                 />
               </View>
+              
               <View style={styles.shareIcon}>
-                <Feather name="corner-up-right" size={17} color="black" />
-                <Text style={{ fontSize: 10 }}>Compartilhar</Text>
+                <Feather 
+                  style={{marginRight:10}} 
+                  name="trash-2" size={18} 
+                  color="black"
+                  onPress={() => delComment()} />
+                
               </View>
+              </>
+              )}
             </View>
+            
           </View>
         );
       }
@@ -76,6 +125,7 @@ export default function Comments({ topic ,topicisLiked, like, deslike }){
                 <Comment
                   id={item?._id}
                   username={item?.user?.username}
+                  userID={item?.user?._id}
                   description={item?.text}
                   likes={item?.likes?.length}
                 />
