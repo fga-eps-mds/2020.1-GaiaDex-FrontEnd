@@ -294,3 +294,18 @@ export const getFavorites = (userId) => {
     .catch(reject);
   })
 }
+export const deleteFavorite = (userId, plantID) => { 
+  const FAVORITES = ENDPOINTS.API.favorites;
+  return new Promise((resolve, reject) => {
+    fetch(
+      ENDPOINTS.API.base_url + FAVORITES.delete.route(userId, plantID),
+      {
+        method: FAVORITES.delete.method,
+        headers: baseHeaders(),
+      }
+    )
+    .then(res => res.json())
+    .then(resolve)
+    .catch(reject);
+  })
+}

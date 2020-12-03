@@ -2,7 +2,7 @@ import React ,{ useState, useEffect }from 'react';
 import { View, Text, FlatList, TouchableOpacity, ImageBackground } from 'react-native';
 import styles from './style';
 import { AntDesign, EvilIcons, Entypo } from '@expo/vector-icons'
-import { getFavorites } from '../../services/backEnd'
+import { getFavorites, getUserLogado, deleteFavorite } from '../../services/backEnd'
 import MenuBar from '../../assets/components/menuBar'
 
 export default function Favorite({ navigation }){
@@ -17,6 +17,11 @@ export default function Favorite({ navigation }){
             setFavorites(data.favorites);
         })
     }, []); 
+
+    const deleteFavorite = async(favoriteId) => {
+        await deleteFavorite(userId, favoriteId)
+        .then(res => setFavorites(res.favorites))
+    }
 
     const Item = ({ item }) => (
 
@@ -37,7 +42,7 @@ export default function Favorite({ navigation }){
                     <TouchableOpacity style={styles.plantButton} onPress={() => navigation.push('Plant',{ itemID: item?._id } )}>
                         <Entypo name="chevron-right" size={24} color="white" />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.deleteButton} onPress={() => navigation.push('Plant',{ itemID: item?._id } )}>
+                    <TouchableOpacity style={styles.deleteButton} onPress={() => deleteFavorite(item?._id)}>
                         <AntDesign name="delete" size={20} color="white" />
                     </TouchableOpacity>
                 </View>    

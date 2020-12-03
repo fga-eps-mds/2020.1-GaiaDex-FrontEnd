@@ -100,5 +100,9 @@ export const ENDPOINTS = {
         route: (userId) => `/favorites/list/${userId}`,
         method: `GET`,
       },
+      delete:{
+        route: (userId, plantId) => `/delete/${userId}/${plantId}`,
+        method: `DELETE`,
+      },
     },
 };
