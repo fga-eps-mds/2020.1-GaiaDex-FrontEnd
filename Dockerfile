@@ -26,7 +26,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
 
 RUN apt-get install nodejs -y
 
-RUN npm install -g expo-cli
+RUN npm install -g react-native-cli
 
 WORKDIR /app
 
@@ -34,4 +34,4 @@ COPY . .
 
 RUN npm install
 
-ENTRYPOINT expo build:android -t apk
+ENTRYPOINT cd android && ./gradlew assembleRelease

@@ -2,42 +2,45 @@ name: Production Continuous Delivery
 
 on:
   push:
-    branches: 
-      - master
-  pull_request:
-    branches:
-      - master
 jobs:
-  test:
-    name: Tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install Modules
-        run: npm install
-      - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v2.7.4
-        env:
-          CC_TEST_REPORTER_ID: ${{secrets.CC_REPORTER_ID}}
-        with:
-          coverageCommand: npm run test
-  build:
-    name: CI Build
-    # needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Build container
-        run: docker build -t homologfront .
+  # test:
+  #   name: Tests
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Install Modules
+  #       run: npm install
+  #     - name: Test & publish code coverage
+  #       uses: paambaati/codeclimate-action@v2.7.4
+  #       env:
+  #         CC_TEST_REPORTER_ID: ${{secrets.CC_REPORTER_ID}}
+  #       with:
+  #         coverageCommand: npm run test
+  # build:
+  #   name: CI Build
+  #   # needs: test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Build container
+  #       run: docker build -t homologfront .
   tagged-release:
     name: "Tagged Release"
-    needs: build
+    # needs: build
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - uses: actions/checkout@v2
+      - name: Build apk file
+        run: |
+          npm i
+          cd android
+          ./gradlew assembleRelease
+      - name: Add Github Release
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: false
           files: |
             LICENSE.txt
+            *.apk
