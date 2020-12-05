@@ -23,6 +23,10 @@ export const ENDPOINTS = {
         method: `POST`,
         body: (userBody) => userBody,
       },
+      getUser: {
+        route: `/auth/user`,
+        method: `GET`,
+      },
     },
     plant: {
       register: {

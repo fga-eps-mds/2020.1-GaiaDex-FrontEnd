@@ -1,5 +1,4 @@
 import { StyleSheet, Dimensions } from "react-native"
-import Constants from "expo-constants";
 
 const altura = Dimensions.get("screen").height;
 const largura = Dimensions.get("screen").width;
@@ -8,7 +7,6 @@ const styles = StyleSheet.create({
     framePerfil:{
         flex: 1,
         backgroundColor: "#242528",
-        paddingTop: Constants.statusBarHeight,
         //justifyContent: "center",
     },
     perfilTextView: {
@@ -53,7 +51,7 @@ const styles = StyleSheet.create({
         width: largura*10/11,
         height: 114,
         marginHorizontal: (largura - largura*10/11)/2,
-        marginVertical: (altura/2)-57,
+        marginTop: (altura/2)-114,
         borderRadius: 20,
         flexDirection: "row",
         justifyContent: "space-between",
@@ -66,7 +64,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     minhasAtividades:{
-        marginTop: 75,
+        marginTop: 54,
         marginLeft: (largura - largura*10/11)/2,
         fontSize: 18,
         fontWeight: "600",
