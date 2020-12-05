@@ -16,7 +16,7 @@ export default function Forum({ navigation }){
       const Favorite = ({ item }) => (
         <TouchableOpacity style={styles.FavoritePlant} onPress={() => navigation.push('Plant', { itemID: item?.plant?._id })}>
             <ImageBackground source={{ uri: item?.plant?.profilePicture }} style={styles.FavoriteTopicImg} imageStyle={{ borderRadius: 100 }}></ImageBackground>
-            <Text style={styles.FavoriteTopicText}>{item?.title}</Text>
+            <Text style={styles.FavoriteTopicText}>{item?.title.slice(0,10) + '...'}</Text>
         </TouchableOpacity>
       );
       const TopPost = ({ item }) => (

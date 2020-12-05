@@ -3,17 +3,20 @@ import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import styles from './style';
 import MenuBar from '../../assets/components/menuBar';
 import { EvilIcons } from '@expo/vector-icons';
-import { getUserLogado } from '../../services/backEnd';
+import { getUserLogado, getPlants } from '../../services/backEnd';
 import { FlatList } from 'react-native-gesture-handler';
  
 export default function Explore({ navigation }){
      const [user, setUser] = useState({})
+     const [plants, setPlants] = useState({})
      useEffect(() => {
+        getPlants()
+        .then(dado => setPlants(dado))
         getUserLogado()
         .then(res => setUser(res))
       }, []);
 
-      const Favorite = ({ item }) => (
+      const Popular = ({ item }) => (
         <TouchableOpacity style={styles.FavoritePlant} onPress={() => navigation.push('Plant', { itemID: item?._id })}>
             <ImageBackground source={{ uri: item?.profilePicture }} style={styles.FavoritePlantImg} imageStyle={{ borderRadius: 30 }}>
                 <View style={styles.plantInfo}>
@@ -44,10 +47,10 @@ export default function Explore({ navigation }){
                 <View style={styles.popularContent}>
                 <FlatList
                     horizontal
-                    data={user?.favorites}
+                    data={plants.plants}
                     keyExtractor={(item) => item?._id}
                     renderItem={({ item }) => (
-                        <Favorite
+                        <Popular
                             item={item}
                         />
                         

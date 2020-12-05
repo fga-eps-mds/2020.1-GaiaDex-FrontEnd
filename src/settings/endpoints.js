@@ -44,9 +44,9 @@ export const ENDPOINTS = {
         method: `GET`,
       },
       getAllPlants: {
-        route: `/plant/`,
-        method: `GET`,
-      },
+        route: `/plant`,
+        method: `GET`
+      }
     },
     myPlant: {
       edit: {
