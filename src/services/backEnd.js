@@ -89,6 +89,18 @@ export const UserDelete = () => {
       .then(reject);
   });
 };
+export const getUserLogado = () => {
+  const USER = ENDPOINTS.API.auth;
+  return new Promise(async(resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + USER.getUser.route, {
+      method: USER.getUser.method,
+      headers: baseHeaders(await getToken()),
+    })
+      .then(res => res.json())
+      .then(resolve)
+      .then(reject);
+  });
+};
 
 export const createTopic = (topicID, topicBody) => {
   const TOPIC = ENDPOINTS.API.topic;
@@ -237,6 +249,17 @@ export const getPlant = (plantID) => {
       .catch(reject);
   });
 };
+export const getAllPlants = () => {
+  const PLANT = ENDPOINTS.API.plant;
+  return new Promise((resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + PLANT.getAllPlant.route(plantID), {
+      method: PLANT.getAllPlants,
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
 
 export const scannerPlant = (scannerBody) => {
   const SCANNER = ENDPOINTS.API.scanner;
@@ -251,6 +274,19 @@ export const scannerPlant = (scannerBody) => {
         mime: scannerBody.mime,
         plantType: scannerBody.plantType,
       }),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .then(reject);
+  });
+};
+export const photoPlant = (scannerBody) => {
+  const PHOTO = ENDPOINTS.API.savePhoto;
+  return new Promise((resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + PHOTO.route, {
+      method: PHOTO.method,
+      headers: baseHeaders(),
+      body: mul,
     })
       .then((res) => res.json())
       .then(resolve)
