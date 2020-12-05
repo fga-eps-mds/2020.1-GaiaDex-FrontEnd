@@ -20,9 +20,7 @@
     ]
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.13.2",
