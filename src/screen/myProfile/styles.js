@@ -28,18 +28,19 @@ const styles = StyleSheet.create({
         width: largura,
     },
     photoView:{
-        backgroundColor: "white",
-        height: largura*3/8,
-        width: largura*3/8,
-        borderRadius: largura*3/16,
         marginLeft: largura/2 - largura*3/16,
         marginTop: altura*2/11 - largura*3/16 - largura*1/8,
     },
+    photo:{
+        height: largura*3/8,
+        width: largura*3/8,
+        borderRadius: largura*3/16,
+    },
     name:{
+        marginTop: largura*3/8 + 7,
         color: "#E5E5E5",
         fontSize: 13,
         textAlign: "center",
-        marginTop: 7,
     },
     frameDown:{
         flex: 1,

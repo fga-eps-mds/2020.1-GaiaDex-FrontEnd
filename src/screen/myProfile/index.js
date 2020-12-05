@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";;
-import { View, Text, Dimensions, ImageBackground, FlatList } from "react-native";
+import { View, Text, Dimensions, ImageBackground, Image, FlatList } from "react-native";
 import { EvilIcons, FontAwesome, Entypo } from "@expo/vector-icons";
 import MenuBar from "./../../assets/components/menuBar";
 import { getUserLogado } from "./../../services";
@@ -72,11 +72,12 @@ export default function myProfile({navigation}){
                     style={styles.vector}
                     source={require('./../../assets/Vector.png')}
                 >
-                    <View style={styles.photoView}>
-
-                    </View>
-                    <Text style={styles.name}>{user?.username}</Text>
-                    <Text style={styles.name}>{user?.email}</Text>
+                    <ImageBackground
+                        style={styles.photoView}
+                        imageStyle={styles.photo}
+                        source={user?.photo ? user.photo : require('./../../assets/userDefault.png') }
+                    />
+                    <Text style={styles.name}>{user?.username+"\n"+user?.email}</Text>
                 </ImageBackground>
             </View>
             <View style={styles.sumary}>
