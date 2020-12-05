@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";;
-import { View, Text, Dimensions, ImageBackground } from "react-native";
+import { View, Text, Dimensions, ImageBackground, FlatList } from "react-native";
 import { EvilIcons, FontAwesome, Entypo } from "@expo/vector-icons";
 import MenuBar from "./../../assets/components/menuBar";
 import { getUserLogado } from "./../../services";
@@ -8,7 +8,6 @@ import styles from "./styles";
 const altura = Dimensions.get("screen").height;
 
 const sort = (user) =>  {
-    console.log("Entrada da funcao ", user);
     let i, d1, d2;
     let countT = user?.topics?.length, 
         countP = user?.myPlants?.length;
@@ -28,9 +27,28 @@ const sort = (user) =>  {
             activity.push(user?.myPlants[--countP]);
         }
     }
-    console.log("Log da funcao ", activity);
     return activity;
 }
+
+function Item({ title, nickname, tempo }){
+    let agora = new Date();
+    let acao = new Date(tempo);
+    if(nickname){
+        return(
+            <View style={[styles.item, styles.plantItem]}>
+                <Text>Adicionou {nickname} à sua coleçao</Text>
+                <Text style={styles.time}>{Math.trunc((agora-acao)/1000/60/60)}h atrás</Text>
+            </View>
+        )
+    }else{
+        return(
+            <View style={[styles.item, styles.topicItem]}>
+                <Text>Criou o tópico: {title.length > 10 ? title.slice(0,10) + "..." : title}</Text>
+                <Text style={styles.time}>{Math.trunc((agora-acao)/1000/60/60)}h atrás</Text>
+            </View>
+        )
+    }
+};
 
 export default function myProfile({navigation}){
     const [activityLog, setActivitLog] = useState([]);
@@ -40,6 +58,9 @@ export default function myProfile({navigation}){
         .then( res => {setUser(res); return sort(res)})
         .then( res => {setActivitLog(res)})
     }, []);
+    const renderItem = ({ item }) => (
+        <Item title={item?.title} nickname={item?.nickname} tempo={item?.createdAt} />
+      );
     return(
         <>
             <View style={styles.framePerfil}>
@@ -57,9 +78,6 @@ export default function myProfile({navigation}){
                     <Text style={styles.name}>{user?.username}</Text>
                     <Text style={styles.name}>{user?.email}</Text>
                 </ImageBackground>
-            </View>
-            <View style={styles.frameDown}>
-                <Text style={styles.minhasAtividades}>Minhas Atividades</Text>
             </View>
             <View style={styles.sumary}>
                 <View style={[styles.sumaryComponents,{borderRightColor: "black",borderRightWidth: 3,}]}>
@@ -82,6 +100,16 @@ export default function myProfile({navigation}){
                         <Text style={{color: "#E5E5E5"}}>{user?.myPlants?.length}</Text>
                     </View>
                     <Text style={{marginTop:10, color: "#E5E5E5"}}>Plantas</Text>
+                </View>
+            </View>
+            <View style={styles.frameDown}>
+                <Text style={styles.minhasAtividades}>Minhas Atividades</Text>
+                <View style={styles.list}>
+                    <FlatList
+                    data={activityLog}
+                    renderItem={renderItem}
+                    keyExtractor={ item => item.id }
+                    />
                 </View>
             </View>
             <MenuBar/>

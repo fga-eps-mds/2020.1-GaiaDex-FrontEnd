@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
+        zIndex: 10,
     },
     sumaryComponents:{
         height: 100,
@@ -64,11 +65,33 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     minhasAtividades:{
-        marginTop: 54,
+        marginTop: 50,
         marginLeft: (largura - largura*10/11)/2,
         fontSize: 18,
         fontWeight: "600",
     },
+    item:{
+        height: altura*(5/61),
+        marginHorizontal: (largura - largura*10/11)/2,
+        borderRadius: 10,
+        marginBottom: 10,
+        padding: 6,
+    },
+    plantItem:{
+        backgroundColor: "#B7F5CD",
+    },
+    topicItem:{
+        backgroundColor: "#D8A3E0"
+    },
+    time:{
+        fontSize: 10,
+        color: "rgba(0,0,0,0.3)",
+        marginTop: 25,
+    },
+    list: {
+        marginTop: 10,
+        height: altura/4,
+    }
 });
-
+//ruan@outlook.com.br
 export default styles;
