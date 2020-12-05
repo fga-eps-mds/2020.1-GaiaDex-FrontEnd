@@ -1,10 +1,12 @@
 import { StyleSheet, Dimensions } from "react-native"
+import Constants from "expo-constants";
 
 const altura = Dimensions.get("screen").height;
 const largura = Dimensions.get("screen").width;
 
 const styles = StyleSheet.create({
     framePerfil:{
+        paddingTop:Constants.statusBarHeight,
         flex: 1,
         backgroundColor: "#242528",
         //justifyContent: "center",
@@ -50,9 +52,9 @@ const styles = StyleSheet.create({
         position: "absolute",
         backgroundColor: "#19BB53",
         width: largura*10/11,
-        height: 114,
+        height: altura/6,
         marginHorizontal: (largura - largura*10/11)/2,
-        marginTop: (altura/2)-114,
+        marginTop: (altura/2)-altura/12,
         borderRadius: 20,
         flexDirection: "row",
         justifyContent: "space-between",
@@ -60,7 +62,7 @@ const styles = StyleSheet.create({
         zIndex: 10,
     },
     sumaryComponents:{
-        height: 100,
+        height: altura/7,
         width: largura*10/33,
         paddingTop: 25,
         alignItems: "center",
@@ -74,9 +76,10 @@ const styles = StyleSheet.create({
     item:{
         height: altura*(5/61),
         marginHorizontal: (largura - largura*10/11)/2,
-        borderRadius: 10,
+        borderRadius: 5,
         marginBottom: 10,
         padding: 6,
+        justifyContent:'space-between',
     },
     plantItem:{
         backgroundColor: "#B7F5CD",
@@ -87,7 +90,6 @@ const styles = StyleSheet.create({
     time:{
         fontSize: 10,
         color: "rgba(0,0,0,0.3)",
-        marginTop: 25,
     },
     list: {
         marginTop: 10,
