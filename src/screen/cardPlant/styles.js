@@ -89,9 +89,25 @@ const styles = StyleSheet.create({
   },
   containerBody:{
     flex:0.60,
-    backgroundColor:'#D6DADF',
+    backgroundColor:'#F9F6F4',
     borderTopRightRadius:20,
     borderTopLeftRadius:20,
+  },
+  menuBar:{
+    flexDirection:'row',
+    alignItems:'center',
+    alignSelf:'center',
+    justifyContent:'space-around',
+    width:largura/1.7,
+  },
+  menuBarTab:{
+    width:largura/4,
+    alignItems:'center',
+    justifyContent:'center',
+  },
+  menuBarTabText:{
+    color:'white',
+    fontSize:12,
   },
   bodyPlants:{
     width:largura/1.2,

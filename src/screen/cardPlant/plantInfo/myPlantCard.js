@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, ImageBackground, FlatList, TouchableOpacity } from 'react-native';
-import Header from './header';
-import styles from './style';
-import { getPlant } from '../../services/backEnd';
-import { Feather, FontAwesome5, AntDesign } from '@expo/vector-icons';
 
-export default function MyPlantCard({ navigation }){
-    const plantID = navigation.getParam('itemID', '5fc843b413d9b0001c1ad57b'); // Recebe ID da planta a ser exibida ou apresenta valor default
+import styles from './style';
+import { getPlant } from './../../../services/backEnd';
+import { AntDesign } from '@expo/vector-icons';
+
+export default function PlantCardInfo({ navigation, plantID }){
     const [plant, setPlant] = useState({});
     const [isClick, setIsClick] = useState(false);
     useEffect(() => {
@@ -16,7 +15,11 @@ export default function MyPlantCard({ navigation }){
 
     const User = ( { item } ) => (
         <View style={styles.userDiv}>
-            <ImageBackground source={require('../../assets/background.jpg') } style={styles.UserImg} imageStyle={{ borderRadius: 50 }}/>
+            <ImageBackground 
+                source={{ uri : plant?.user?.profilePicture}} 
+                defaultSource={require('../../../assets/userDefault.png')}
+                style={styles.UserImg} 
+                imageStyle={{ borderRadius: 50 }}/>
             <Text style={styles.userName}>{item?.user?.username}</Text>
         </View>
       );
@@ -24,33 +27,7 @@ export default function MyPlantCard({ navigation }){
     
     
     return(
-        <View style={styles.containerView}>
-            <Header navigation={navigation}/>
-            <View style={styles.containerPlant}>
-                
-                <ImageBackground source={{uri : plant?.profilePicture}} style={styles.plantImg} imageStyle={{ borderRadius: 25 }}/>
-                <View style={styles.plantInfo}>
-                        <Text style={styles.plantInfoTitle}>
-                        {plant?.scientificName}
-                        </Text>
-                        <View style={styles.plantInfoStats}>
-                            <View style={styles.plantInfoDiv}>
-                                <Feather name="users" size={15} color="white" />
-                                <Text style={styles.plantInfoText}>{plant?.topics?.length} Usuários</Text>
-                            </View>
-                            <View style={styles.plantInfoDiv}>
-                                <FontAwesome5 name="comment" size={14} color="white" />
-                                <Text style={styles.plantInfoText}>{plant?.topics?.length} Tópicos</Text>
-                            </View>
-                        </View>
-                </View>
-                <View style={styles.plantText}>
-                        <Feather name="check-circle" size={18} color="green" style={{paddingBottom:10}}/>
-                        <Text style={styles.plantTextDescription}>
-                        Esta é uma comunidade certificada/padrão do app. Direcionada para se interagir sobre quaisquer assuntos envolvendo cenouras.
-                        </Text>
-                </View>
-            </View>
+        
             <View style={styles.containerBody}>
                 <View style={styles.bodyTopics}>
                     <View style={styles.bodyDescription}>
@@ -108,7 +85,5 @@ export default function MyPlantCard({ navigation }){
                     
                 </View>
             </View>
-           
-        </View>
     )
 }

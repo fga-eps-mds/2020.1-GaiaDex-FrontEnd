@@ -1,45 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, ImageBackground, FlatList } from 'react-native';
+import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import Header from './header';
 import styles from './styles';
 import { getPlant } from '../../services/backEnd';
-import { Feather, FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
-import NewTopic from './newTopic';
+import { Feather, FontAwesome5, Octicons } from '@expo/vector-icons';
+import NewTopic from './plantTopic/newTopic';
+import PlantCardInfo from './plantInfo/myPlantCard';
+import PlantCardTopic from './plantTopic/cardPlantTopic';
 export default function PlantCard({ navigation }){
-    const plantID = navigation.getParam('itemID', '5fc6af5e0187ef0027bb3b02'); // Recebe ID da planta a ser exibida ou apresenta valor default
+    const plantID = navigation.getParam('itemID', '5fc843b413d9b0001c1ad57b'); // Recebe ID da planta a ser exibida ou apresenta valor default
     const [plant, setPlant] = useState({});
-
+    const [stateCard, setStateCard] = useState(false);
     useEffect(() => {
         getPlant(plantID)
         .then(res => setPlant(res.plant))
     }, []);
-
-    const User = ( { item } ) => (
-        <View style={styles.userDiv}>
-            <ImageBackground source={require('../../assets/background.jpg') } style={styles.UserImg} imageStyle={{ borderRadius: 50 }}/>
-            <Text style={styles.userName}>{item?.user?.username}</Text>
-        </View>
-      );
-      const renderUser = ({ item }) => <User item={item} />;    
-    
-    const Topic = ( { item } ) => (
-        <View style={styles.TopicDivContainer}>
-            <ImageBackground source={{uri : plant?.profilePicture}} style={styles.TopicImg} imageStyle={{ borderRadius: 20 }}>
-                <View style={styles.TopicCommentsDiv}>
-                    <MaterialCommunityIcons name="comment-outline" size={18} color="white" />
-                    <Text style={[styles.TopicUsername,{paddingLeft:5,fontWeight:'600'}]}>{item?.comments?.length}</Text>
-                </View>
-                <View style={styles.TopicDescriptionDiv}>
-                    <Text style={styles.TopicUsername}>{item?.user?.username}</Text>
-                    <Text style={styles.TopicTitle} numberOfLines={1}>{item?.title}</Text>
-                    <Text style={styles.TopicDescription} numberOfLines={2}>{item?.description}</Text>
-                </View>
-                
-            </ImageBackground>
-        </View>
-      );
-
-    const renderItem = ({ item }) => <Topic item={item} />;
     return(
         <View style={styles.containerView}>
             <Header navigation={navigation}/>
@@ -48,7 +23,7 @@ export default function PlantCard({ navigation }){
                 <ImageBackground source={{uri : plant?.profilePicture}} style={styles.plantImg} imageStyle={{ borderRadius: 25 }}/>
                 <View style={styles.plantInfo}>
                         <Text style={styles.plantInfoTitle}>
-                            Cenoura
+                            {plant?.scientificName}
                         </Text>
                         <View style={styles.plantInfoStats}>
                             <View style={styles.plantInfoDiv}>
@@ -67,29 +42,35 @@ export default function PlantCard({ navigation }){
                         Esta é uma comunidade certificada/padrão do app. Direcionada para se interagir sobre quaisquer assuntos envolvendo cenouras.
                         </Text>
                 </View>
-            </View>
-            <View style={styles.containerBody}>
-                <View style={styles.bodyPlants}>
-                    <Text style={styles.bodyPlantsTitle}>Contribuidores:</Text>
-                    <FlatList
-                        data={plant?.topics}
-                        horizontal
-                        renderItem={renderUser}
-                        keyExtractor={(item) => item?._id}
-                    />
-                    
-                </View>
-                <View style={styles.bodyTopics}>
-                    <Text style={styles.bodyPlantsTitle}>Tópicos mais comentados</Text>
-                    <FlatList
-                        data={plant?.topics}
-                        renderItem={renderItem}
-                        keyExtractor={(item) => item?._id}
-                    />
-                    
+                <View style={styles.menuBar}>
+                    <TouchableOpacity style={styles.menuBarTab}>
+                        <Text style={styles.menuBarTabText}>Informações</Text>
+                        <Octicons 
+                            name="primitive-dot" 
+                            size={20} 
+                            color={stateCard? 'green':'white'}
+                            onPress={() => setStateCard(true)} />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.menuBarTab}>
+                        <Text style={styles.menuBarTabText}>Topicos</Text>
+                        <Octicons 
+                            name="primitive-dot" 
+                            size={20} 
+                            color={stateCard? 'white':'green'}
+                            onPress={() => setStateCard(false)} />
+                    </TouchableOpacity>
                 </View>
             </View>
-            <NewTopic/>
+            {stateCard? 
+            <>
+                <PlantCardInfo navigation={navigation} plantID={plantID}/>
+            </>:
+            <>
+                <PlantCardTopic navigation={navigation} plantID={plantID}/>
+                <NewTopic/>
+            </>       
+            }
+            
         </View>
     )
 }

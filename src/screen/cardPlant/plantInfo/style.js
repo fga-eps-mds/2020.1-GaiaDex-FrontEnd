@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     backgroundColor:'#D6DADF',
     width:largura,
     backgroundColor:'#242528',
-    flex:1,
+    flex:0.8,
   },
   containerHeader:{
     flex:0.15,
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     fontSize:10,
   },
   containerBody:{
-    flex:0.70,
+    flex:0.60,
     backgroundColor:'#F9F6F4',
     borderTopRightRadius:20,
     borderTopLeftRadius:20,
