@@ -2,7 +2,6 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import Scanner from './screen/scanner';
-import PlantView from './screen/plant/plantView';
 import Login from './screen/login/login';
 import Signup from './screen/login/signup';
 import Update from './screen/login/updateUser';
@@ -59,13 +58,6 @@ const AppStack = createStackNavigator({
   Scanner: {
     screen: Scanner,
     path: 'Scanner',
-    navigationOptions: {
-      headerShown: false,
-    },
-  },
-  Plant: {
-    screen: PlantView,
-    path: 'Plant',
     navigationOptions: {
       headerShown: false,
     },

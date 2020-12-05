@@ -3,6 +3,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 import Constants from 'expo-constants';
 import { ceil, round } from 'react-native-reanimated';
+import { NONE } from 'apisauce';
 
 const largura = Dimensions.get('screen').width;
 const altura = Dimensions.get('screen').height;
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
     flex:1,
   },
   containerHeader:{
-    flex:0.1,
+    flex:0.15,
     backgroundColor:'#242528',
     width:largura,
     alignSelf:'center',
@@ -35,10 +36,10 @@ const styles = StyleSheet.create({
     
   },
   plantImg:{
-    flex:0.4,
+    flex:0.5,
     width:largura/2.1,
     alignSelf:'center',
-    marginTop:'-9%',
+    marginTop:'-15%',
 
   },
   plantInfo:{
@@ -88,16 +89,16 @@ const styles = StyleSheet.create({
     fontSize:10,
   },
   containerBody:{
-    flex:0.60,
-    backgroundColor:'#D6DADF',
+    flex:0.70,
+    backgroundColor:'#F9F6F4',
     borderTopRightRadius:20,
     borderTopLeftRadius:20,
   },
   bodyPlants:{
-    width:largura/1.2,
+    width:largura/1.1,
     alignSelf:'center',
     padding:10,
-    flex:0.35,
+    flex:0.28,
   },
   bodyPlantsTitle:{
     color:'#242528',
@@ -106,12 +107,12 @@ const styles = StyleSheet.create({
   },
   userDiv:{
     padding:5,
-    width:largura/4.5,
+    width:largura/5,
     alignItems:'center',
   },
   UserImg:{
-    width:largura/5,
-    height:largura/5,
+    width:largura/6,
+    height:largura/6,
   },
   userName:{
     fontSize:12,
@@ -120,80 +121,83 @@ const styles = StyleSheet.create({
   bodyTopics:{
     width:largura/1.2,
     alignSelf:'center',
-    padding:0,
-    flex:0.65,
-  },
-  TopicDivContainer:{
-    width:largura/1.2,
-    alignSelf:"center",
-    marginVertical:'3%',
-    height:altura/3.8,
-  },
-  TopicImg:{
-    width:'100%',
-    height:altura/3.8,
-    alignSelf:"center",
-    flexDirection:'column-reverse',
-    alignItems:'center',
-
-
-  },
-  TopicDescriptionDiv:{
-    width:'100%',
-    flex:0.42,
-    backgroundColor:'#0B5B28',
-    opacity:0.8,
-    flexDirection:'column',
     justifyContent:'space-around',
-    paddingLeft:15,
+    flex:0.75,
   },
-  TopicCommentsDiv:{
-    width:'100%',
-    flex:0.18,
-    backgroundColor:'#063718',
-    borderBottomRightRadius:20,
-    borderBottomLeftRadius:20,
-    flexDirection:'row',
+  bodyDescription:{
+    flex:0.45,
+  },
+  descriptionContainer:{
+    flex:0.7, 
+    width:largura/1.25,
+    padding:5,
+    backgroundColor:'white',
+    borderWidth:1,
+    borderColor:'#A8AFB9',
+    borderTopRightRadius:5,
+    borderTopLeftRadius:5,
+    alignSelf:'center',
+    justifyContent:'center',
+  },
+  descriptionContainerTextOpen:{
+    flex:1, 
+    width:largura/1.25,
+    padding:5,
+    backgroundColor:'white',
+    borderWidth:1,
+    borderColor:'#A8AFB9',
+    alignSelf:'center',
+    justifyContent:'center',
+  },
+  button:{
+    height:20,
+    width:largura/1.25,
+    backgroundColor:'#E5E5E5',
+    alignSelf:'center',
+    justifyContent:'center',
     alignItems:'center',
-    paddingLeft:15,
+    borderWidth:1,
+    borderColor:'#A8AFB9',
+    borderBottomRightRadius:5,
+    borderBottomLeftRadius:5,
   },
-  TopicUsername:{
-    color:'#D6DADF',
-    fontWeight:'400',
-    fontSize:13,
-  },
-  TopicTitle:{
-    color:'#D6DADF',
-    fontWeight:'bold',
-    fontSize:13,
-  },
-  TopicDescription:{
-    color:'#D6DADF',
-    fontWeight:'500',
+  descriptionContainerText:{  
     fontSize:10,
+    fontWeight:'300',
+    textAlign:'left',
+  },
+  bodyInfo:{
+    flex:0.4,
+  },
+  basicContainer:{
+    flex:0.9,
+    flexDirection:'row',
+    justifyContent:'space-around'  
+   
+  },
+  basicContainerDiv:{
+    fontSize:8,
+    fontWeight:'300',
+    textAlign:'left',
+    width:largura/2.6,
+    borderWidth:1,
+    borderColor:'#A8AFB9',
+    backgroundColor:'white',
+    borderRadius:5,
+    padding:10,
+    justifyContent:'space-around',
+  },
+  basicTitle:{
+    fontSize:10,
+    fontWeight:'400',
+    textAlign:'center',
+  },
+  basicContainerText:{
+    fontSize:8,
+    fontWeight:'300',
+    textAlign:'left',
   },
 
-  ButtonBackground:{  
-    position:'absolute',
-    zIndex:0,
-    marginTop:altura/1.2,
-    marginLeft:largura/1.35, 
-    width:largura/5,
-    height:largura/5,
-    borderRadius:100,
-    alignItems:'center',
-    justifyContent:'center',
-    backgroundColor: 'rgba(255, 0, 0, 0.3)',
-    
-  },
-  ButtonDiv:{
-    width:largura/6.8,
-    height:largura/6.8,
-    borderRadius:100,
-    backgroundColor:'#242528',
-    alignItems:'center',
-    justifyContent:'center',
-  }
 });
 
 export default styles;
