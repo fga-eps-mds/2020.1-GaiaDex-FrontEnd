@@ -14,7 +14,7 @@ import styles from './styles';
 import { getPlant, createTopic, getUserLogado } from '../../services/backEnd';
 
 export default function TopicCreate({ navigation }) {
-  const plantID = '5fcc41578e5b3100955db205'; // inserir o id da planta  ser exibido
+  const plantID = navigation.getParam('itemID', '5fccf1e6cda5f60033720866');
 
   // consts post
   const [user, setUser] = useState({});
@@ -58,7 +58,7 @@ export default function TopicCreate({ navigation }) {
         <View style={styles.TopicCreateUserDiv}>
           <Image
             style={styles.TopicCreateimgUser}
-            source={{ uri: plant?.common_name }}
+            source={{ uri: user?.photo }}
             defaultSource={require('../../assets/AvatarUser.png')}
           />
           <Text style={styles.TopicCreatenameUser}>

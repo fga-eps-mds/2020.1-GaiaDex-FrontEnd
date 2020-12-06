@@ -23,9 +23,35 @@ import {
   getUserLogado, 
 } from '../../services/backEnd';
 import Comments from './comment/comment';
+function Data({ tempo }) {
+  const agora = new Date();
+  const acao = new Date(tempo);
+  let tmp = Math.trunc((agora - acao) / 1000 / 60 )
+  if (tmp/60 > 24) {
+    return (
+      <Text style={styles.dataTopic}>
+        {tmp/24} dias atrás
+      </Text>
+    );
+  }
+  if (tmp/3600 > 24) {
+    return (
+      <Text style={styles.dataTopic}>
+        {tmp/24} horas atrás
+      </Text>
+    );
+  }
+  return (
+    <Text style={styles.dataTopic}>
+        {tmp} minutos atrás
+      </Text>
+  );
+}
+
+
 
 export default function TopicView({ navigation }) {
-  const topicID = navigation.getParam('itemID', '5fc8fd6d2911e1001c6210e0');
+  const topicID = navigation.getParam('itemID', '5fcc409c8e5b3100955db202');
   const [user, setUser] = useState({});
   const [topic, setTopic] = useState({});
   const [isNewComment, setIsNewComment] = useState(true);
@@ -34,14 +60,15 @@ export default function TopicView({ navigation }) {
   const [commentText, setCommentText] = useState('');
   const [topicisLiked, setTopicIsLiked] = useState(false);
   const [topicisNotLiked, setTopicIsNotLiked] = useState(false);
-  const [commentisLiked, setcommentIsLiked] = useState(false);
+  const [topicDate, setTopicDate] = useState(0);
   const [isDeletd, setIsDeletd] = useState(false);
+  const dateNow = new Date();
   useEffect(() => {
     getUserLogado()
       .then(res => setUser(res));
 
     getTopic(topicID)
-      .then((res) => setTopic(res))
+      .then((res) => {postData(res.createdAt);return setTopic(res);})
       .then(() => {
         if (topic?.title == 'Topico Deletado') {
           setIsDeletd(true);
@@ -53,6 +80,11 @@ export default function TopicView({ navigation }) {
         }
       });
   }, []);
+  const postData = async(data) =>{
+    const dataTop = new Date(data);
+    setTopicDate(dataTop);
+  }
+
   const putTopic = async () => {
     const topicBody = {
       title: topic.title,
@@ -131,12 +163,12 @@ export default function TopicView({ navigation }) {
         <View style={styles.UserDiv}>
           <Image
             style={styles.imgUser}
-            source={{ uri: topic?.user?.profile_picture }}
+            source={{ uri: topic?.user?.photo }}
             defaultSource={AvatarUser}
           />
           <View>
             <Text style={styles.nameUser}>{topic?.user?.username}</Text>
-            <Text style={styles.dataTopic}>{topic?.createdAt}</Text>
+            <Data tempo={topicDate}/>
           </View>
         </View>
         <View style={styles.topicDiv}>

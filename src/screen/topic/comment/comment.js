@@ -17,7 +17,7 @@ export default function Comments({ topic, setTopic, user, like, deslike }){
       let [isEditing, setIsEditing] = useState(false);
       let [topicEditing, setTopicEditing] = useState('');
       let [newDescription, setNewDescription] = useState('');
-
+    
       const putComment = async () => {
         const commentBody = {
           text: newDescription,
@@ -55,7 +55,7 @@ export default function Comments({ topic, setTopic, user, like, deslike }){
             <View style={styles.commentUser}>
               <Image
                 style={styles.imgUserComment}
-                source={{ uri: topic?.user?.profile_picture }}
+                source={{ uri: topic?.user?.photo }}
                 defaultSource={AvatarUser}
               />
               <ScrollView>
@@ -71,7 +71,6 @@ export default function Comments({ topic, setTopic, user, like, deslike }){
                     onChangeText={(text) => setNewDescription(text)}></TextInput>
                   )
                 }
-                <Text style={styles.commentData}>2 horas atrás</Text>
               </ScrollView>
             </View>
             
