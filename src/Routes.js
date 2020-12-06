@@ -7,6 +7,7 @@ import Login from './screen/login/login';
 import Signup from './screen/login/signup';
 import Update from './screen/login/updateUser';
 import DeleteMyAccount from './screen/login/deleteMyAccount';
+import MyProfile from './screen/myProfile';
 
 const AuthStack = createStackNavigator({
   Login: {
@@ -40,6 +41,13 @@ const AuthStack = createStackNavigator({
 });
 
 const AppStack = createStackNavigator({
+  MyProfile: {
+    screen: MyProfile,
+    path: 'MyProfile',
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
   Scanner: {
     screen: Scanner,
     path: 'Scanner',

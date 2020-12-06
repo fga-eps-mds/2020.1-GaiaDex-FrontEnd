@@ -11,11 +11,11 @@ import {
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import styles from './styles';
-import {ENDPOINTS} from '../../settings'
+import { ENDPOINTS } from '../../settings';
 
 const register = async (plant) => {
   try {
-    registerPlant(plant)
+    registerPlant(plant);
     // .then();
     // redirecionar para pagina minha planta com id do response.id
   } catch (err) {

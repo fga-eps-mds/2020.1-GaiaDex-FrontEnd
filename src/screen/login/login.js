@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Text,
   View,
@@ -8,29 +8,26 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
+import { AntDesign, Entypo } from '@expo/vector-icons';
 import styles from './style';
-import { UserLogin } from '../../services/backEnd'
-import { AntDesign } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
+import { UserLogin } from '../../services/backEnd';
 
-export default function Login({navigation}) {
+export default function Login({ navigation }) {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const login = () => {
     const user = {
-      'email': email,
-      'password': senha,
-    }
-    UserLogin(user)
-    .then(res => {
-      if(res.Error){
-        Alert.alert('Usuário ou Senha invalidos')
+      email,
+      password: senha,
+    };
+    UserLogin(user).then((res) => {
+      if (res.Error) {
+        Alert.alert('Usuário ou Senha invalidos');
+      } else {
+        navigation.push('MyProfile');
       }
-      else{
-        navigation.push('Scanner')
-      }
-    })
-  }
+    });
+  };
 
   return (
     <View style={styles.containerLogin}>
@@ -58,22 +55,37 @@ export default function Login({navigation}) {
       <View style={styles.direction}>
         <Text style={styles.midTxt}>Login</Text>
         <TouchableOpacity style={styles.midBtn} onPress={() => login()}>
-          <AntDesign name="arrowright" size={35} color="white" style={styles.arrow}/>
+          <AntDesign
+            name="arrowright"
+            size={35}
+            color="white"
+            style={styles.arrow}
+          />
         </TouchableOpacity>
       </View>
 
       <TouchableOpacity style={styles.btnFbGoogleLogin}>
         <View style={styles.viewbtnFbGoogle}>
-          <Entypo name="facebook" size={24} color="#F2E0F5" style={styles.iconBtnFbGoogle}/>
+          <Entypo
+            name="facebook"
+            size={24}
+            color="#F2E0F5"
+            style={styles.iconBtnFbGoogle}
+          />
           <Text style={styles.txtBtnFbGoogleLogin}>
             Fazer login com o Facebook
           </Text>
-        </View >
+        </View>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.btnFbGoogleLogin}>
         <View style={styles.viewbtnFbGoogle}>
-          <AntDesign name="google" size={24} color="#F2E0F5" style={styles.iconBtnFbGoogle}/>
+          <AntDesign
+            name="google"
+            size={24}
+            color="#F2E0F5"
+            style={styles.iconBtnFbGoogle}
+          />
           <Text style={styles.txtBtnFbGoogleLogin}>
             Fazer login com o Google
           </Text>

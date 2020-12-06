@@ -12,8 +12,7 @@ export default function PlantView({ navigation }) {
   const [plant, setPlant] = useState({});
 
   useEffect(() => {
-    getPlant(plantID)
-    .then(res => setPlant(res.plant))
+    getPlant(plantID).then((res) => setPlant(res.plant));
   }, []);
   return (
     <View style={styles.container}>

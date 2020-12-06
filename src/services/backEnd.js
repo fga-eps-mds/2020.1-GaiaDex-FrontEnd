@@ -6,6 +6,19 @@ const baseHeaders = (token = '') => ({
   'Content-Type': 'application/json',
   Accept: 'application/json',
 });
+export const getUserLogado = () => {
+  const USER = ENDPOINTS.API.auth;
+  return new Promise(async (resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + USER.getUser.route, {
+      method: USER.getUser.method,
+      headers: baseHeaders(await getToken()),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .then(reject);
+  });
+};
+
 export const UserLogin = (User) => {
   const USER = ENDPOINTS.API.auth;
   return new Promise((resolve, reject) => {
