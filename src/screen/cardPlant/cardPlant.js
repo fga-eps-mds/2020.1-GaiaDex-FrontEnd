@@ -54,22 +54,26 @@ export default function PlantCard({ navigation }) {
           </Text>
         </View>
         <View style={styles.menuBar}>
-          <TouchableOpacity style={styles.menuBarTab}>
+          <TouchableOpacity
+            style={styles.menuBarTab}
+            onPress={() => setStateCard(true)}
+          >
             <Text style={styles.menuBarTabText}>Informações</Text>
             <Octicons
               name="primitive-dot"
               size={20}
               color={stateCard ? 'green' : 'white'}
-              onPress={() => setStateCard(true)}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.menuBarTab}>
+          <TouchableOpacity
+            style={styles.menuBarTab}
+            onPress={() => setStateCard(false)}
+          >
             <Text style={styles.menuBarTabText}>Topicos</Text>
             <Octicons
               name="primitive-dot"
               size={20}
               color={stateCard ? 'white' : 'green'}
-              onPress={() => setStateCard(false)}
             />
           </TouchableOpacity>
         </View>

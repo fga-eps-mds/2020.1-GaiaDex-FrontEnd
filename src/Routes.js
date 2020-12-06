@@ -48,7 +48,7 @@ const AppStack = createStackNavigator({
       headerShown: false,
     },
   },
-  PlantCard:{
+  PlantCard: {
     screen: PlantCard,
     path: 'PlantCard',
     navigationOptions: {

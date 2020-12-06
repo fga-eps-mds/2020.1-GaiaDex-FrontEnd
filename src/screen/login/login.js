@@ -24,7 +24,7 @@ export default function Login({ navigation }) {
       if (res.Error) {
         Alert.alert('Usuário ou Senha invalidos');
       } else {
-        navigation.push('MyProfile');
+        navigation.push('PlantCard');
       }
     });
   };
