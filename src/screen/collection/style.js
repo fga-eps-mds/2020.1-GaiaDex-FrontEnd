@@ -10,8 +10,36 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection:"column",
     backgroundColor: '#F2E0F5',
-    paddingTop: Constants.statusBarHeight,
+    //paddingTop: Constants.statusBarHeight,
   },
+  editView: {
+    backgroundColor: "#F2E0F5",
+    width: largura*2/3,
+    height: altura*2/7,
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 50,
+    padding: 7,
+    justifyContent:"space-evenly"
+  },
+  editHeader:{
+    flexDirection:"row",
+    justifyContent:"space-between",
+  },
+  editImage:{
+    width: largura*1/4,
+    height: altura/5,
+  },
+  editText:{
+    width: largura*2/3 - largura*1/4 - 14,
+    marginBottom: 7,
+  },  
   exploreContainer:{
     flexDirection: 'row',
     alignSelf:"center",
