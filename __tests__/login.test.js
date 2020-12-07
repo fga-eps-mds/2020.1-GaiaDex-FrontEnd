@@ -7,10 +7,10 @@ import Login from '../src/screen/login/login'
 import styles from '../src/screen/login/style'
 
 
-const wrapper = mount(<Login />);
 
 describe('<Login />', () => {
   const wrapper = mount(<Login />);
+  
   it('renders everything', () => {
     expect(wrapper).toMatchSnapshot;
     expect(wrapper.find('TextInput').length).toBe(2);
