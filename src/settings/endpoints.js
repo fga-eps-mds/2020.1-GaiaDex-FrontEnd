@@ -38,6 +38,12 @@ export const ENDPOINTS = {
       register: {
         route: `/plant/register`,
         method: `POST`,
+        body: (plantBody) => plantBody,
+      },
+      create: {
+        route: `/plant/register`,
+        method: `POST`,
+        body: (plantBody) => plantBody,
       },
       getPlant: {
         route: (plantID) => `/plant/${plantID}`,
@@ -131,6 +137,12 @@ export const ENDPOINTS = {
       route: `/scanner/`,
       method: `POST`,
       body: (scannerBody) => scannerBody,
+    },
+    myPlant:{
+      add:{
+        route: (plantId) => `/myplants/add/${plantId}`,
+        method: `POST`,
+      },
     },
   },
 };
