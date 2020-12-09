@@ -177,3 +177,58 @@ export const registerPlant = (plant) => {
       .catch(reject);
   });
 };
+
+export const editMyPlant = (myPlantID, newNick) => {
+  const PLANT = ENDPOINTS.API.myPlant;
+  return new Promise((resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + PLANT.edit.route(myPlantID), {
+      method: PLANT.edit.method,
+      headers: baseHeaders(),
+      body: JSON.stringify({
+        nickname: newNick,
+      }),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+
+export const deleteMyPlant = (myPlantID) => {
+  const PLANT = ENDPOINTS.API.myPlant;
+  return new Promise((resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + PLANT.delete.route(myPlantID), {
+      method: PLANT.delete.method,
+      headers: baseHeaders(),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+
+export const favoritePlant = (plantID) => {
+  const PLANT = ENDPOINTS.API.favorite;
+  return new Promise(async (resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + PLANT.add.route(plantID), {
+      method: PLANT.add.method,
+      headers: baseHeaders(await getToken()),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+
+export const desfavoritePlant = (plantID) => {
+  const PLANT = ENDPOINTS.API.favorite;
+  return new Promise(async (resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + PLANT.remove.route(plantID), {
+      method: PLANT.remove.method,
+      headers: baseHeaders(await getToken()),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};

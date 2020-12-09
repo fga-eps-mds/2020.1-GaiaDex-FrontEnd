@@ -19,9 +19,7 @@
       "git add"
     ]
   },
-  "husky": {
-    
-  },
+  "husky": {},
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.13.2",
     "@react-native-community/masked-view": "^0.1.10",

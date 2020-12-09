@@ -98,7 +98,9 @@ export default function myProfile({ navigation }) {
             style={styles.photoView}
             imageStyle={styles.photo}
             source={
-              user?.photo ? user.photo : require('../../assets/userDefault.png')
+              user?.photo
+                ? { uri: user.photo }
+                : require('../../assets/userDefault.png')
             }
           />
           <Text style={styles.name}>{`${user?.username}\n${user?.email}`}</Text>

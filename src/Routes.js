@@ -49,7 +49,7 @@ const AppStack = createStackNavigator({
       headerShown: false,
     },
   },
-  Collection:{
+  Collection: {
     screen: Collection,
     path: 'Collection',
     navigationOptions: {

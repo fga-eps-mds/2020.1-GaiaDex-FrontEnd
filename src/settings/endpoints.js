@@ -41,6 +41,27 @@ export const ENDPOINTS = {
         method: `GET`,
       },
     },
+    myPlant: {
+      edit: {
+        route: (myPlantID) => `/myplants/edit/${myPlantID}`,
+        method: `PUT`,
+      },
+      delete: {
+        route: (myPlantID) => `/myplants/delete/${myPlantID}`,
+        method: `DELETE`,
+        body: (nickname) => nickname,
+      },
+    },
+    favorite: {
+      add: {
+        route: (plantID) => `/favorites/add/${plantID}`,
+        method: `POST`,
+      },
+      remove: {
+        route: (plantID) => `/favorites/delete/${plantID}`,
+        method: `DELETE`,
+      },
+    },
     topic: {
       create: {
         route: (topicID) => `/topic/create/${topicID}`,
