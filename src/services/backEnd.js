@@ -270,42 +270,35 @@ export const registerPlant = (plant) => {
         family_name: plant.species.family.scientificNameWithoutAuthor,
         common_name: plant.commonNames[0],
         gbifID: plant.gbifID,
-        }
-      }
-    )
-    .then(res => res.json())
-    .then(resolve)
-    .catch(reject)
-  })
-}
+      },
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
 
-export const delFavorite = (plantID) => { 
+export const delFavorite = (plantID) => {
   const FAVORITES = ENDPOINTS.API.favorites;
-  return new Promise(async(resolve, reject) => {
-    fetch(
-      ENDPOINTS.API.base_url + FAVORITES.delete.route(plantID),
-      {
-        method: FAVORITES.delete.method,
-        headers: baseHeaders(await getToken()),
-      }
-    )
-    .then(res => res.json())
-    .then(resolve)
-    .catch(reject);
-  })
-}
-export const getFavorites = () => { 
+  return new Promise(async (resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + FAVORITES.delete.route(plantID), {
+      method: FAVORITES.delete.method,
+      headers: baseHeaders(await getToken()),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+export const getFavorites = () => {
   const FAVORITES = ENDPOINTS.API.favorites;
-  return new Promise(async(resolve, reject) => {
-    fetch(
-      ENDPOINTS.API.base_url + FAVORITES.list.route,
-      {
-        method: FAVORITES.list.method,
-        headers: baseHeaders(await getToken()),
-      }
-    )
-    .then(res => res.json())
-    .then(resolve)
-    .catch(reject);
-  })
-}
+  return new Promise(async (resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + FAVORITES.list.route, {
+      method: FAVORITES.list.method,
+      headers: baseHeaders(await getToken()),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};

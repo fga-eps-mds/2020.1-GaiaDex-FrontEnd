@@ -11,7 +11,7 @@ import PlantCard from './screen/cardPlant/cardPlant';
 import TopicView from './screen/topic/TopicView';
 import TopicCreate from './screen/topic/TopicCreate';
 import Config from './screen/config/config';
-import Favorite from './screen/collection/favorites';
+import Favorite from './screen/collection/Favorite';
 
 const AuthStack = createStackNavigator({
   Login: {
@@ -44,7 +44,6 @@ const AuthStack = createStackNavigator({
   },
 });
 
-
 const AppStack = createStackNavigator({
   MyProfile: {
     screen: MyProfile,
@@ -53,9 +52,9 @@ const AppStack = createStackNavigator({
       headerShown: false,
     },
   },
-  Favoritos:{
+  Favoritos: {
     screen: Favorite,
-    path: 'Favorite',
+    path: 'Favoritos',
     navigationOptions: {
       headerShown: false,
     },

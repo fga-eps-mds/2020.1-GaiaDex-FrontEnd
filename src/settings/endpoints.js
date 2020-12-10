@@ -88,21 +88,20 @@ export const ENDPOINTS = {
         method: `POST`,
       },
     },
+    favorites: {
+      list: {
+        route: `/favorites/list`,
+        method: `GET`,
+      },
+      delete: {
+        route: (plantId) => `/favorites/delete/${plantId}`,
+        method: `DELETE`,
+      },
+    },
     scanner: {
       route: `/scanner/`,
       method: `POST`,
       body: (scannerBody) => scannerBody,
     },
-      body:(scannerBody) => scannerBody
-    },
-    favorites: {
-      list:{
-        route: `/favorites/list`,
-        method: `GET`,
-      },
-      delete:{
-        route: (plantId) => `/favorites/delete/${plantId}`,
-        method: `DELETE`,
-      },
-    },
+  },
 };

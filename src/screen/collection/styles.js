@@ -3,51 +3,51 @@ import { StyleSheet, Dimensions } from 'react-native';
 const largura = Dimensions.get('screen').width;
 const altura = Dimensions.get('screen').height;
 const styles = StyleSheet.create({
- container:{
-     flex:1,
-     flexDirection:'column',
-     backgroundColor:'#F2E0F5',
- },
- header:{
-     flex: 0.25,
-     flexDirection:'column',
-     width: largura/1.1,
-     alignSelf: 'center',
- },
- headerIcon:{
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#F2E0F5',
+  },
+  header: {
+    flex: 0.25,
+    flexDirection: 'column',
+    width: largura / 1.1,
+    alignSelf: 'center',
+  },
+  headerIcon: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    alignSelf:'flex-start',
-    flex: 0.6
- },
- headerTitle:{
-    width: largura/1.2,
-    flexDirection:'row',
+    alignSelf: 'flex-start',
+    flex: 0.6,
+  },
+  headerTitle: {
+    width: largura / 1.2,
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent:'space-between',
- },
- headerTitleText:{
+    justifyContent: 'space-between',
+  },
+  headerTitleText: {
     fontSize: 35,
-    fontWeight:'600',
+    fontWeight: '600',
     paddingLeft: 5,
- },
- body:{
-    flex:0.7,
+  },
+  body: {
+    flex: 0.7,
     alignItems: 'center',
     paddingBottom: 20,
- },
- plant:{
+  },
+  plant: {
     flex: 0.45,
-    maxHeight:altura/3,
-    width: largura/1.2,
+    maxHeight: altura / 3,
+    width: largura / 1.2,
     flexDirection: 'row',
-    marginBottom: '10%'
- },
- plantBackground: {
+    marginBottom: '10%',
+  },
+  plantBackground: {
     flex: 1,
- }, 
- plantDescription:{
+  },
+  plantDescription: {
     flex: 1,
     backgroundColor: '#59A44D',
     fontWeight: '600',
@@ -59,20 +59,20 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     padding: 10,
- },
- plantDescriptionTitle: {
+  },
+  plantDescriptionTitle: {
     fontSize: 14,
-    color:'white',
+    color: 'white',
     paddingBottom: 5,
-    textAlign: 'center'
- },
- plantDescriptionText:{
+    textAlign: 'center',
+  },
+  plantDescriptionText: {
     fontSize: 12,
     color: 'white',
-    textAlign: 'center'
- },
- plantButtonDiv:{
-    flexDirection:'row',
+    textAlign: 'center',
+  },
+  plantButtonDiv: {
+    flexDirection: 'row',
     width: '100%',
     height: '50%',
     alignSelf: 'flex-start',
@@ -81,8 +81,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'space-around',
- },
- plantButton: {
+  },
+  plantButton: {
     width: '45%',
     height: '80%',
     backgroundColor: 'orange',
@@ -92,21 +92,21 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
- },
- deleteButton:{
-   width: '45%',
-   height: '80%',
-   backgroundColor: 'red',
-   alignSelf: 'flex-start',
-   margin: 5,
-   marginTop: '5%',
-   borderRadius: 10,
-   alignItems: 'center',
-   justifyContent: 'center',
-},
- deleteButtonText:{
-    fontSize:12,
-    color:'white',
- }
+  },
+  deleteButton: {
+    width: '45%',
+    height: '80%',
+    backgroundColor: 'red',
+    alignSelf: 'flex-start',
+    margin: 5,
+    marginTop: '5%',
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  deleteButtonText: {
+    fontSize: 12,
+    color: 'white',
+  },
 });
 export default styles;
