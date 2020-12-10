@@ -63,7 +63,36 @@ describe('<AuthStack />', () => {
 
 
   });
+  
+  it('navigates from login to update and from update to login', async() => {
+    const component = (
+      <NavigationContainer>
+        <Routes />
+      </NavigationContainer>
+    );
 
+    const { findByText, findAllByText } = render(component);
+
+    var log = await findByText('Seja bem-vindo');
+
+    expect(log).toBeTruthy();
+
+    var toClick = await findByText('Esqueci a senha');
+    fireEvent(toClick, 'press');
+
+    const upd = await findByText('Alterar Dados:');
+
+    expect(upd).toBeTruthy();
+
+    var toClick = await findAllByText('Login');
+    fireEvent(toClick[1], 'press');
+
+    var log = await findAllByText('Seja bem-vindo');
+
+    expect(log[1]).toBeTruthy();
+
+
+  });
  
 
 });
