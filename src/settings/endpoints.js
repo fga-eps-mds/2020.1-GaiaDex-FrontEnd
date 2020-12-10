@@ -3,9 +3,8 @@ export const ENDPOINTS = {
     base_url: `http://192.168.0.10:3000`,
     auth: {
       delete: {
-        route: `/auth/update`,
-        method: `PUT`,
-        body: (userBody) => userBody,
+        route: `/auth/delete`,
+        method: `DELETE`,
       },
       update: {
         route: `/auth/update`,

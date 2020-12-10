@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  View,
-  Text,
-  Image,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
+import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 
 import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 import styles from './styles';

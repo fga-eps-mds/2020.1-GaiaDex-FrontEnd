@@ -247,18 +247,18 @@ const styles = StyleSheet.create({
     color: 'white',
     marginBottom: 40,
   },
-  btnButtonLogoutDelete:{
-    backgroundColor:'#D6DADF',
-    width:windowWidth/2.5,
-    height:windowHeight/20,
-    alignItems:'center',
-    justifyContent:'center',
-    borderRadius:10,
+  btnButtonLogoutDelete: {
+    backgroundColor: '#D6DADF',
+    width: windowWidth / 2.5,
+    height: windowHeight / 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
   },
-  txtBtnDeleteLogout:{
-    fontSize:12,
-    textAlign:'center',
-  }
+  txtBtnDeleteLogout: {
+    fontSize: 12,
+    textAlign: 'center',
+  },
 });
 
 export default styles;
