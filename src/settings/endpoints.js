@@ -1,6 +1,6 @@
 export const ENDPOINTS = {
   API: {
-    base_url: `http://192.168.0.106:3000`,
+    base_url: `http://192.168.0.10:3000`,
     auth: {
       delete: {
         route: `/auth/update`,
@@ -42,20 +42,26 @@ export const ENDPOINTS = {
       },
     },
     topic: {
+      getTopic: {
+        route: (topicID) => `/topic/find/${topicID}`,
+        method: `GET`,
+      },
       create: {
-        route: (topicID) => `/topic/create/${topicID}`,
+        route: (plantID) => `/topic/create/${plantID}`,
         method: `POST`,
+        body: (topicBody) => topicBody,
       },
       update: {
         route: (topicID) => `/topic/update/${topicID}`,
         method: `PUT`,
+        body: (topicBody) => topicBody,
       },
       like: {
         route: (topicID) => `/topic/like/${topicID}`,
         method: `POST`,
       },
       dislike: {
-        route: (topicID) => `/topic/dislike/${topicID}`,
+        route: (plantID) => `/topic/dislike/${plantID}`,
         method: `POST`,
       },
     },
@@ -63,10 +69,12 @@ export const ENDPOINTS = {
       create: {
         route: (commentID) => `/comment/create/${commentID}`,
         method: `POST`,
+        body: (commentBody) => commentBody,
       },
       update: {
         route: (commentID) => `/comment/update/${commentID}`,
         method: `PUT`,
+        body: (commentBody) => commentBody,
       },
       delete: {
         route: (commentID) => `/comment/delete/${commentID}`,

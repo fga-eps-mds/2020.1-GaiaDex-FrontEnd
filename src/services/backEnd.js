@@ -19,6 +19,7 @@ export const getUserLogado = () => {
   });
 };
 
+
 export const UserLogin = (User) => {
   const USER = ENDPOINTS.API.auth;
   return new Promise((resolve, reject) => {
@@ -90,15 +91,139 @@ export const UserDelete = () => {
   });
 };
 
-export const createTopic = (topicID) => {
+export const createTopic = (topicID, topicBody) => {
   const TOPIC = ENDPOINTS.API.topic;
-  return new Promise((resolve, reject) => {
+  return new Promise(async(resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + TOPIC.create.route(topicID), {
       method: TOPIC.create.method,
-      headers: baseHeaders(window.localStorage.getItem('token')),
+      headers: baseHeaders(await getToken()),
+      body: JSON.stringify({
+        title: topicBody.title,
+        description: topicBody.description,
+      }),
     })
+      .then((res) => res.json())
       .then(resolve)
       .then(reject);
+  });
+};
+export const getTopic = (topicID) => {
+  const TOPIC = ENDPOINTS.API.topic;
+  return new Promise((resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + TOPIC.getTopic.route(topicID), {
+      method: TOPIC.getTopic.method,
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+export const updateTopic = (topicID, body) => {
+  const TOPIC = ENDPOINTS.API.topic;
+  return new Promise((resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + TOPIC.update.route(topicID), {
+      method: TOPIC.update.method,
+      headers: baseHeaders(),
+      body: JSON.stringify({
+        title: body.title,
+        description: body.description,
+      }),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+export const likeTopic = (topicID) => {
+  const TOPIC = ENDPOINTS.API.topic;
+  return new Promise(async(resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + TOPIC.like.route(topicID), {
+      method: TOPIC.like.method,
+      headers: baseHeaders(await getToken()),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+export const dislikeTopic = (topicID) => {
+  const TOPIC = ENDPOINTS.API.topic;
+  return new Promise(async(resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + TOPIC.dislike.route(topicID), {
+      method: TOPIC.dislike.method,
+      headers: baseHeaders(await getToken()),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+
+export const createComment = (commentID, topicBody) => {
+  const COMMENT = ENDPOINTS.API.comment;
+  return new Promise(async(resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + COMMENT.create.route(commentID), {
+      method: COMMENT.create.method,
+      headers: baseHeaders(await getToken()),
+      body: JSON.stringify({
+        text: topicBody.text,
+      }),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .then(reject);
+  });
+};
+
+export const updateComment = (commentID, topicBody) => {
+  const COMMENT = ENDPOINTS.API.comment;
+  return new Promise(async(resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + COMMENT.update.route(commentID), {
+      method: COMMENT.update.method,
+      headers: baseHeaders(await getToken()),
+      body: JSON.stringify({
+        text: topicBody.text,
+      }),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .then(reject);
+  });
+};
+export const deleteComment = (commentID, topicBody) => {
+  const COMMENT = ENDPOINTS.API.comment;
+  return new Promise(async(resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + COMMENT.delete.route(commentID), {
+      method: COMMENT.delete.method,
+      headers: baseHeaders(await getToken()),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .then(reject);
+  });
+};
+export const likeComment = (commentID) => {
+  const COMMENT = ENDPOINTS.API.comment;
+  return new Promise(async(resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + COMMENT.like.route(commentID), {
+      method: COMMENT.like.method,
+      headers: baseHeaders(await getToken()),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+export const dislikeComment = (CommentID) => {
+  const COMMENT = ENDPOINTS.API.comment;
+  return new Promise(async(resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + COMMENT.dislike.route(CommentID), {
+      method: COMMENT.dislike.method,
+      headers: baseHeaders(await getToken()),
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
   });
 };
 
@@ -136,10 +261,10 @@ export const scannerPlant = (scannerBody) => {
 
 export const registerPlant = (plant) => {
   const PLANT = ENDPOINTS.API.plant;
-  return new Promise((resolve, reject) => {
+  return new Promise(async(resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + PLANT.register, {
       method: PLANT.register.method,
-      headers: baseHeaders(window.localStorage).getItem('token'),
+      headers: baseHeaders(await getToken()),
       body: {
         scienctificName: plant.species.scientificNameWithoutAuthor,
         genderName: plant.species.genus.scientificNameWithoutAuthor,
