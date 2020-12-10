@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 import { AntDesign } from '@expo/vector-icons';
 
@@ -14,11 +10,8 @@ export default function Header({ title, onPress }) {
         <AntDesign name="left" size={24} color="white" onPress={onPress} />
       </View>
       <View style={{ flex: 0.9 }}>
-        <Text style={{ color: 'white', fontSize: 18 }}>
-          {title}
-        </Text>
+        <Text style={{ color: 'white', fontSize: 18 }}>{title}</Text>
       </View>
-  
     </View>
   );
 }

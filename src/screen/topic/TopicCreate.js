@@ -4,17 +4,15 @@ import {
   Text,
   Image,
   TextInput,
-  ScrollView,
   TouchableOpacity,
-  KeyboardAvoidingView,
 } from 'react-native';
 
-import { MaterialCommunityIcons, AntDesign, Entypo } from '@expo/vector-icons';
+import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 import styles from './styles';
 import { getPlant, createTopic, getUserLogado } from '../../services/backEnd';
 
 export default function TopicCreate({ navigation }) {
-  const plantID = navigation.getParam('itemID', '5fccf1e6cda5f60033720866');
+  const plantID = navigation.getParam('itemID', '5fd1585e7ecf46002731738f');
 
   // consts post
   const [user, setUser] = useState({});
@@ -23,16 +21,18 @@ export default function TopicCreate({ navigation }) {
   const [description, setDescription] = useState('');
 
   useEffect(() => {
-    getUserLogado().then(res => setUser(res))
+    getUserLogado().then((res) => setUser(res));
     getPlant(plantID).then((res) => setPlant(res.plant));
   }, []);
   const postTopic = async () => {
-    console.log(title,description)
+    console.log(title, description);
     const body = {
       title,
       description,
     };
-    createTopic(plantID, body).then((res) => navigation.push('TopicView', { itemID: res?.topic?._id}));
+    createTopic(plantID, body).then((res) =>
+      navigation.push('TopicView', { itemID: res?.topic?._id })
+    );
   };
   return (
     <View style={styles.TopicCreatemasterView}>
@@ -81,9 +81,7 @@ export default function TopicCreate({ navigation }) {
             onChangeText={(val) => setDescription(val)}
           />
         </View>
-        <View style={styles.TopicCreatescrollDiv}>
-         
-        </View>
+        <View style={styles.TopicCreatescrollDiv} />
       </View>
     </View>
   );

@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   scrollViewDescription: {
-    marginTop:5,
+    marginTop: 5,
     maxHeight: altura / 8,
   },
   imgDescription: {
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     justifyContent: 'center',
     margin: 10,
-    marginBottom:0,
+    marginBottom: 0,
   },
   saveButton: {
     backgroundColor: '#D8A3E0',
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#D6DADF',
     maxHeight: altura / 20,
     borderRadius: 8,
-    marginTop:20,
+    marginTop: 20,
     alignItems: 'center',
     justifyContent: 'space-between',
   },
@@ -260,7 +260,6 @@ const styles = StyleSheet.create({
   },
   commentContent: {
     flexDirection: 'column',
-    alignContent: 'center',
     alignContent: 'center',
     alignSelf: 'center',
     padding: 15,

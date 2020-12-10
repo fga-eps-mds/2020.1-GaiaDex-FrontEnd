@@ -12,43 +12,30 @@ import { TextInput } from 'react-native-gesture-handler';
 import Header from './header';
 import styles from './styles';
 import AvatarUser from '../../assets/AvatarUser.png';
-import { 
-  getTopic, 
-  updateTopic, 
-  createComment, 
-  likeTopic, 
+import {
+  getTopic,
+  updateTopic,
+  createComment,
+  likeTopic,
   dislikeTopic,
   likeComment,
   dislikeComment,
-  getUserLogado, 
+  getUserLogado,
 } from '../../services/backEnd';
-import Comments from './comment/comment';
+import Comments from './comment/Comments';
+
 function Data({ tempo }) {
   const agora = new Date();
   const acao = new Date(tempo);
-  let tmp = Math.trunc((agora - acao) / 1000 / 60 )
-  if (tmp/60 > 24) {
-    return (
-      <Text style={styles.dataTopic}>
-        {tmp/24} dias atrás
-      </Text>
-    );
+  const tmp = Math.trunc((agora - acao) / 1000 / 60);
+  if (tmp / 60 > 24) {
+    return <Text style={styles.dataTopic}>{tmp / 24} dias atrás</Text>;
   }
-  if (tmp/3600 > 24) {
-    return (
-      <Text style={styles.dataTopic}>
-        {tmp/24} horas atrás
-      </Text>
-    );
+  if (tmp / 3600 > 24) {
+    return <Text style={styles.dataTopic}>{tmp / 24} horas atrás</Text>;
   }
-  return (
-    <Text style={styles.dataTopic}>
-        {tmp} minutos atrás
-      </Text>
-  );
+  return <Text style={styles.dataTopic}>{tmp} minutos atrás</Text>;
 }
-
-
 
 export default function TopicView({ navigation }) {
   const topicID = navigation.getParam('itemID', '5fcc409c8e5b3100955db202');
@@ -62,28 +49,29 @@ export default function TopicView({ navigation }) {
   const [topicisNotLiked, setTopicIsNotLiked] = useState(false);
   const [topicDate, setTopicDate] = useState(0);
   const [isDeletd, setIsDeletd] = useState(false);
-  const dateNow = new Date();
   useEffect(() => {
-    getUserLogado()
-      .then(res => setUser(res));
+    getUserLogado().then((res) => setUser(res));
 
     getTopic(topicID)
-      .then((res) => {postData(res.createdAt);return setTopic(res);})
+      .then((res) => {
+        postData(res.createdAt);
+        return setTopic(res);
+      })
       .then(() => {
         if (topic?.title == 'Topico Deletado') {
           setIsDeletd(true);
         }
       })
-      .then(() =>{
+      .then(() => {
         if (topic?.user?._id == user?._id) {
-         setIsEditable(true);
+          setIsEditable(true);
         }
       });
   }, []);
-  const postData = async(data) =>{
+  const postData = async (data) => {
     const dataTop = new Date(data);
     setTopicDate(dataTop);
-  }
+  };
 
   const putTopic = async () => {
     const topicBody = {
@@ -114,18 +102,17 @@ export default function TopicView({ navigation }) {
   const like = async (type, id = null) => {
     const options = {
       topic: () => {
-          likeTopic(topic?._id).then(res => {
+        likeTopic(topic?._id).then((res) => {
           const { likes } = res;
-          setTopic({ ...topic,likes})
+          setTopic({ ...topic, likes });
           setTopicIsLiked(true);
           setTopicIsNotLiked(false);
         });
       },
       comment: () => {
-        likeComment(id).then(res => {
+        likeComment(id).then((res) => {
           const { comments } = res;
-          setTopic({ ...topic,comments})
-         
+          setTopic({ ...topic, comments });
         });
       },
     };
@@ -135,24 +122,23 @@ export default function TopicView({ navigation }) {
   const deslike = async (type, id = null) => {
     const options = {
       topic: () => {
-          dislikeTopic(topic?._id).then(res => {
+        dislikeTopic(topic?._id).then((res) => {
           const { likes } = res;
-          setTopic({ ...topic,likes})
+          setTopic({ ...topic, likes });
           setTopicIsLiked(false);
           setTopicIsNotLiked(true);
         });
       },
       comment: () => {
-        dislikeComment(id).then(res => {
+        dislikeComment(id).then((res) => {
           const { comments } = res;
-          setTopic({ ...topic,comments})
-         
+          setTopic({ ...topic, comments });
         });
       },
     };
     if (options[type]) options[type]();
   };
-  
+
   return (
     <KeyboardAvoidingView style={styles.containerMaster}>
       <Header
@@ -168,7 +154,7 @@ export default function TopicView({ navigation }) {
           />
           <View>
             <Text style={styles.nameUser}>{topic?.user?.username}</Text>
-            <Data tempo={topicDate}/>
+            <Data tempo={topicDate} />
           </View>
         </View>
         <View style={styles.topicDiv}>
@@ -216,29 +202,29 @@ export default function TopicView({ navigation }) {
                 )}
               </ScrollView>
               {!!isEditable && (
-              <Feather
-                style={styles.deleteButton}
-                onPress={() => deleteTopic()}
-                name="trash-2"
-                size={24}
-                color="black"
-              />
+                <Feather
+                  style={styles.deleteButton}
+                  onPress={() => deleteTopic()}
+                  name="trash-2"
+                  size={24}
+                  color="black"
+                />
               )}
             </>
           )}
           <View style={styles.topicContainer}>
             <View style={styles.topicDivLikes}>
               <AntDesign
-                name={'arrowup'}
+                name="arrowup"
                 size={18}
-                color={topicisLiked ?'red':'black'}
-                onPress={() =>like('topic', topicID)}
+                color={topicisLiked ? 'red' : 'black'}
+                onPress={() => like('topic', topicID)}
               />
               <Text>{topic?.likes?.length}</Text>
               <AntDesign
-                name={'arrowdown'}
+                name="arrowdown"
                 size={18}
-                color={topicisNotLiked ?'red':'black'}
+                color={topicisNotLiked ? 'red' : 'black'}
                 onPress={() => deslike('topic', topicID)}
               />
             </View>
@@ -276,7 +262,14 @@ export default function TopicView({ navigation }) {
       <View style={styles.commentsListDiv}>
         <View style={styles.commentsList}>
           {isNewComment ? (
-            <Comments topic={topic} setTopic={setTopic} user={user} like={like} deslike={deslike} topicisLiked={topicisLiked}/>
+            <Comments
+              topic={topic}
+              setTopic={setTopic}
+              user={user}
+              like={like}
+              deslike={deslike}
+              topicisLiked={topicisLiked}
+            />
           ) : (
             <View style={styles.commentContent}>
               <TextInput
