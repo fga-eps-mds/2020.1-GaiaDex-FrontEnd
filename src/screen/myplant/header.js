@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  Dimensions,
-} from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 
 import { MaterialIcons, AntDesign } from '@expo/vector-icons';
 

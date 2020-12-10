@@ -244,8 +244,20 @@ const styles = StyleSheet.create({
     // lineHeight: 171,
     textAlign: 'center',
     letterSpacing: 0.1,
-    color: '#242528',
+    color: 'white',
     marginBottom: 40,
+  },
+  btnButtonLogoutDelete: {
+    backgroundColor: '#D6DADF',
+    width: windowWidth / 2.5,
+    height: windowHeight / 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+  },
+  txtBtnDeleteLogout: {
+    fontSize: 12,
+    textAlign: 'center',
   },
 });
 

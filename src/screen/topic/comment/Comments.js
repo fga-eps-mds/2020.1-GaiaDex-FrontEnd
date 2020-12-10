@@ -50,7 +50,7 @@ export default function Comments({ topic, setTopic, user, like, deslike }) {
           />
           <ScrollView>
             <Text style={styles.commentUsername}>{username}</Text>
-            {(topicEditing != id) ? (
+            {topicEditing != id ? (
               <Text style={styles.commentDescription}>{description}</Text>
             ) : (
               <TextInput

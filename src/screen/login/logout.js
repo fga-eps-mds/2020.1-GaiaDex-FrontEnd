@@ -15,7 +15,7 @@ export default function Logout({ navigation }) {
         },
         {
           text: 'Sair',
-          onPress: () => navigation.push('Signup'),
+          onPress: () => navigation.push('Login'),
         },
       ],
       { cancelable: false }
@@ -24,8 +24,11 @@ export default function Logout({ navigation }) {
   // Use: '<Logout navigation={navigation}/>' to call the button
   return (
     <View>
-      <TouchableOpacity onPress={() => pressLogout()}>
-        <Text style={styles.txtBtnOthersLogin}>Sair</Text>
+      <TouchableOpacity
+        style={styles.btnButtonLogoutDelete}
+        onPress={() => pressLogout()}
+      >
+        <Text style={styles.txtBtnDeleteLogout}>Sair</Text>
       </TouchableOpacity>
     </View>
   );

@@ -10,6 +10,7 @@ import MyProfile from './screen/myProfile';
 import PlantCard from './screen/cardPlant/cardPlant';
 import TopicView from './screen/topic/TopicView';
 import TopicCreate from './screen/topic/TopicCreate';
+import Config from './screen/config/config';
 
 const AuthStack = createStackNavigator({
   Login: {
@@ -46,6 +47,13 @@ const AppStack = createStackNavigator({
   MyProfile: {
     screen: MyProfile,
     path: 'MyProfile',
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  Config: {
+    screen: Config,
+    path: 'Config',
     navigationOptions: {
       headerShown: false,
     },
