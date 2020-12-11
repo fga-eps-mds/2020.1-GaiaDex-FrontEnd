@@ -32,6 +32,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install
+RUN npm ci
 
 ENTRYPOINT cd android && ./gradlew assembleRelease

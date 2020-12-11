@@ -16,17 +16,20 @@ jobs:
   #         CC_TEST_REPORTER_ID: ${{secrets.CC_REPORTER_ID}}
   #       with:
   #         coverageCommand: npm run test
-  # build:
-  #   name: CI Build
-  #   # needs: test
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Build container
-  #       run: docker build -t homologfront .
+  build:
+    name: CI Build
+    # needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build container
+        run: |
+          docker build -t homologfront .
+          docker run homologfront
+
   tagged-release:
     name: "Tagged Release"
-    # needs: build
+    needs: build
     runs-on: "ubuntu-latest"
     steps:
       - uses: actions/checkout@v2
@@ -43,4 +46,4 @@ jobs:
           prerelease: false
           files: |
             LICENSE.txt
-            *.apk
+            ${{job.build.homologfront}}/app/android/app/build/outputs/apk/release/*
