@@ -13,7 +13,7 @@ import TopicCreate from './screen/topic/TopicCreate';
 import Config from './screen/config/config';
 import Favorite from './screen/collection/Favorite';
 import Collection from './screen/collection/collenction';
->>>>>>> 89d2974 (Adding collection view and some changes to it)
+
 
 const AuthStack = createStackNavigator({
   Login: {
