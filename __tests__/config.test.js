@@ -1,5 +1,6 @@
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 
+import { mount } from 'enzyme';
 import Config from '../src/screen/config/config';
 import styles from '../src/screen/config/styles';
 import Header from '../src/screen/config/header';
@@ -14,6 +15,8 @@ describe('<Config />', () => {
     expect(wrapper).toMatchSnapshot;
     expect(wrapper.find('View').length).toBe(24);
     expect(wrapper.find('Header').length).toBe(1);
+    expect(wrapper.find('Switch').length).toBe(3);
+    expect(wrapper.find('Text').length).toBe(16);
   });
   it('renders View correctly', () => {
     expect(wrapper.find('View').at(0)).toHaveStyle(styles.containerView);
