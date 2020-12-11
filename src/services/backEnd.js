@@ -261,7 +261,6 @@ export const getPlants = () => {
   });
 };
 
-
 export const scannerPlant = (scannerBody) => {
   const SCANNER = ENDPOINTS.API.scanner;
   console.log(scannerBody.filename);

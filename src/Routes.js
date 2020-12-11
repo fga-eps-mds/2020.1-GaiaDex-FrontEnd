@@ -46,7 +46,6 @@ const AuthStack = createStackNavigator({
   },
 });
 
-
 const AppStack = createStackNavigator({
   MyProfile: {
     screen: MyProfile,
@@ -121,7 +120,6 @@ const Routes = createSwitchNavigator(
   {
     initialRouteName: 'AuthStack',
   }
-  
 );
 
 export default createAppContainer(Routes);

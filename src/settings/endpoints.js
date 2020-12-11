@@ -2,7 +2,7 @@ export const ENDPOINTS = {
   API: {
     base_url: `http://192.168.0.10:3000`,
     auth: {
-      user:{
+      user: {
         route: `/auth/user`,
         method: `GET`,
       },
@@ -14,10 +14,10 @@ export const ENDPOINTS = {
         route: `/auth/update`,
         method: `POST`,
         body: (userBody) => userBody,
-      }, 
-      findOne:{
+      },
+      findOne: {
         route: (userID) => `/auth/user/${userID}`,
-        method: `GET`
+        method: `GET`,
       },
       signup: {
         route: `/auth/signup`,
@@ -45,8 +45,8 @@ export const ENDPOINTS = {
       },
       getAllPlants: {
         route: `/plant`,
-        method: `GET`
-      }
+        method: `GET`,
+      },
     },
     myPlant: {
       edit: {

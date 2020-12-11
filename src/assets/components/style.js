@@ -6,7 +6,6 @@ const largura = Dimensions.get('screen').width;
 const altura = Dimensions.get('screen').height;
 
 const styles = StyleSheet.create({
-
   // menuBar
   mbContainer: {
     width: largura,
