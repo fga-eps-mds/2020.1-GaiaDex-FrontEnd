@@ -17,4 +17,14 @@ describe('<MyProfile />', () => {
     expect(wrapper.find('MenuBar').length).toBe(1);
   });
 
+  it('renders View correctly', () => {
+    expect(wrapper.find('View').at(0)).toHaveStyle(styles.framePerfil);
+    expect(wrapper.find('View').at(2)).toHaveStyle(styles.perfilTextView);
+    expect(wrapper.find('View').at(8)).toHaveStyle(styles.sumary);
+    expect(wrapper.find('View').at(14)).toHaveStyle(styles.sumaryComponents);
+    expect(wrapper.find('View').at(22)).toHaveStyle(styles.frameDown);
+    expect(wrapper.find('View').at(24)).toHaveStyle(styles.list);
+  });
+
+  
 });
