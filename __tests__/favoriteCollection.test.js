@@ -8,7 +8,7 @@ jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
 const wrapper = mount(<Favorite />);
 
-describe('<Config />', () => {
+describe('<Favorite />', () => {
   it('renders everything', () => {
     expect(wrapper).toMatchSnapshot;
     expect(wrapper.find('View').length).toBe(28);

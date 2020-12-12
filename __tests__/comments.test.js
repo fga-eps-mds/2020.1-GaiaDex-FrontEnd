@@ -2,7 +2,6 @@ import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/asy
 
 import { mount } from 'enzyme';
 import Comments from '../src/screen/topic/comment/Comments';
-import styles from '../src/screen/topic/comment/styles';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
@@ -14,7 +13,6 @@ describe('<Comments />', () => {
     expect(wrapper.find('View').length).toBe(2);
     expect(wrapper.find('ScrollView').length).toBe(1);
     expect(wrapper.find('FlatList').length).toBe(1);
-    console.log(wrapper.debug());
   });
   it('renders FlatList correctly', () => {
     expect(wrapper.find('FlatList').at(0)).toHaveProp('data');

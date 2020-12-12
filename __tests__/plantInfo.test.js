@@ -8,15 +8,13 @@ jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
 const wrapper = mount(<PlantCardInfo />);
 
-describe('<Config />', () => {
+describe('<PlantCardInfo />', () => {
   it('renders everything', () => {
     expect(wrapper).toMatchSnapshot;
     expect(wrapper.find('View').length).toBe(22);
     expect(wrapper.find('Text').length).toBe(26);
     expect(wrapper.find('TouchableOpacity').length).toBe(1);
     expect(wrapper.find('FlatList').length).toBe(1);
-    // console.log(wrapper.find('FlatList').length);
-    // console.log(wrapper.debug());
   });
   it('renders View correctly', () => {
     expect(wrapper.find('View').at(0)).toHaveStyle(styles.containerBody);
@@ -28,7 +26,6 @@ describe('<Config />', () => {
     expect(wrapper.find('View').at(14)).toHaveStyle(styles.basicContainerDiv);
     expect(wrapper.find('View').at(16)).toHaveStyle(styles.basicContainerDiv);
     expect(wrapper.find('View').at(18)).toHaveStyle(styles.bodyPlants);
-    // expect(wrapper.find('View').at(10)).toHaveStyle(styles.bodyInfo);
   });
   it('renders Text correctly', () => {
     expect(wrapper.find('Text').at(0)).toHaveStyle(styles.bodyPlantsTitle);
