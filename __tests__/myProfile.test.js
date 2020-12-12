@@ -32,5 +32,9 @@ describe('<MyProfile />', () => {
     expect(wrapper.find('Text').at(24)).toHaveStyle(styles.minhasAtividades);
   });
 
-
+  it('renders FlatList correctly', () => {
+    expect(wrapper.find('FlatList').at(0)).toHaveProp('data');
+    expect(wrapper.find('FlatList').at(0)).toHaveProp('renderItem');
+    expect(wrapper.find('FlatList').at(0)).toHaveProp('keyExtractor');
+  });
 });
