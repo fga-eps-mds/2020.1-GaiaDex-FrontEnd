@@ -11,10 +11,10 @@ describe('<MyProfile />', () => {
   it('renders everything', () => {
     expect(wrapper).toMatchSnapshot;
     expect(wrapper.find('View').length).toBe(44);
-    //expect(wrapper.find('Header').length).toBe(1);
-    //expect(wrapper.find('Switch').length).toBe(3);
-    //expect(wrapper.find('Text').length).toBe(16);
-    //console.log(wrapper.find('View').length);
+    expect(wrapper.find('Text').length).toBe(36);
+    expect(wrapper.find('ImageBackground').length).toBe(2);
+    expect(wrapper.find('FlatList').length).toBe(1);
+    expect(wrapper.find('MenuBar').length).toBe(1);
   });
 
 });
