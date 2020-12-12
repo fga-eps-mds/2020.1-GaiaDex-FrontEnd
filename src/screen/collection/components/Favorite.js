@@ -8,31 +8,16 @@ import {
 } from 'react-native';
 import { AntDesign, EvilIcons, Entypo } from '@expo/vector-icons';
 import styles from './styles';
-import {
-  getUserLogado,
-  delFavorite,
-} from '../../services/backEnd';
-import MenuBar from '../../assets/components/menuBar';
+import { getUserLogado, delFavorite } from '../../../services/backEnd';
+import MenuBar from '../../../assets/components/menuBar';
 
-export default function Favorite({ navigation }) {
-  const [user, setUser] = useState({});
-
-  useEffect(() => {
-    getUserLogado().then((res) => setUser(res));
-  }, []);
-
-  const deleteFavorite = (favoriteId) => {
-    delFavorite(favoriteId).then((favorites) =>
-      setUser({ ...user, favorites })
-    );
-  };
-
+export default function Favorite({ navigation, user, setUser, desfavoritar }) {
   const Item = ({ item }) => (
     <View style={styles.plant}>
       <ImageBackground
         source={{ uri: item?.profilePicture }}
         style={styles.plantBackground}
-        imageStyle={{ borderRadius: 30 }}
+        imageStyle={{ borderRadius: 20 }}
       />
 
       <View style={styles.plantDescription}>
@@ -51,7 +36,7 @@ export default function Favorite({ navigation }) {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.deleteButton}
-            onPress={() => deleteFavorite(item?._id)}
+            onPress={() => desfavoritar(item?._id)}
           >
             <AntDesign name="delete" size={20} color="white" />
           </TouchableOpacity>
@@ -62,24 +47,10 @@ export default function Favorite({ navigation }) {
   const renderItem = ({ item }) => <Item item={item} />;
 
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <View style={styles.headerIcon}>
-          <AntDesign name="left" size={30} color="black" />
-        </View>
-        <View style={styles.headerTitle}>
-          <Text style={styles.headerTitleText}>Favoritos</Text>
-          <EvilIcons name="search" size={50} color="black" />
-        </View>
-      </View>
-      <View style={styles.body}>
-        <FlatList
-          data={user?.favorites}
-          renderItem={renderItem}
-          keyExtractor={(item) => item?._id}
-        />
-      </View>
-      <MenuBar />
-    </View>
+    <FlatList
+      data={user?.favorites}
+      renderItem={renderItem}
+      keyExtractor={(item) => item?._id}
+    />
   );
 }

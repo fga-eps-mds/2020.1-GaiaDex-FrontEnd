@@ -25,7 +25,6 @@ export default function Login({ navigation }) {
         Alert.alert('Usuário ou Senha invalidos');
       } else {
         navigation.push('Collection');
-
       }
     });
   };

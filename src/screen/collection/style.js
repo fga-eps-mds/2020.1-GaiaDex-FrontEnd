@@ -63,8 +63,26 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignSelf: 'center',
     width: largura / 1.1,
-    flex: 0.25,
+    flex: 0.7,
     justifyContent: 'flex-start',
+  },
+  tabContainer: {
+    flexDirection: 'row',
+    width: largura / 1.7,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: '10%',
+  },
+  tabText: {
+    fontSize: 18,
+    fontWeight: '400',
+  },
+  tabTextactivate: {
+    fontSize: 18,
+    fontWeight: '500',
+    textDecorationLine: 'underline',
+    textDecorationStyle: 'solid',
+    textDecorationColor: '#000',
   },
   popularTabs: {
     flexDirection: 'row',
@@ -113,7 +131,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     alignSelf: 'center',
     width: largura / 1.1,
-    flex: 0.4,
+    flex: 1,
     justifyContent: 'flex-start',
   },
   myPlantsText: {
@@ -124,8 +142,8 @@ const styles = StyleSheet.create({
   },
   myplantPlant: {
     marginTop: 10,
-    width: largura / 3.8,
-    height: altura / 6,
+    width: largura / 2.3,
+    height: altura / 4,
     flexDirection: 'column-reverse',
     borderRadius: 20,
     marginRight: 15,
@@ -136,7 +154,7 @@ const styles = StyleSheet.create({
     flex: 0.3,
     borderBottomRightRadius: 20,
     borderBottomLeftRadius: 20,
-    width: largura / 3.8,
+    width: largura / 2.3,
     alignItems: 'center',
     justifyContent: 'space-around',
     flexDirection: 'row',
@@ -149,4 +167,3 @@ const styles = StyleSheet.create({
   },
 });
 export default styles;
-

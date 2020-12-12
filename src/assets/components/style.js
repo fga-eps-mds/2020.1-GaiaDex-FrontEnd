@@ -6,7 +6,6 @@ const largura = Dimensions.get('screen').width;
 const altura = Dimensions.get('screen').height;
 
 const styles = StyleSheet.create({
-<<<<<<< HEAD
   // menuBar
   mbContainer: {
     width: largura,
@@ -54,56 +53,5 @@ const styles = StyleSheet.create({
     height: altura / 13,
     borderRadius: 30,
   },
-=======
-  //menuBar
-  mbContainer:{
-    width:largura,
-    height:altura/7,
-    position:"absolute",
-    bottom:0,
-    left:0,
-    right:0,
-    backgroundColor:'rgba(0,0,0,0)',
-
-  },
-  mbContent:{
-      flexDirection:"row",
-      justifyContent:'space-around',
-      alignContent:'center',
-      alignItems:'center',
-      padding:1,
-      backgroundColor:'#19BB53',
-      width:largura/1.1,
-      height:altura/11,
-      alignSelf:'center',
-      borderRadius:30,
-  },
-  mbIcons:{
-    backgroundColor:'rgba(0,0,0,0)',
-    borderRadius:5,
-  },
-  mbCameraIcon:{
-    backgroundColor:'#19BB53',
-    borderColor:'black',
-    alignContent:'center',
-    alignItems:"center",
-    justifyContent:"center",
-    height:largura/7,
-    width:largura/5,
-    borderWidth:2,
-    borderRadius:30
-  },
-  mbCameraDiv:{
-    backgroundColor:'#F2E0F5',
-    alignContent:'center',
-    alignItems:"center",
-    justifyContent:"center",
-    flex:0.4,
-    marginBottom:40,
-    height:altura/10,
-    borderRadius:30
-  },
-
->>>>>>> 89d2974 (Adding collection view and some changes to it)
 });
 export default styles;
