@@ -26,5 +26,11 @@ describe('<MyProfile />', () => {
     expect(wrapper.find('View').at(24)).toHaveStyle(styles.list);
   });
 
-  
+  it('renders Text correctly', () => {
+    expect(wrapper.find('Text').at(0)).toHaveStyle(styles.perfilText);
+    expect(wrapper.find('Text').at(4)).toHaveStyle(styles.name);
+    expect(wrapper.find('Text').at(24)).toHaveStyle(styles.minhasAtividades);
+  });
+
+
 });
