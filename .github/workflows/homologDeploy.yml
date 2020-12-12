@@ -1,9 +1,9 @@
-name: Production Continuous Delivery
+name: Homolog Continuous Delivery
 
 on:
   pull_request:
     branches: 
-      - master
+      - develop
 jobs:
   test:
     name: Tests
@@ -45,12 +45,15 @@ jobs:
         uses: actions/download-artifact@master
         with:
           name: apk
+          path: ~/apk/
+      - name: log
+        run: ls ~/apk/
       - name: Add Github Release
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: false
+          automatic_release_tag: "homolog"
+          prerelease: true
           files: |
             LICENSE.txt
             *.apk
