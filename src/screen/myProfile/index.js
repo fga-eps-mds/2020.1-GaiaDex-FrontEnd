@@ -88,7 +88,12 @@ export default function myProfile({ navigation }) {
       <View style={styles.framePerfil}>
         <View style={styles.perfilTextView}>
           <Text style={styles.perfilText}>Perfil</Text>
-          <EvilIcons name="gear" size={altura / 16} color="white" />
+          <EvilIcons
+            name="gear"
+            size={altura / 16}
+            color="white"
+            onPress={() => navigation.push('Config')}
+          />
         </View>
         <ImageBackground
           style={styles.vector}
@@ -164,7 +169,7 @@ export default function myProfile({ navigation }) {
           />
         </View>
       </View>
-      <MenuBar />
+      <MenuBar navigation={navigation} />
     </>
   );
 }

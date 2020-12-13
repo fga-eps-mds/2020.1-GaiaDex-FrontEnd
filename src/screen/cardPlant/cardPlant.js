@@ -85,7 +85,11 @@ export default function PlantCard({ navigation }) {
       ) : (
         <>
           <PlantCardTopic navigation={navigation} plantID={plantID} />
-          <NewTopic />
+          <NewTopic
+            onPress={() =>
+              navigation.push('TopicCreate', { itemID: plant?._id })
+            }
+          />
         </>
       )}
     </View>

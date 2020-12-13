@@ -1,14 +1,14 @@
 import React from 'react';
-import { View, Text, ImageBackground, FlatList } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import styles from '../styles';
 
-export default function NewTopic({ navigation }) {
+export default function NewTopic({ onPress }) {
   return (
     <View style={styles.ButtonBackground}>
-      <View style={styles.ButtonDiv}>
+      <TouchableOpacity style={styles.ButtonDiv} onPress={onPress}>
         <Feather name="edit" size={30} color="white" />
-      </View>
+      </TouchableOpacity>
     </View>
   );
 }

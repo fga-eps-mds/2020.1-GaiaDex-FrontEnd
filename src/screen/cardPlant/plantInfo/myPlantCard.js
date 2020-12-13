@@ -103,7 +103,7 @@ export default function PlantCardInfo({ navigation, plantID }) {
         </View>
       </View>
       <View style={styles.bodyPlants}>
-        <Text style={styles.bodyPlantsTitle}>Comunidades relacionadas:</Text>
+        <Text style={styles.bodyPlantsTitle}>Usuários relacionados:</Text>
         <FlatList
           data={plant?.topics}
           horizontal

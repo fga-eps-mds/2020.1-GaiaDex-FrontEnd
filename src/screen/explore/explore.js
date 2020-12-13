@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import { EvilIcons } from '@expo/vector-icons';
 import { FlatList } from 'react-native-gesture-handler';
-import styles from './style';
+import styles from './styles';
 import MenuBar from '../../assets/components/menuBar';
 import { getUserLogado, getPlants } from '../../services/backEnd';
 
@@ -17,12 +17,12 @@ export default function Explore({ navigation }) {
   const Popular = ({ item }) => (
     <TouchableOpacity
       style={styles.FavoritePlant}
-      onPress={() => navigation.push('Plant', { itemID: item?._id })}
+      onPress={() => navigation.push('PlantCard', { itemID: item?._id })}
     >
       <ImageBackground
         source={{ uri: item?.profilePicture }}
         style={styles.FavoritePlantImg}
-        imageStyle={{ borderRadius: 30 }}
+        imageStyle={{ borderRadius: 20 }}
       >
         <View style={styles.plantInfo}>
           <Text style={styles.plantText}>{item?.scientificName}</Text>
@@ -33,12 +33,12 @@ export default function Explore({ navigation }) {
   const MyPlant = ({ item }) => (
     <TouchableOpacity
       style={styles.myplantPlant}
-      onPress={() => navigation.push('Plant', { itemID: item?.plant?._id })}
+      onPress={() => navigation.push('PlantCard', { itemID: item?.plant?._id })}
     >
       <ImageBackground
         source={{ uri: item?.plant?.profilePicture }}
         style={styles.FavoritePlantImg}
-        imageStyle={{ borderRadius: 20 }}
+        imageStyle={{ borderRadius: 10 }}
       >
         <View style={styles.myplantInfo}>
           <Text style={styles.plantText}>{item?.nickname}</Text>
@@ -59,14 +59,14 @@ export default function Explore({ navigation }) {
         <View style={styles.popularContent}>
           <FlatList
             horizontal
-            data={plants.plants}
+            data={plants}
             keyExtractor={(item) => item?._id}
             renderItem={({ item }) => <Popular item={item} />}
           />
         </View>
       </View>
       <View style={styles.myPlantsContainer}>
-        <Text style={styles.exploreText}>Minhas Plantas</Text>
+        <Text style={styles.popularTab}>Minhas Plantas</Text>
         <FlatList
           horizontal
           data={user?.myPlants}

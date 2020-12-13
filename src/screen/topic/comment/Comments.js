@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, Image, ScrollView, FlatList } from 'react-native';
 import { AntDesign, Feather } from '@expo/vector-icons';
 import { TextInput } from 'react-native-gesture-handler';
-import AvatarUser from '../../../assets/AvatarUser.png';
+import userDefault from '../../../assets/userDefault.png';
 import { updateComment, deleteComment } from '../../../services/backEnd';
 import styles from './styles';
 
@@ -46,7 +46,7 @@ export default function Comments({ topic, setTopic, user, like, deslike }) {
           <Image
             style={styles.imgUserComment}
             source={{ uri: topic?.user?.photo }}
-            defaultSource={AvatarUser}
+            defaultSource={userDefault}
           />
           <ScrollView>
             <Text style={styles.commentUsername}>{username}</Text>

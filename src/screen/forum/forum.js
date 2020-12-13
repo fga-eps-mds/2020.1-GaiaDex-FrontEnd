@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import { EvilIcons, Ionicons } from '@expo/vector-icons';
 import { FlatList } from 'react-native-gesture-handler';
-import styles from './style';
+import styles from './styles';
 import MenuBar from '../../assets/components/menuBar';
 import { getUserLogado } from '../../services/backEnd';
 import TopTopic from './components/TopTopic';
@@ -17,7 +17,7 @@ export default function Forum({ navigation }) {
   const Favorite = ({ item }) => (
     <TouchableOpacity
       style={styles.FavoritePlant}
-      onPress={() => navigation.push('Plant', { itemID: item?.plant?._id })}
+      onPress={() => navigation.push('PlantCard', { itemID: item?.plant?._id })}
     >
       <ImageBackground
         source={{ uri: item?.plant?.profilePicture }}
@@ -29,7 +29,6 @@ export default function Forum({ navigation }) {
       </Text>
     </TouchableOpacity>
   );
-
   return (
     <View style={styles.container}>
       <View style={styles.forumContainer}>

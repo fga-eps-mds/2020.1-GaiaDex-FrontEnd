@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text } from 'react-native';
-import { AntDesign, Entypo, EvilIcons } from '@expo/vector-icons';
+import React from 'react';
+import { View } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 import styles from './styles';
 
 export default function Header({ navigation }) {
@@ -12,16 +12,7 @@ export default function Header({ navigation }) {
         color="white"
         onPress={() => navigation.goBack()}
       />
-      <View style={styles.headerIcons}>
-        <EvilIcons name="search" size={26} color="white" />
-        <AntDesign
-          name="sharealt"
-          size={24}
-          color="white"
-          style={{ paddingHorizontal: 10 }}
-        />
-        <Entypo name="dots-three-vertical" size={24} color="white" />
-      </View>
+      <View style={styles.headerIcons} />
     </View>
   );
 }

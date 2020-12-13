@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, ImageBackground, FlatList } from 'react-native';
+import {
+  View,
+  Text,
+  ImageBackground,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import styles from '../styles';
 import { getPlant } from '../../../services/backEnd';
@@ -12,7 +18,7 @@ export default function PlantCardTopic({ navigation, plantID }) {
   }, []);
 
   const User = ({ item }) => (
-    <View style={styles.userDiv}>
+    <TouchableOpacity style={styles.userDiv}>
       <ImageBackground
         source={
           plant?.user?.photo
@@ -23,12 +29,15 @@ export default function PlantCardTopic({ navigation, plantID }) {
         imageStyle={{ borderRadius: 50 }}
       />
       <Text style={styles.userName}>{item?.user?.username}</Text>
-    </View>
+    </TouchableOpacity>
   );
   const renderUser = ({ item }) => <User item={item} />;
 
   const Topic = ({ item }) => (
-    <View style={styles.TopicDivContainer}>
+    <TouchableOpacity
+      style={styles.TopicDivContainer}
+      onPress={() => navigation.push('TopicView', { itemID: item?._id })}
+    >
       <ImageBackground
         source={{ uri: plant?.profilePicture }}
         style={styles.TopicImg}
@@ -59,7 +68,7 @@ export default function PlantCardTopic({ navigation, plantID }) {
           </Text>
         </View>
       </ImageBackground>
-    </View>
+    </TouchableOpacity>
   );
 
   const renderItem = ({ item }) => <Topic item={item} />;
@@ -75,7 +84,7 @@ export default function PlantCardTopic({ navigation, plantID }) {
         />
       </View>
       <View style={styles.bodyTopics}>
-        <Text style={styles.bodyPlantsTitle}>Tópicos mais comentados</Text>
+        <Text style={styles.bodyPlantsTitle}>Tópicos relacionados:</Text>
         <FlatList
           data={plant?.topics}
           renderItem={renderItem}

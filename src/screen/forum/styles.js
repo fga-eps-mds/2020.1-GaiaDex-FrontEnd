@@ -165,7 +165,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   postLikes: {
-    flex: 0.4,
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
