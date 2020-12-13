@@ -14,9 +14,7 @@ describe('<Favorite />', () => {
     expect(wrapper.find('View').length).toBe(28);
     expect(wrapper.find('Text').length).toBe(16);
     expect(wrapper.find('FlatList').length).toBe(1);
-    expect(wrapper.find('MenuBar').length).toBe(1);
-    // console.log(wrapper.find('Button').length);
-    // console.log(wrapper.debug());
+    expect(wrapper.find('MenuBar').length).toBe(1); 
   });
   it('renders View correctly', () => {
     expect(wrapper.find('View').at(0)).toHaveStyle(styles.container);
