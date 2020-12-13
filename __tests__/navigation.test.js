@@ -23,16 +23,7 @@ import { render, fireEvent } from '@testing-library/react-native';
 import Routes from '../src/Routes';
 
 
-function Test(){
-  return(
-    <NavigationContainer>
-        <Routes />
-    </NavigationContainer>
-  );
-}
-
-
-describe('<AuthStack />', () => {
+describe('<Routes />', () => {
 
   it('navigates from login to signup and from signup to login', async() => {
     const component = (
@@ -63,7 +54,7 @@ describe('<AuthStack />', () => {
 
 
   });
-  
+
   it('navigates from login to update and from update to login', async() => {
     const component = (
       <NavigationContainer>
