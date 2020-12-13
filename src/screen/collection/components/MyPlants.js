@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
-import { Ionicons, AntDesign, FontAwesome } from '@expo/vector-icons';
+import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import { FlatList } from 'react-native-gesture-handler';
-import styles from '../style';
-import MenuBar from '../../../assets/components/menuBar';
+import styles from '../styles';
 import { favoritePlant, deleteMyPlant } from '../../../services/backEnd';
 
-export default function MyPlants({ navigation, user, setUser }) {
-  const [text, setText] = useState('');
-  const [editingText, setEditingText] = useState(false);
-  const [plantToEdit, setPlantToEdit] = useState({});
+export default function MyPlants({
+  navigation,
+  user,
+  setUser,
+  setPlantToEdit,
+  setEditingText,
+  setPlantTab,
+}) {
   const favoritar = (plantID) => {
-    favoritePlant(plantID).then((res) => setUser(res));
+    favoritePlant(plantID)
+      .then((res) => setUser(res))
+      .then(() => setPlantTab(false));
   };
   const deletar = (plantID) => {
     deleteMyPlant(plantID).then((res) => setUser(res));
@@ -49,18 +54,18 @@ export default function MyPlants({ navigation, user, setUser }) {
           style={{
             flexDirection: 'row-reverse',
             justifyContent: 'space-around',
-            marginTop: -7,
+            marginTop: 0,
           }}
         >
           <AntDesign
-            name="staro"
-            size={24}
+            name="star"
+            size={28}
             color="#E0AC00"
             onPress={() => favoritar(item?.plant?._id)}
           />
           <FontAwesome
             name="trash"
-            size={24}
+            size={28}
             color="#E4572E"
             onPress={() => deletar(item?._id)}
           />

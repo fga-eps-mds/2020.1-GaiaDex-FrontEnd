@@ -2,23 +2,19 @@ import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
-  ImageBackground,
   TouchableOpacity,
   TextInput,
   Modal,
 } from 'react-native';
-import { Ionicons, AntDesign, FontAwesome } from '@expo/vector-icons';
-import { FlatList } from 'react-native-gesture-handler';
-import styles from './style';
+import { Ionicons } from '@expo/vector-icons';
+import styles from './styles';
 import MenuBar from '../../assets/components/menuBar';
-import MyPlants from './components/myPlant';
+import MyPlants from './components/MyPlants';
 import Favorite from './components/Favorite';
 import {
   getUserLogado,
-  favoritePlant,
   desfavoritePlant,
   editMyPlant,
-  deleteMyPlant,
 } from '../../services/backEnd';
 
 export default function Collection({ navigation }) {
@@ -30,19 +26,14 @@ export default function Collection({ navigation }) {
   useEffect(() => {
     getUserLogado().then((res) => setUser(res));
   }, []);
-  const favoritar = (plantID) => {
-    favoritePlant(plantID).then((res) => setUser(res));
-  };
   const desfavoritar = (plantID) => {
-    desfavoritePlant(plantID).then((res) => setUser(res));
+    desfavoritePlant(plantID).then((favorites) =>
+      setUser({ ...user, favorites })
+    );
   };
   const editarNickname = () => {
     editMyPlant(plantToEdit._id, text).then((res) => setUser(res));
   };
-  const deletar = (plantID) => {
-    deleteMyPlant(plantID).then((res) => setUser(res));
-  };
-  const numColumns = 3;
   return (
     <View style={styles.container}>
       <Modal visible={editingText} transparent animationType="fade">
@@ -53,7 +44,7 @@ export default function Collection({ navigation }) {
             </Text>
             <TextInput
               autoFocus
-              onChangeText={(text) => setText(text)}
+              onChangeText={(val) => setText(val)}
               style={styles.editTextInput}
             />
           </View>
@@ -97,7 +88,14 @@ export default function Collection({ navigation }) {
 
         {plantTab ? (
           <>
-            <MyPlants user={user} setUser={setUser} navigation={navigation} />
+            <MyPlants
+              user={user}
+              setUser={setUser}
+              navigation={navigation}
+              setPlantTab={setPlantTab}
+              setPlantToEdit={setPlantToEdit}
+              setEditingText={setEditingText}
+            />
           </>
         ) : (
           <>

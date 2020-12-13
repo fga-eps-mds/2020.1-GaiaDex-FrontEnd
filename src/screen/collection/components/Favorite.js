@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -6,10 +6,8 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from 'react-native';
-import { AntDesign, EvilIcons, Entypo } from '@expo/vector-icons';
+import { AntDesign, Entypo } from '@expo/vector-icons';
 import styles from './styles';
-import { getUserLogado, delFavorite } from '../../../services/backEnd';
-import MenuBar from '../../../assets/components/menuBar';
 
 export default function Favorite({ navigation, user, setUser, desfavoritar }) {
   const Item = ({ item }) => (

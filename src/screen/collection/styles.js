@@ -1,7 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-import Constants from 'expo-constants';
-
 const largura = Dimensions.get('screen').width;
 const altura = Dimensions.get('screen').height;
 
@@ -121,14 +119,8 @@ const styles = StyleSheet.create({
     width: largura / 3,
     alignSelf: 'center',
   },
-  plantText: {
-    padding: 5,
-    fontSize: 13,
-    color: 'white',
-  },
   myPlantsContainer: {
     flexDirection: 'column',
-    alignSelf: 'center',
     alignSelf: 'center',
     width: largura / 1.1,
     flex: 1,

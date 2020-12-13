@@ -11,7 +11,7 @@ import PlantCard from './screen/cardPlant/cardPlant';
 import TopicView from './screen/topic/TopicView';
 import TopicCreate from './screen/topic/TopicCreate';
 import Config from './screen/config/config';
-import Collection from './screen/collection/collenction';
+import Collection from './screen/collection/collection';
 
 const AuthStack = createStackNavigator({
   Login: {
