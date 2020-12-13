@@ -66,7 +66,9 @@ export default function Explore({ navigation }) {
         </View>
       </View>
       <View style={styles.myPlantsContainer}>
-        <Text style={styles.popularTab}>Minhas Plantas</Text>
+        <TouchableOpacity onPress={() => navigation.push('Collection')}>
+          <Text style={styles.popularTab}>Minhas Plantas</Text>
+        </TouchableOpacity>
         <FlatList
           horizontal
           data={user?.myPlants}

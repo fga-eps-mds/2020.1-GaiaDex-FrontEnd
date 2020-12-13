@@ -17,7 +17,7 @@ export default function Forum({ navigation }) {
   const Favorite = ({ item }) => (
     <TouchableOpacity
       style={styles.FavoritePlant}
-      onPress={() => navigation.push('PlantCard', { itemID: item?.plant?._id })}
+      onPress={() => navigation.push('TopicView', { itemID: item?._id })}
     >
       <ImageBackground
         source={{ uri: item?.plant?.profilePicture }}

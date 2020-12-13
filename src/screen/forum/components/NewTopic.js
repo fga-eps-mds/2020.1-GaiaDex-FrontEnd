@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import { FontAwesome5, AntDesign } from '@expo/vector-icons';
 import { FlatList } from 'react-native-gesture-handler';
-import styles from '../style';
+import styles from '../styles';
 
 export default function NewTopic({ navigation, topTopic }) {
   const TopPost = ({ item }) => (
