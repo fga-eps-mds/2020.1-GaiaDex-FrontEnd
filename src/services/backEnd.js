@@ -282,12 +282,12 @@ export const scannerPlant = (scannerBody) => {
 
 export const addMyPlant = (plantId, plantNickname) => {
   const PLANT = ENDPOINTS.API.myPlant;
-  return new Promise( async(resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + PLANT.add.route(plantId), {
       method: PLANT.add.method,
       headers: baseHeaders(await getToken()),
       body: JSON.stringify({
-        nickname:plantNickname,
+        nickname: plantNickname,
       }),
     })
       .then((res) => res.json())
@@ -298,7 +298,7 @@ export const addMyPlant = (plantId, plantNickname) => {
 
 export const registerPlant = (plant) => {
   const PLANT = ENDPOINTS.API.plant;
-  return new Promise(async(resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + PLANT.register.route, {
       method: PLANT.register.method,
       headers: baseHeaders(await getToken()),
@@ -306,17 +306,16 @@ export const registerPlant = (plant) => {
         scientificName: plant.species.scientificNameWithoutAuthor,
         genderName: plant.species.genus.scientificNameWithoutAuthor,
         familyName: plant.species.family.scientificNameWithoutAuthor,
-        commonName: plant.species.commonNames[0]?plant.species.commonNames[0]:'Sem commonName' ,
+        commonName: plant.species.commonNames[0]
+          ? plant.species.commonNames[0]
+          : 'Sem commonName',
         gbifID: plant.gbifID,
       }),
     })
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(resolve)
       .catch(reject);
   });
- 
-
-
 };
 
 export const editMyPlant = (myPlantID, newNick) => {

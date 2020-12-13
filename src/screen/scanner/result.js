@@ -1,35 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import {
   View,
   Text,
   TouchableOpacity,
   Image,
   FlatList,
-  Alert,
+  Modal,
+  TextInput,
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import styles from './styles';
+import stylesEdit from '../collection/styles';
 import { registerPlant, addMyPlant } from '../../services';
 
 export default function ({ setOpen, capturedPhoto, plants, navigation }) {
-
+  const [editingText, setEditingText] = useState(false);
+  const [text, setText] = useState('');
+  const [plantToEdit, SetPlantToEdit] = useState({});
   const register = async (plant, nickName) => {
     try {
-      //registra a planta no banco
+      // registra a planta no banco
       registerPlant(plant)
-      .then(res => addMyPlant(res._id, nickName))
-      .then(() => setOpen(false))
-      .then(() => navigation.push('MyProfile'));    
+        .then((res) => addMyPlant(res._id, nickName))
+        .then(() => setOpen(false))
+        .then(() => navigation.push('MyProfile'));
     } catch (err) {
       console.log(err);
     }
   };
-  
+
   const Item = ({ item }) => (
     <TouchableOpacity
       style={styles.lista}
       onPress={() => {
-        AddPlant(item);
+        SetPlantToEdit(item);
+        setEditingText(true);
       }}
     >
       <Text style={styles.textList}>
@@ -42,27 +48,37 @@ export default function ({ setOpen, capturedPhoto, plants, navigation }) {
     </TouchableOpacity>
   );
 
-  const AddPlant = (plant) =>{
-      Alert.prompt(
-        "Adicione um nome",
-        "Escolha um apelido para sua plantinha",
-        [
-          {
-            text: "Cancel",
-            onPress: () => console.log("Cancel Pressed"),
-            style: "cancel"
-          },
-          {
-            text: "OK",
-            onPress: Apelido => register(plant, Apelido)
-          }
-        ],
-      );
-  }
-
   const renderItem = ({ item }) => <Item item={item} />;
+
   return (
     <View style={styles.result}>
+      <Modal visible={editingText} transparent animationType="fade">
+        <View style={stylesEdit.editView}>
+          <View>
+            <Text style={stylesEdit.editTitle}>
+              Digite o novo nome para sua planta:
+            </Text>
+            <TextInput
+              autoFocus
+              onChangeText={(val) => setText(val)}
+              style={stylesEdit.editTextInput}
+            />
+          </View>
+          <View style={{ flexDirection: 'row-reverse' }}>
+            <TouchableOpacity
+              onPress={() => {
+                register(plantToEdit, text);
+                setEditingText(false);
+              }}
+            >
+              <Text style={stylesEdit.editButton}>FEITO</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setEditingText(false)}>
+              <Text style={stylesEdit.editButton}>CANCELAR</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
       <TouchableOpacity style={{ margin: 10 }} onPress={() => setOpen(false)}>
         <MaterialCommunityIcons
           name="close-circle-outline"

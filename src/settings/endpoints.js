@@ -55,6 +55,10 @@ export const ENDPOINTS = {
       },
     },
     myPlant: {
+      add: {
+        route: (plantId) => `/myplants/add/${plantId}`,
+        method: `POST`,
+      },
       edit: {
         route: (myPlantID) => `/myplants/edit/${myPlantID}`,
         method: `PUT`,
@@ -137,12 +141,6 @@ export const ENDPOINTS = {
       route: `/scanner/`,
       method: `POST`,
       body: (scannerBody) => scannerBody,
-    },
-    myPlant:{
-      add:{
-        route: (plantId) => `/myplants/add/${plantId}`,
-        method: `POST`,
-      },
     },
   },
 };
