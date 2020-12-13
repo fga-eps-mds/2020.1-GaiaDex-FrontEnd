@@ -263,7 +263,6 @@ export const getPlants = () => {
 
 export const scannerPlant = (scannerBody) => {
   const SCANNER = ENDPOINTS.API.scanner;
-  console.log(scannerBody.filename);
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + SCANNER.route, {
       method: SCANNER.method,
@@ -280,33 +279,38 @@ export const scannerPlant = (scannerBody) => {
       .then(reject);
   });
 };
-export const photoPlant = (scannerBody) => {
-  const PHOTO = ENDPOINTS.API.savePhoto;
-  return new Promise((resolve, reject) => {
-    fetch(ENDPOINTS.API.base_url + PHOTO.route, {
-      method: PHOTO.method,
-      headers: baseHeaders(),
-      body: mul,
+
+export const addMyPlant = (plantId, plantNickname) => {
+  const PLANT = ENDPOINTS.API.myPlant;
+  return new Promise(async (resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + PLANT.add.route(plantId), {
+      method: PLANT.add.method,
+      headers: baseHeaders(await getToken()),
+      body: JSON.stringify({
+        nickname: plantNickname,
+      }),
     })
       .then((res) => res.json())
       .then(resolve)
-      .then(reject);
+      .catch(reject);
   });
 };
 
 export const registerPlant = (plant) => {
   const PLANT = ENDPOINTS.API.plant;
   return new Promise(async (resolve, reject) => {
-    fetch(ENDPOINTS.API.base_url + PLANT.register, {
+    fetch(ENDPOINTS.API.base_url + PLANT.register.route, {
       method: PLANT.register.method,
       headers: baseHeaders(await getToken()),
-      body: {
-        scienctificName: plant.species.scientificNameWithoutAuthor,
+      body: JSON.stringify({
+        scientificName: plant.species.scientificNameWithoutAuthor,
         genderName: plant.species.genus.scientificNameWithoutAuthor,
-        family_name: plant.species.family.scientificNameWithoutAuthor,
-        common_name: plant.commonNames[0],
+        familyName: plant.species.family.scientificNameWithoutAuthor,
+        commonName: plant.species.commonNames[0]
+          ? plant.species.commonNames[0]
+          : 'Sem commonName',
         gbifID: plant.gbifID,
-      },
+      }),
     })
       .then((res) => res.json())
       .then(resolve)

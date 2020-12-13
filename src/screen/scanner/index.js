@@ -19,7 +19,7 @@ import { scannerPlant } from '../../services';
 
 const largura = Dimensions.get('screen').width;
 
-export default function camera() {
+export default function camera({ navigation }) {
   const camRef = useRef(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
   const [hasPermission, setHasPermission] = useState(null);
@@ -155,6 +155,7 @@ export default function camera() {
             setOpen={setOpen}
             capturedPhoto={capturedPhoto}
             plants={plants}
+            navigation={navigation}
           />
         </Modal>
       )}

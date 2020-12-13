@@ -38,6 +38,12 @@ export const ENDPOINTS = {
       register: {
         route: `/plant/register`,
         method: `POST`,
+        body: (plantBody) => plantBody,
+      },
+      create: {
+        route: `/plant/register`,
+        method: `POST`,
+        body: (plantBody) => plantBody,
       },
       getPlant: {
         route: (plantID) => `/plant/${plantID}`,
@@ -49,6 +55,10 @@ export const ENDPOINTS = {
       },
     },
     myPlant: {
+      add: {
+        route: (plantId) => `/myplants/add/${plantId}`,
+        method: `POST`,
+      },
       edit: {
         route: (myPlantID) => `/myplants/edit/${myPlantID}`,
         method: `PUT`,
