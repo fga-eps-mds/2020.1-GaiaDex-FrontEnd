@@ -18,7 +18,6 @@ import styles from './styles';
 import { scannerPlant } from '../../services';
 
 const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
 
 export default function camera() {
   const camRef = useRef(null);

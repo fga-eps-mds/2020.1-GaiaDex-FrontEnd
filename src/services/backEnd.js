@@ -249,6 +249,18 @@ export const getAllPlants = () => {
   });
 };
 
+export const getPlants = () => {
+  const PLANT = ENDPOINTS.API.plant;
+  return new Promise((resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + PLANT.getAllPlants.route, {
+      method: PLANT.getAllPlants.method,
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+
 export const scannerPlant = (scannerBody) => {
   const SCANNER = ENDPOINTS.API.scanner;
   console.log(scannerBody.filename);

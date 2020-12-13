@@ -19,7 +19,7 @@ export default function Config({ navigation }) {
 
   return (
     <View style={styles.containerView}>
-      <Header />
+      <Header navigation={navigation} />
       <View style={styles.notificationContainer}>
         <View style={styles.notification}>
           <Text style={styles.notificationText}>

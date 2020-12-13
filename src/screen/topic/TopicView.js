@@ -11,7 +11,7 @@ import { AntDesign, Feather, Entypo } from '@expo/vector-icons';
 import { TextInput } from 'react-native-gesture-handler';
 import Header from './header';
 import styles from './styles';
-import AvatarUser from '../../assets/AvatarUser.png';
+import userDefault from '../../assets/userDefault.png';
 import {
   getTopic,
   updateTopic,
@@ -150,7 +150,7 @@ export default function TopicView({ navigation }) {
           <Image
             style={styles.imgUser}
             source={{ uri: topic?.user?.photo }}
-            defaultSource={AvatarUser}
+            defaultSource={userDefault}
           />
           <View>
             <Text style={styles.nameUser}>{topic?.user?.username}</Text>

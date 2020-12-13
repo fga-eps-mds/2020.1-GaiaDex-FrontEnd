@@ -17,7 +17,12 @@ export default function MenuBar({ navigation }) {
           />
         </View>
         <View style={styles.mbIcons}>
-          <Entypo name="flower" size={30} color="white" />
+          <Entypo
+            name="flower"
+            size={30}
+            color="white"
+            onPress={() => navigation.push('Collection')}
+          />
         </View>
         <View style={styles.mbCameraDiv}>
           <View style={styles.mbCameraIcon}>

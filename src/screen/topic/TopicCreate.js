@@ -53,7 +53,7 @@ export default function TopicCreate({ navigation }) {
           <Image
             style={styles.TopicCreateimgUser}
             source={{ uri: user?.photo }}
-            defaultSource={require('../../assets/AvatarUser.png')}
+            defaultSource={require('../../assets/userDefault.png')}
           />
           <Text style={styles.TopicCreatenameUser}>
             {user?.username ? user?.username : 'username'}
