@@ -38,7 +38,6 @@ describe('<Collection />', () => {
     expect(wrapper.find('TextInput').at(0)).toHaveStyle(styles.editTextInput);
     expect(wrapper.find('TextInput').at(0)).toHaveProp('onChangeText');
     expect(wrapper.find('TextInput').at(0)).toHaveProp('autoFocus');
-
   });
 
   it('renders TouchableOpacity correctly', () => {
