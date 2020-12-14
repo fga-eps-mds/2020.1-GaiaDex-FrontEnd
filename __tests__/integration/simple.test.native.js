@@ -7,7 +7,7 @@ it(`renders a view with a custom background`, () => {
     <View style={{ backgroundColor: 'rgba(0,0,0,0.5)' }} />
   );
 
-  console.log('Component:', component.debug({ verbose: true }));
+  // console.log('Component:', component.debug({ verbose: true }));
 
   const prop = component.find('View').prop('style');
 

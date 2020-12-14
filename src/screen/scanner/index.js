@@ -27,7 +27,7 @@ export default function camera({ navigation }) {
   const [isLoading, setIsLoading] = useState(false);
   const [plants, setPlants] = useState([]);
   const [plantType, setPlantType] = useState(true);
-  const falshTypes = [
+  const flashTypes = [
     'off',
     'auto',
     'on',
@@ -117,12 +117,12 @@ export default function camera({ navigation }) {
         style={styles.camera}
         type={type}
         ref={camRef}
-        flashMode={falshTypes[flash]}
+        flashMode={flashTypes[flash]}
       >
         <View style={styles.botoesConteinerTop}>
           <TouchableOpacity style={styles.buttonFlip} onPress={switchFlash}>
             <MaterialCommunityIcons
-              name={falshTypes[flash + 4]}
+              name={flashTypes[flash + 4]}
               size={36}
               color="#FFF"
             />

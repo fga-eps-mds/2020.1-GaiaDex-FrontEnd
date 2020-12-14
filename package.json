@@ -5,7 +5,7 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
-    "test": "jest",
+    "test": "jest --all --no-watchman",
     "coverage": "rm -rf coverage/ node_modules/.cache/ && NODE_ENV=test npx jest --collect-coverage",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix"
