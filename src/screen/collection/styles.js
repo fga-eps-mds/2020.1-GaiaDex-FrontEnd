@@ -1,7 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
+const { height, width } = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   container: {
@@ -12,10 +11,10 @@ const styles = StyleSheet.create({
   },
   editView: {
     backgroundColor: '#F2E0F5',
-    width: (largura * 4) / 5,
-    height: (altura * 2) / 9,
-    marginTop: (altura * 5) / 36,
-    marginLeft: largura / 10,
+    width: (width * 4) / 5,
+    height: (height * 2) / 9,
+    marginTop: (height * 5) / 36,
+    marginLeft: width / 10,
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: {
@@ -25,8 +24,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 50,
-    paddingHorizontal: largura / 25,
-    paddingVertical: altura / 90,
+    paddingHorizontal: width / 25,
+    paddingVertical: height / 90,
     justifyContent: 'space-between',
   },
   editTitle: {
@@ -34,19 +33,19 @@ const styles = StyleSheet.create({
   },
   editTextInput: {
     height: 40,
-    width: (largura * 4) / 5 - (largura * 2) / 25,
+    width: (width * 4) / 5 - (width * 2) / 25,
     borderBottomColor: '#38143E',
     borderBottomWidth: 1,
   },
   editButton: {
     fontSize: 14,
     color: '#0582CA',
-    marginLeft: (largura * 9) / 125,
+    marginLeft: (width * 9) / 125,
   },
   exploreContainer: {
     flexDirection: 'row',
     alignSelf: 'center',
-    width: largura / 1.1,
+    width: width / 1.1,
     flex: 0.22,
     justifyContent: 'space-between',
     alignContent: 'center',
@@ -60,13 +59,13 @@ const styles = StyleSheet.create({
   popularContainer: {
     flexDirection: 'column',
     alignSelf: 'center',
-    width: largura / 1.1,
+    width: width / 1.1,
     flex: 0.7,
     justifyContent: 'flex-start',
   },
   tabContainer: {
     flexDirection: 'row',
-    width: largura / 1.7,
+    width: width / 1.7,
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: '10%',
@@ -97,7 +96,7 @@ const styles = StyleSheet.create({
     flex: 0.8,
   },
   FavoritePlant: {
-    width: largura / 3,
+    width: width / 3,
     flex: 1,
     flexDirection: 'column-reverse',
     borderRadius: 30,
@@ -116,13 +115,13 @@ const styles = StyleSheet.create({
     flex: 0.3,
     borderBottomRightRadius: 30,
     borderBottomLeftRadius: 30,
-    width: largura / 3,
+    width: width / 3,
     alignSelf: 'center',
   },
   myPlantsContainer: {
     flexDirection: 'column',
     alignSelf: 'center',
-    width: largura / 1.1,
+    width: width / 1.1,
     flex: 1,
     justifyContent: 'flex-start',
   },
@@ -134,8 +133,8 @@ const styles = StyleSheet.create({
   },
   myplantPlant: {
     marginTop: 10,
-    width: largura / 2.3,
-    height: altura / 4,
+    width: width / 2.3,
+    height: height / 4,
     flexDirection: 'column-reverse',
     borderRadius: 20,
     marginRight: 15,
@@ -146,7 +145,7 @@ const styles = StyleSheet.create({
     flex: 0.3,
     borderBottomRightRadius: 20,
     borderBottomLeftRadius: 20,
-    width: largura / 2.3,
+    width: width / 2.3,
     alignItems: 'center',
     justifyContent: 'space-around',
     flexDirection: 'row',

@@ -11,36 +11,40 @@ import MenuBar from '../../assets/components/menuBar';
 import { getUserLogged } from '../../services';
 import styles from './styles';
 
-const altura = Dimensions.get('screen').height;
+const { height } = Dimensions.get('screen');
 
-const sort = (user) => {
-  let i;
-  let d1;
-  let d2;
-  let countT = user?.topics?.length;
-  let countP = user?.myPlants?.length;
+function getDateFromLast(obj, total) {
+  const last = total - 1;
+  return new Date(obj[last]?.createdAt);
+}
+
+function sort(user) {
+  let countTopics = user?.topics?.length;
+  let countMyPlants = user?.myPlants?.length;
   const activity = [];
-  for (i = 0; i < 6 && countT + countP > 0; i += 1) {
-    if (countT > 0 && countP > 0) {
-      d1 = new Date(user?.topics[countT - 1]?.createdAt);
-      d2 = new Date(user?.myPlants[countP - 1]?.createdAt);
-      if (d1 - d2 > 0) {
-        countT -= 1;
-        activity.push(user?.topics[countT]);
+
+  for (let i = 0; i < 6 && countTopics + countMyPlants > 0; i += 1) {
+    if (countTopics > 0 && countMyPlants > 0) {
+      const topicDate = getDateFromLast(user?.topics, countTopics);
+      const myPlantDate = getDateFromLast(user?.myPlants, countMyPlants);
+      if (topicDate - myPlantDate > 0) {
+        countTopics -= 1;
+        activity.push(user?.topics[countTopics]);
       } else {
-        countP -= 1;
-        activity.push(user?.myPlants[countP]);
+        countMyPlants -= 1;
+        activity.push(user?.myPlants[countMyPlants]);
       }
-    } else if (countT > 0) {
-      countT -= 1;
-      activity.push(user?.topics[countT]);
-    } else if (countP > 0) {
-      countP -= 1;
-      activity.push(user?.myPlants[countP]);
+    } else if (countTopics > 0) {
+      countTopics -= 1;
+      activity.push(user?.topics[countTopics]);
+    } else if (countMyPlants > 0) {
+      countMyPlants -= 1;
+      activity.push(user?.myPlants[countMyPlants]);
     }
   }
+
   return activity;
-};
+}
 
 const backgroundVector = require('../../assets/Vector.png');
 const userDefaultImg = require('../../assets/userDefault.png');
@@ -97,7 +101,7 @@ export default function myProfile({ navigation }) {
           <Text style={styles.perfilText}>Perfil</Text>
           <EvilIcons
             name="gear"
-            size={altura / 16}
+            size={height / 16}
             color="white"
             onPress={() => navigation.push('Config')}
           />

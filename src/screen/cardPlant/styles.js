@@ -1,20 +1,19 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
+const { height, width } = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   containerView: {
     flexDirection: 'column',
     backgroundColor: '#D6DADF',
-    width: largura,
+    width,
     // backgroundColor: '#242528',
     flex: 1,
   },
   containerHeader: {
     flex: 0.1,
     backgroundColor: '#242528',
-    width: largura,
+    width,
     alignSelf: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -31,13 +30,13 @@ const styles = StyleSheet.create({
   },
   plantImg: {
     flex: 0.4,
-    width: largura / 2.1,
+    width: width / 2.1,
     alignSelf: 'center',
     marginTop: '-9%',
   },
   plantInfo: {
     backgroundColor: '#242528',
-    width: largura / 1.3,
+    width: width / 1.3,
     flex: 0.25,
     flexDirection: 'column',
     alignItems: 'flex-start',
@@ -51,7 +50,7 @@ const styles = StyleSheet.create({
   plantInfoStats: {
     flex: 0.4,
     flexDirection: 'row',
-    width: largura / 1.3,
+    width: width / 1.3,
     justifyContent: 'space-between',
     alignContent: 'center',
     alignItems: 'center',
@@ -69,7 +68,7 @@ const styles = StyleSheet.create({
   plantText: {
     backgroundColor: '#242528',
     flex: 0.375,
-    width: largura / 1.3,
+    width: width / 1.3,
     alignSelf: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
@@ -92,10 +91,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
     justifyContent: 'space-around',
-    width: largura / 1.7,
+    width: width / 1.7,
   },
   menuBarTab: {
-    width: largura / 4,
+    width: width / 4,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -104,7 +103,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   bodyPlants: {
-    width: largura / 1.2,
+    width: width / 1.2,
     alignSelf: 'center',
     padding: 10,
     flex: 0.35,
@@ -116,32 +115,32 @@ const styles = StyleSheet.create({
   },
   userDiv: {
     padding: 5,
-    width: largura / 4.5,
+    width: width / 4.5,
     alignItems: 'center',
   },
   UserImg: {
-    width: largura / 5,
-    height: largura / 5,
+    width: width / 5,
+    height: width / 5,
   },
   userName: {
     fontSize: 12,
     textAlign: 'center',
   },
   bodyTopics: {
-    width: largura / 1.2,
+    width: width / 1.2,
     alignSelf: 'center',
     padding: 0,
     flex: 0.65,
   },
   TopicDivContainer: {
-    width: largura / 1.2,
+    width: width / 1.2,
     alignSelf: 'center',
     marginVertical: '3%',
-    height: altura / 3.8,
+    height: height / 3.8,
   },
   TopicImg: {
     width: '100%',
-    height: altura / 3.8,
+    height: height / 3.8,
     alignSelf: 'center',
     flexDirection: 'column-reverse',
     alignItems: 'center',
@@ -184,18 +183,18 @@ const styles = StyleSheet.create({
   ButtonBackground: {
     position: 'absolute',
     zIndex: 0,
-    marginTop: altura / 1.2,
-    marginLeft: largura / 1.35,
-    width: largura / 5,
-    height: largura / 5,
+    marginTop: height / 1.2,
+    marginLeft: width / 1.35,
+    width: width / 5,
+    height: width / 5,
     borderRadius: 100,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'rgba(255, 0, 0, 0.3)',
   },
   ButtonDiv: {
-    width: largura / 6.8,
-    height: largura / 6.8,
+    width: width / 6.8,
+    height: width / 6.8,
     borderRadius: 100,
     backgroundColor: '#242528',
     alignItems: 'center',

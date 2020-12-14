@@ -8,12 +8,12 @@ import styles from './style';
 export default function Update({ navigation }) {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
+  const [password, setPassword] = useState('');
   const update = () => {
     const user = {
       username,
       email,
-      password: senha,
+      password,
     };
     UserUpdate(user).then((res) => {
       if (res.Error) {
@@ -50,7 +50,7 @@ export default function Update({ navigation }) {
         secureTextEntry
         placeholder="Senha:"
         underlineColorAndroid="transparent"
-        onChangeText={(valor) => setSenha(valor)}
+        onChangeText={(valor) => setPassword(valor)}
       />
 
       <View style={styles.direction}>
@@ -97,6 +97,7 @@ export default function Update({ navigation }) {
         <Text style={styles.txtBtnOthersRegform}>Login</Text>
       </TouchableOpacity>
 
+      {/* eslint-disable-next-line react/style-prop-object */}
       <StatusBar style="auto" />
     </View>
   );

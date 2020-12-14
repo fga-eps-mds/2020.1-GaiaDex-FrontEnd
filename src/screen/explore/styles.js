@@ -2,8 +2,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 import Constants from 'expo-constants';
 
-const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
+const { height, width } = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   container: {
@@ -15,7 +14,7 @@ const styles = StyleSheet.create({
   exploreContainer: {
     flexDirection: 'row',
     alignSelf: 'center',
-    width: largura / 1.1,
+    width: width / 1.1,
     flex: 0.22,
     justifyContent: 'space-between',
     alignContent: 'center',
@@ -29,7 +28,7 @@ const styles = StyleSheet.create({
   popularContainer: {
     flexDirection: 'column',
     alignSelf: 'center',
-    width: largura / 1.1,
+    width: width / 1.1,
     flex: 0.35,
     justifyContent: 'flex-start',
   },
@@ -48,8 +47,8 @@ const styles = StyleSheet.create({
     flex: 0.8,
   },
   FavoritePlant: {
-    width: largura / 2.7,
-    height: altura / 4,
+    width: width / 2.7,
+    height: height / 4,
     flexDirection: 'column-reverse',
     borderRadius: 30,
     marginRight: 15,
@@ -66,13 +65,13 @@ const styles = StyleSheet.create({
     flex: 0.2,
     borderBottomRightRadius: 20,
     borderBottomLeftRadius: 20,
-    width: largura / 2.7,
+    width: width / 2.7,
     alignSelf: 'center',
   },
   myPlantsContainer: {
     flexDirection: 'column',
     alignSelf: 'center',
-    width: largura / 1.1,
+    width: width / 1.1,
     flex: 0.3,
     justifyContent: 'flex-start',
   },
@@ -84,8 +83,8 @@ const styles = StyleSheet.create({
   },
   myplantPlant: {
     marginTop: 10,
-    height: altura / 6,
-    width: largura / 4.5,
+    height: height / 6,
+    width: width / 4.5,
     flexDirection: 'column-reverse',
     borderRadius: 20,
     marginRight: 15,
@@ -96,7 +95,7 @@ const styles = StyleSheet.create({
     flex: 0.3,
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
-    width: largura / 4.5,
+    width: width / 4.5,
     alignSelf: 'center',
   },
   plantText: {

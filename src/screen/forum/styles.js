@@ -2,8 +2,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 import Constants from 'expo-constants';
 
-const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
+const { height, width } = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   container: {
@@ -15,7 +14,7 @@ const styles = StyleSheet.create({
   forumContainer: {
     flexDirection: 'row',
     alignSelf: 'center',
-    width: largura / 1.1,
+    width: width / 1.1,
     flex: 0.2,
     justifyContent: 'space-between',
     alignContent: 'center',
@@ -29,7 +28,7 @@ const styles = StyleSheet.create({
   myforumsContainer: {
     flexDirection: 'column',
     alignSelf: 'center',
-    width: largura / 1.1,
+    width: width / 1.1,
     flex: 0.28,
     justifyContent: 'flex-start',
   },
@@ -51,8 +50,8 @@ const styles = StyleSheet.create({
     flex: 0.8,
   },
   FavoritePlant: {
-    width: largura / 4,
-    height: largura / 3.5,
+    width: width / 4,
+    height: width / 3.5,
     flexDirection: 'column',
     marginRight: 15,
     marginTop: 15,
@@ -74,7 +73,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(52, 9, 37, 0.91)',
     borderBottomRightRadius: 30,
     borderBottomLeftRadius: 30,
-    width: largura / 2.7,
+    width: width / 2.7,
     alignSelf: 'center',
   },
   plantText: {
@@ -85,12 +84,12 @@ const styles = StyleSheet.create({
   topPostContainer: {
     flexDirection: 'column',
     alignSelf: 'center',
-    width: largura / 1.1,
+    width: width / 1.1,
     flex: 0.4,
     justifyContent: 'flex-end',
   },
   topPostTabs: {
-    width: largura / 2,
+    width: width / 2,
     alignSelf: 'flex-start',
     flexDirection: 'row',
     alignItems: 'center',
@@ -113,8 +112,8 @@ const styles = StyleSheet.create({
   },
   topPostPlant: {
     marginTop: 15,
-    height: altura / 3.6,
-    width: largura / 1.1,
+    height: height / 3.6,
+    width: width / 1.1,
     flexDirection: 'column-reverse',
     borderRadius: 30,
   },
@@ -123,7 +122,7 @@ const styles = StyleSheet.create({
     flex: 0.6,
     borderBottomRightRadius: 20,
     borderBottomLeftRadius: 20,
-    width: largura / 1.1,
+    width: width / 1.1,
     alignSelf: 'center',
   },
   topPostBack: {
@@ -133,7 +132,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderBottomRightRadius: 20,
     borderBottomLeftRadius: 20,
-    width: largura / 1.1,
+    width: width / 1.1,
     alignSelf: 'center',
   },
   postTitle: {

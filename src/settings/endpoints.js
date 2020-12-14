@@ -19,7 +19,7 @@ const ENDPOINTS = {
         route: (userID) => `/auth/user/${userID}`,
         method: `GET`,
       },
-      signup: {
+      create: {
         route: `/auth/signup`,
         method: `POST`,
         body: (userBody) => userBody,
@@ -35,31 +35,26 @@ const ENDPOINTS = {
       },
     },
     plant: {
-      register: {
-        route: `/plant/register`,
-        method: `POST`,
-        body: (plantBody) => plantBody,
-      },
       create: {
         route: `/plant/register`,
         method: `POST`,
         body: (plantBody) => plantBody,
       },
-      getPlant: {
+      find: {
         route: (plantID) => `/plant/${plantID}`,
         method: `GET`,
       },
-      getAllPlants: {
+      list: {
         route: `/plant`,
         method: `GET`,
       },
     },
     myPlant: {
-      add: {
+      create: {
         route: (plantId) => `/myplants/add/${plantId}`,
         method: `POST`,
       },
-      edit: {
+      update: {
         route: (myPlantID) => `/myplants/edit/${myPlantID}`,
         method: `PUT`,
       },
@@ -70,17 +65,21 @@ const ENDPOINTS = {
       },
     },
     favorite: {
-      add: {
+      create: {
         route: (plantID) => `/favorites/add/${plantID}`,
         method: `POST`,
       },
-      remove: {
+      list: {
+        route: `/favorites/list`,
+        method: `GET`,
+      },
+      delete: {
         route: (plantID) => `/favorites/delete/${plantID}`,
         method: `DELETE`,
       },
     },
     topic: {
-      getTopic: {
+      find: {
         route: (topicID) => `/topic/find/${topicID}`,
         method: `GET`,
       },
@@ -125,16 +124,6 @@ const ENDPOINTS = {
       dislike: {
         route: (commentID) => `/comment/dislike/${commentID}`,
         method: `POST`,
-      },
-    },
-    favorites: {
-      list: {
-        route: `/favorites/list`,
-        method: `GET`,
-      },
-      delete: {
-        route: (plantId) => `/favorites/delete/${plantId}`,
-        method: `DELETE`,
       },
     },
     scanner: {

@@ -1,13 +1,12 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
+const { height, width } = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   // menuBar
   mbContainer: {
-    width: largura,
-    height: altura / 11,
+    width,
+    height: height / 11,
     position: 'absolute',
     bottom: 0,
     left: 0,
@@ -21,7 +20,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 1,
     backgroundColor: '#19BB53',
-    width: largura / 1.1,
+    width: width / 1.1,
     flex: 0.67,
     alignSelf: 'center',
     borderRadius: 30,
@@ -36,8 +35,8 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    height: largura / 7,
-    width: largura / 7,
+    height: width / 7,
+    width: width / 7,
     borderWidth: 2,
     borderRadius: 30,
   },
@@ -48,7 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flex: 0.3,
     marginBottom: 60,
-    height: altura / 13,
+    height: height / 13,
     borderRadius: 30,
   },
 });

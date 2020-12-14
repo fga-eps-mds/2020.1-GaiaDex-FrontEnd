@@ -7,11 +7,11 @@ import { UserLogin } from '../../services/backEnd';
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
+  const [password, setPassword] = useState('');
   const login = () => {
     const user = {
       email,
-      password: senha,
+      password,
     };
     UserLogin(user).then((res) => {
       if (res.Error) {
@@ -27,24 +27,20 @@ export default function Login({ navigation }) {
       <View style={styles.circle3} />
       <View style={styles.circle2} />
       <View style={styles.circle1} />
-
       <Text style={styles.headerLogin}>Seja bem-vindo</Text>
-
       <TextInput
         style={styles.textinputLogin}
         placeholder="Seu e-mail:"
         underlineColorAndroid="transparent"
         onChangeText={(valor) => setEmail(valor)}
       />
-
       <TextInput
         style={styles.textinputLogin}
         placeholder="Sua senha:"
         secureTextEntry
         underlineColorAndroid="transparent"
-        onChangeText={(valor) => setSenha(valor)}
+        onChangeText={(valor) => setPassword(valor)}
       />
-
       <View style={styles.direction}>
         <Text style={styles.midTxt}>Login</Text>
         <TouchableOpacity style={styles.midBtn} onPress={() => login()}>
@@ -56,7 +52,6 @@ export default function Login({ navigation }) {
           />
         </TouchableOpacity>
       </View>
-
       <TouchableOpacity style={styles.btnFbGoogleLogin}>
         <View style={styles.viewbtnFbGoogle}>
           <Entypo
@@ -70,7 +65,6 @@ export default function Login({ navigation }) {
           </Text>
         </View>
       </TouchableOpacity>
-
       <TouchableOpacity style={styles.btnFbGoogleLogin}>
         <View style={styles.viewbtnFbGoogle}>
           <AntDesign
@@ -84,7 +78,6 @@ export default function Login({ navigation }) {
           </Text>
         </View>
       </TouchableOpacity>
-
       <View style={styles.direction}>
         <TouchableOpacity onPress={() => navigation.push('Signup')}>
           <Text style={styles.txtBtnOthersLogin}>Cadastro</Text>
@@ -94,7 +87,7 @@ export default function Login({ navigation }) {
           <Text style={styles.txtBtnOthersLogin}>Esqueci a senha</Text>
         </TouchableOpacity>
       </View>
-
+      {/* eslint-disable-next-line react/style-prop-object */}
       <StatusBar style="auto" />
     </View>
   );

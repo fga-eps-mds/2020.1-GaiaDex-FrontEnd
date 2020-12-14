@@ -1,19 +1,19 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-const largura = Dimensions.get('screen').width;
+const { width } = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   containerView: {
     flexDirection: 'column',
     backgroundColor: '#D6DADF',
-    width: largura,
+    width,
     // backgroundColor: '#242528',
     flex: 0.8,
   },
   containerHeader: {
     flex: 0.15,
     backgroundColor: '#242528',
-    width: largura,
+    width,
     alignSelf: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -30,13 +30,13 @@ const styles = StyleSheet.create({
   },
   plantImg: {
     flex: 0.5,
-    width: largura / 2.1,
+    width: width / 2.1,
     alignSelf: 'center',
     marginTop: '-15%',
   },
   plantInfo: {
     backgroundColor: '#242528',
-    width: largura / 1.3,
+    width: width / 1.3,
     flex: 0.25,
     flexDirection: 'column',
     alignItems: 'flex-start',
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   plantInfoStats: {
     flex: 0.4,
     flexDirection: 'row',
-    width: largura / 1.3,
+    width: width / 1.3,
     justifyContent: 'space-between',
     alignContent: 'center',
     alignItems: 'center',
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   plantText: {
     backgroundColor: '#242528',
     flex: 0.375,
-    width: largura / 1.3,
+    width: width / 1.3,
     alignSelf: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 20,
   },
   bodyPlants: {
-    width: largura / 1.1,
+    width: width / 1.1,
     alignSelf: 'center',
     padding: 10,
     flex: 0.28,
@@ -99,19 +99,19 @@ const styles = StyleSheet.create({
   },
   userDiv: {
     padding: 5,
-    width: largura / 5,
+    width: width / 5,
     alignItems: 'center',
   },
   UserImg: {
-    width: largura / 6,
-    height: largura / 6,
+    width: width / 6,
+    height: width / 6,
   },
   userName: {
     fontSize: 12,
     textAlign: 'center',
   },
   bodyTopics: {
-    width: largura / 1.2,
+    width: width / 1.2,
     alignSelf: 'center',
     justifyContent: 'space-around',
     flex: 0.75,
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
   },
   descriptionContainer: {
     flex: 0.7,
-    width: largura / 1.25,
+    width: width / 1.25,
     padding: 5,
     backgroundColor: 'white',
     borderWidth: 1,
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
   },
   descriptionContainerTextOpen: {
     flex: 1,
-    width: largura / 1.25,
+    width: width / 1.25,
     padding: 5,
     backgroundColor: 'white',
     borderWidth: 1,
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
   },
   button: {
     height: 20,
-    width: largura / 1.25,
+    width: width / 1.25,
     backgroundColor: '#E5E5E5',
     alignSelf: 'center',
     justifyContent: 'center',
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     fontSize: 8,
     fontWeight: '300',
     textAlign: 'left',
-    width: largura / 2.6,
+    width: width / 2.6,
     borderWidth: 1,
     borderColor: '#A8AFB9',
     backgroundColor: 'white',

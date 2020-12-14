@@ -16,7 +16,7 @@ import Result from './result';
 import styles from './styles';
 import { scannerPlant } from '../../services';
 
-const largura = Dimensions.get('screen').width;
+const { width } = Dimensions.get('screen');
 
 export default function camera({ navigation }) {
   const camRef = useRef(null);
@@ -41,7 +41,6 @@ export default function camera({ navigation }) {
 
   useEffect(() => {
     (async () => {
-      // seta permissao
       const { status } = await Camera.requestPermissionsAsync();
       setHasPermission(status === 'granted');
       if (!hasPermission) {
@@ -51,6 +50,7 @@ export default function camera({ navigation }) {
           </View>
         );
       }
+      return null;
     })();
   }, []);
 
@@ -83,6 +83,7 @@ export default function camera({ navigation }) {
           .then((res) => setPlants(res.results))
           .then(setOpen(true))
           .then(setIsLoading(false));
+        return null;
       } catch (err) {
         console.log(err);
         setIsLoading(false);
@@ -107,7 +108,7 @@ export default function camera({ navigation }) {
       {isLoading && (
         <View style={styles.loadingContainer}>
           <ActivityIndicator
-            size={Platform.OS === 'ios' ? 'large' : largura / 3}
+            size={Platform.OS === 'ios' ? 'large' : width / 3}
             color="#19BB53"
           />
         </View>
@@ -141,7 +142,7 @@ export default function camera({ navigation }) {
         <TouchableOpacity onPress={takePhoto}>
           <MaterialCommunityIcons
             name="circle-slice-8"
-            size={largura / 4}
+            size={width / 4}
             color="#19BB53"
           />
         </TouchableOpacity>

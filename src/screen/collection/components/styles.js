@@ -1,7 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
+const { height, width } = Dimensions.get('screen');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -11,7 +10,7 @@ const styles = StyleSheet.create({
   header: {
     flex: 0.25,
     flexDirection: 'column',
-    width: largura / 1.1,
+    width: width / 1.1,
     alignSelf: 'center',
   },
   headerIcon: {
@@ -22,7 +21,7 @@ const styles = StyleSheet.create({
     flex: 0.6,
   },
   headerTitle: {
-    width: largura / 1.2,
+    width: width / 1.2,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -39,8 +38,8 @@ const styles = StyleSheet.create({
   },
   plant: {
     flex: 0.45,
-    maxHeight: altura / 3,
-    width: largura / 1.2,
+    maxHeight: height / 3,
+    width: width / 1.2,
     flexDirection: 'row',
     marginBottom: '10%',
   },

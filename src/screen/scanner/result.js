@@ -12,7 +12,7 @@ import {
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import styles from './styles';
 import stylesEdit from '../collection/styles';
-import { registerPlant, addMyPlant } from '../../services';
+import { createPlant, createMyPlant } from '../../services';
 
 export default function Result({ setOpen, capturedPhoto, plants, navigation }) {
   const [editingText, setEditingText] = useState(false);
@@ -21,8 +21,8 @@ export default function Result({ setOpen, capturedPhoto, plants, navigation }) {
   const register = async (plant, nickName) => {
     try {
       // registra a planta no banco
-      registerPlant(plant)
-        .then((res) => addMyPlant(res._id, nickName))
+      await createPlant(plant)
+        .then((res) => createMyPlant(res._id, nickName))
         .then(() => setOpen(false))
         .then(() => navigation.push('MyProfile'));
     } catch (err) {

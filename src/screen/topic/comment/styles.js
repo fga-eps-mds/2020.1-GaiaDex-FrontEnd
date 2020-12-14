@@ -1,7 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
+const { height, width } = Dimensions.get('screen');
 const styles = StyleSheet.create({
   topicDivLikes: {
     flexDirection: 'row',
@@ -36,7 +35,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
     alignSelf: 'flex-start',
-    paddingLeft: largura / 10,
+    paddingLeft: width / 10,
     paddingTop: 12,
   },
   commentsBarIcon: {
@@ -55,8 +54,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flexDirection: 'column',
     alignSelf: 'center',
-    width: largura / 1.1,
-    height: altura / 7,
+    width: width / 1.1,
+    height: height / 7,
     marginVertical: 5,
     borderRadius: 5,
     paddingTop: 10,
@@ -70,16 +69,16 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     flex: 4,
     backgroundColor: 'white',
-    maxHeight: altura / 30,
+    maxHeight: height / 30,
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'space-between',
-    width: largura / 1.8,
+    width: width / 1.8,
   },
   imgUserComment: {
     marginLeft: 10,
-    width: largura / 8,
-    height: largura / 8,
+    width: width / 8,
+    height: width / 8,
     borderRadius: 50,
   },
   commentUsername: {
