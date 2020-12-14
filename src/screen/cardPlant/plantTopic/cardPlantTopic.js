@@ -9,6 +9,7 @@ import {
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import styles from '../styles';
 import { getPlant } from '../../../services/backEnd';
+import { gray } from '../../../theme/colorPalette';
 
 const userDefaultImg = require('../../../assets/userDefault.png');
 
@@ -47,7 +48,7 @@ export default function PlantCardTopic({ navigation, plantID }) {
           <MaterialCommunityIcons
             name="comment-outline"
             size={18}
-            color="white"
+            color={gray.iron()}
           />
           <Text
             style={[

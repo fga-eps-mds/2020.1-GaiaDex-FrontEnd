@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
-
 import Constants from 'expo-constants';
+import { gray, purple } from '../../theme/colorPalette';
 
 const { height, width } = Dimensions.get('screen');
 
@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#F2E0F5',
+    backgroundColor: purple.frenchLilacLighter(),
     paddingTop: Constants.statusBarHeight,
   },
   exploreContainer: {
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   exploreText: {
     fontSize: 40,
     fontWeight: '600',
-    color: '#31353A',
+    color: gray.outerSpace(),
   },
   popularContainer: {
     flexDirection: 'column',
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     textDecorationLine: 'underline',
     textDecorationStyle: 'solid',
-    textDecorationColor: '#000',
+    textDecorationColor: gray.darkest(),
   },
   popularContent: {
     flex: 0.8,
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column-reverse',
     borderRadius: 30,
     marginRight: 15,
-    backgroundColor: 'rgba(52, 9, 37, 0.91)',
+    backgroundColor: purple.grapeDark(0.9),
   },
   FavoritePlantImg: {
     width: '100%',
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   plantInfo: {
-    backgroundColor: 'rgba(52, 9, 37, 0.91)',
+    backgroundColor: purple.grapeDark(0.9),
     flex: 0.2,
     borderBottomRightRadius: 20,
     borderBottomLeftRadius: 20,
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   },
   myPlantsText: {
     paddingTop: 30,
-    color: '#31353A',
+    color: gray.outerSpace(),
     fontSize: 26,
     fontWeight: '600',
   },
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'brown',
   },
   myplantInfo: {
-    backgroundColor: 'rgba(52, 9, 37, 0.91)',
+    backgroundColor: purple.grapeDark(0.9),
     flex: 0.3,
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     padding: 5,
     textAlign: 'center',
     fontSize: 10,
-    color: 'white',
+    color: gray.iron(),
   },
 });
 export default styles;

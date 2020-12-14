@@ -4,6 +4,7 @@ import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 import styles from './styles';
 import { getPlant, createTopic, getUserLogged } from '../../services/backEnd';
+import { gray } from '../../theme/colorPalette';
 
 const userDefaultImg = require('../../assets/userDefault.png');
 
@@ -33,8 +34,8 @@ export default function TopicCreate({ navigation }) {
   return (
     <View style={styles.TopicCreatemasterView}>
       <View style={styles.TopicCreateheader}>
-        <AntDesign name="left" size={24} color="white" />
-        <Text style={{ color: 'white', fontSize: 15 }}>
+        <AntDesign name="left" size={24} color={gray.iron()} />
+        <Text style={{ color: gray.iron(), fontSize: 15 }}>
           {plant?.scientificName}
         </Text>
         <TouchableOpacity
@@ -44,7 +45,7 @@ export default function TopicCreate({ navigation }) {
           <MaterialCommunityIcons
             name="send"
             size={24}
-            color="white"
+            color={gray.iron()}
             style={{ marginRight: 20 }}
           />
           <Text style={styles.TopicCreatepublicarText}>PUBLICAR</Text>

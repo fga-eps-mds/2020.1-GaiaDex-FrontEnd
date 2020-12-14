@@ -3,6 +3,7 @@ import { Alert, View, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import styles from './style';
 import { UserDelete } from '../../services/backEnd';
+import { highlight } from '../../theme/colorPalette';
 
 export default function DeleteMyAccount({ navigation }) {
   function userDelete() {
@@ -37,7 +38,7 @@ export default function DeleteMyAccount({ navigation }) {
       <TouchableOpacity
         style={[
           styles.btnButtonLogoutDelete,
-          { borderWidth: 1, borderColor: 'red' },
+          { borderWidth: 1, borderColor: highlight.cinnabar() },
         ]}
         onPress={() => pressDelete()}
       >

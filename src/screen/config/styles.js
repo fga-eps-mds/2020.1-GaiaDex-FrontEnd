@@ -1,11 +1,12 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { gray } from '../../theme/colorPalette';
 
 const { width } = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   containerView: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: gray.iron(),
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 32,
-    color: '#242528',
+    color: gray.shark(),
   },
   notificationContainer: {
     flex: 0.7,
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
   notificationText: {
     fontSize: 15,
     fontWeight: '500',
-    color: '#242528',
+    color: gray.shark(),
   },
 });
 

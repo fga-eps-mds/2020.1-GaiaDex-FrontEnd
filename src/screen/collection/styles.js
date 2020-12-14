@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { gray, highlight, purple } from '../../theme/colorPalette';
 
 const { height, width } = Dimensions.get('screen');
 
@@ -6,17 +7,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#F2E0F5',
+    backgroundColor: purple.frenchLilacLighter(),
     // paddingTop: Constants.statusBarHeight,
   },
   editView: {
-    backgroundColor: '#F2E0F5',
+    backgroundColor: purple.frenchLilacLighter(),
     width: (width * 4) / 5,
     height: (height * 2) / 9,
     marginTop: (height * 5) / 36,
     marginLeft: width / 10,
     borderRadius: 10,
-    shadowColor: '#000',
+    shadowColor: gray.darkest(),
     shadowOffset: {
       width: 0,
       height: 2,
@@ -34,12 +35,12 @@ const styles = StyleSheet.create({
   editTextInput: {
     height: 40,
     width: (width * 4) / 5 - (width * 2) / 25,
-    borderBottomColor: '#38143E',
+    borderBottomColor: purple.grapeDark(),
     borderBottomWidth: 1,
   },
   editButton: {
     fontSize: 14,
-    color: '#0582CA',
+    color: highlight.lochmara(),
     marginLeft: (width * 9) / 125,
   },
   exploreContainer: {
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
   exploreText: {
     fontSize: 40,
     fontWeight: '600',
-    color: '#31353A',
+    color: gray.outerSpace(),
   },
   popularContainer: {
     flexDirection: 'column',
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     textDecorationLine: 'underline',
     textDecorationStyle: 'solid',
-    textDecorationColor: '#000',
+    textDecorationColor: gray.darkest(),
   },
   popularTabs: {
     flexDirection: 'row',
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     textDecorationLine: 'underline',
     textDecorationStyle: 'solid',
-    textDecorationColor: '#000',
+    textDecorationColor: gray.darkest(),
   },
   popularContent: {
     flex: 0.8,
@@ -101,7 +102,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column-reverse',
     borderRadius: 30,
     marginRight: 15,
-    backgroundColor: 'rgba(52, 9, 37, 0.91)',
+    backgroundColor: purple.grapeDark(0.9),
   },
   FavoritePlantImg: {
     width: '100%',
@@ -111,7 +112,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   plantInfo: {
-    backgroundColor: 'rgba(52, 9, 37, 0.91)',
+    backgroundColor: purple.grapeDark(0.9),
     flex: 0.3,
     borderBottomRightRadius: 30,
     borderBottomLeftRadius: 30,
@@ -127,7 +128,7 @@ const styles = StyleSheet.create({
   },
   myPlantsText: {
     paddingTop: 30,
-    color: '#31353A',
+    color: gray.outerSpace(),
     fontSize: 26,
     fontWeight: '600',
   },
@@ -141,7 +142,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'brown',
   },
   myplantInfo: {
-    backgroundColor: 'rgba(52, 9, 37, 0.91)',
+    backgroundColor: purple.grapeDark(0.9),
     flex: 0.3,
     borderBottomRightRadius: 20,
     borderBottomLeftRadius: 20,
@@ -154,7 +155,7 @@ const styles = StyleSheet.create({
     padding: 5,
     fontSize: 10,
     textAlign: 'center',
-    color: '#F2E0F5',
+    color: purple.frenchLilacLighter(),
   },
 });
 export default styles;

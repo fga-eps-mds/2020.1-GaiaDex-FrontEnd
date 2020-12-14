@@ -4,6 +4,7 @@ import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import { FlatList } from 'react-native-gesture-handler';
 import styles from '../styles';
 import { favoritePlant, deleteMyPlant } from '../../../services/backEnd';
+import { purple, highlight } from '../../../theme/colorPalette';
 
 export default function MyPlants({
   navigation,
@@ -43,7 +44,7 @@ export default function MyPlants({
           <AntDesign
             name="edit"
             size={24}
-            color="#F2E0F5"
+            color={purple.frenchLilacLighter()}
             onPress={() => {
               setEditingText(true);
               setPlantToEdit(item);
@@ -60,13 +61,13 @@ export default function MyPlants({
           <AntDesign
             name="star"
             size={28}
-            color="#E0AC00"
+            color={highlight.lightningYellow()}
             onPress={() => favoritar(item?.plant?._id)}
           />
           <FontAwesome
             name="trash"
             size={28}
-            color="#E4572E"
+            color={highlight.cinnabar()}
             onPress={() => deletar(item?._id)}
           />
         </View>

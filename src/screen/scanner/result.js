@@ -13,6 +13,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import styles from './styles';
 import stylesEdit from '../collection/styles';
 import { createPlant, createMyPlant } from '../../services';
+import { gray } from '../../theme/colorPalette';
 
 export default function Result({ setOpen, capturedPhoto, plants, navigation }) {
   const [editingText, setEditingText] = useState(false);
@@ -83,7 +84,7 @@ export default function Result({ setOpen, capturedPhoto, plants, navigation }) {
         <MaterialCommunityIcons
           name="close-circle-outline"
           size={24}
-          color="black"
+          color={gray.shark()}
         />
       </TouchableOpacity>
       <Image style={styles.imagem} source={{ uri: capturedPhoto }} />

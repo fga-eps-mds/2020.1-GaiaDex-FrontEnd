@@ -5,6 +5,7 @@ import { FlatList } from 'react-native-gesture-handler';
 import styles from './styles';
 import MenuBar from '../../assets/components/menuBar';
 import { getUserLogged, getPlants } from '../../services/backEnd';
+import { gray } from '../../theme/colorPalette';
 
 export default function Explore({ navigation }) {
   const [user, setUser] = useState({});
@@ -50,7 +51,7 @@ export default function Explore({ navigation }) {
     <View style={styles.container}>
       <View style={styles.exploreContainer}>
         <Text style={styles.exploreText}>Explorar</Text>
-        <EvilIcons name="search" size={45} color="black" />
+        <EvilIcons name="search" size={45} color={gray.shark()} />
       </View>
       <View style={styles.popularContainer}>
         <View style={styles.popularTabs}>

@@ -5,6 +5,7 @@ import { TextInput } from 'react-native-gesture-handler';
 import userDefault from '../../../assets/userDefault.png';
 import { updateComment, deleteComment } from '../../../services/backEnd';
 import styles from './styles';
+import { gray } from '../../../theme/colorPalette';
 
 export default function Comments({ topic, setTopic, user, like, dislike }) {
   function Comment({ description, username, userID, id, likes }) {
@@ -69,14 +70,14 @@ export default function Comments({ topic, setTopic, user, like, dislike }) {
             <AntDesign
               name="arrowup"
               size={17}
-              color="black"
+              color={gray.shark()}
               onPress={() => like('comment', id)}
             />
             <Text>{likes}</Text>
             <AntDesign
               name="arrowdown"
               size={17}
-              color="black"
+              color={gray.shark()}
               onPress={() => dislike('comment', id)}
             />
           </View>
@@ -86,7 +87,7 @@ export default function Comments({ topic, setTopic, user, like, dislike }) {
                 <Feather
                   name="edit"
                   size={17}
-                  color={isEditing ? 'green' : 'black'}
+                  color={isEditing ? 'green' : gray.darkest()}
                   onPress={() => EditComment(isEditing)}
                 />
               </View>
@@ -96,7 +97,7 @@ export default function Comments({ topic, setTopic, user, like, dislike }) {
                   style={{ marginRight: 10 }}
                   name="trash-2"
                   size={18}
-                  color="black"
+                  color={gray.shark()}
                   onPress={() => delComment()}
                 />
               </View>

@@ -5,6 +5,7 @@ import styles from './styles';
 import DeleteMyAccount from '../login/deleteMyAccount';
 import Logout from '../login/logout';
 import Header from './header';
+import { gray } from '../../theme/colorPalette';
 
 export default function Config({ navigation }) {
   const [commentIsEnabled, setCommentIsEnabled] = useState(false);
@@ -28,7 +29,7 @@ export default function Config({ navigation }) {
           <Switch
             trackColor={{ false: '#767577', true: '#81b0ff' }}
             thumbColor={commentIsEnabled ? '#f5dd4b' : '#f4f3f4'}
-            ios_backgroundColor="#3e3e3e"
+            ios_backgroundcolor={gray.outerSpace()}
             onValueChange={commentToggleSwitch}
             value={commentIsEnabled}
           />
@@ -40,7 +41,7 @@ export default function Config({ navigation }) {
           <Switch
             trackColor={{ false: '#767577', true: '#81b0ff' }}
             thumbColor={topicIsEnabled ? '#f5dd4b' : '#f4f3f4'}
-            ios_backgroundColor="#3e3e3e"
+            ios_backgroundcolor={gray.outerSpace()}
             onValueChange={topicToggleSwitch}
             value={topicIsEnabled}
           />
@@ -52,7 +53,7 @@ export default function Config({ navigation }) {
           <Switch
             trackColor={{ false: '#767577', true: '#81b0ff' }}
             thumbColor={likeIsEnabled ? '#f5dd4b' : '#f4f3f4'}
-            ios_backgroundColor="#3e3e3e"
+            ios_backgroundcolor={gray.outerSpace()}
             onValueChange={likeToggleSwitch}
             value={likeIsEnabled}
           />

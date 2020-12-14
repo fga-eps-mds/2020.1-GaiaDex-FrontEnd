@@ -15,6 +15,7 @@ import { MaterialCommunityIcons, AntDesign as Icon } from '@expo/vector-icons';
 import Result from './result';
 import styles from './styles';
 import { scannerPlant } from '../../services';
+import { gray, green } from '../../theme/colorPalette';
 
 const { width } = Dimensions.get('screen');
 
@@ -109,7 +110,7 @@ export default function camera({ navigation }) {
         <View style={styles.loadingContainer}>
           <ActivityIndicator
             size={Platform.OS === 'ios' ? 'large' : width / 3}
-            color="#19BB53"
+            color={green.mountainMeadow()}
           />
         </View>
       )}
@@ -124,11 +125,11 @@ export default function camera({ navigation }) {
             <MaterialCommunityIcons
               name={flashTypes[flash + 4]}
               size={36}
-              color="#FFF"
+              color={gray.iron()}
             />
           </TouchableOpacity>
           <TouchableOpacity style={styles.buttonFlip} onPress={switchCamera}>
-            <Icon name="camerao" size={36} color="#FFF" />
+            <Icon name="camerao" size={36} color={gray.iron()} />
           </TouchableOpacity>
         </View>
       </Camera>
@@ -143,7 +144,7 @@ export default function camera({ navigation }) {
           <MaterialCommunityIcons
             name="circle-slice-8"
             size={width / 4}
-            color="#19BB53"
+            color={green.mountainMeadow()}
           />
         </TouchableOpacity>
         <TouchableOpacity

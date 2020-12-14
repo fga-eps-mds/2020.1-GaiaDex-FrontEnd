@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { gray, green, purple } from '../../theme/colorPalette';
 
 const { height, width } = Dimensions.get('screen');
 
@@ -11,7 +12,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: 'rgba(0,0,0,0)',
+    backgroundColor: gray.shark(0),
   },
   mbContent: {
     flexDirection: 'row',
@@ -19,19 +20,19 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignItems: 'center',
     padding: 1,
-    backgroundColor: '#19BB53',
+    backgroundColor: green.mountainMeadow(),
     width: width / 1.1,
     flex: 0.67,
     alignSelf: 'center',
     borderRadius: 30,
   },
   mbIcons: {
-    backgroundColor: 'rgba(0,0,0,0)',
+    backgroundColor: gray.shark(0),
     borderRadius: 5,
   },
   mbCameraIcon: {
-    backgroundColor: '#19BB53',
-    borderColor: 'black',
+    backgroundColor: green.mountainMeadow(),
+    borderColor: gray.darkest(),
     alignContent: 'center',
     alignItems: 'center',
     justifyContent: 'center',
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   mbCameraDiv: {
-    backgroundColor: '#F2E0F5',
+    backgroundColor: purple.frenchLilacLighter(),
     alignContent: 'center',
     alignItems: 'center',
     justifyContent: 'center',

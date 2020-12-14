@@ -10,6 +10,7 @@ import {
 import { AntDesign } from '@expo/vector-icons';
 import styles from './style';
 import { getPlant } from '../../../services/backEnd';
+import { gray } from '../../../theme/colorPalette';
 
 const userDefaultImg = require('../../../assets/userDefault.png');
 
@@ -50,7 +51,7 @@ export default function PlantCardInfo({ plantID }) {
                 style={styles.button}
                 onPress={() => setIsClick(!isClick)}
               >
-                <AntDesign name="down" size={15} color="black" />
+                <AntDesign name="down" size={15} color={gray.shark()} />
               </TouchableOpacity>
             </>
           ) : (
@@ -67,7 +68,7 @@ export default function PlantCardInfo({ plantID }) {
                 style={styles.button}
                 onPress={() => setIsClick(!isClick)}
               >
-                <AntDesign name="up" size={18} color="black" />
+                <AntDesign name="up" size={18} color={gray.shark()} />
               </TouchableOpacity>
             </>
           )}

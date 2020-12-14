@@ -23,6 +23,7 @@ import {
   getUserLogged,
 } from '../../services/backEnd';
 import Comments from './comment/Comments';
+import { gray, highlight } from '../../theme/colorPalette';
 
 function Data({ time }) {
   const now = new Date();
@@ -207,7 +208,7 @@ export default function TopicView({ navigation }) {
                   onPress={() => deleteTopic()}
                   name="trash-2"
                   size={24}
-                  color="black"
+                  color={gray.shark()}
                 />
               )}
             </>
@@ -217,14 +218,14 @@ export default function TopicView({ navigation }) {
               <AntDesign
                 name="arrowup"
                 size={18}
-                color={topicIsDeleted ? 'red' : 'black'}
+                color={topicIsDeleted ? highlight.cinnabar() : gray.darkest()}
                 onPress={() => like('topic', topicID)}
               />
               <Text>{topic?.likes?.length}</Text>
               <AntDesign
                 name="arrowdown"
                 size={18}
-                color={topicIsNotLiked ? 'red' : 'black'}
+                color={topicIsNotLiked ? highlight.cinnabar() : gray.darkest()}
                 onPress={() => deslike('topic', topicID)}
               />
             </View>
@@ -233,13 +234,13 @@ export default function TopicView({ navigation }) {
                 <Feather
                   name="edit"
                   size={18}
-                  color="black"
+                  color={gray.shark()}
                   onPress={() => !isDeleted && setIsEditing(!isEditing)}
                 />
               </View>
             )}
             <View style={styles.shareIcon}>
-              <Feather name="corner-up-right" size={15} color="black" />
+              <Feather name="corner-up-right" size={15} color={gray.shark()} />
               <Text style={{ fontSize: 10 }}>Compartilhar</Text>
             </View>
           </View>
@@ -255,7 +256,7 @@ export default function TopicView({ navigation }) {
             style={styles.commentsBarIcon}
             name={isNewComment ? 'triangle-right' : 'triangle-down'}
             size={15}
-            color="black"
+            color={gray.shark()}
           />
         </View>
       </TouchableOpacity>

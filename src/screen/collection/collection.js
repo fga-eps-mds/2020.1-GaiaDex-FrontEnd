@@ -10,6 +10,7 @@ import {
   desfavoritePlant,
   editMyPlant,
 } from '../../services/backEnd';
+import { gray } from '../../theme/colorPalette';
 
 export default function Collection({ navigation }) {
   const [user, setUser] = useState({});
@@ -62,7 +63,7 @@ export default function Collection({ navigation }) {
         <Ionicons
           name="ios-add-circle-outline"
           size={45}
-          color="black"
+          color={gray.shark()}
           onPress={() => navigation.push('Scanner')}
         />
       </View>

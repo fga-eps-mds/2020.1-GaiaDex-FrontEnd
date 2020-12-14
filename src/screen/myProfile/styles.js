@@ -1,11 +1,12 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { gray, green, purple } from '../../theme/colorPalette';
 
 const { height, width } = Dimensions.get('screen');
 const styles = StyleSheet.create({
   framePerfil: {
     // paddingTop:Constants.statusBarHeight,
     flex: 1,
-    backgroundColor: '#242528',
+    backgroundColor: gray.shark(),
     // justifyContent: "center",
   },
   perfilTextView: {
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
   },
   perfilText: {
     fontSize: height / 20,
-    color: '#D6DADF',
+    color: gray.iron(),
     fontWeight: '500',
   },
   vector: {
@@ -37,17 +38,17 @@ const styles = StyleSheet.create({
   },
   name: {
     marginTop: (width * 3) / 8 + 7,
-    color: '#E5E5E5',
+    color: gray.iron(),
     fontSize: 13,
     textAlign: 'center',
   },
   frameDown: {
     flex: 1,
-    backgroundColor: '#F2E0F5',
+    backgroundColor: purple.frenchLilacLighter(),
   },
   sumary: {
     position: 'absolute',
-    backgroundColor: '#19BB53',
+    backgroundColor: green.mountainMeadow(),
     width: (width * 10) / 11,
     height: height / 9,
     marginHorizontal: (width - (width * 10) / 11) / 2,
@@ -79,14 +80,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   plantItem: {
-    backgroundColor: '#B7F5CD',
+    backgroundColor: green.magicMint(),
   },
   topicItem: {
-    backgroundColor: '#D8A3E0',
+    backgroundColor: purple.lightWisteriaLighter(),
   },
   time: {
     fontSize: 10,
-    color: 'rgba(0,0,0,0.3)',
+    color: gray.shark(0.3),
   },
   list: {
     marginTop: 10,

@@ -1,18 +1,19 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { gray, purple } from '../../../theme/colorPalette';
 
 const { width } = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   containerView: {
     flexDirection: 'column',
-    backgroundColor: '#D6DADF',
+    backgroundColor: gray.iron(),
     width,
-    // backgroundColor: '#242528',
+    // backgroundColor: gray.shark(),
     flex: 0.8,
   },
   containerHeader: {
     flex: 0.15,
-    backgroundColor: '#242528',
+    backgroundColor: gray.shark(),
     width,
     alignSelf: 'center',
     flexDirection: 'row',
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
   },
   containerPlant: {
     flex: 0.3,
-    backgroundColor: '#242528',
+    backgroundColor: gray.shark(),
     flexDirection: 'column',
   },
   plantImg: {
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
     marginTop: '-15%',
   },
   plantInfo: {
-    backgroundColor: '#242528',
+    backgroundColor: gray.shark(),
     width: width / 1.3,
     flex: 0.25,
     flexDirection: 'column',
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
   },
   plantInfoTitle: {
     flex: 0.6,
-    color: '#D6DADF',
+    color: gray.iron(),
     fontSize: 23,
   },
   plantInfoStats: {
@@ -62,11 +63,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   plantInfoText: {
-    color: '#D6DADF',
+    color: gray.iron(),
     fontSize: 10,
   },
   plantText: {
-    backgroundColor: '#242528',
+    backgroundColor: gray.shark(),
     flex: 0.375,
     width: width / 1.3,
     alignSelf: 'center',
@@ -75,14 +76,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   plantTextDescription: {
-    color: '#D6DADF',
+    color: gray.iron(),
     textAlign: 'left',
     padding: '4%',
     fontSize: 10,
   },
   containerBody: {
     flex: 0.6,
-    backgroundColor: '#F9F6F4',
+    backgroundColor: purple.frenchLilacLighter(),
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
   },
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
     flex: 0.28,
   },
   bodyPlantsTitle: {
-    color: '#242528',
+    color: gray.shark(),
     fontSize: 16,
     marginBottom: 10,
   },
@@ -123,9 +124,9 @@ const styles = StyleSheet.create({
     flex: 0.7,
     width: width / 1.25,
     padding: 5,
-    backgroundColor: 'white',
+    backgroundColor: gray.iron(),
     borderWidth: 1,
-    borderColor: '#A8AFB9',
+    borderColor: gray.grayChateau(),
     borderTopRightRadius: 5,
     borderTopLeftRadius: 5,
     alignSelf: 'center',
@@ -135,21 +136,21 @@ const styles = StyleSheet.create({
     flex: 1,
     width: width / 1.25,
     padding: 5,
-    backgroundColor: 'white',
+    backgroundColor: gray.iron(),
     borderWidth: 1,
-    borderColor: '#A8AFB9',
+    borderColor: gray.grayChateau(),
     alignSelf: 'center',
     justifyContent: 'center',
   },
   button: {
     height: 20,
     width: width / 1.25,
-    backgroundColor: '#E5E5E5',
+    backgroundColor: gray.iron(),
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#A8AFB9',
+    borderColor: gray.grayChateau(),
     borderBottomRightRadius: 5,
     borderBottomLeftRadius: 5,
   },
@@ -172,8 +173,8 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     width: width / 2.6,
     borderWidth: 1,
-    borderColor: '#A8AFB9',
-    backgroundColor: 'white',
+    borderColor: gray.grayChateau(),
+    backgroundColor: gray.iron(),
     borderRadius: 5,
     padding: 10,
     justifyContent: 'space-around',

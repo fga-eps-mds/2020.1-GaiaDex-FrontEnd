@@ -7,6 +7,7 @@ import MenuBar from '../../assets/components/menuBar';
 import { getUserLogged } from '../../services/backEnd';
 import TopTopic from './components/TopTopic';
 import NewTopic from './components/NewTopic';
+import { gray } from '../../theme/colorPalette';
 
 export default function Forum({ navigation }) {
   const [user, setUser] = useState({});
@@ -33,7 +34,7 @@ export default function Forum({ navigation }) {
     <View style={styles.container}>
       <View style={styles.forumContainer}>
         <Text style={styles.forumText}>Fórum</Text>
-        <EvilIcons name="search" size={45} color="black" />
+        <EvilIcons name="search" size={45} color={gray.shark()} />
       </View>
       <View style={styles.myforumsContainer}>
         <View style={styles.myforumsTabs}>
@@ -41,7 +42,7 @@ export default function Forum({ navigation }) {
           <Ionicons
             name="ios-add-circle-outline"
             size={30}
-            color="black"
+            color={gray.shark()}
             onPress={() => navigation.push('Explore')}
           />
         </View>

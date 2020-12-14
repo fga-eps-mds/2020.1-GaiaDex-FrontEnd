@@ -4,6 +4,7 @@ import { Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { AntDesign, Entypo } from '@expo/vector-icons';
 import styles from './style';
 import { UserLogin } from '../../services/backEnd';
+import { gray, purple } from '../../theme/colorPalette';
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState('');
@@ -47,7 +48,7 @@ export default function Login({ navigation }) {
           <AntDesign
             name="arrowright"
             size={35}
-            color="white"
+            color={gray.iron()}
             style={styles.arrow}
           />
         </TouchableOpacity>
@@ -57,7 +58,7 @@ export default function Login({ navigation }) {
           <Entypo
             name="facebook"
             size={24}
-            color="#F2E0F5"
+            color={purple.frenchLilacLighter()}
             style={styles.iconBtnFbGoogle}
           />
           <Text style={styles.txtBtnFbGoogleLogin}>
@@ -70,7 +71,7 @@ export default function Login({ navigation }) {
           <AntDesign
             name="google"
             size={24}
-            color="#F2E0F5"
+            color={purple.frenchLilacLighter()}
             style={styles.iconBtnFbGoogle}
           />
           <Text style={styles.txtBtnFbGoogleLogin}>

@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { AntDesign, Entypo } from '@expo/vector-icons';
 import styles from './styles';
+import { gray } from '../../../theme/colorPalette';
 
 export default function Favorite({ navigation, user, desfavoritar }) {
   const Item = ({ item }) => (
@@ -30,13 +31,13 @@ export default function Favorite({ navigation, user, desfavoritar }) {
             style={styles.plantButton}
             onPress={() => navigation.push('PlantCard', { itemID: item?._id })}
           >
-            <Entypo name="chevron-right" size={24} color="white" />
+            <Entypo name="chevron-right" size={24} color={gray.iron()} />
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.deleteButton}
             onPress={() => desfavoritar(item?._id)}
           >
-            <AntDesign name="delete" size={20} color="white" />
+            <AntDesign name="delete" size={20} color={gray.iron()} />
           </TouchableOpacity>
         </View>
       </View>

@@ -4,6 +4,7 @@ import { Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { AntDesign, Entypo } from '@expo/vector-icons';
 import { UserUpdate } from '../../services/backEnd';
 import styles from './style';
+import { gray, purple } from '../../theme/colorPalette';
 
 export default function Update({ navigation }) {
   const [username, setUsername] = useState('');
@@ -59,7 +60,7 @@ export default function Update({ navigation }) {
           <AntDesign
             name="arrowright"
             size={35}
-            color="white"
+            color={gray.iron()}
             style={styles.arrow}
           />
         </TouchableOpacity>
@@ -70,7 +71,7 @@ export default function Update({ navigation }) {
           <Entypo
             name="facebook"
             size={24}
-            color="#38143E"
+            color={purple.grapeDark()}
             style={styles.iconBtnFbGoogle}
           />
           <Text style={styles.txtBtnFbGoogleRegform}>
@@ -84,7 +85,7 @@ export default function Update({ navigation }) {
           <AntDesign
             name="google"
             size={24}
-            color="#38143E"
+            color={purple.grapeDark()}
             style={styles.iconBtnFbGoogle}
           />
           <Text style={styles.txtBtnFbGoogleRegform}>

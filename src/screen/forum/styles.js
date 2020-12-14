@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
-
 import Constants from 'expo-constants';
+import { gray, green, purple } from '../../theme/colorPalette';
 
 const { height, width } = Dimensions.get('screen');
 
@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#F2E0F5',
+    backgroundColor: purple.frenchLilacLighter(),
     paddingTop: Constants.statusBarHeight,
   },
   forumContainer: {
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   forumText: {
     fontSize: 40,
     fontWeight: '600',
-    color: '#31353A',
+    color: gray.outerSpace(),
   },
   myforumsContainer: {
     flexDirection: 'column',
@@ -41,10 +41,10 @@ const styles = StyleSheet.create({
   myforumsTab: {
     fontSize: 22,
     fontWeight: '400',
-    color: '#31353A',
+    color: gray.outerSpace(),
     textDecorationLine: 'underline',
     textDecorationStyle: 'solid',
-    textDecorationColor: '#000',
+    textDecorationColor: gray.darkest(),
   },
   myforumsContent: {
     flex: 0.8,
@@ -61,16 +61,16 @@ const styles = StyleSheet.create({
     width: '100%',
     alignSelf: 'center',
     borderRadius: 60,
-    backgroundColor: 'black',
+    backgroundColor: gray.darkest(),
   },
   FavoriteTopicText: {
     fontSize: 8,
-    color: '#31353A',
+    color: gray.outerSpace(),
     fontWeight: 'bold',
     textAlign: 'center',
   },
   plantInfo: {
-    backgroundColor: 'rgba(52, 9, 37, 0.91)',
+    backgroundColor: purple.grapeDark(0.9),
     borderBottomRightRadius: 30,
     borderBottomLeftRadius: 30,
     width: width / 2.7,
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   plantText: {
     padding: 5,
     fontSize: 13,
-    color: 'white',
+    color: gray.iron(),
   },
   topPostContainer: {
     flexDirection: 'column',
@@ -97,18 +97,18 @@ const styles = StyleSheet.create({
   },
   topPostText: {
     paddingTop: 16,
-    color: '#31353A',
+    color: gray.outerSpace(),
     fontSize: 16,
     fontWeight: '400',
   },
   topPostTextactive: {
     paddingTop: 16,
-    color: '#31353A',
+    color: gray.outerSpace(),
     fontSize: 18,
     fontWeight: '600',
     textDecorationLine: 'underline',
     textDecorationStyle: 'solid',
-    textDecorationColor: '#000',
+    textDecorationColor: gray.darkest(),
   },
   topPostPlant: {
     marginTop: 15,
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   topPostInfo: {
-    backgroundColor: 'rgba(27, 116, 33, 0.91)',
+    backgroundColor: green.jewel(0.9),
     flex: 0.6,
     borderBottomRightRadius: 20,
     borderBottomLeftRadius: 20,
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
   topPostBack: {
     borderRadius: 20,
     marginVertical: 10,
-    backgroundColor: 'rgba(27, 116, 33, 0.91)',
+    backgroundColor: green.jewel(0.9),
     flex: 1,
     borderBottomRightRadius: 20,
     borderBottomLeftRadius: 20,
@@ -139,25 +139,25 @@ const styles = StyleSheet.create({
     padding: 5,
     flex: 0.2,
     fontSize: 16,
-    color: 'white',
+    color: gray.iron(),
   },
   postDescription: {
     padding: 5,
     flex: 0.2,
     fontSize: 12,
-    color: 'white',
+    color: gray.iron(),
   },
   postData: {
     padding: 6,
     flex: 0.2,
     fontSize: 8,
-    color: 'white',
+    color: gray.iron(),
   },
   posStatus: {
     flex: 0.7,
     paddingHorizontal: 15,
     flexDirection: 'row',
-    backgroundColor: 'rgba(12, 54, 18, 0.96)',
+    backgroundColor: green.zuccini(0.95),
     borderBottomRightRadius: 20,
     borderBottomLeftRadius: 20,
     justifyContent: 'space-between',

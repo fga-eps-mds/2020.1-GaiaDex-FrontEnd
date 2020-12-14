@@ -1,11 +1,12 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { gray, green, highlight, purple } from '../../../theme/colorPalette';
 
 const { height, width } = Dimensions.get('screen');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#F2E0F5',
+    backgroundColor: purple.frenchLilacLighter(),
   },
   header: {
     flex: 0.25,
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
   },
   plantDescription: {
     flex: 1,
-    backgroundColor: '#59A44D',
+    backgroundColor: green.mountainMeadow(),
     fontWeight: '600',
     height: '50%',
     alignSelf: 'center',
@@ -61,13 +62,13 @@ const styles = StyleSheet.create({
   },
   plantDescriptionTitle: {
     fontSize: 14,
-    color: 'white',
+    color: gray.iron(),
     paddingBottom: 5,
     textAlign: 'center',
   },
   plantDescriptionText: {
     fontSize: 12,
-    color: 'white',
+    color: gray.iron(),
     textAlign: 'center',
   },
   plantButtonDiv: {
@@ -95,7 +96,7 @@ const styles = StyleSheet.create({
   deleteButton: {
     width: '45%',
     height: '80%',
-    backgroundColor: 'red',
+    backgroundColor: highlight.cinnabar(),
     alignSelf: 'flex-start',
     margin: 5,
     marginTop: '5%',
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
   },
   deleteButtonText: {
     fontSize: 12,
-    color: 'white',
+    color: gray.iron(),
   },
 });
 export default styles;

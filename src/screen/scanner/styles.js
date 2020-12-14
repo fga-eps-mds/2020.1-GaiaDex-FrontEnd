@@ -1,13 +1,13 @@
 import { StyleSheet, Dimensions } from 'react-native';
-
 import Constants from 'expo-constants';
+import { gray, green, purple } from '../../theme/colorPalette';
 
 const { height, width } = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F2E0F5',
+    backgroundColor: purple.frenchLilacLighter(),
     justifyContent: 'center',
     paddingTop: Constants.statusBarHeight,
   },
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width,
     height,
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: gray.shark(0.5),
   },
   camera: {
     flex: 6,
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonDisabled: {
-    backgroundColor: '#E5C2EB',
+    backgroundColor: purple.frenchLilacMedium(),
     height: width / 12,
     width: width / 6,
     alignItems: 'center',
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   buttonActived: {
-    backgroundColor: '#28E269',
+    backgroundColor: green.pastelGreen(),
     height: width / 12,
     width: width / 6,
     alignItems: 'center',
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
-    backgroundColor: '#F2E0F5',
+    backgroundColor: purple.frenchLilacLighter(),
   },
   imagem: {
     height: (height * 1) / 4,
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     marginHorizontal: width / 50,
   },
   lista: {
-    backgroundColor: '#E5C2EB',
+    backgroundColor: purple.frenchLilacMedium(),
     marginVertical: width / 60,
     marginHorizontal: width / 50,
     borderRadius: 20,

@@ -10,6 +10,7 @@ import { EvilIcons, FontAwesome, Entypo } from '@expo/vector-icons';
 import MenuBar from '../../assets/components/menuBar';
 import { getUserLogged } from '../../services';
 import styles from './styles';
+import { gray, green } from '../../theme/colorPalette';
 
 const { height } = Dimensions.get('screen');
 
@@ -102,7 +103,7 @@ export default function myProfile({ navigation }) {
           <EvilIcons
             name="gear"
             size={height / 16}
-            color="white"
+            color={gray.iron()}
             onPress={() => navigation.push('Config')}
           />
         </View>
@@ -119,48 +120,50 @@ export default function myProfile({ navigation }) {
         <View
           style={[
             styles.sumaryComponents,
-            { borderRightColor: 'black', borderRightWidth: 3 },
+            { borderRightColor: gray.darkest(), borderRightWidth: 3 },
           ]}
         >
           <View style={{ flexDirection: 'row' }}>
             <FontAwesome
               name="twitch"
               size={30}
-              color="#094820"
+              color={green.darkFern()}
               style={{ marginRight: 13 }}
             />
-            <Text style={{ color: '#E5E5E5' }}>{user?.topics?.length}</Text>
+            <Text style={{ color: gray.iron() }}>{user?.topics?.length}</Text>
           </View>
-          <Text style={{ marginTop: 10, color: '#E5E5E5' }}>Tópicos</Text>
+          <Text style={{ marginTop: 10, color: gray.iron() }}>Tópicos</Text>
         </View>
         <View
           style={[
             styles.sumaryComponents,
-            { borderRightColor: 'black', borderRightWidth: 3 },
+            { borderRightColor: gray.darkest(), borderRightWidth: 3 },
           ]}
         >
           <View style={{ flexDirection: 'row' }}>
             <FontAwesome
               name="star-o"
               size={30}
-              color="#094820"
+              color={green.darkFern()}
               style={{ marginRight: 13 }}
             />
-            <Text style={{ color: '#E5E5E5' }}>{user?.favorites?.length}</Text>
+            <Text style={{ color: gray.iron() }}>
+              {user?.favorites?.length}
+            </Text>
           </View>
-          <Text style={{ marginTop: 10, color: '#E5E5E5' }}>Favoritos</Text>
+          <Text style={{ marginTop: 10, color: gray.iron() }}>Favoritos</Text>
         </View>
         <View style={styles.sumaryComponents}>
           <View style={{ flexDirection: 'row' }}>
             <Entypo
               name="flower"
               size={30}
-              color="#094820"
+              color={green.darkFern()}
               style={{ marginRight: 13 }}
             />
-            <Text style={{ color: '#E5E5E5' }}>{user?.myPlants?.length}</Text>
+            <Text style={{ color: gray.iron() }}>{user?.myPlants?.length}</Text>
           </View>
-          <Text style={{ marginTop: 10, color: '#E5E5E5' }}>Plantas</Text>
+          <Text style={{ marginTop: 10, color: gray.iron() }}>Plantas</Text>
         </View>
       </View>
       <View style={styles.frameDown}>

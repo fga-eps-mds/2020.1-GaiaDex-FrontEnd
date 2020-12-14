@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { gray, purple } from '../../../theme/colorPalette';
 
 const { height, width } = Dimensions.get('screen');
 const styles = StyleSheet.create({
@@ -17,17 +18,17 @@ const styles = StyleSheet.create({
   commentsBarDiv: {
     flex: 1,
     marginTop: 20,
-    backgroundColor: 'white',
+    backgroundColor: gray.iron(),
   },
   commentsListDiv: {
     flex: 5,
-    backgroundColor: '#D8A3E0',
+    backgroundColor: purple.lightWisteriaLighter(),
     justifyContent: 'center',
     flexWrap: 'nowrap',
   },
   commentsBar: {
     flex: 5,
-    backgroundColor: '#D8A3E0',
+    backgroundColor: purple.lightWisteriaLighter(),
     alignContent: 'flex-start',
     flexDirection: 'row',
   },
@@ -45,13 +46,13 @@ const styles = StyleSheet.create({
   },
   commentsList: {
     flex: 1,
-    backgroundColor: '#D6DADF',
+    backgroundColor: gray.iron(),
   },
   commentIcon: {
     flexDirection: 'row',
   },
   commentItemDiv: {
-    backgroundColor: 'white',
+    backgroundColor: gray.iron(),
     flexDirection: 'column',
     alignSelf: 'center',
     width: width / 1.1,
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignSelf: 'flex-end',
     flex: 4,
-    backgroundColor: 'white',
+    backgroundColor: gray.iron(),
     maxHeight: height / 30,
     borderRadius: 8,
     alignItems: 'center',

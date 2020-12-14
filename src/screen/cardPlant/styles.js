@@ -1,18 +1,19 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { gray, green, purple } from '../../theme/colorPalette';
 
 const { height, width } = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   containerView: {
     flexDirection: 'column',
-    backgroundColor: '#D6DADF',
+    backgroundColor: gray.iron(),
     width,
-    // backgroundColor: '#242528',
+    // backgroundColor: gray.shark(),
     flex: 1,
   },
   containerHeader: {
     flex: 0.1,
-    backgroundColor: '#242528',
+    backgroundColor: gray.shark(),
     width,
     alignSelf: 'center',
     flexDirection: 'row',
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
   },
   containerPlant: {
     flex: 0.3,
-    backgroundColor: '#242528',
+    backgroundColor: gray.shark(),
     flexDirection: 'column',
   },
   plantImg: {
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
     marginTop: '-9%',
   },
   plantInfo: {
-    backgroundColor: '#242528',
+    backgroundColor: gray.shark(),
     width: width / 1.3,
     flex: 0.25,
     flexDirection: 'column',
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
   },
   plantInfoTitle: {
     flex: 0.6,
-    color: '#D6DADF',
+    color: gray.iron(),
     fontSize: 23,
   },
   plantInfoStats: {
@@ -62,11 +63,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   plantInfoText: {
-    color: '#D6DADF',
+    color: gray.iron(),
     fontSize: 10,
   },
   plantText: {
-    backgroundColor: '#242528',
+    backgroundColor: gray.shark(),
     flex: 0.375,
     width: width / 1.3,
     alignSelf: 'center',
@@ -75,14 +76,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   plantTextDescription: {
-    color: '#D6DADF',
+    color: gray.iron(),
     textAlign: 'left',
     padding: '4%',
     fontSize: 10,
   },
   containerBody: {
     flex: 0.6,
-    backgroundColor: '#F9F6F4',
+    backgroundColor: purple.frenchLilacLighter(),
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
   },
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   menuBarTabText: {
-    color: 'white',
+    color: gray.iron(),
     fontSize: 12,
   },
   bodyPlants: {
@@ -109,7 +110,7 @@ const styles = StyleSheet.create({
     flex: 0.35,
   },
   bodyPlantsTitle: {
-    color: '#242528',
+    color: gray.shark(),
     fontSize: 16,
     marginBottom: 10,
   },
@@ -148,7 +149,7 @@ const styles = StyleSheet.create({
   TopicDescriptionDiv: {
     width: '100%',
     flex: 0.42,
-    backgroundColor: '#0B5B28',
+    backgroundColor: green.darkFern(),
     opacity: 0.8,
     flexDirection: 'column',
     justifyContent: 'space-around',
@@ -157,7 +158,7 @@ const styles = StyleSheet.create({
   TopicCommentsDiv: {
     width: '100%',
     flex: 0.18,
-    backgroundColor: '#063718',
+    backgroundColor: green.zuccini(),
     borderBottomRightRadius: 20,
     borderBottomLeftRadius: 20,
     flexDirection: 'row',
@@ -165,17 +166,17 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
   },
   TopicUsername: {
-    color: '#D6DADF',
+    color: gray.iron(),
     fontWeight: '400',
     fontSize: 13,
   },
   TopicTitle: {
-    color: '#D6DADF',
+    color: gray.iron(),
     fontWeight: 'bold',
     fontSize: 13,
   },
   TopicDescription: {
-    color: '#D6DADF',
+    color: gray.iron(),
     fontWeight: '500',
     fontSize: 10,
   },
@@ -190,13 +191,13 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(255, 0, 0, 0.3)',
+    backgroundColor: purple.lightWisteria(0.3),
   },
   ButtonDiv: {
     width: width / 6.8,
     height: width / 6.8,
     borderRadius: 100,
-    backgroundColor: '#242528',
+    backgroundColor: gray.shark(),
     alignItems: 'center',
     justifyContent: 'center',
   },
