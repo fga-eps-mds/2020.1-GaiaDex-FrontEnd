@@ -52,4 +52,13 @@ describe('<Collection />', () => {
   it('renders Modal correctly', () => {
     expect(wrapper.find('Modal').at(0)).toHaveProp('visible');
   });
+
+  it('renders MyPlants correctly', () => {
+    expect(wrapper.find('MyPlants').at(0)).toHaveProp('user');
+    expect(wrapper.find('MyPlants').at(0)).toHaveProp('setUser');
+    expect(wrapper.find('MyPlants').at(0)).toHaveProp('navigation');
+    expect(wrapper.find('MyPlants').at(0)).toHaveProp('setPlantTab');
+    expect(wrapper.find('MyPlants').at(0)).toHaveProp('setPlantToEdit');
+    expect(wrapper.find('MyPlants').at(0)).toHaveProp('setEditingText');
+  });
 });
