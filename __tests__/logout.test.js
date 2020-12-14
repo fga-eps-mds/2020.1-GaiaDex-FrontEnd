@@ -5,13 +5,17 @@ jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 import Logout from '../src/screen/login/logout'
 
 import styles from '../src/screen/login/style'
+import renderer from 'react-test-renderer';
 
 
 const wrapper = mount(<Logout />);
 
 describe('<Logout />', () => {
     it('renders everything', () => {
-        expect(wrapper).toMatchSnapshot;
+        const tree = renderer
+            .create(<Logout></Logout>)
+            .toJSON();
+        expect(tree).toMatchSnapshot();
         expect(wrapper.find('View').length).toBe(4);
         expect(wrapper.find('Text').length).toBe(2);
         expect(wrapper.find('TouchableOpacity').length).toBe(1);

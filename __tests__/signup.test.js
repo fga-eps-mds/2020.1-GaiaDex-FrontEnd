@@ -6,12 +6,17 @@ import Signup from '../src/screen/login/signup'
 
 import styles from '../src/screen/login/style'
 
+import renderer from 'react-test-renderer';
+
 const wrapper = mount(<Signup />);
 
 describe('<Signup />', () => {
  
   it('renders everything', () => {
-    expect(wrapper).toMatchSnapshot;
+    const tree = renderer
+      .create(<Signup></Signup>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
     expect(wrapper.find('TextInput').length).toBe(3);
     expect(wrapper.find('View').length).toBe(20);
     expect(wrapper.find('Text').length).toBe(16);

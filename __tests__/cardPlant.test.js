@@ -5,11 +5,17 @@ import styles from '../src/screen/cardPlant/styles';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
+import renderer from 'react-test-renderer';
+
+
 const wrapper = mount(<PlantCard navigation={{ getParam: jest.fn() }} />);
 
 describe('<TopicCreate />', () => {
   it('renders everything', () => {
-    expect(wrapper).toMatchSnapshot;
+    const tree = renderer
+      .create(<PlantCard navigation={{ getParam: jest.fn() }}></PlantCard>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(40);
     expect(wrapper.find('Header').length).toBe(1);
     expect(wrapper.find('ImageBackground').length).toBe(1);

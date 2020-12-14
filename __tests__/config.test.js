@@ -4,6 +4,7 @@ import { mount } from 'enzyme';
 import Config from '../src/screen/config/config';
 import styles from '../src/screen/config/styles';
 import Header from '../src/screen/config/header';
+import renderer from 'react-test-renderer';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
@@ -12,7 +13,14 @@ const wrapperHeader = mount(<Header />);
 
 describe('<Config />', () => {
   it('renders everything', () => {
-    expect(wrapper).toMatchSnapshot;
+    const tree = renderer
+      .create(<Config></Config>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+    const tree2 = renderer
+      .create(<Header></Header>)
+      .toJSON();
+    expect(tree2).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(24);
     expect(wrapper.find('Header').length).toBe(1);
     expect(wrapper.find('Switch').length).toBe(3);

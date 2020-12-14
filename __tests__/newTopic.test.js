@@ -2,6 +2,7 @@ import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/asy
 
 import NewTopic from '../src/screen/forum/components/NewTopic';
 import styles from '../src/screen/forum/styles';
+import renderer from 'react-test-renderer';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
@@ -9,7 +10,10 @@ const wrapper = mount(<NewTopic />);
 
 describe('<NewTopic />', () => {
   it('renders everything', () => {
-    expect(wrapper).toMatchSnapshot;
+    const tree = renderer
+      .create(<NewTopic></NewTopic>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
     expect(wrapper.find('TouchableOpacity').length).toBe(0);
     expect(wrapper.find('ImageBackground').length).toBe(0);
     expect(wrapper.find('View').length).toBe(2);

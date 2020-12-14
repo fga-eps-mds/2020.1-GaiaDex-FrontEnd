@@ -5,13 +5,17 @@ jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 import Update from '../src/screen/login/updateUser'
 
 import styles from '../src/screen/login/style'
+import renderer from 'react-test-renderer';
 
 
 const wrapper = mount(<Update />);
 
 describe('<Update />', () => {
   it('renders everything', () => {
-    expect(wrapper).toMatchSnapshot;
+    const tree = renderer
+      .create(<Update></Update>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
     expect(wrapper.find('TextInput').length).toBe(3);
     expect(wrapper.find('View').length).toBe(20);
     expect(wrapper.find('Text').length).toBe(16);

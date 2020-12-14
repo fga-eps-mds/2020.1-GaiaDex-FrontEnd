@@ -3,6 +3,7 @@ import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/asy
 import { mount } from 'enzyme';
 import Forum from '../src/screen/forum/forum';
 import styles from '../src/screen/forum/styles';
+import renderer from 'react-test-renderer';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
@@ -10,7 +11,10 @@ const wrapper = mount(<Forum />);
 
 describe('<Forum />', () => {
   it('renders everything', () => {
-    expect(wrapper).toMatchSnapshot;
+    const tree = renderer
+      .create(<Forum></Forum>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(34);
     expect(wrapper.find('Text').length).toBe(22);
     expect(wrapper.find('TouchableOpacity').length).toBe(1);

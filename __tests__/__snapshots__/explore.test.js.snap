@@ -1,0 +1,287 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Explore /> renders everything 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#F2E0F5",
+      "flex": 1,
+      "flexDirection": "column",
+      "paddingTop": 44,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignContent": "center",
+        "alignItems": "center",
+        "alignSelf": "center",
+        "flex": 0.22,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "width": 681.8181818181818,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#31353A",
+          "fontSize": 40,
+          "fontWeight": "600",
+        }
+      }
+    >
+      Explorar
+    </Text>
+    <Text />
+  </View>
+  <View
+    style={
+      Object {
+        "alignSelf": "center",
+        "flex": 0.35,
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "width": 681.8181818181818,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 0.2,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 22,
+            "fontWeight": "400",
+            "textDecorationColor": "#000",
+            "textDecorationLine": "underline",
+            "textDecorationStyle": "solid",
+          }
+        }
+      >
+        Populares
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 0.8,
+        }
+      }
+    >
+      <RCTScrollView
+        collapsable={false}
+        data={Object {}}
+        disableVirtualization={false}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        horizontal={true}
+        initialNumToRender={10}
+        keyExtractor={[Function]}
+        maxToRenderPerBatch={10}
+        onContentSizeChange={[Function]}
+        onEndReachedThreshold={2}
+        onGestureHandlerEvent={[Function]}
+        onGestureHandlerStateChange={[Function]}
+        onLayout={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        removeClippedSubviews={false}
+        renderItem={[Function]}
+        renderScrollComponent={[Function]}
+        scrollEventThrottle={50}
+        stickyHeaderIndices={Array []}
+        updateCellsBatchingPeriod={50}
+        viewabilityConfigCallbackPairs={Array []}
+        windowSize={21}
+      >
+        <View />
+      </RCTScrollView>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignSelf": "center",
+        "flex": 0.3,
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "width": 681.8181818181818,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 22,
+            "fontWeight": "400",
+            "textDecorationColor": "#000",
+            "textDecorationLine": "underline",
+            "textDecorationStyle": "solid",
+          }
+        }
+      >
+        Minhas Plantas
+      </Text>
+    </View>
+    <RCTScrollView
+      collapsable={false}
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={true}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onGestureHandlerEvent={[Function]}
+      onGestureHandlerStateChange={[Function]}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      renderScrollComponent={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View />
+    </RCTScrollView>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(0,0,0,0)",
+        "bottom": 0,
+        "height": 121.27272727272727,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "width": 750,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignContent": "center",
+          "alignItems": "center",
+          "alignSelf": "center",
+          "backgroundColor": "#19BB53",
+          "borderRadius": 30,
+          "flex": 0.67,
+          "flexDirection": "row",
+          "justifyContent": "space-around",
+          "padding": 1,
+          "width": 681.8181818181818,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+            "borderRadius": 5,
+          }
+        }
+      >
+        <Text />
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+            "borderRadius": 5,
+          }
+        }
+      >
+        <Text />
+      </View>
+      <View
+        style={
+          Object {
+            "alignContent": "center",
+            "alignItems": "center",
+            "backgroundColor": "#F2E0F5",
+            "borderRadius": 30,
+            "flex": 0.3,
+            "height": 102.61538461538461,
+            "justifyContent": "center",
+            "marginBottom": 60,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignContent": "center",
+              "alignItems": "center",
+              "backgroundColor": "#19BB53",
+              "borderColor": "black",
+              "borderRadius": 30,
+              "borderWidth": 2,
+              "height": 107.14285714285714,
+              "justifyContent": "center",
+              "width": 107.14285714285714,
+            }
+          }
+        >
+          <Text />
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+            "borderRadius": 5,
+          }
+        }
+      >
+        <Text />
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+            "borderRadius": 5,
+          }
+        }
+      >
+        <Text />
+      </View>
+    </View>
+  </View>
+</View>
+`;

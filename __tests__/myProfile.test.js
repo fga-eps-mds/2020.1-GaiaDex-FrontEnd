@@ -2,6 +2,7 @@ import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/asy
 
 import MyProfile from '../src/screen/myProfile/index';
 import styles from '../src/screen/myProfile/styles';
+import renderer from 'react-test-renderer';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
@@ -9,7 +10,10 @@ const wrapper = mount(<MyProfile />);
 
 describe('<MyProfile />', () => {
   it('renders everything', () => {
-    expect(wrapper).toMatchSnapshot;
+    const tree = renderer
+      .create(<MyProfile></MyProfile>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(44);
     expect(wrapper.find('Text').length).toBe(36);
     expect(wrapper.find('ImageBackground').length).toBe(2);

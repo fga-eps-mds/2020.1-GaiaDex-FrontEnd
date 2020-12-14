@@ -3,6 +3,7 @@ import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/asy
 import { mount } from 'enzyme';
 import Favorite from '../src/screen/collection/components/Favorite';
 import styles from '../src/screen/collection/styles';
+import renderer from 'react-test-renderer';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
@@ -10,7 +11,10 @@ const wrapper = mount(<Favorite />);
 
 describe('<Favorite />', () => {
   it('renders everything', () => {
-    expect(wrapper).toMatchSnapshot;
+    const tree = renderer
+      .create(<Favorite></Favorite>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
     expect(wrapper.find('FlatList').length).toBe(1);
   });
 

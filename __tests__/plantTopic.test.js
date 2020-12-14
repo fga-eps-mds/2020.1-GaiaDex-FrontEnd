@@ -4,6 +4,7 @@ import { mount } from 'enzyme';
 import PlantCardTopic from '../src/screen/cardPlant/plantTopic/cardPlantTopic';
 import NewTopic from '../src/screen/cardPlant/plantTopic/newTopic';
 import styles from '../src/screen/cardPlant/styles';
+import renderer from 'react-test-renderer';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
@@ -12,7 +13,10 @@ const wrapperNewTopic = mount(<NewTopic />);
 
 describe('<PlantCardTopic />', () => {
   it('renders everything in PlantCardTopic', () => {
-    expect(wrapper).toMatchSnapshot;
+    const tree = renderer
+      .create(<PlantCardTopic></PlantCardTopic>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(10);
     expect(wrapper.find('Text').length).toBe(4);
     expect(wrapper.find('FlatList').length).toBe(2);
@@ -35,7 +39,10 @@ describe('<PlantCardTopic />', () => {
 
 describe('<NewTopic />', () => {
   it('renders everything in NewTopic', () => {
-    expect(wrapperNewTopic).toMatchSnapshot;
+    const tree2 = renderer
+      .create(<NewTopic></NewTopic>)
+      .toJSON();
+    expect(tree2).toMatchSnapshot();
     expect(wrapperNewTopic.find('View').length).toBe(4);
   });
   it('renders View of NewTopic correctly', () => {

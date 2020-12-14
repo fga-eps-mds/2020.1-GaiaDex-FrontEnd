@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PlantCardInfo /> renders everything 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#F9F6F4",
+      "borderTopLeftRadius": 20,
+      "borderTopRightRadius": 20,
+      "flex": 0.6,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignSelf": "center",
+        "flex": 0.75,
+        "justifyContent": "space-around",
+        "width": 625,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 0.45,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#242528",
+            "fontSize": 16,
+            "marginBottom": 10,
+          }
+        }
+      >
+        Descrição
+      </Text>
+      <View
+        style={
+          Object {
+            "alignSelf": "center",
+            "backgroundColor": "white",
+            "borderColor": "#A8AFB9",
+            "borderTopLeftRadius": 5,
+            "borderTopRightRadius": 5,
+            "borderWidth": 1,
+            "flex": 0.7,
+            "justifyContent": "center",
+            "padding": 5,
+            "width": 600,
+          }
+        }
+      >
+        <Text
+          numberOfLines={2}
+          style={
+            Object {
+              "fontSize": 10,
+              "fontWeight": "300",
+              "textAlign": "left",
+            }
+          }
+        />
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "alignSelf": "center",
+            "backgroundColor": "#E5E5E5",
+            "borderBottomLeftRadius": 5,
+            "borderBottomRightRadius": 5,
+            "borderColor": "#A8AFB9",
+            "borderWidth": 1,
+            "height": 20,
+            "justifyContent": "center",
+            "opacity": 1,
+            "width": 600,
+          }
+        }
+      >
+        <Text />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 0.4,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#242528",
+            "fontSize": 16,
+            "marginBottom": 10,
+          }
+        }
+      >
+        Informações básicas
+      </Text>
+      <View
+        style={
+          Object {
+            "flex": 0.9,
+            "flexDirection": "row",
+            "justifyContent": "space-around",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "white",
+              "borderColor": "#A8AFB9",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "fontSize": 8,
+              "fontWeight": "300",
+              "justifyContent": "space-around",
+              "padding": 10,
+              "textAlign": "left",
+              "width": 288.46153846153845,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 10,
+                "fontWeight": "400",
+                "textAlign": "center",
+              }
+            }
+          >
+            Caracteristicas
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 8,
+                "fontWeight": "300",
+                "textAlign": "left",
+              }
+            }
+          >
+            Nome científico: 
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 8,
+                "fontWeight": "300",
+                "textAlign": "left",
+              }
+            }
+          >
+            Gênero: 
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 8,
+                "fontWeight": "300",
+                "textAlign": "left",
+              }
+            }
+          >
+            Família: 
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "white",
+              "borderColor": "#A8AFB9",
+              "borderRadius": 5,
+              "borderWidth": 1,
+              "fontSize": 8,
+              "fontWeight": "300",
+              "justifyContent": "space-around",
+              "padding": 10,
+              "textAlign": "left",
+              "width": 288.46153846153845,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 10,
+                "fontWeight": "400",
+                "textAlign": "center",
+              }
+            }
+          >
+            Informações
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 8,
+                "fontWeight": "300",
+                "textAlign": "left",
+              }
+            }
+          >
+            GbifID: 
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 8,
+                "fontWeight": "300",
+                "textAlign": "left",
+              }
+            }
+          >
+            Extinção: 
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 8,
+                "fontWeight": "300",
+                "textAlign": "left",
+              }
+            }
+          >
+            Estado: 
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignSelf": "center",
+        "flex": 0.28,
+        "padding": 10,
+        "width": 681.8181818181818,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#242528",
+          "fontSize": 16,
+          "marginBottom": 10,
+        }
+      }
+    >
+      Usuários relacionados:
+    </Text>
+    <RCTScrollView
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={true}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View />
+    </RCTScrollView>
+  </View>
+</View>
+`;

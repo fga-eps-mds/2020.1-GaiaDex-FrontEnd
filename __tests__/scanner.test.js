@@ -4,6 +4,7 @@ jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
 import camera from '../src/screen/scanner/index';
 import styles from '../src/screen/scanner/styles'
+import renderer from 'react-test-renderer';
 
 const Scamera = camera;
 
@@ -12,7 +13,10 @@ const wrapper = mount(<Scamera />);
 
 describe('<Scamera />', () => {
   it('renders everything', () => {
-    expect(wrapper).toMatchSnapshot;
+    const tree = renderer
+      .create(<Scamera></Scamera>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(16);
     expect(wrapper.find('Camera').length).toBe(1);
     expect(wrapper.find('TouchableOpacity').length).toBe(5);

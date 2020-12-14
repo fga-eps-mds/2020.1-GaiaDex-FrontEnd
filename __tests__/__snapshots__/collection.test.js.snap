@@ -1,0 +1,386 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Collection /> renders everything 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#F2E0F5",
+      "flex": 1,
+      "flexDirection": "column",
+    }
+  }
+>
+  <Modal
+    animationType="fade"
+    hardwareAccelerated={false}
+    transparent={true}
+    visible={false}
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#F2E0F5",
+          "borderRadius": 10,
+          "elevation": 50,
+          "height": 296.44444444444446,
+          "justifyContent": "space-between",
+          "marginLeft": 75,
+          "marginTop": 185.27777777777777,
+          "paddingHorizontal": 30,
+          "paddingVertical": 14.822222222222223,
+          "shadowColor": "#000",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.25,
+          "shadowRadius": 3.84,
+          "width": 600,
+        }
+      }
+    >
+      <View>
+        <Text
+          style={
+            Object {
+              "fontSize": 17,
+            }
+          }
+        >
+          Digite o novo nome para sua planta:
+        </Text>
+        <TextInput
+          allowFontScaling={true}
+          autoFocus={true}
+          onChangeText={[Function]}
+          rejectResponderTermination={true}
+          style={
+            Object {
+              "borderBottomColor": "#38143E",
+              "borderBottomWidth": 1,
+              "height": 40,
+              "width": 540,
+            }
+          }
+          underlineColorAndroid="transparent"
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row-reverse",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#0582CA",
+                "fontSize": 14,
+                "marginLeft": 54,
+              }
+            }
+          >
+            FEITO
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#0582CA",
+                "fontSize": 14,
+                "marginLeft": 54,
+              }
+            }
+          >
+            CANCELAR
+          </Text>
+        </View>
+      </View>
+    </View>
+  </Modal>
+  <View
+    style={
+      Object {
+        "alignContent": "center",
+        "alignItems": "center",
+        "alignSelf": "center",
+        "flex": 0.22,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "width": 681.8181818181818,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#31353A",
+          "fontSize": 40,
+          "fontWeight": "600",
+        }
+      }
+    >
+      Coleção
+    </Text>
+    <Text />
+  </View>
+  <View
+    style={
+      Object {
+        "alignSelf": "center",
+        "flex": 0.7,
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "width": 681.8181818181818,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": "10%",
+          "width": 441.1764705882353,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 18,
+              "fontWeight": "500",
+              "textDecorationColor": "#000",
+              "textDecorationLine": "underline",
+              "textDecorationStyle": "solid",
+            }
+          }
+        >
+          Minhas Plantas
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 18,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Favoritas
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignSelf": "center",
+          "flex": 1,
+          "flexDirection": "column",
+          "justifyContent": "flex-start",
+          "width": 681.8181818181818,
+        }
+      }
+    >
+      <RCTScrollView
+        collapsable={false}
+        disableVirtualization={false}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        horizontal={false}
+        initialNumToRender={10}
+        keyExtractor={[Function]}
+        maxToRenderPerBatch={10}
+        onContentSizeChange={[Function]}
+        onEndReachedThreshold={2}
+        onGestureHandlerEvent={[Function]}
+        onGestureHandlerStateChange={[Function]}
+        onLayout={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        removeClippedSubviews={false}
+        renderItem={[Function]}
+        renderScrollComponent={[Function]}
+        scrollEventThrottle={50}
+        stickyHeaderIndices={Array []}
+        updateCellsBatchingPeriod={50}
+        viewabilityConfigCallbackPairs={Array []}
+        windowSize={21}
+      >
+        <View />
+      </RCTScrollView>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(0,0,0,0)",
+        "bottom": 0,
+        "height": 121.27272727272727,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "width": 750,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignContent": "center",
+          "alignItems": "center",
+          "alignSelf": "center",
+          "backgroundColor": "#19BB53",
+          "borderRadius": 30,
+          "flex": 0.67,
+          "flexDirection": "row",
+          "justifyContent": "space-around",
+          "padding": 1,
+          "width": 681.8181818181818,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+            "borderRadius": 5,
+          }
+        }
+      >
+        <Text />
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+            "borderRadius": 5,
+          }
+        }
+      >
+        <Text />
+      </View>
+      <View
+        style={
+          Object {
+            "alignContent": "center",
+            "alignItems": "center",
+            "backgroundColor": "#F2E0F5",
+            "borderRadius": 30,
+            "flex": 0.3,
+            "height": 102.61538461538461,
+            "justifyContent": "center",
+            "marginBottom": 60,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignContent": "center",
+              "alignItems": "center",
+              "backgroundColor": "#19BB53",
+              "borderColor": "black",
+              "borderRadius": 30,
+              "borderWidth": 2,
+              "height": 107.14285714285714,
+              "justifyContent": "center",
+              "width": 107.14285714285714,
+            }
+          }
+        >
+          <Text />
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+            "borderRadius": 5,
+          }
+        }
+      >
+        <Text />
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+            "borderRadius": 5,
+          }
+        }
+      >
+        <Text />
+      </View>
+    </View>
+  </View>
+</View>
+`;

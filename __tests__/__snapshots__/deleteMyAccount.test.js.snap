@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DeleteMyAccount /> renders everything 1`] = `
+<View>
+  <RNGestureHandlerButton
+    collapsable={false}
+    onGestureEvent={[Function]}
+    onGestureHandlerEvent={[Function]}
+    onGestureHandlerStateChange={[Function]}
+    onHandlerStateChange={[Function]}
+    rippleColor={0}
+  >
+    <View
+      accessible={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#D6DADF",
+          "borderColor": "red",
+          "borderRadius": 10,
+          "borderWidth": 1,
+          "height": 66.7,
+          "justifyContent": "center",
+          "opacity": 1,
+          "width": 300,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 12,
+            "textAlign": "center",
+          }
+        }
+      >
+        Deletar minha conta
+      </Text>
+    </View>
+  </RNGestureHandlerButton>
+</View>
+`;

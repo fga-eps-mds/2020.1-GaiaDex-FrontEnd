@@ -4,12 +4,16 @@ jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
 import TopicView from '../src/screen/topic/TopicView';
 import styles from '../src/screen/topic/styles'
+import renderer from 'react-test-renderer';
 
 const wrapper = mount(<TopicView navigation={{ getParam: jest.fn() }}/>);
 
 describe('<TopicCreate />', () => {
     it('renders everything', () => {
-      expect(wrapper).toMatchSnapshot;
+      const tree = renderer
+        .create(<TopicView navigation={{ getParam: jest.fn() }}></TopicView>)
+        .toJSON();
+      expect(tree).toMatchSnapshot();
       expect(wrapper.find('KeyboardAvoidingView').length).toBe(1);
       expect(wrapper.find('View').length).toBe(38);
       expect(wrapper.find('Header').length).toBe(1);

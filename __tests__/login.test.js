@@ -5,6 +5,7 @@ jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 import Login from '../src/screen/login/login'
 
 import styles from '../src/screen/login/style'
+import renderer from 'react-test-renderer';
 
 
 
@@ -12,7 +13,10 @@ describe('<Login />', () => {
   const wrapper = mount(<Login />);
   
   it('renders everything', () => {
-    expect(wrapper).toMatchSnapshot;
+    const tree = renderer
+      .create(<Login></Login>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
     expect(wrapper.find('TextInput').length).toBe(2);
     expect(wrapper.find('View').length).toBe(26);
     expect(wrapper.find('Text').length).toBe(18);

@@ -1,0 +1,415 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MyProfile /> renders everything 1`] = `
+Array [
+  <View
+    style={
+      Object {
+        "backgroundColor": "#242528",
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "width": 625,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#D6DADF",
+            "fontSize": 66.7,
+            "fontWeight": "500",
+          }
+        }
+      >
+        Perfil
+      </Text>
+      <Text />
+    </View>
+    <View
+      accessibilityIgnoresInvertColors={true}
+      style={
+        Object {
+          "height": 485.09090909090907,
+          "marginTop": 10,
+          "width": 750,
+        }
+      }
+    >
+      <Image
+        source={1}
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": 485.09090909090907,
+              "width": 750,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        accessibilityIgnoresInvertColors={true}
+        style={
+          Object {
+            "marginLeft": 234.375,
+            "marginTop": 8.170454545454533,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": undefined,
+                "width": undefined,
+              },
+              Object {
+                "borderRadius": 140.625,
+                "height": 281.25,
+                "width": 281.25,
+              },
+            ]
+          }
+        />
+      </View>
+      <Text
+        style={
+          Object {
+            "color": "#E5E5E5",
+            "fontSize": 13,
+            "marginTop": 288.25,
+            "textAlign": "center",
+          }
+        }
+      >
+        undefined
+undefined
+      </Text>
+    </View>
+  </View>,
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#19BB53",
+        "borderRadius": 20,
+        "flexDirection": "row",
+        "height": 148.22222222222223,
+        "justifyContent": "space-between",
+        "marginHorizontal": 34.090909090909065,
+        "marginTop": 518.7777777777778,
+        "position": "absolute",
+        "width": 681.8181818181819,
+        "zIndex": 10,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "height": 121.27272727272727,
+            "paddingTop": 25,
+            "width": 227.27272727272728,
+          },
+          Object {
+            "borderRightColor": "black",
+            "borderRightWidth": 3,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text />
+        <Text
+          style={
+            Object {
+              "color": "#E5E5E5",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Object {
+            "color": "#E5E5E5",
+            "marginTop": 10,
+          }
+        }
+      >
+        Tópicos
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "height": 121.27272727272727,
+            "paddingTop": 25,
+            "width": 227.27272727272728,
+          },
+          Object {
+            "borderRightColor": "black",
+            "borderRightWidth": 3,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text />
+        <Text
+          style={
+            Object {
+              "color": "#E5E5E5",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Object {
+            "color": "#E5E5E5",
+            "marginTop": 10,
+          }
+        }
+      >
+        Favoritos
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "height": 121.27272727272727,
+          "paddingTop": 25,
+          "width": 227.27272727272728,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text />
+        <Text
+          style={
+            Object {
+              "color": "#E5E5E5",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Object {
+            "color": "#E5E5E5",
+            "marginTop": 10,
+          }
+        }
+      >
+        Plantas
+      </Text>
+    </View>
+  </View>,
+  <View
+    style={
+      Object {
+        "backgroundColor": "#F2E0F5",
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 18,
+          "fontWeight": "600",
+          "marginLeft": 34.090909090909065,
+          "marginTop": 50,
+        }
+      }
+    >
+      Minhas Atividades
+    </Text>
+    <View
+      style={
+        Object {
+          "height": 333.5,
+          "marginTop": 10,
+        }
+      }
+    >
+      <RCTScrollView
+        data={Array []}
+        disableVirtualization={false}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        horizontal={false}
+        initialNumToRender={10}
+        keyExtractor={[Function]}
+        maxToRenderPerBatch={10}
+        onContentSizeChange={[Function]}
+        onEndReachedThreshold={2}
+        onLayout={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        removeClippedSubviews={false}
+        renderItem={[Function]}
+        scrollEventThrottle={50}
+        stickyHeaderIndices={Array []}
+        updateCellsBatchingPeriod={50}
+        viewabilityConfigCallbackPairs={Array []}
+        windowSize={21}
+      >
+        <View />
+      </RCTScrollView>
+    </View>
+  </View>,
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(0,0,0,0)",
+        "bottom": 0,
+        "height": 121.27272727272727,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "width": 750,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignContent": "center",
+          "alignItems": "center",
+          "alignSelf": "center",
+          "backgroundColor": "#19BB53",
+          "borderRadius": 30,
+          "flex": 0.67,
+          "flexDirection": "row",
+          "justifyContent": "space-around",
+          "padding": 1,
+          "width": 681.8181818181818,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+            "borderRadius": 5,
+          }
+        }
+      >
+        <Text />
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+            "borderRadius": 5,
+          }
+        }
+      >
+        <Text />
+      </View>
+      <View
+        style={
+          Object {
+            "alignContent": "center",
+            "alignItems": "center",
+            "backgroundColor": "#F2E0F5",
+            "borderRadius": 30,
+            "flex": 0.3,
+            "height": 102.61538461538461,
+            "justifyContent": "center",
+            "marginBottom": 60,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignContent": "center",
+              "alignItems": "center",
+              "backgroundColor": "#19BB53",
+              "borderColor": "black",
+              "borderRadius": 30,
+              "borderWidth": 2,
+              "height": 107.14285714285714,
+              "justifyContent": "center",
+              "width": 107.14285714285714,
+            }
+          }
+        >
+          <Text />
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+            "borderRadius": 5,
+          }
+        }
+      >
+        <Text />
+      </View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+            "borderRadius": 5,
+          }
+        }
+      >
+        <Text />
+      </View>
+    </View>
+  </View>,
+]
+`;

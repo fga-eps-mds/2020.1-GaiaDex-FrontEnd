@@ -2,6 +2,7 @@ import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/asy
 
 import { mount } from 'enzyme';
 import Comments from '../src/screen/topic/comment/Comments';
+import renderer from 'react-test-renderer';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
@@ -9,7 +10,10 @@ const wrapper = mount(<Comments />);
 
 describe('<Comments />', () => {
   it('renders everything', () => {
-    expect(wrapper).toMatchSnapshot;
+    const tree = renderer
+      .create(<Comments></Comments>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(2);
     expect(wrapper.find('ScrollView').length).toBe(1);
     expect(wrapper.find('FlatList').length).toBe(1);

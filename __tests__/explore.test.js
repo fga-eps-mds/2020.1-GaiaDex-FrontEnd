@@ -4,15 +4,17 @@ jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
 import Explore from '../src/screen/explore/explore';
 import styles from '../src/screen/explore/styles';
-
-
+import renderer from 'react-test-renderer';
 
 
 const wrapper = mount(<Explore />);
 
 describe('<Explore />', () => {
   it('renders everything', () => {
-    expect(wrapper).toMatchSnapshot;
+    const tree = renderer
+      .create(<Explore></Explore>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(34);
     expect(wrapper.find('TouchableOpacity').length).toBe(1);
     expect(wrapper.find('Icon').length).toBe(6);
