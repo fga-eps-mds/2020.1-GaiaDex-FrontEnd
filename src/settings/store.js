@@ -7,10 +7,8 @@ export const setToken = async (token) => {
     console.log({ error: `error when ${error}` });
   }
 };
-export const getToken = async () => {
-  try {
-    return await AsyncStorage.getItem('authtoken');
-  } catch (err) {
-    return err;
-  }
+export const getToken = () => {
+  return new Promise((resolve, reject) => {
+    AsyncStorage.getItem('authtoken').then(resolve).catch(reject);
+  });
 };
