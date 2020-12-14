@@ -8,9 +8,14 @@ import styles from '../src/screen/login/style'
 import renderer from 'react-test-renderer';
 
 
-const wrapper = mount(<Logout />);
+let wrapper;
 
 describe('<Logout />', () => {
+
+    beforeEach(() => {
+        wrapper = mount(<Logout />);
+    });
+
     it('renders everything', () => {
         const tree = renderer
             .create(<Logout></Logout>)

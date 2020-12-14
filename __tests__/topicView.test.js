@@ -6,9 +6,14 @@ import TopicView from '../src/screen/topic/TopicView';
 import styles from '../src/screen/topic/styles'
 import renderer from 'react-test-renderer';
 
-const wrapper = mount(<TopicView navigation={{ getParam: jest.fn() }}/>);
+let wrapper;
 
 describe('<TopicCreate />', () => {
+
+    beforeEach(() => {
+      wrapper = mount(<TopicView navigation={{ getParam: jest.fn() }}/>);
+    });
+
     it('renders everything', () => {
       const tree = renderer
         .create(<TopicView navigation={{ getParam: jest.fn() }}></TopicView>)

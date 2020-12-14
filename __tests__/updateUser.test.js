@@ -8,9 +8,14 @@ import styles from '../src/screen/login/style'
 import renderer from 'react-test-renderer';
 
 
-const wrapper = mount(<Update />);
+let wrapper;
 
 describe('<Update />', () => {
+
+  beforeEach(() => {
+    wrapper = mount(<Update />);
+  });
+
   it('renders everything', () => {
     const tree = renderer
       .create(<Update></Update>)

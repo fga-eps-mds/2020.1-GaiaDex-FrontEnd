@@ -7,9 +7,14 @@ import renderer from 'react-test-renderer';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
-const wrapper = mount(<Favorite />);
+let wrapper;
 
 describe('<Favorite />', () => {
+
+  beforeEach(() => {
+    wrapper = mount(<Favorite />);
+  });
+
   it('renders everything', () => {
     const tree = renderer
       .create(<Favorite></Favorite>)

@@ -7,9 +7,13 @@ import renderer from 'react-test-renderer';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
-const wrapper = mount(<Forum />);
+let wrapper;
 
 describe('<Forum />', () => {
+  beforeEach(() => {
+    wrapper = mount(<Forum />);
+  });
+
   it('renders everything', () => {
     const tree = renderer
       .create(<Forum></Forum>)

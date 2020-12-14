@@ -8,9 +8,14 @@ import styles from '../src/screen/login/style'
 import renderer from 'react-test-renderer';
 
 
-const wrapper = mount(<DeleteMyAccount />);
+let wrapper;
 
 describe('<DeleteMyAccount />', () => {
+
+  beforeEach(() => {
+    wrapper = mount(<DeleteMyAccount />);
+  });
+
   it('renders everything', () => {
     const tree = renderer
       .create(<DeleteMyAccount></DeleteMyAccount>)

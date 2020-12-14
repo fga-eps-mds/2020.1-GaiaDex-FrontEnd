@@ -9,9 +9,14 @@ import renderer from 'react-test-renderer';
 const Scamera = camera;
 
 
-const wrapper = mount(<Scamera />);
+let wrapper;
 
 describe('<Scamera />', () => {
+
+  beforeEach(() => {
+    wrapper = mount(<Scamera />);
+  });
+
   it('renders everything', () => {
     const tree = renderer
       .create(<Scamera></Scamera>)

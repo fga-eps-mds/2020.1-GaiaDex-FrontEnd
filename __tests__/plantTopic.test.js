@@ -8,10 +8,15 @@ import renderer from 'react-test-renderer';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
-const wrapper = mount(<PlantCardTopic />);
-const wrapperNewTopic = mount(<NewTopic />);
+let wrapper;
+let wrapperNewTopic;
 
 describe('<PlantCardTopic />', () => {
+
+  beforeEach(() => {
+    wrapper = mount(<PlantCardTopic />);
+  });
+
   it('renders everything in PlantCardTopic', () => {
     const tree = renderer
       .create(<PlantCardTopic></PlantCardTopic>)
@@ -38,6 +43,11 @@ describe('<PlantCardTopic />', () => {
 });
 
 describe('<NewTopic />', () => {
+
+  beforeEach(() => {
+    wrapperNewTopic = mount(<NewTopic />);
+  });
+
   it('renders everything in NewTopic', () => {
     const tree2 = renderer
       .create(<NewTopic></NewTopic>)

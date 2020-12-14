@@ -6,9 +6,14 @@ import renderer from 'react-test-renderer';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
-const wrapper = mount(<MyProfile />);
+let wrapper;
 
 describe('<MyProfile />', () => {
+
+  beforeEach(() => {
+    wrapper = mount(<MyProfile />);
+  });
+
   it('renders everything', () => {
     const tree = renderer
       .create(<MyProfile></MyProfile>)

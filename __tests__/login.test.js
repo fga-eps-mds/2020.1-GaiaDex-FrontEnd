@@ -7,10 +7,14 @@ import Login from '../src/screen/login/login'
 import styles from '../src/screen/login/style'
 import renderer from 'react-test-renderer';
 
+let wrapper;
 
 
 describe('<Login />', () => {
-  const wrapper = mount(<Login />);
+
+  beforeEach(() => {
+    wrapper = mount(<Login />);
+  });
   
   it('renders everything', () => {
     const tree = renderer

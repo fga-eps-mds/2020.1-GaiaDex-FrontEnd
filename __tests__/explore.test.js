@@ -7,9 +7,14 @@ import styles from '../src/screen/explore/styles';
 import renderer from 'react-test-renderer';
 
 
-const wrapper = mount(<Explore />);
+let wrapper ;
 
 describe('<Explore />', () => {
+
+  beforeEach(() => {
+    wrapper = mount(<Explore />);
+  });
+
   it('renders everything', () => {
     const tree = renderer
       .create(<Explore></Explore>)

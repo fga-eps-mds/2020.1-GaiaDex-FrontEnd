@@ -7,9 +7,14 @@ import renderer from 'react-test-renderer';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
-const wrapper = mount(<PlantCardInfo />);
+let wrapper;
 
 describe('<PlantCardInfo />', () => {
+
+  beforeEach(() => {
+    wrapper = mount(<PlantCardInfo />);
+  });
+  
   it('renders everything', () => {
     const tree = renderer
       .create(<PlantCardInfo></PlantCardInfo>)

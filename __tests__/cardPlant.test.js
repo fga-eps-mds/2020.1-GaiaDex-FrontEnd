@@ -8,9 +8,14 @@ jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 import renderer from 'react-test-renderer';
 
 
-const wrapper = mount(<PlantCard navigation={{ getParam: jest.fn() }} />);
+let wrapper;
 
 describe('<TopicCreate />', () => {
+
+  beforeEach(() => {
+    wrapper = mount(<PlantCard navigation={{ getParam: jest.fn() }} />);
+  });
+
   it('renders everything', () => {
     const tree = renderer
       .create(<PlantCard navigation={{ getParam: jest.fn() }}></PlantCard>)
