@@ -20,14 +20,14 @@ import {
   dislikeTopic,
   likeComment,
   dislikeComment,
-  getUserLogado,
+  getUserLogged,
 } from '../../services/backEnd';
 import Comments from './comment/Comments';
 
-function Data({ tempo }) {
-  const agora = new Date();
-  const acao = new Date(tempo);
-  const tmp = Math.trunc((agora - acao) / 1000 / 60);
+function Data({ time }) {
+  const now = new Date();
+  const action = new Date(time);
+  const tmp = Math.trunc((now - action) / 1000 / 60);
   if (tmp / 60 > 24) {
     return <Text style={styles.dataTopic}>{tmp / 24} dias atrás</Text>;
   }
@@ -45,12 +45,12 @@ export default function TopicView({ navigation }) {
   const [isEditing, setIsEditing] = useState(false);
   const [isEditable, setIsEditable] = useState(true);
   const [commentText, setCommentText] = useState('');
-  const [topicisLiked, setTopicIsLiked] = useState(false);
-  const [topicisNotLiked, setTopicIsNotLiked] = useState(false);
+  const [topicIsDeleted, setTopicIsLiked] = useState(false);
+  const [topicIsNotLiked, setTopicIsNotLiked] = useState(false);
   const [topicDate, setTopicDate] = useState(0);
-  const [isDeletd, setIsDeletd] = useState(false);
+  const [isDeleted, setIsDeleted] = useState(false);
   useEffect(() => {
-    getUserLogado().then((res) => setUser(res));
+    getUserLogged().then((res) => setUser(res));
 
     getTopic(topicID)
       .then((res) => {
@@ -58,12 +58,12 @@ export default function TopicView({ navigation }) {
         return setTopic(res);
       })
       .then(() => {
-        if (topic?.title == 'Topico Deletado') {
-          setIsDeletd(true);
+        if (topic?.title === 'Topico Deletado') {
+          setIsDeleted(true);
         }
       })
       .then(() => {
-        if (topic?.user?._id == user?._id) {
+        if (topic?.user?._id === user?._id) {
           setIsEditable(true);
         }
       });
@@ -87,7 +87,7 @@ export default function TopicView({ navigation }) {
     };
     updateTopic(topic?._id, topicBody)
       .then((data) => setTopic(data))
-      .then(() => setIsDeletd(true))
+      .then(() => setIsDeleted(true))
       .catch((error) => console.error(error));
   };
   const postComment = async () => {
@@ -176,7 +176,7 @@ export default function TopicView({ navigation }) {
                   setTopic({ ...topic, description })
                 }
               />
-              {!isDeletd && (
+              {!isDeleted && (
                 <TouchableOpacity
                   style={styles.saveButton}
                   onPress={() => putTopic()}
@@ -217,14 +217,14 @@ export default function TopicView({ navigation }) {
               <AntDesign
                 name="arrowup"
                 size={18}
-                color={topicisLiked ? 'red' : 'black'}
+                color={topicIsDeleted ? 'red' : 'black'}
                 onPress={() => like('topic', topicID)}
               />
               <Text>{topic?.likes?.length}</Text>
               <AntDesign
                 name="arrowdown"
                 size={18}
-                color={topicisNotLiked ? 'red' : 'black'}
+                color={topicIsNotLiked ? 'red' : 'black'}
                 onPress={() => deslike('topic', topicID)}
               />
             </View>
@@ -234,7 +234,7 @@ export default function TopicView({ navigation }) {
                   name="edit"
                   size={18}
                   color="black"
-                  onPress={() => !isDeletd && setIsEditing(!isEditing)}
+                  onPress={() => !isDeleted && setIsEditing(!isEditing)}
                 />
               </View>
             )}
@@ -268,7 +268,7 @@ export default function TopicView({ navigation }) {
               user={user}
               like={like}
               deslike={deslike}
-              topicisLiked={topicisLiked}
+              topicIsDeleted={topicIsDeleted}
             />
           ) : (
             <View style={styles.commentContent}>

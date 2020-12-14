@@ -1,8 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-import Constants from 'expo-constants';
-import { ceil, round } from 'react-native-reanimated';
-
 const largura = Dimensions.get('screen').width;
 const altura = Dimensions.get('screen').height;
 
@@ -11,7 +8,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#D6DADF',
     width: largura,
-    backgroundColor: '#242528',
+    // backgroundColor: '#242528',
     flex: 1,
   },
   containerHeader: {

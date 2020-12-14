@@ -1,13 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect, useState } from 'react';
-import {
-  Text,
-  View,
-  StatusBar as sBar,
-  TextInput,
-  TouchableOpacity,
-  Alert,
-} from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { AntDesign, Entypo } from '@expo/vector-icons';
 import styles from './style';
 import { UserLogin } from '../../services/backEnd';

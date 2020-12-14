@@ -11,8 +11,7 @@ import {
   Platform,
   Alert,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/AntDesign';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, AntDesign as Icon } from '@expo/vector-icons';
 import Result from './result';
 import styles from './styles';
 import { scannerPlant } from '../../services';
@@ -94,6 +93,10 @@ export default function camera({ navigation }) {
           { cancelable: false }
         );
       }
+    } else {
+      return Alert.alert('Erro ao inicializar a câmera.', [{ text: 'OK' }], {
+        cancelable: false,
+      });
     }
   };
   const switchPlantType = () => {

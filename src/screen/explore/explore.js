@@ -4,14 +4,14 @@ import { EvilIcons } from '@expo/vector-icons';
 import { FlatList } from 'react-native-gesture-handler';
 import styles from './styles';
 import MenuBar from '../../assets/components/menuBar';
-import { getUserLogado, getPlants } from '../../services/backEnd';
+import { getUserLogged, getPlants } from '../../services/backEnd';
 
 export default function Explore({ navigation }) {
   const [user, setUser] = useState({});
   const [plants, setPlants] = useState({});
   useEffect(() => {
     getPlants().then((dado) => setPlants(dado));
-    getUserLogado().then((res) => setUser(res));
+    getUserLogged().then((res) => setUser(res));
   }, []);
 
   const Popular = ({ item }) => (

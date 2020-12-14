@@ -1,5 +1,4 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import Constants from 'expo-constants';
 
 const altura = Dimensions.get('screen').height;
 const largura = Dimensions.get('screen').width;

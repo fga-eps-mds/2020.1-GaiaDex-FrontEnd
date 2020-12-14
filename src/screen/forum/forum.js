@@ -4,7 +4,7 @@ import { EvilIcons, Ionicons } from '@expo/vector-icons';
 import { FlatList } from 'react-native-gesture-handler';
 import styles from './styles';
 import MenuBar from '../../assets/components/menuBar';
-import { getUserLogado } from '../../services/backEnd';
+import { getUserLogged } from '../../services/backEnd';
 import TopTopic from './components/TopTopic';
 import NewTopic from './components/NewTopic';
 
@@ -12,7 +12,7 @@ export default function Forum({ navigation }) {
   const [user, setUser] = useState({});
   const [topicTab, setTopicTab] = useState(false);
   useEffect(() => {
-    getUserLogado().then((res) => setUser(res));
+    getUserLogged().then((res) => setUser(res));
   }, []);
   const Favorite = ({ item }) => (
     <TouchableOpacity

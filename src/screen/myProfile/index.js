@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { EvilIcons, FontAwesome, Entypo } from '@expo/vector-icons';
 import MenuBar from '../../assets/components/menuBar';
-import { getUserLogado } from '../../services';
+import { getUserLogged } from '../../services';
 import styles from './styles';
 
 const altura = Dimensions.get('screen').height;
@@ -19,24 +19,31 @@ const sort = (user) => {
   let d2;
   let countT = user?.topics?.length;
   let countP = user?.myPlants?.length;
-  const activity = new Array();
-  for (i = 0; i < 6 && countT + countP > 0; i++) {
+  const activity = [];
+  for (i = 0; i < 6 && countT + countP > 0; i += 1) {
     if (countT > 0 && countP > 0) {
       d1 = new Date(user?.topics[countT - 1]?.createdAt);
       d2 = new Date(user?.myPlants[countP - 1]?.createdAt);
       if (d1 - d2 > 0) {
-        activity.push(user?.topics[--countT]);
+        countT -= 1;
+        activity.push(user?.topics[countT]);
       } else {
-        activity.push(user?.myPlants[--countP]);
+        countP -= 1;
+        activity.push(user?.myPlants[countP]);
       }
     } else if (countT > 0) {
-      activity.push(user?.topics[--countT]);
+      countT -= 1;
+      activity.push(user?.topics[countT]);
     } else if (countP > 0) {
-      activity.push(user?.myPlants[--countP]);
+      countP -= 1;
+      activity.push(user?.myPlants[countP]);
     }
   }
   return activity;
 };
+
+const backgroundVector = require('../../assets/Vector.png');
+const userDefaultImg = require('../../assets/userDefault.png');
 
 function Item({ title, nickname, tempo }) {
   const agora = new Date();
@@ -67,7 +74,7 @@ export default function myProfile({ navigation }) {
   const [activityLog, setActivitLog] = useState([]);
   const [user, setUser] = useState({});
   useEffect(() => {
-    getUserLogado()
+    getUserLogged()
       .then((res) => {
         setUser(res);
         return sort(res);
@@ -95,18 +102,11 @@ export default function myProfile({ navigation }) {
             onPress={() => navigation.push('Config')}
           />
         </View>
-        <ImageBackground
-          style={styles.vector}
-          source={require('../../assets/Vector.png')}
-        >
+        <ImageBackground style={styles.vector} source={backgroundVector}>
           <ImageBackground
             style={styles.photoView}
             imageStyle={styles.photo}
-            source={
-              user?.photo
-                ? { uri: user.photo }
-                : require('../../assets/userDefault.png')
-            }
+            source={user?.photo ? { uri: user.photo } : { userDefaultImg }}
           />
           <Text style={styles.name}>{`${user?.username}\n${user?.email}`}</Text>
         </ImageBackground>

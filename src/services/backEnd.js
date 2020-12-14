@@ -6,12 +6,13 @@ const baseHeaders = (token = '') => ({
   'Content-Type': 'application/json',
   Accept: 'application/json',
 });
-export const getUserLogado = () => {
+export const getUserLogged = async () => {
   const USER = ENDPOINTS.API.auth;
-  return new Promise(async (resolve, reject) => {
+  const token = await getToken();
+  return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + USER.getUser.route, {
       method: USER.getUser.method,
-      headers: baseHeaders(await getToken()),
+      headers: baseHeaders(token),
     })
       .then((res) => res.json())
       .then(resolve)
@@ -19,7 +20,7 @@ export const getUserLogado = () => {
   });
 };
 
-export const UserLogin = (User) => {
+export const UserLogin = async (User) => {
   const USER = ENDPOINTS.API.auth;
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + USER.login.route, {
@@ -39,7 +40,7 @@ export const UserLogin = (User) => {
   });
 };
 
-export const UserSignup = (User) => {
+export const UserSignup = async (User) => {
   const USER = ENDPOINTS.API.auth;
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + USER.signup.route, {
@@ -58,7 +59,7 @@ export const UserSignup = (User) => {
   });
 };
 
-export const UserUpdate = (User) => {
+export const UserUpdate = async (User) => {
   const USER = ENDPOINTS.API.auth;
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + USER.update.route, {
@@ -77,12 +78,13 @@ export const UserUpdate = (User) => {
   });
 };
 
-export const UserDelete = () => {
+export const UserDelete = async () => {
   const USER = ENDPOINTS.API.auth;
-  return new Promise(async (resolve, reject) => {
+  const token = await getToken();
+  return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + USER.delete.route, {
       method: USER.delete.method,
-      headers: baseHeaders(await getToken()),
+      headers: baseHeaders(token),
     })
       .then((res) => res.json())
       .then(resolve)
@@ -90,12 +92,13 @@ export const UserDelete = () => {
   });
 };
 
-export const createTopic = (topicID, topicBody) => {
+export const createTopic = async (topicID, topicBody) => {
   const TOPIC = ENDPOINTS.API.topic;
-  return new Promise(async (resolve, reject) => {
+  const token = await getToken();
+  return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + TOPIC.create.route(topicID), {
       method: TOPIC.create.method,
-      headers: baseHeaders(await getToken()),
+      headers: baseHeaders(token),
       body: JSON.stringify({
         title: topicBody.title,
         description: topicBody.description,
@@ -106,7 +109,7 @@ export const createTopic = (topicID, topicBody) => {
       .then(reject);
   });
 };
-export const getTopic = (topicID) => {
+export const getTopic = async (topicID) => {
   const TOPIC = ENDPOINTS.API.topic;
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + TOPIC.getTopic.route(topicID), {
@@ -117,7 +120,7 @@ export const getTopic = (topicID) => {
       .catch(reject);
   });
 };
-export const updateTopic = (topicID, body) => {
+export const updateTopic = async (topicID, body) => {
   const TOPIC = ENDPOINTS.API.topic;
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + TOPIC.update.route(topicID), {
@@ -133,24 +136,26 @@ export const updateTopic = (topicID, body) => {
       .catch(reject);
   });
 };
-export const likeTopic = (topicID) => {
+export const likeTopic = async (topicID) => {
   const TOPIC = ENDPOINTS.API.topic;
-  return new Promise(async (resolve, reject) => {
+  const token = await getToken();
+  return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + TOPIC.like.route(topicID), {
       method: TOPIC.like.method,
-      headers: baseHeaders(await getToken()),
+      headers: baseHeaders(token),
     })
       .then((res) => res.json())
       .then(resolve)
       .catch(reject);
   });
 };
-export const dislikeTopic = (topicID) => {
+export const dislikeTopic = async (topicID) => {
   const TOPIC = ENDPOINTS.API.topic;
-  return new Promise(async (resolve, reject) => {
+  const token = await getToken();
+  return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + TOPIC.dislike.route(topicID), {
       method: TOPIC.dislike.method,
-      headers: baseHeaders(await getToken()),
+      headers: baseHeaders(token),
     })
       .then((res) => res.json())
       .then(resolve)
@@ -158,12 +163,13 @@ export const dislikeTopic = (topicID) => {
   });
 };
 
-export const createComment = (commentID, topicBody) => {
+export const createComment = async (commentID, topicBody) => {
   const COMMENT = ENDPOINTS.API.comment;
-  return new Promise(async (resolve, reject) => {
+  const token = await getToken();
+  return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + COMMENT.create.route(commentID), {
       method: COMMENT.create.method,
-      headers: baseHeaders(await getToken()),
+      headers: baseHeaders(token),
       body: JSON.stringify({
         text: topicBody.text,
       }),
@@ -174,12 +180,13 @@ export const createComment = (commentID, topicBody) => {
   });
 };
 
-export const updateComment = (commentID, topicBody) => {
+export const updateComment = async (commentID, topicBody) => {
   const COMMENT = ENDPOINTS.API.comment;
-  return new Promise(async (resolve, reject) => {
+  const token = await getToken();
+  return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + COMMENT.update.route(commentID), {
       method: COMMENT.update.method,
-      headers: baseHeaders(await getToken()),
+      headers: baseHeaders(token),
       body: JSON.stringify({
         text: topicBody.text,
       }),
@@ -189,36 +196,39 @@ export const updateComment = (commentID, topicBody) => {
       .then(reject);
   });
 };
-export const deleteComment = (commentID, topicBody) => {
+export const deleteComment = async (commentID) => {
   const COMMENT = ENDPOINTS.API.comment;
-  return new Promise(async (resolve, reject) => {
+  const token = await getToken();
+  return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + COMMENT.delete.route(commentID), {
       method: COMMENT.delete.method,
-      headers: baseHeaders(await getToken()),
+      headers: baseHeaders(token),
     })
       .then((res) => res.json())
       .then(resolve)
       .then(reject);
   });
 };
-export const likeComment = (commentID) => {
+export const likeComment = async (commentID) => {
   const COMMENT = ENDPOINTS.API.comment;
-  return new Promise(async (resolve, reject) => {
+  const token = await getToken();
+  return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + COMMENT.like.route(commentID), {
       method: COMMENT.like.method,
-      headers: baseHeaders(await getToken()),
+      headers: baseHeaders(token),
     })
       .then((res) => res.json())
       .then(resolve)
       .catch(reject);
   });
 };
-export const dislikeComment = (CommentID) => {
+export const dislikeComment = async (CommentID) => {
   const COMMENT = ENDPOINTS.API.comment;
-  return new Promise(async (resolve, reject) => {
+  const token = await getToken();
+  return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + COMMENT.dislike.route(CommentID), {
       method: COMMENT.dislike.method,
-      headers: baseHeaders(await getToken()),
+      headers: baseHeaders(token),
     })
       .then((res) => res.json())
       .then(resolve)
@@ -226,7 +236,7 @@ export const dislikeComment = (CommentID) => {
   });
 };
 
-export const getPlant = (plantID) => {
+export const getPlant = async (plantID) => {
   const PLANT = ENDPOINTS.API.plant;
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + PLANT.getPlant.route(plantID), {
@@ -237,10 +247,10 @@ export const getPlant = (plantID) => {
       .catch(reject);
   });
 };
-export const getAllPlants = () => {
+export const getAllPlants = async () => {
   const PLANT = ENDPOINTS.API.plant;
   return new Promise((resolve, reject) => {
-    fetch(ENDPOINTS.API.base_url + PLANT.getAllPlant.route(plantID), {
+    fetch(ENDPOINTS.API.base_url + PLANT.getAllPlant.route(), {
       method: PLANT.getAllPlants,
     })
       .then((res) => res.json())
@@ -249,7 +259,7 @@ export const getAllPlants = () => {
   });
 };
 
-export const getPlants = () => {
+export const getPlants = async () => {
   const PLANT = ENDPOINTS.API.plant;
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + PLANT.getAllPlants.route, {
@@ -261,7 +271,7 @@ export const getPlants = () => {
   });
 };
 
-export const scannerPlant = (scannerBody) => {
+export const scannerPlant = async (scannerBody) => {
   const SCANNER = ENDPOINTS.API.scanner;
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + SCANNER.route, {
@@ -280,12 +290,13 @@ export const scannerPlant = (scannerBody) => {
   });
 };
 
-export const addMyPlant = (plantId, plantNickname) => {
+export const addMyPlant = async (plantId, plantNickname) => {
   const PLANT = ENDPOINTS.API.myPlant;
-  return new Promise(async (resolve, reject) => {
+  const token = await getToken();
+  return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + PLANT.add.route(plantId), {
       method: PLANT.add.method,
-      headers: baseHeaders(await getToken()),
+      headers: baseHeaders(token),
       body: JSON.stringify({
         nickname: plantNickname,
       }),
@@ -296,12 +307,13 @@ export const addMyPlant = (plantId, plantNickname) => {
   });
 };
 
-export const registerPlant = (plant) => {
+export const registerPlant = async (plant) => {
   const PLANT = ENDPOINTS.API.plant;
-  return new Promise(async (resolve, reject) => {
+  const token = await getToken();
+  return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + PLANT.register.route, {
       method: PLANT.register.method,
-      headers: baseHeaders(await getToken()),
+      headers: baseHeaders(token),
       body: JSON.stringify({
         scientificName: plant.species.scientificNameWithoutAuthor,
         genderName: plant.species.genus.scientificNameWithoutAuthor,
@@ -318,7 +330,7 @@ export const registerPlant = (plant) => {
   });
 };
 
-export const editMyPlant = (myPlantID, newNick) => {
+export const editMyPlant = async (myPlantID, newNick) => {
   const PLANT = ENDPOINTS.API.myPlant;
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + PLANT.edit.route(myPlantID), {
@@ -334,7 +346,7 @@ export const editMyPlant = (myPlantID, newNick) => {
   });
 };
 
-export const deleteMyPlant = (myPlantID) => {
+export const deleteMyPlant = async (myPlantID) => {
   const PLANT = ENDPOINTS.API.myPlant;
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + PLANT.delete.route(myPlantID), {
@@ -347,12 +359,13 @@ export const deleteMyPlant = (myPlantID) => {
   });
 };
 
-export const favoritePlant = (plantID) => {
+export const favoritePlant = async (plantID) => {
   const PLANT = ENDPOINTS.API.favorite;
-  return new Promise(async (resolve, reject) => {
+  const token = await getToken();
+  return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + PLANT.add.route(plantID), {
       method: PLANT.add.method,
-      headers: baseHeaders(await getToken()),
+      headers: baseHeaders(token),
     })
       .then((res) => res.json())
       .then(resolve)
@@ -360,12 +373,13 @@ export const favoritePlant = (plantID) => {
   });
 };
 
-export const desfavoritePlant = (plantID) => {
+export const desfavoritePlant = async (plantID) => {
   const PLANT = ENDPOINTS.API.favorite;
-  return new Promise(async (resolve, reject) => {
+  const token = await getToken();
+  return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + PLANT.remove.route(plantID), {
       method: PLANT.remove.method,
-      headers: baseHeaders(await getToken()),
+      headers: baseHeaders(token),
     })
       .then((res) => res.json())
       .then(resolve)

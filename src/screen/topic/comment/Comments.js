@@ -6,7 +6,7 @@ import userDefault from '../../../assets/userDefault.png';
 import { updateComment, deleteComment } from '../../../services/backEnd';
 import styles from './styles';
 
-export default function Comments({ topic, setTopic, user, like, deslike }) {
+export default function Comments({ topic, setTopic, user, like, dislike }) {
   function Comment({ description, username, userID, id, likes }) {
     const [isEditing, setIsEditing] = useState(false);
     const [topicEditing, setTopicEditing] = useState('');
@@ -50,7 +50,7 @@ export default function Comments({ topic, setTopic, user, like, deslike }) {
           />
           <ScrollView>
             <Text style={styles.commentUsername}>{username}</Text>
-            {topicEditing != id ? (
+            {topicEditing !== id ? (
               <Text style={styles.commentDescription}>{description}</Text>
             ) : (
               <TextInput
@@ -77,10 +77,10 @@ export default function Comments({ topic, setTopic, user, like, deslike }) {
               name="arrowdown"
               size={17}
               color="black"
-              onPress={() => deslike('comment', id)}
+              onPress={() => dislike('comment', id)}
             />
           </View>
-          {user?._id == userID && (
+          {user?._id === userID && (
             <>
               <View style={styles.commentIcon}>
                 <Feather

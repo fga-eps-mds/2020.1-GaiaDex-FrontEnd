@@ -1,11 +1,7 @@
 import {
   Platform,
   StyleSheet,
-  Text,
-  View,
   StatusBar as sBar,
-  TextInput,
-  TouchableOpacity,
   Dimensions,
 } from 'react-native';
 

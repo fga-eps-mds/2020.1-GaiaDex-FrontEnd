@@ -14,7 +14,7 @@ import styles from './styles';
 import stylesEdit from '../collection/styles';
 import { registerPlant, addMyPlant } from '../../services';
 
-export default function ({ setOpen, capturedPhoto, plants, navigation }) {
+export default function Result({ setOpen, capturedPhoto, plants, navigation }) {
   const [editingText, setEditingText] = useState(false);
   const [text, setText] = useState('');
   const [plantToEdit, SetPlantToEdit] = useState({});

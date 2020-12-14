@@ -9,7 +9,7 @@ import {
 import { AntDesign, Entypo } from '@expo/vector-icons';
 import styles from './styles';
 
-export default function Favorite({ navigation, user, setUser, desfavoritar }) {
+export default function Favorite({ navigation, user, desfavoritar }) {
   const Item = ({ item }) => (
     <View style={styles.plant}>
       <ImageBackground

@@ -36,7 +36,7 @@ export default function MyPlants({
           style={styles.myplantInfo}
           onPress={() => {
             setPlantToEdit(item);
-            setEdit(true);
+            setEditingText(true);
           }}
         >
           <Text style={styles.plantText}>{item?.nickname}</Text>

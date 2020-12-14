@@ -11,7 +11,9 @@ import { AntDesign } from '@expo/vector-icons';
 import styles from './style';
 import { getPlant } from '../../../services/backEnd';
 
-export default function PlantCardInfo({ navigation, plantID }) {
+const userDefaultImg = require('../../../assets/userDefault.png');
+
+export default function PlantCardInfo({ plantID }) {
   const [plant, setPlant] = useState({});
   const [isClick, setIsClick] = useState(false);
   useEffect(() => {
@@ -22,9 +24,7 @@ export default function PlantCardInfo({ navigation, plantID }) {
     <View style={styles.userDiv}>
       <ImageBackground
         source={
-          plant?.user?.photo
-            ? { uri: plant?.user?.photo }
-            : require('../../../assets/userDefault.png')
+          plant?.user?.photo ? { uri: plant?.user?.photo } : userDefaultImg
         }
         style={styles.UserImg}
         imageStyle={{ borderRadius: 50 }}

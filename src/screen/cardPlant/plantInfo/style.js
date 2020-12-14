@@ -1,18 +1,13 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-import Constants from 'expo-constants';
-import { ceil, round } from 'react-native-reanimated';
-import { NONE } from 'apisauce';
-
 const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
 
 const styles = StyleSheet.create({
   containerView: {
     flexDirection: 'column',
     backgroundColor: '#D6DADF',
     width: largura,
-    backgroundColor: '#242528',
+    // backgroundColor: '#242528',
     flex: 0.8,
   },
   containerHeader: {

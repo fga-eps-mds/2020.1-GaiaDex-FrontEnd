@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Alert, View, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import styles from './style';
 import { UserDelete } from '../../services/backEnd';
 
 export default function DeleteMyAccount({ navigation }) {
-  function userdelete() {
+  function userDelete() {
     UserDelete().then((res) => {
       if (res.Error) {
         Alert.alert(res.Error);
@@ -26,7 +26,7 @@ export default function DeleteMyAccount({ navigation }) {
         },
         {
           text: 'Deletar',
-          onPress: () => userdelete(),
+          onPress: () => userDelete(),
         },
       ]
     );

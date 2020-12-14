@@ -3,7 +3,9 @@ import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 
 import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 import styles from './styles';
-import { getPlant, createTopic, getUserLogado } from '../../services/backEnd';
+import { getPlant, createTopic, getUserLogged } from '../../services/backEnd';
+
+const userDefaultImg = require('../../assets/userDefault.png');
 
 export default function TopicCreate({ navigation }) {
   const plantID = navigation.getParam('itemID', '5fd1585e7ecf46002731738f');
@@ -15,7 +17,7 @@ export default function TopicCreate({ navigation }) {
   const [description, setDescription] = useState('');
 
   useEffect(() => {
-    getUserLogado().then((res) => setUser(res));
+    getUserLogged().then((res) => setUser(res));
     getPlant(plantID).then((res) => setPlant(res.plant));
   }, []);
   const postTopic = async () => {
@@ -53,7 +55,7 @@ export default function TopicCreate({ navigation }) {
           <Image
             style={styles.TopicCreateimgUser}
             source={{ uri: user?.photo }}
-            defaultSource={require('../../assets/userDefault.png')}
+            defaultSource={userDefaultImg}
           />
           <Text style={styles.TopicCreatenameUser}>
             {user?.username ? user?.username : 'username'}

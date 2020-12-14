@@ -6,7 +6,7 @@ import MenuBar from '../../assets/components/menuBar';
 import MyPlants from './components/MyPlants';
 import Favorite from './components/Favorite';
 import {
-  getUserLogado,
+  getUserLogged,
   desfavoritePlant,
   editMyPlant,
 } from '../../services/backEnd';
@@ -18,7 +18,7 @@ export default function Collection({ navigation }) {
   const [plantToEdit, setPlantToEdit] = useState({});
   const [plantTab, setPlantTab] = useState(true);
   useEffect(() => {
-    getUserLogado().then((res) => setUser(res));
+    getUserLogged().then((res) => setUser(res));
   }, []);
   const desfavoritar = (plantID) => {
     desfavoritePlant(plantID).then((favorites) =>

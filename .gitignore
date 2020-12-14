@@ -15,3 +15,6 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
+
+test-report.xml
+coverage
