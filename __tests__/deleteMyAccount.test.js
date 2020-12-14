@@ -2,14 +2,14 @@ import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/asy
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
-import Logout from '../src/screen/login/logout'
+import DeleteMyAccount from '../src/screen/login/deleteMyAccount'
 
 import styles from '../src/screen/login/style'
 
 
-const wrapper = mount(<Logout />);
+const wrapper = mount(<DeleteMyAccount />);
 
-describe('<Logout />', () => {
+describe('<DeleteMyAccount />', () => {
     it('renders everything', () => {
         expect(wrapper).toMatchSnapshot;
         expect(wrapper.find('View').length).toBe(4);
@@ -18,11 +18,10 @@ describe('<Logout />', () => {
     });
     it('renders Text correctly', () => {
         expect(wrapper.find('Text').at(0)).toHaveStyle(styles.txtBtnDeleteLogout);
-        expect(wrapper.find('Text').at(0)).toHaveText('Sair');
-
+        expect(wrapper.find('Text').at(0)).toHaveText('Deletar minha conta');
     });
     it('renders TouchableOpacity correctly', () => {
-        expect(wrapper.find('TouchableOpacity').at(0)).toHaveProp('style',styles.btnButtonLogoutDelete);
+        expect(wrapper.find('TouchableOpacity').at(0)).toHaveProp('style',[styles.btnButtonLogoutDelete, {borderWidth: 1, borderColor: 'red' }]);
         expect(wrapper.find('TouchableOpacity').at(0)).toHaveProp('onPress');
     });
 });
