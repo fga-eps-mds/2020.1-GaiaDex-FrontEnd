@@ -11,7 +11,6 @@ describe('<Collection />', () => {
   it('renders everything', () => {
     expect(wrapper).toMatchSnapshot;
     expect(wrapper.find('View').length).toBe(42);
-    expect(wrapper.find('Modal').length).toBe(1);
     expect(wrapper.find('Text').length).toBe(24);
     expect(wrapper.find('TextInput').length).toBe(1);
     expect(wrapper.find('TouchableOpacity').length).toBe(4);
@@ -27,4 +26,11 @@ describe('<Collection />', () => {
     expect(wrapper.find('View').at(16)).toHaveStyle(styles.tabContainer);
   });
 
+  it('renders Text correctly', () => {
+    expect(wrapper.find('Text').at(0)).toHaveStyle(styles.editTitle);
+    expect(wrapper.find('Text').at(2)).toHaveStyle(styles.editButton);
+    expect(wrapper.find('Text').at(6)).toHaveStyle(styles.exploreText);
+    expect(wrapper.find('Text').at(10)).toHaveStyle(styles.tabTextactivate);
+    expect(wrapper.find('Text').at(12)).toHaveStyle(styles.tabText);
+  });
 });
