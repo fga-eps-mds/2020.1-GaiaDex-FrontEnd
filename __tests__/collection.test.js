@@ -33,4 +33,16 @@ describe('<Collection />', () => {
     expect(wrapper.find('Text').at(10)).toHaveStyle(styles.tabTextactivate);
     expect(wrapper.find('Text').at(12)).toHaveStyle(styles.tabText);
   });
+
+  it('renders TextInput correctly', () => {
+    expect(wrapper.find('TextInput').at(0)).toHaveStyle(styles.editTextInput);
+  });
+
+  it('renders TouchableOpacity correctly', () => {
+    expect(wrapper.find('TouchableOpacity').at(0)).toHaveProp('onPress');
+    expect(wrapper.find('TouchableOpacity').at(1)).toHaveProp('onPress');
+    expect(wrapper.find('TouchableOpacity').at(2)).toHaveProp('onPress');
+    expect(wrapper.find('TouchableOpacity').at(3)).toHaveProp('onPress');
+  });
+
 });
