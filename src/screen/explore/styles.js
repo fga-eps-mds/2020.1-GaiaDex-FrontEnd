@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     textDecorationLine: 'underline',
     textDecorationStyle: 'solid',
-    textDecorationColor: gray.darkest(),
+    textDecorationColor: gray.shark(),
   },
   popularContent: {
     flex: 0.8,

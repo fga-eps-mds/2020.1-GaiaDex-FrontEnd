@@ -1,12 +1,11 @@
 import { ENDPOINTS, baseHeaders, getToken } from './index';
 
-export const createComment = async (commentID, topicBody) => {
+export const createComment = (commentID, topicBody) => {
   const COMMENT = ENDPOINTS.API.comment;
-  const token = await getToken();
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + COMMENT.create.route(commentID), {
       method: COMMENT.create.method,
-      headers: baseHeaders(token),
+      headers: baseHeaders(getToken()),
       body: JSON.stringify({
         text: topicBody.text,
       }),
@@ -17,13 +16,12 @@ export const createComment = async (commentID, topicBody) => {
   });
 };
 
-export const updateComment = async (commentID, topicBody) => {
+export const updateComment = (commentID, topicBody) => {
   const COMMENT = ENDPOINTS.API.comment;
-  const token = await getToken();
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + COMMENT.update.route(commentID), {
       method: COMMENT.update.method,
-      headers: baseHeaders(token),
+      headers: baseHeaders(getToken()),
       body: JSON.stringify({
         text: topicBody.text,
       }),
@@ -34,13 +32,12 @@ export const updateComment = async (commentID, topicBody) => {
   });
 };
 
-export const deleteComment = async (commentID) => {
+export const deleteComment = (commentID) => {
   const COMMENT = ENDPOINTS.API.comment;
-  const token = await getToken();
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + COMMENT.delete.route(commentID), {
       method: COMMENT.delete.method,
-      headers: baseHeaders(token),
+      headers: baseHeaders(getToken()),
     })
       .then((res) => res.json())
       .then(resolve)
@@ -48,13 +45,12 @@ export const deleteComment = async (commentID) => {
   });
 };
 
-export const likeComment = async (commentID) => {
+export const likeComment = (commentID) => {
   const COMMENT = ENDPOINTS.API.comment;
-  const token = await getToken();
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + COMMENT.like.route(commentID), {
       method: COMMENT.like.method,
-      headers: baseHeaders(token),
+      headers: baseHeaders(getToken()),
     })
       .then((res) => res.json())
       .then(resolve)
@@ -62,13 +58,12 @@ export const likeComment = async (commentID) => {
   });
 };
 
-export const dislikeComment = async (CommentID) => {
+export const dislikeComment = (CommentID) => {
   const COMMENT = ENDPOINTS.API.comment;
-  const token = await getToken();
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + COMMENT.dislike.route(CommentID), {
       method: COMMENT.dislike.method,
-      headers: baseHeaders(token),
+      headers: baseHeaders(getToken()),
     })
       .then((res) => res.json())
       .then(resolve)

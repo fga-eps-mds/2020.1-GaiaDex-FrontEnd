@@ -5,7 +5,7 @@ exports[`<Login /> renders correctly 1`] = `
   style={
     Object {
       "alignItems": "stretch",
-      "backgroundColor": "rgba(229,194,235,1.0)",
+      "backgroundColor": "rgba(229,194,235,0.3)",
       "flex": 0,
       "height": 1334,
       "justifyContent": "flex-end",

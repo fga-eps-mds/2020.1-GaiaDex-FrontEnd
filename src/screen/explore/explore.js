@@ -4,7 +4,7 @@ import { EvilIcons } from '@expo/vector-icons';
 import { FlatList } from 'react-native-gesture-handler';
 import styles from './styles';
 import MenuBar from '../../assets/components/menuBar';
-import { getUserLogged, getPlants } from '../../services/backEnd';
+import { getUserLogged, getPlants } from '../../services';
 import { gray } from '../../theme/colorPalette';
 
 export default function Explore({ navigation }) {

@@ -3,14 +3,14 @@ import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import { FlatList } from 'react-native-gesture-handler';
 import styles from '../styles';
-import { favoritePlant, deleteMyPlant } from '../../../services/backEnd';
+import { favoritePlant, deleteMyPlant } from '../../../services';
 import { purple, highlight } from '../../../theme/colorPalette';
 
 export default function MyPlants({
   navigation,
   user,
   setUser,
-  setPlantToEdit,
+  setPlantToUpdate,
   setEditingText,
   setPlantTab,
 }) {
@@ -36,7 +36,7 @@ export default function MyPlants({
         <View
           style={styles.myplantInfo}
           onPress={() => {
-            setPlantToEdit(item);
+            setPlantToUpdate(item);
             setEditingText(true);
           }}
         >
@@ -47,7 +47,7 @@ export default function MyPlants({
             color={purple.frenchLilacLighter()}
             onPress={() => {
               setEditingText(true);
-              setPlantToEdit(item);
+              setPlantToUpdate(item);
             }}
           />
         </View>

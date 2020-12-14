@@ -1,12 +1,11 @@
 import { ENDPOINTS, baseHeaders, getToken } from './index';
 
-export const createTopic = async (topicID, topicBody) => {
+export const createTopic = (topicID, topicBody) => {
   const TOPIC = ENDPOINTS.API.topic;
-  const token = await getToken();
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + TOPIC.create.route(topicID), {
       method: TOPIC.create.method,
-      headers: baseHeaders(token),
+      headers: baseHeaders(getToken()),
       body: JSON.stringify({
         title: topicBody.title,
         description: topicBody.description,
@@ -18,7 +17,7 @@ export const createTopic = async (topicID, topicBody) => {
   });
 };
 
-export const getTopic = async (topicID) => {
+export const getTopic = (topicID) => {
   const TOPIC = ENDPOINTS.API.topic;
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + TOPIC.find.route(topicID), {
@@ -30,7 +29,7 @@ export const getTopic = async (topicID) => {
   });
 };
 
-export const updateTopic = async (topicID, body) => {
+export const updateTopic = (topicID, body) => {
   const TOPIC = ENDPOINTS.API.topic;
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + TOPIC.update.route(topicID), {
@@ -47,13 +46,12 @@ export const updateTopic = async (topicID, body) => {
   });
 };
 
-export const likeTopic = async (topicID) => {
+export const likeTopic = (topicID) => {
   const TOPIC = ENDPOINTS.API.topic;
-  const token = await getToken();
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + TOPIC.like.route(topicID), {
       method: TOPIC.like.method,
-      headers: baseHeaders(token),
+      headers: baseHeaders(getToken()),
     })
       .then((res) => res.json())
       .then(resolve)
@@ -61,13 +59,12 @@ export const likeTopic = async (topicID) => {
   });
 };
 
-export const dislikeTopic = async (topicID) => {
+export const dislikeTopic = (topicID) => {
   const TOPIC = ENDPOINTS.API.topic;
-  const token = await getToken();
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + TOPIC.dislike.route(topicID), {
       method: TOPIC.dislike.method,
-      headers: baseHeaders(token),
+      headers: baseHeaders(getToken()),
     })
       .then((res) => res.json())
       .then(resolve)

@@ -4,7 +4,7 @@ import { EvilIcons, Ionicons } from '@expo/vector-icons';
 import { FlatList } from 'react-native-gesture-handler';
 import styles from './styles';
 import MenuBar from '../../assets/components/menuBar';
-import { getUserLogged } from '../../services/backEnd';
+import { getUserLogged } from '../../services';
 import TopTopic from './components/TopTopic';
 import NewTopic from './components/NewTopic';
 import { gray } from '../../theme/colorPalette';

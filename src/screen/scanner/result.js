@@ -18,7 +18,7 @@ import { gray } from '../../theme/colorPalette';
 export default function Result({ setOpen, capturedPhoto, plants, navigation }) {
   const [editingText, setEditingText] = useState(false);
   const [text, setText] = useState('');
-  const [plantToEdit, SetPlantToEdit] = useState({});
+  const [plantToUpdate, SetPlantToUpdate] = useState({});
   const register = async (plant, nickName) => {
     try {
       // registra a planta no banco
@@ -35,7 +35,7 @@ export default function Result({ setOpen, capturedPhoto, plants, navigation }) {
     <TouchableOpacity
       style={styles.lista}
       onPress={() => {
-        SetPlantToEdit(item);
+        SetPlantToUpdate(item);
         setEditingText(true);
       }}
     >
@@ -68,7 +68,7 @@ export default function Result({ setOpen, capturedPhoto, plants, navigation }) {
           <View style={{ flexDirection: 'row-reverse' }}>
             <TouchableOpacity
               onPress={() => {
-                register(plantToEdit, text);
+                register(plantToUpdate, text);
                 setEditingText(false);
               }}
             >

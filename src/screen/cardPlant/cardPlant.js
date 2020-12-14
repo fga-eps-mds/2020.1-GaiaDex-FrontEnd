@@ -3,7 +3,7 @@ import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import { Feather, FontAwesome5, Octicons } from '@expo/vector-icons';
 import Header from './header';
 import styles from './styles';
-import { getPlant } from '../../services/backEnd';
+import { getPlant } from '../../services';
 import NewTopic from './plantTopic/newTopic';
 import PlantCardInfo from './plantInfo/myPlantCard';
 import PlantCardTopic from './plantTopic/cardPlantTopic';
@@ -46,7 +46,7 @@ export default function PlantCard({ navigation }) {
           <Feather
             name="check-circle"
             size={18}
-            color={green.melachite()}
+            color={green.malachite()}
             style={{ paddingBottom: 10 }}
           />
           <Text style={styles.plantTextDescription}>

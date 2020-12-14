@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { AntDesign, Entypo } from '@expo/vector-icons';
-import { UserUpdate } from '../../services/backEnd';
+import { UserUpdate } from '../../services';
 import styles from './style';
 import { gray, purple } from '../../theme/colorPalette';
 

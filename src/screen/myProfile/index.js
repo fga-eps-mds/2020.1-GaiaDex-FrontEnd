@@ -120,7 +120,7 @@ export default function myProfile({ navigation }) {
         <View
           style={[
             styles.sumaryComponents,
-            { borderRightColor: gray.darkest(), borderRightWidth: 3 },
+            { borderRightColor: gray.shark(), borderRightWidth: 3 },
           ]}
         >
           <View style={{ flexDirection: 'row' }}>
@@ -137,7 +137,7 @@ export default function myProfile({ navigation }) {
         <View
           style={[
             styles.sumaryComponents,
-            { borderRightColor: gray.darkest(), borderRightWidth: 3 },
+            { borderRightColor: gray.shark(), borderRightWidth: 3 },
           ]}
         >
           <View style={{ flexDirection: 'row' }}>

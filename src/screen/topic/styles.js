@@ -4,7 +4,7 @@ import { gray, green, highlight, purple } from '../../theme/colorPalette';
 const { height, width } = Dimensions.get('screen');
 const styles = StyleSheet.create({
   TopicCreateheader: {
-    backgroundColor: gray.darkest(),
+    backgroundColor: gray.shark(),
     flexDirection: 'row',
     width,
     alignItems: 'center',

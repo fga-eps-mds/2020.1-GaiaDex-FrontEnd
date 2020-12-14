@@ -1,6 +1,6 @@
 import { ENDPOINTS, baseHeaders } from './index';
 
-const scannerPlant = async (scannerBody) => {
+const scannerPlant = (scannerBody) => {
   const SCANNER = ENDPOINTS.API.scanner;
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + SCANNER.route, {

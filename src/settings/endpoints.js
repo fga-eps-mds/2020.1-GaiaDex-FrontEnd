@@ -1,134 +1,144 @@
 const ENDPOINTS = {
   API: {
-    base_url: `http://192.168.0.10:3000`,
+    base_url:
+      process.env.NODE_ENV === 'production'
+        ? 'http://gaiadex-backend-homolog.herokuapp.com'
+        : 'http://192.168.0.10:3000',
+
     auth: {
       user: {
-        route: `/auth/user`,
-        method: `GET`,
+        route: '/auth/user',
+        method: 'GET',
       },
       delete: {
-        route: `/auth/delete`,
-        method: `DELETE`,
+        route: '/auth/delete',
+        method: 'DELETE',
       },
       update: {
-        route: `/auth/update`,
-        method: `POST`,
+        route: '/auth/update',
+        method: 'POST',
         body: (userBody) => userBody,
       },
       findOne: {
         route: (userID) => `/auth/user/${userID}`,
-        method: `GET`,
+        method: 'GET',
       },
       create: {
-        route: `/auth/signup`,
-        method: `POST`,
+        route: '/auth/signup',
+        method: 'POST',
         body: (userBody) => userBody,
       },
       login: {
-        route: `/auth/login`,
-        method: `POST`,
+        route: '/auth/login',
+        method: 'POST',
         body: (userBody) => userBody,
       },
       getUser: {
-        route: `/auth/user`,
-        method: `GET`,
+        route: '/auth/user',
+        method: 'GET',
       },
     },
+
     plant: {
       create: {
-        route: `/plant/register`,
-        method: `POST`,
+        route: '/plant/register',
+        method: 'POST',
         body: (plantBody) => plantBody,
       },
       find: {
         route: (plantID) => `/plant/${plantID}`,
-        method: `GET`,
+        method: 'GET',
       },
       list: {
-        route: `/plant`,
-        method: `GET`,
+        route: '/plant',
+        method: 'GET',
       },
     },
+
     myPlant: {
       create: {
         route: (plantId) => `/myplants/add/${plantId}`,
-        method: `POST`,
+        method: 'POST',
       },
       update: {
         route: (myPlantID) => `/myplants/edit/${myPlantID}`,
-        method: `PUT`,
+        method: 'PUT',
       },
       delete: {
         route: (myPlantID) => `/myplants/delete/${myPlantID}`,
-        method: `DELETE`,
+        method: 'DELETE',
         body: (nickname) => nickname,
       },
     },
+
     favorite: {
       create: {
         route: (plantID) => `/favorites/add/${plantID}`,
-        method: `POST`,
+        method: 'POST',
       },
       list: {
-        route: `/favorites/list`,
-        method: `GET`,
+        route: '/favorites/list',
+        method: 'GET',
       },
       delete: {
         route: (plantID) => `/favorites/delete/${plantID}`,
-        method: `DELETE`,
+        method: 'DELETE',
       },
     },
+
     topic: {
       find: {
         route: (topicID) => `/topic/find/${topicID}`,
-        method: `GET`,
+        method: 'GET',
       },
       create: {
         route: (plantID) => `/topic/create/${plantID}`,
-        method: `POST`,
+        method: 'POST',
         body: (topicBody) => topicBody,
       },
       update: {
         route: (topicID) => `/topic/update/${topicID}`,
-        method: `PUT`,
+        method: 'PUT',
         body: (topicBody) => topicBody,
       },
       like: {
         route: (topicID) => `/topic/like/${topicID}`,
-        method: `POST`,
+        method: 'POST',
       },
       dislike: {
         route: (plantID) => `/topic/dislike/${plantID}`,
-        method: `POST`,
+        method: 'POST',
       },
     },
+
     comment: {
       create: {
         route: (commentID) => `/comment/create/${commentID}`,
-        method: `POST`,
+        method: 'POST',
         body: (commentBody) => commentBody,
       },
       update: {
         route: (commentID) => `/comment/update/${commentID}`,
-        method: `PUT`,
+        method: 'PUT',
         body: (commentBody) => commentBody,
       },
       delete: {
         route: (commentID) => `/comment/delete/${commentID}`,
-        method: `DELETE`,
+        method: 'DELETE',
       },
       like: {
         route: (commentID) => `/comment/like/${commentID}`,
-        method: `POST`,
+        method: 'POST',
       },
       dislike: {
         route: (commentID) => `/comment/dislike/${commentID}`,
-        method: `POST`,
+        method: 'POST',
       },
     },
+
     scanner: {
-      route: `/scanner/`,
-      method: `POST`,
+      route: '/scanner/',
+      method: 'POST',
       body: (scannerBody) => scannerBody,
     },
   },

@@ -23,7 +23,7 @@ export default function Header({ title, onPress }) {
 }
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: gray.darkest(),
+    backgroundColor: gray.shark(),
     flex: 1.5,
     flexDirection: 'row',
     alignItems: 'center',

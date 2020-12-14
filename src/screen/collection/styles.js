@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     marginTop: (height * 5) / 36,
     marginLeft: width / 10,
     borderRadius: 10,
-    shadowColor: gray.darkest(),
+    shadowColor: gray.shark(),
     shadowOffset: {
       width: 0,
       height: 2,
@@ -75,12 +75,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '400',
   },
-  tabTextactivate: {
+  tabTextActive: {
     fontSize: 18,
     fontWeight: '500',
     textDecorationLine: 'underline',
     textDecorationStyle: 'solid',
-    textDecorationColor: gray.darkest(),
+    textDecorationColor: gray.shark(),
   },
   popularTabs: {
     flexDirection: 'row',
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     textDecorationLine: 'underline',
     textDecorationStyle: 'solid',
-    textDecorationColor: gray.darkest(),
+    textDecorationColor: gray.shark(),
   },
   popularContent: {
     flex: 0.8,

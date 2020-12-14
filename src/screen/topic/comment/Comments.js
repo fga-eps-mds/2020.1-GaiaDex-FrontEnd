@@ -3,7 +3,7 @@ import { View, Text, Image, ScrollView, FlatList } from 'react-native';
 import { AntDesign, Feather } from '@expo/vector-icons';
 import { TextInput } from 'react-native-gesture-handler';
 import userDefault from '../../../assets/userDefault.png';
-import { updateComment, deleteComment } from '../../../services/backEnd';
+import { updateComment, deleteComment } from '../../../services';
 import styles from './styles';
 import { gray } from '../../../theme/colorPalette';
 
@@ -87,7 +87,7 @@ export default function Comments({ topic, setTopic, user, like, dislike }) {
                 <Feather
                   name="edit"
                   size={17}
-                  color={isEditing ? 'green' : gray.darkest()}
+                  color={isEditing ? 'green' : gray.shark()}
                   onPress={() => EditComment(isEditing)}
                 />
               </View>

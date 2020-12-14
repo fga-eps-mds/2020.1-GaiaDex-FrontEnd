@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: gray.shark(0),
+    backgroundColor: 'transparent',
   },
   mbContent: {
     flexDirection: 'row',
@@ -27,12 +27,12 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   mbIcons: {
-    backgroundColor: gray.shark(0),
+    backgroundColor: 'transparent',
     borderRadius: 5,
   },
   mbCameraIcon: {
     backgroundColor: green.mountainMeadow(),
-    borderColor: gray.darkest(),
+    borderColor: gray.shark(),
     alignContent: 'center',
     alignItems: 'center',
     justifyContent: 'center',

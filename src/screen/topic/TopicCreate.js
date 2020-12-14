@@ -3,7 +3,7 @@ import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 
 import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 import styles from './styles';
-import { getPlant, createTopic, getUserLogged } from '../../services/backEnd';
+import { getPlant, createTopic, getUserLogged } from '../../services';
 import { gray } from '../../theme/colorPalette';
 
 const userDefaultImg = require('../../assets/userDefault.png');

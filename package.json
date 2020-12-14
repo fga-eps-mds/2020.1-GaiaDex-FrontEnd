@@ -8,7 +8,8 @@
     "test": "jest --all --no-watchman",
     "coverage": "rm -rf coverage/ node_modules/.cache/ && NODE_ENV=test npx jest --collect-coverage",
     "lint": "eslint .",
-    "lint-fix": "eslint . --fix"
+    "lint-fix": "eslint . --fix",
+    "watch-need-help": "echo 256 | sudo tee -a /proc/sys/fs/inotify/max_user_instances && echo 32768 | sudo tee -a /proc/sys/fs/inotify/max_queued_events && echo 65536 | sudo tee -a /proc/sys/fs/inotify/max_user_watches && watchman shutdown-server && watchman watch-del-all"
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [

@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     color: gray.outerSpace(),
     textDecorationLine: 'underline',
     textDecorationStyle: 'solid',
-    textDecorationColor: gray.darkest(),
+    textDecorationColor: gray.shark(),
   },
   myforumsContent: {
     flex: 0.8,
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignSelf: 'center',
     borderRadius: 60,
-    backgroundColor: gray.darkest(),
+    backgroundColor: gray.shark(),
   },
   FavoriteTopicText: {
     fontSize: 8,
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     textDecorationLine: 'underline',
     textDecorationStyle: 'solid',
-    textDecorationColor: gray.darkest(),
+    textDecorationColor: gray.shark(),
   },
   topPostPlant: {
     marginTop: 15,

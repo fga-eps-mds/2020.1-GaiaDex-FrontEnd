@@ -2,7 +2,7 @@ import React from 'react';
 import { Alert, View, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import styles from './style';
-import { UserDelete } from '../../services/backEnd';
+import { UserDelete } from '../../services';
 import { highlight } from '../../theme/colorPalette';
 
 export default function DeleteMyAccount({ navigation }) {

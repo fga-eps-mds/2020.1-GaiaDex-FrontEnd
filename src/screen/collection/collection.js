@@ -5,18 +5,14 @@ import styles from './styles';
 import MenuBar from '../../assets/components/menuBar';
 import MyPlants from './components/MyPlants';
 import Favorite from './components/Favorite';
-import {
-  getUserLogged,
-  desfavoritePlant,
-  editMyPlant,
-} from '../../services/backEnd';
+import { getUserLogged, desfavoritePlant, updateMyPlant } from '../../services';
 import { gray } from '../../theme/colorPalette';
 
 export default function Collection({ navigation }) {
   const [user, setUser] = useState({});
   const [text, setText] = useState('');
   const [editingText, setEditingText] = useState(false);
-  const [plantToEdit, setPlantToEdit] = useState({});
+  const [plantToUpdate, setPlantToUpdate] = useState({});
   const [plantTab, setPlantTab] = useState(true);
   useEffect(() => {
     getUserLogged().then((res) => setUser(res));
@@ -27,7 +23,7 @@ export default function Collection({ navigation }) {
     );
   };
   const editarNickname = () => {
-    editMyPlant(plantToEdit._id, text).then((res) => setUser(res));
+    updateMyPlant(plantToUpdate._id, text).then((res) => setUser(res));
   };
   return (
     <View style={styles.container}>
@@ -70,12 +66,12 @@ export default function Collection({ navigation }) {
       <View style={styles.popularContainer}>
         <View style={styles.tabContainer}>
           <TouchableOpacity onPress={() => setPlantTab(true)}>
-            <Text style={plantTab ? styles.tabTextactivate : styles.tabText}>
+            <Text style={plantTab ? styles.tabTextActive : styles.tabText}>
               Minhas Plantas
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => setPlantTab(false)}>
-            <Text style={plantTab ? styles.tabText : styles.tabTextactivate}>
+            <Text style={plantTab ? styles.tabText : styles.tabTextActive}>
               Favoritas
             </Text>
           </TouchableOpacity>
@@ -88,7 +84,7 @@ export default function Collection({ navigation }) {
               setUser={setUser}
               navigation={navigation}
               setPlantTab={setPlantTab}
-              setPlantToEdit={setPlantToEdit}
+              setPlantToUpdate={setPlantToUpdate}
               setEditingText={setEditingText}
             />
           </>

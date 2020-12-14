@@ -9,7 +9,7 @@ import {
 
 import { AntDesign } from '@expo/vector-icons';
 import styles from './style';
-import { getPlant } from '../../../services/backEnd';
+import { getPlant } from '../../../services';
 import { gray } from '../../../theme/colorPalette';
 
 const userDefaultImg = require('../../../assets/userDefault.png');

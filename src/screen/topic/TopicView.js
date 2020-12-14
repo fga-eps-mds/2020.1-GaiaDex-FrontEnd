@@ -21,7 +21,7 @@ import {
   likeComment,
   dislikeComment,
   getUserLogged,
-} from '../../services/backEnd';
+} from '../../services';
 import Comments from './comment/Comments';
 import { gray, highlight } from '../../theme/colorPalette';
 
@@ -47,10 +47,11 @@ export default function TopicView({ navigation }) {
   const [isEditing, setIsEditing] = useState(false);
   const [isEditable, setIsEditable] = useState(true);
   const [commentText, setCommentText] = useState('');
-  const [topicIsDeleted, setTopicIsLiked] = useState(false);
+  const [topicIsLiked, setTopicIsLiked] = useState(false);
   const [topicIsNotLiked, setTopicIsNotLiked] = useState(false);
   const [topicDate, setTopicDate] = useState(0);
-  const [isDeleted, setIsDeleted] = useState(false);
+  const [topicIsDeleted, setTopicIsDeleted] = useState(false);
+
   useEffect(() => {
     getUserLogged().then((res) => setUser(res));
 
@@ -61,7 +62,7 @@ export default function TopicView({ navigation }) {
       })
       .then(() => {
         if (topic?.title === deletedTopicTitle) {
-          setIsDeleted(true);
+          setTopicIsDeleted(true);
         }
       })
       .then(() => {
@@ -89,7 +90,7 @@ export default function TopicView({ navigation }) {
     };
     updateTopic(topic?._id, topicBody)
       .then((data) => setTopic(data))
-      .then(() => setIsDeleted(true))
+      .then(() => setTopicIsDeleted(true))
       .catch((error) => console.error(error));
   };
   const postComment = async () => {
@@ -121,7 +122,7 @@ export default function TopicView({ navigation }) {
     if (options[type]) options[type]();
   };
 
-  const deslike = async (type, id = null) => {
+  const dislike = async (type, id = null) => {
     const options = {
       topic: () => {
         dislikeTopic(topic?._id).then((res) => {
@@ -178,7 +179,7 @@ export default function TopicView({ navigation }) {
                   setTopic({ ...topic, description })
                 }
               />
-              {!isDeleted && (
+              {!topicIsDeleted && (
                 <TouchableOpacity
                   style={styles.saveButton}
                   onPress={() => putTopic()}
@@ -219,15 +220,15 @@ export default function TopicView({ navigation }) {
               <AntDesign
                 name="arrowup"
                 size={18}
-                color={topicIsDeleted ? highlight.cinnabar() : gray.darkest()}
+                color={topicIsLiked ? highlight.cinnabar() : gray.shark()}
                 onPress={() => like('topic', topicID)}
               />
               <Text>{topic?.likes?.length}</Text>
               <AntDesign
                 name="arrowdown"
                 size={18}
-                color={topicIsNotLiked ? highlight.cinnabar() : gray.darkest()}
-                onPress={() => deslike('topic', topicID)}
+                color={topicIsNotLiked ? highlight.cinnabar() : gray.shark()}
+                onPress={() => dislike('topic', topicID)}
               />
             </View>
             {!!isEditable && (
@@ -236,7 +237,7 @@ export default function TopicView({ navigation }) {
                   name="edit"
                   size={18}
                   color={gray.shark()}
-                  onPress={() => !isDeleted && setIsEditing(!isEditing)}
+                  onPress={() => !topicIsDeleted && setIsEditing(!isEditing)}
                 />
               </View>
             )}
@@ -269,8 +270,8 @@ export default function TopicView({ navigation }) {
               setTopic={setTopic}
               user={user}
               like={like}
-              deslike={deslike}
-              topicIsDeleted={topicIsDeleted}
+              dislike={dislike}
+              topicIsLiked={topicIsLiked}
             />
           ) : (
             <View style={styles.commentContent}>

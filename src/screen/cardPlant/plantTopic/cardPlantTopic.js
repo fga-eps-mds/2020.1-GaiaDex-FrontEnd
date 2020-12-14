@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import styles from '../styles';
-import { getPlant } from '../../../services/backEnd';
+import { getPlant } from '../../../services';
 import { gray } from '../../../theme/colorPalette';
 
 const userDefaultImg = require('../../../assets/userDefault.png');

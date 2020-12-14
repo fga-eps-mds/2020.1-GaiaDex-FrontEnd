@@ -1,12 +1,11 @@
 import { ENDPOINTS, baseHeaders, getToken } from './index';
 
-export const createMyPlant = async (plantId, plantNickname) => {
+export const createMyPlant = (plantId, plantNickname) => {
   const PLANT = ENDPOINTS.API.myPlant;
-  const token = await getToken();
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + PLANT.create.route(plantId), {
       method: PLANT.create.method,
-      headers: baseHeaders(token),
+      headers: baseHeaders(getToken()),
       body: JSON.stringify({
         nickname: plantNickname,
       }),
@@ -17,7 +16,7 @@ export const createMyPlant = async (plantId, plantNickname) => {
   });
 };
 
-export const editMyPlant = async (myPlantID, newNick) => {
+export const updateMyPlant = (myPlantID, newNick) => {
   const PLANT = ENDPOINTS.API.myPlant;
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + PLANT.update.route(myPlantID), {
@@ -33,7 +32,7 @@ export const editMyPlant = async (myPlantID, newNick) => {
   });
 };
 
-export const deleteMyPlant = async (myPlantID) => {
+export const deleteMyPlant = (myPlantID) => {
   const PLANT = ENDPOINTS.API.myPlant;
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + PLANT.delete.route(myPlantID), {
