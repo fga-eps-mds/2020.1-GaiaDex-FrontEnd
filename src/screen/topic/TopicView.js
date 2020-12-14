@@ -40,6 +40,7 @@ function Data({ time }) {
 
 export default function TopicView({ navigation }) {
   const topicID = navigation.getParam('itemID', '5fcc409c8e5b3100955db202');
+  const deletedTopicTitle = 'Topico Deletado';
   const [user, setUser] = useState({});
   const [topic, setTopic] = useState({});
   const [isNewComment, setIsNewComment] = useState(true);
@@ -59,7 +60,7 @@ export default function TopicView({ navigation }) {
         return setTopic(res);
       })
       .then(() => {
-        if (topic?.title === 'Topico Deletado') {
+        if (topic?.title === deletedTopicTitle) {
           setIsDeleted(true);
         }
       })
@@ -83,8 +84,8 @@ export default function TopicView({ navigation }) {
   };
   const deleteTopic = async () => {
     const topicBody = {
-      title: 'Topico Deletado',
-      description: 'Topico Deletado',
+      title: deletedTopicTitle,
+      description: deletedTopicTitle,
     };
     updateTopic(topic?._id, topicBody)
       .then((data) => setTopic(data))

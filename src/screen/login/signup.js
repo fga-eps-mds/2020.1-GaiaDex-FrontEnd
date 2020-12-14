@@ -48,7 +48,7 @@ export default function Signup({ navigation }) {
 
       <TextInput
         style={styles.textinputRegform}
-        placeholder="Senha:"
+        placeholder="Sua senha:"
         secureTextEntry
         underlineColorAndroid="transparent"
         onChangeText={(valor) => setPassword(valor)}

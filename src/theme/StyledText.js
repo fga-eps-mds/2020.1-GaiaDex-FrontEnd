@@ -12,7 +12,7 @@ export default function StyledText({ option, title, propStyle }) {
 uso:
   exemplo 1:
     <StyledText option="h1" title="Este é um texto grande padrão" />
-    
+
   exemplo 2:
     <StyledText
       option="body1"
