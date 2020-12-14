@@ -65,6 +65,20 @@ describe('<Login />', () => {
     expect(wrapper.find('TouchableOpacity').at(4)).toHaveProp('onPress');
 
   });
+  it('renders Icon correctly', () => {
+    expect(wrapper.find('Icon').at(0)).toHaveProp('name','arrowright');
+    expect(wrapper.find('Icon').at(0)).toHaveProp('size', 35);
+    expect(wrapper.find('Icon').at(0)).toHaveProp('color','white');
+    expect(wrapper.find('Icon').at(0)).toHaveProp('style',styles.arrow);
+    expect(wrapper.find('Icon').at(1)).toHaveProp('name','facebook');
+    expect(wrapper.find('Icon').at(1)).toHaveProp('size', 24);
+    expect(wrapper.find('Icon').at(1)).toHaveProp('color','#F2E0F5');
+    expect(wrapper.find('Icon').at(1)).toHaveProp('style',styles.iconBtnFbGoogle);
+    expect(wrapper.find('Icon').at(2)).toHaveProp('name','google');
+    expect(wrapper.find('Icon').at(2)).toHaveProp('size', 24);
+    expect(wrapper.find('Icon').at(2)).toHaveProp('color','#F2E0F5');
+    expect(wrapper.find('Icon').at(2)).toHaveProp('style',styles.iconBtnFbGoogle);
+  });
   /*
   it('reads input correctly', () => {
     

@@ -2,14 +2,14 @@ import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/asy
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
-import Signup from '../src/screen/login/signup'
+import Update from '../src/screen/login/updateUser'
 
 import styles from '../src/screen/login/style'
 
-const wrapper = mount(<Signup />);
 
-describe('<Signup />', () => {
- 
+const wrapper = mount(<Update />);
+
+describe('<Update />', () => {
   it('renders everything', () => {
     expect(wrapper).toMatchSnapshot;
     expect(wrapper.find('TextInput').length).toBe(3);
@@ -17,6 +17,7 @@ describe('<Signup />', () => {
     expect(wrapper.find('Text').length).toBe(16);
     expect(wrapper.find('TouchableOpacity').length).toBe(4);
     expect(wrapper.find('StatusBar').length).toBe(1);
+    expect(wrapper.find('Icon').length).toBe(3);
   });
 
   it('renders Text Input correctly', () => {
@@ -46,9 +47,9 @@ describe('<Signup />', () => {
 
   it('renders Text correctly', () => {
     expect(wrapper.find('Text').at(0)).toHaveStyle(styles.headerRegform);
-    expect(wrapper.find('Text').at(0)).toHaveText('Criar Conta');
+    expect(wrapper.find('Text').at(0)).toHaveText('Alterar Dados:');
     expect(wrapper.find('Text').at(2)).toHaveStyle(styles.midTxt);
-    expect(wrapper.find('Text').at(2)).toHaveText('Cadastro');
+    expect(wrapper.find('Text').at(2)).toHaveText('Alterar');
     expect(wrapper.find('Text').at(8)).toHaveStyle(styles.txtBtnFbGoogleRegform);
     expect(wrapper.find('Text').at(8)).toHaveText('Fazer login com o Facebook');
     expect(wrapper.find('Text').at(12)).toHaveStyle(styles.txtBtnFbGoogleRegform);
