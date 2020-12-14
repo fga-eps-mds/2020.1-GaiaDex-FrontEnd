@@ -1,7 +1,7 @@
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 
 import { mount } from 'enzyme';
-import Favorite from '../src/screen/collection/Favorite';
+import Favorite from '../src/screen/collection/components/Favorite';
 import styles from '../src/screen/collection/styles';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
