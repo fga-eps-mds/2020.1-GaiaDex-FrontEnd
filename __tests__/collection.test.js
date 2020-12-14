@@ -45,4 +45,11 @@ describe('<Collection />', () => {
     expect(wrapper.find('TouchableOpacity').at(3)).toHaveProp('onPress');
   });
 
+  it('renders MenuBar correctly', () => {
+    expect(wrapper.find('MenuBar').at(0)).toHaveProp('navigation');
+  });
+
+  it('renders Modal correctly', () => {
+    expect(wrapper.find('Modal').at(0)).toHaveProp('visible');
+  });
 });
