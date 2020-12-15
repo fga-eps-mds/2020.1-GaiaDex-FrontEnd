@@ -87,6 +87,10 @@ const ENDPOINTS = {
         route: (topicID) => `/topic/find/${topicID}`,
         method: 'GET',
       },
+      listTop: {
+        route: `/topic/list`,
+        method: 'GET',
+      },
       create: {
         route: (plantID) => `/topic/create/${plantID}`,
         method: 'POST',
