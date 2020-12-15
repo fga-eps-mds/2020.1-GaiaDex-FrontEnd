@@ -1,10 +1,6 @@
 const ENDPOINTS = {
   API: {
-    base_url: 'http://gaiadex-backend-homolog.herokuapp.com',
-      //process.env.NODE_ENV === 'production'
-        //? 'http://gaiadex-backend-homolog.herokuapp.com'
-        //: 'http://192.168.0.10:3000',
-
+    base_url: 'https://gaiadex-backend-homolog.herokuapp.com',
     auth: {
       user: {
         route: '/auth/user',
