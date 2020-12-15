@@ -1,0 +1,315 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Signup /> renders everything 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "stretch",
+      "backgroundColor": "rgba(25,187,83,0.3)",
+      "flex": 0,
+      "height": 1376,
+      "justifyContent": "flex-end",
+      "paddingLeft": "8.5%",
+      "paddingRight": "8.5%",
+      "paddingTop": 42,
+      "width": 750,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(98,35,108,1.0)",
+        "borderRadius": 722.72,
+        "height": 722.72,
+        "left": -297.92,
+        "position": "absolute",
+        "top": -457.01,
+        "width": 722.72,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(242,224,245,1.0)",
+        "borderRadius": 432.49,
+        "height": 432.49,
+        "left": 178,
+        "position": "absolute",
+        "top": 651.43,
+        "width": 491.11,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "color": "rgba(242,224,245,1.0)",
+        "flex": 1,
+        "fontSize": 65,
+        "fontStyle": "normal",
+        "fontWeight": "600",
+        "lineHeight": 65,
+        "marginTop": 82.0923076923077,
+      }
+    }
+  >
+    Criar Conta
+  </Text>
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    placeholder="Nome:"
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "rgba(15,128,56,1.0)",
+        "borderColor": "transparent",
+        "borderRadius": 20,
+        "color": "rgba(49,53,58,1.0)",
+        "fontSize": 15,
+        "fontStyle": "normal",
+        "fontWeight": "500",
+        "height": "8%",
+        "marginBottom": 20,
+        "paddingLeft": 30,
+        "paddingRight": 30,
+        "width": "100%",
+      }
+    }
+    underlineColorAndroid="transparent"
+  />
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    placeholder="Seu e-mail:"
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "rgba(15,128,56,1.0)",
+        "borderColor": "transparent",
+        "borderRadius": 20,
+        "color": "rgba(49,53,58,1.0)",
+        "fontSize": 15,
+        "fontStyle": "normal",
+        "fontWeight": "500",
+        "height": "8%",
+        "marginBottom": 20,
+        "paddingLeft": 30,
+        "paddingRight": 30,
+        "width": "100%",
+      }
+    }
+    underlineColorAndroid="transparent"
+  />
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    placeholder="Sua senha:"
+    rejectResponderTermination={true}
+    secureTextEntry={true}
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "rgba(15,128,56,1.0)",
+        "borderColor": "transparent",
+        "borderRadius": 20,
+        "color": "rgba(49,53,58,1.0)",
+        "fontSize": 15,
+        "fontStyle": "normal",
+        "fontWeight": "500",
+        "height": "8%",
+        "marginBottom": 20,
+        "paddingLeft": 30,
+        "paddingRight": 30,
+        "width": "100%",
+      }
+    }
+    underlineColorAndroid="transparent"
+  />
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "rgba(36,37,40,1.0)",
+          "fontSize": 40,
+          "fontStyle": "normal",
+          "fontWeight": "600",
+          "lineHeight": 40,
+          "marginTop": 12.75,
+        }
+      }
+    >
+      Cadastro
+    </Text>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "flex-end",
+          "backgroundColor": "rgba(77,82,90,1.0)",
+          "borderRadius": 100,
+          "height": 8.5,
+          "justifyContent": "center",
+          "marginBottom": 20,
+          "opacity": 1,
+          "padding": 35,
+          "width": 8.5,
+        }
+      }
+    >
+      <Text />
+    </View>
+  </View>
+  <View
+    accessible={true}
+    focusable={false}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignContent": "center",
+        "backgroundColor": "rgba(216,163,224,1.0)",
+        "borderColor": "rgba(5,130,202,1.0)",
+        "borderRadius": 10,
+        "height": "6.20%",
+        "justifyContent": "center",
+        "marginBottom": 10,
+        "opacity": 1,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text />
+      <Text
+        style={
+          Object {
+            "color": "rgba(56,20,62,1.0)",
+            "fontSize": 14,
+            "fontStyle": "normal",
+            "fontWeight": "500",
+            "letterSpacing": 0.1,
+            "textAlign": "center",
+          }
+        }
+      >
+        Fazer login com o Facebook
+      </Text>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    focusable={false}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignContent": "center",
+        "backgroundColor": "rgba(216,163,224,1.0)",
+        "borderColor": "rgba(5,130,202,1.0)",
+        "borderRadius": 10,
+        "height": "6.20%",
+        "justifyContent": "center",
+        "marginBottom": 10,
+        "opacity": 1,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text />
+      <Text
+        style={
+          Object {
+            "color": "rgba(56,20,62,1.0)",
+            "fontSize": 14,
+            "fontStyle": "normal",
+            "fontWeight": "500",
+            "letterSpacing": 0.1,
+            "textAlign": "center",
+          }
+        }
+      >
+        Fazer login com o Google
+      </Text>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "alignSelf": "flex-end",
+          "color": "rgba(214,218,223,1.0)",
+          "fontSize": 18,
+          "fontStyle": "normal",
+          "fontWeight": "300",
+          "letterSpacing": 0.1,
+          "marginBottom": 40,
+          "textAlign": "center",
+        }
+      }
+    >
+      Login
+    </Text>
+  </View>
+</View>
+`;

@@ -1,4 +1,8 @@
 {
+  "globals": {
+        "mount": true,
+        "shallow": true
+    },
   "extends": [
     "airbnb",
     "plugin:prettier/recommended",

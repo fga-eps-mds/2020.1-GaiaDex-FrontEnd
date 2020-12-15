@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Logout /> renders everything 1`] = `
+<View>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    delayLongPress={600}
+    extraButtonProps={
+      Object {
+        "rippleColor": "transparent",
+      }
+    }
+    onPress={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(214,218,223,1.0)",
+        "borderRadius": 10,
+        "height": 66.7,
+        "justifyContent": "center",
+        "width": 300,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+          "textAlign": "center",
+        }
+      }
+    >
+      Sair
+    </Text>
+  </TouchableOpacity>
+</View>
+`;

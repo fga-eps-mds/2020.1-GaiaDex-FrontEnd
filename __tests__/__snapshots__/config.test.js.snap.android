@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Config /> renders everything 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "rgba(214,218,223,1.0)",
+      "flex": 1,
+      "justifyContent": "flex-end",
+    }
+  }
+>
+  <Header />
+  <View
+    style={
+      Object {
+        "flex": 0.7,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 0.1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginVertical": "3%",
+          "width": 625,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(36,37,40,1.0)",
+            "fontSize": 15,
+            "fontWeight": "500",
+          }
+        }
+      >
+        Notificação de novo comentário
+      </Text>
+      <Switch
+        ios_backgroundcolor="rgba(49,53,58,1.0)"
+        onValueChange={[Function]}
+        thumbColor="rgba(219,250,230,1.0)"
+        trackColor={
+          Object {
+            "false": "rgba(124,130,138,1.0)",
+            "true": "rgba(5,130,202,1.0)",
+          }
+        }
+        value={false}
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 0.1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginVertical": "3%",
+          "width": 625,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(36,37,40,1.0)",
+            "fontSize": 15,
+            "fontWeight": "500",
+          }
+        }
+      >
+        Notificação de novo tópico
+      </Text>
+      <Switch
+        ios_backgroundcolor="rgba(49,53,58,1.0)"
+        onValueChange={[Function]}
+        thumbColor="rgba(219,250,230,1.0)"
+        trackColor={
+          Object {
+            "false": "rgba(124,130,138,1.0)",
+            "true": "rgba(5,130,202,1.0)",
+          }
+        }
+        value={false}
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 0.1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginVertical": "3%",
+          "width": 625,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(36,37,40,1.0)",
+            "fontSize": 15,
+            "fontWeight": "500",
+          }
+        }
+      >
+        Notificação de likes e dislikes
+      </Text>
+      <Switch
+        ios_backgroundcolor="rgba(49,53,58,1.0)"
+        onValueChange={[Function]}
+        thumbColor="rgba(219,250,230,1.0)"
+        trackColor={
+          Object {
+            "false": "rgba(124,130,138,1.0)",
+            "true": "rgba(5,130,202,1.0)",
+          }
+        }
+        value={false}
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 0.1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginTop": "10%",
+          "marginVertical": "3%",
+          "width": 625,
+        }
+      }
+    >
+      <Logout />
+      <DeleteMyAccount />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`<Config /> renders everything 2`] = `
+<View
+  style={
+    Object {
+      "flex": 0.2,
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "paddingRight": "8%",
+      "width": 750,
+    }
+  }
+>
+  <ForwardRef
+    onPress={[Function]}
+    style={
+      Object {
+        "flexDirection": "row",
+      }
+    }
+  >
+    <Icon
+      allowFontScaling={false}
+      color="rgba(36,37,40,1.0)"
+      name="left"
+      size={35}
+    />
+    <Text
+      style={
+        Object {
+          "color": "rgba(36,37,40,1.0)",
+          "fontSize": 32,
+        }
+      }
+    >
+      Configurações
+    </Text>
+  </ForwardRef>
+  <Icon
+    allowFontScaling={false}
+    color="rgba(36,37,40,1.0)"
+    name="setting"
+    size={35}
+  />
+</View>
+`;

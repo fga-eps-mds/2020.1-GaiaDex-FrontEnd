@@ -1,0 +1,405 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TopicCreate /> renders everything 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgba(214,218,223,1.0)",
+      "flex": 1,
+      "flexDirection": "column",
+      "width": 750,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "center",
+        "backgroundColor": "rgba(36,37,40,1.0)",
+        "flex": 0.1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "width": 750,
+      }
+    }
+  >
+    <Text />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(36,37,40,1.0)",
+        "flex": 0.3,
+        "flexDirection": "column",
+      }
+    }
+  >
+    <View
+      accessibilityIgnoresInvertColors={true}
+      style={
+        Object {
+          "alignSelf": "center",
+          "flex": 0.4,
+          "marginTop": "-9%",
+          "width": 357.1428571428571,
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": undefined,
+          }
+        }
+        style={
+          Object {
+            "borderRadius": 25,
+            "bottom": 0,
+            "height": undefined,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "width": 357.1428571428571,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "alignSelf": "center",
+          "backgroundColor": "rgba(36,37,40,1.0)",
+          "flex": 0.25,
+          "flexDirection": "column",
+          "width": 576.9230769230769,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(214,218,223,1.0)",
+            "flex": 0.6,
+            "fontSize": 23,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "alignContent": "center",
+            "alignItems": "center",
+            "flex": 0.4,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": 576.9230769230769,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "space-around",
+              "width": "35%",
+            }
+          }
+        >
+          <Text />
+          <Text
+            style={
+              Object {
+                "color": "rgba(214,218,223,1.0)",
+                "fontSize": 10,
+              }
+            }
+          >
+             Usuários
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "space-around",
+              "width": "35%",
+            }
+          }
+        >
+          <Text />
+          <Text
+            style={
+              Object {
+                "color": "rgba(214,218,223,1.0)",
+                "fontSize": 10,
+              }
+            }
+          >
+             Tópicos
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "center",
+          "backgroundColor": "rgba(36,37,40,1.0)",
+          "flex": 0.375,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "width": 576.9230769230769,
+        }
+      }
+    >
+      <Text />
+      <Text
+        style={
+          Object {
+            "color": "rgba(214,218,223,1.0)",
+            "fontSize": 10,
+            "padding": "4%",
+            "textAlign": "left",
+          }
+        }
+      >
+        Esta é uma comunidade certificada/padrão do app. Direcionada para se interagir sobre quaisquer assuntos envolvendo cenouras.
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-around",
+          "width": 441.1764705882353,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+            "opacity": 1,
+            "width": 187.5,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "rgba(214,218,223,1.0)",
+              "fontSize": 12,
+            }
+          }
+        >
+          Informações
+        </Text>
+        <Text />
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+            "opacity": 1,
+            "width": 187.5,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "rgba(214,218,223,1.0)",
+              "fontSize": 12,
+            }
+          }
+        >
+          Topicos
+        </Text>
+        <Text />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(242,224,245,1.0)",
+        "borderTopLeftRadius": 20,
+        "borderTopRightRadius": 20,
+        "flex": 0.6,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignSelf": "center",
+          "flex": 0.35,
+          "padding": 10,
+          "width": 625,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(36,37,40,1.0)",
+            "fontSize": 16,
+            "marginBottom": 10,
+          }
+        }
+      >
+        Contribuidores:
+      </Text>
+      <RCTScrollView
+        disableVirtualization={false}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        horizontal={true}
+        initialNumToRender={10}
+        keyExtractor={[Function]}
+        maxToRenderPerBatch={10}
+        onContentSizeChange={[Function]}
+        onEndReachedThreshold={2}
+        onLayout={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        removeClippedSubviews={false}
+        renderItem={[Function]}
+        scrollEventThrottle={50}
+        stickyHeaderIndices={Array []}
+        updateCellsBatchingPeriod={50}
+        viewabilityConfigCallbackPairs={Array []}
+        windowSize={21}
+      >
+        <View />
+      </RCTScrollView>
+    </View>
+    <View
+      style={
+        Object {
+          "alignSelf": "center",
+          "flex": 0.65,
+          "padding": 0,
+          "width": 625,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(36,37,40,1.0)",
+            "fontSize": 16,
+            "marginBottom": 10,
+          }
+        }
+      >
+        Tópicos relacionados:
+      </Text>
+      <RCTScrollView
+        disableVirtualization={false}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        horizontal={false}
+        initialNumToRender={10}
+        keyExtractor={[Function]}
+        maxToRenderPerBatch={10}
+        onContentSizeChange={[Function]}
+        onEndReachedThreshold={2}
+        onLayout={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        removeClippedSubviews={false}
+        renderItem={[Function]}
+        scrollEventThrottle={50}
+        stickyHeaderIndices={Array []}
+        updateCellsBatchingPeriod={50}
+        viewabilityConfigCallbackPairs={Array []}
+        windowSize={21}
+      >
+        <View />
+      </RCTScrollView>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(203,133,214,0.3)",
+        "borderRadius": 100,
+        "height": 150,
+        "justifyContent": "center",
+        "marginLeft": 555.5555555555555,
+        "marginTop": 1111.6666666666667,
+        "position": "absolute",
+        "width": 150,
+        "zIndex": 0,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(36,37,40,1.0)",
+          "borderRadius": 100,
+          "height": 110.29411764705883,
+          "justifyContent": "center",
+          "opacity": 1,
+          "width": 110.29411764705883,
+        }
+      }
+    >
+      <Text />
+    </View>
+  </View>
+</View>
+`;

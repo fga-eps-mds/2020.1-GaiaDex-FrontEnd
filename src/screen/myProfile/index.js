@@ -75,7 +75,7 @@ function Item({ title, nickname, tempo }) {
   );
 }
 
-export default function myProfile({ navigation }) {
+export default function MyProfile({ navigation }) {
   const [activityLog, setActivitLog] = useState([]);
   const [user, setUser] = useState({});
   useEffect(() => {

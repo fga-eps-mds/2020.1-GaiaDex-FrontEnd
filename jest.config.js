@@ -7,7 +7,10 @@ module.exports = {
   moduleFileExtensions: ['js', 'jsx'],
   setupFilesAfterEnv: ['jest-enzyme'],
   testEnvironment: 'enzyme',
-  testMatch: ['**/__tests__/**/*.test.native.js'],
+  testMatch: [
+    '**/__tests__/*.test.native.js',
+    '**/__tests__/**/*.test.native.js',
+  ],
   collectCoverage: true,
   testResultsProcessor: 'jest-sonar-reporter',
   coveragePathIgnorePatterns: ['/node_modules/', '/__tests__/'],
