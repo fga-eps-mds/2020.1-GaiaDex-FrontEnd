@@ -12,7 +12,7 @@ jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
 let wrapper;
 
-describe('<TopicCreate />', () => {
+describe('<TopicView />', () => {
   beforeEach(() => {
     wrapper = mount(<TopicView navigation={{ getParam: jest.fn() }} />);
   });
@@ -23,15 +23,15 @@ describe('<TopicCreate />', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
     expect(wrapper.find('KeyboardAvoidingView').length).toBe(1);
-    expect(wrapper.find('View').length).toBe(38);
+    expect(wrapper.find('View').length).toBe(36);
     expect(wrapper.find('Header').length).toBe(1);
     expect(wrapper.find('Image').length).toBe(2);
     expect(wrapper.find('Data').length).toBe(1);
     expect(wrapper.find('ScrollView').length).toBe(2);
     expect(wrapper.find('Comments').length).toBe(1);
-    expect(wrapper.find('Text').length).toBe(30);
-    expect(wrapper.find('TouchableOpacity').length).toBe(1);
-    expect(wrapper.find('Icon').length).toBe(7);
+    expect(wrapper.find('Text').length).toBe(26);
+    expect(wrapper.find('TouchableOpacity').length).toBe(2);
+    expect(wrapper.find('Icon').length).toBe(5);
   });
   it('renders KeyboardAvoidingView correctly', () => {
     expect(wrapper.find('KeyboardAvoidingView').at(0)).toHaveStyle(
@@ -48,7 +48,7 @@ describe('<TopicCreate />', () => {
     expect(wrapper.find('Image').at(0)).toHaveProp('defaultSource');
   });
   it('renders Data correctly', () => {
-    expect(wrapper.find('Data').at(0)).toHaveProp('tempo');
+    expect(wrapper.find('Data').at(0)).toHaveProp('time');
   });
   it('renders ScrollView correctly', () => {
     expect(wrapper.find('ScrollView').at(0)).toHaveStyle(
@@ -70,44 +70,32 @@ describe('<TopicCreate />', () => {
     expect(wrapper.find('View').at(16)).toHaveStyle({ marginTop: 10 });
     expect(wrapper.find('View').at(17)).toHaveStyle({ marginTop: 10 });
     expect(wrapper.find('View').at(20)).toHaveStyle(styles.topicContainer);
-    expect(wrapper.find('View').at(26)).toHaveStyle(styles.shareIcon);
-    expect(wrapper.find('View').at(30)).toHaveStyle(styles.commentsBar);
-    expect(wrapper.find('View').at(32)).toHaveStyle(styles.commentsListDiv);
-    expect(wrapper.find('View').at(34)).toHaveStyle(styles.commentsList);
+    expect(wrapper.find('View').at(28)).toHaveStyle(styles.commentsBar);
+    expect(wrapper.find('View').at(30)).toHaveStyle(styles.commentsListDiv);
+    expect(wrapper.find('View').at(32)).toHaveStyle(styles.commentsList);
   });
   it('renders Text correctly', () => {
     expect(wrapper.find('Text').at(4)).toHaveStyle(styles.nameUser);
     expect(wrapper.find('Text').at(8)).toHaveStyle(styles.topicDivTitle);
-    expect(wrapper.find('Text').at(24)).toHaveText('Compartilhar');
-    expect(wrapper.find('Text').at(24)).toHaveStyle({ fontSize: 10 });
-    expect(wrapper.find('Text').at(26)).toHaveStyle(styles.commentsBarText);
-    expect(wrapper.find('Text').at(26)).toHaveText('Novo Comentário');
+    expect(wrapper.find('Text').at(22)).toHaveStyle(styles.commentsBarText);
+    expect(wrapper.find('Text').at(22)).toHaveText('Novo Comentário');
   });
   it('renders TouchableOpacity correctly', () => {
-    expect(wrapper.find('TouchableOpacity').at(0)).toHaveStyle(
-      styles.commentsBarDiv
-    );
     expect(wrapper.find('TouchableOpacity').at(0)).toHaveProp('onPress');
   });
   it('renders Icon correctly', () => {
-    expect(wrapper.find('Icon').at(2)).toHaveProp('name', 'arrowup');
+    expect(wrapper.find('Icon').at(1)).toHaveProp('size', 18);
+    expect(wrapper.find('Icon').at(1)).toHaveProp('color', gray.shark());
+    expect(wrapper.find('Icon').at(1)).toHaveProp('onPress');
+    expect(wrapper.find('Icon').at(1)).toHaveProp('name', 'arrowup');
     expect(wrapper.find('Icon').at(2)).toHaveProp('size', 18);
     expect(wrapper.find('Icon').at(2)).toHaveProp('color', gray.shark());
     expect(wrapper.find('Icon').at(2)).toHaveProp('onPress');
-    expect(wrapper.find('Icon').at(3)).toHaveProp('name', 'arrowdown');
-    expect(wrapper.find('Icon').at(3)).toHaveProp('size', 18);
+    expect(wrapper.find('Icon').at(3)).toHaveProp('name', 'corner-up-right');
+    expect(wrapper.find('Icon').at(3)).toHaveProp('size', 15);
     expect(wrapper.find('Icon').at(3)).toHaveProp('color', gray.shark());
-    expect(wrapper.find('Icon').at(3)).toHaveProp('onPress');
-    expect(wrapper.find('Icon').at(4)).toHaveProp('name', 'edit');
-    expect(wrapper.find('Icon').at(4)).toHaveProp('size', 18);
+    expect(wrapper.find('Icon').at(4)).toHaveProp('name', 'triangle-right');
+    expect(wrapper.find('Icon').at(4)).toHaveProp('size', 15);
     expect(wrapper.find('Icon').at(4)).toHaveProp('color', gray.shark());
-    expect(wrapper.find('Icon').at(4)).toHaveProp('onPress');
-    expect(wrapper.find('Icon').at(5)).toHaveProp('name', 'corner-up-right');
-    expect(wrapper.find('Icon').at(5)).toHaveProp('size', 15);
-    expect(wrapper.find('Icon').at(5)).toHaveProp('color', gray.shark());
-    expect(wrapper.find('Icon').at(6)).toHaveStyle(styles.commentsBarIcon);
-    expect(wrapper.find('Icon').at(6)).toHaveProp('name', 'triangle-right');
-    expect(wrapper.find('Icon').at(6)).toHaveProp('size', 15);
-    expect(wrapper.find('Icon').at(6)).toHaveProp('color', gray.shark());
   });
 });

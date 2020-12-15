@@ -29,12 +29,16 @@ function Data({ time }) {
   const now = new Date();
   const tmp = Math.trunc((now - time) / 1000 / 60);
   if (tmp / 60 > 24) {
-    return <Text style={styles.dataTopic}>{tmp / 24} dias atrás</Text>;
+    return (
+      <Text style={styles.dataTopic}>{Math.trunc(tmp / 24)} dias atrás</Text>
+    );
   }
   if (tmp / 3600 > 24) {
-    return <Text style={styles.dataTopic}>{tmp / 24} horas atrás</Text>;
+    return (
+      <Text style={styles.dataTopic}>{Math.trunc(tmp / 60)} horas atrás</Text>
+    );
   }
-  return <Text style={styles.dataTopic}>{tmp} minutos atrás</Text>;
+  return <Text style={styles.dataTopic}>{Math.trunc(tmp)} minutos atrás</Text>;
 }
 
 export default function TopicView({ navigation }) {
