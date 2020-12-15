@@ -1,12 +1,13 @@
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 
 import renderer from 'react-test-renderer';
-
 import React from 'react';
 import Collection from '../src/screen/collection/collection';
 import styles from '../src/screen/collection/styles';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
+
+
 
 let wrapper;
 
@@ -16,8 +17,8 @@ describe('<Collection />', () => {
   });
 
   it('renders everything', () => {
-    const tree = renderer.create(<Collection />).toJSON();
-    expect(tree).toMatchSnapshot();
+    let wrapperSnap = shallow(<Collection />)
+    expect(wrapperSnap).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(42);
     expect(wrapper.find('Text').length).toBe(24);
     expect(wrapper.find('TextInput').length).toBe(1);
@@ -36,10 +37,17 @@ describe('<Collection />', () => {
 
   it('renders Text correctly', () => {
     expect(wrapper.find('Text').at(0)).toHaveStyle(styles.editTitle);
+    expect(wrapper.find('Text').at(0)).toHaveText('Digite o novo nome para sua planta:');
     expect(wrapper.find('Text').at(2)).toHaveStyle(styles.editButton);
+    expect(wrapper.find('Text').at(2)).toHaveText('FEITO');
+    expect(wrapper.find('Text').at(4)).toHaveStyle(styles.editButton);
+    expect(wrapper.find('Text').at(4)).toHaveText('CANCELAR');
     expect(wrapper.find('Text').at(6)).toHaveStyle(styles.exploreText);
-    expect(wrapper.find('Text').at(10)).toHaveStyle(styles.tabTextactivate);
+    expect(wrapper.find('Text').at(6)).toHaveText('Coleção');
+    expect(wrapper.find('Text').at(10)).toHaveStyle(styles.tabTextActive);
+    expect(wrapper.find('Text').at(10)).toHaveText('Minhas Plantas');
     expect(wrapper.find('Text').at(12)).toHaveStyle(styles.tabText);
+    expect(wrapper.find('Text').at(12)).toHaveText('Favoritas');
   });
 
   it('renders TextInput correctly', () => {
@@ -68,7 +76,7 @@ describe('<Collection />', () => {
     expect(wrapper.find('MyPlants').at(0)).toHaveProp('setUser');
     expect(wrapper.find('MyPlants').at(0)).toHaveProp('navigation');
     expect(wrapper.find('MyPlants').at(0)).toHaveProp('setPlantTab');
-    expect(wrapper.find('MyPlants').at(0)).toHaveProp('setPlantToEdit');
+    expect(wrapper.find('MyPlants').at(0)).toHaveProp('setPlantToUpdate');
     expect(wrapper.find('MyPlants').at(0)).toHaveProp('setEditingText');
   });
 });
