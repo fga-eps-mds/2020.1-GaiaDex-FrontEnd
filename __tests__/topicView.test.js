@@ -2,6 +2,8 @@ import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/asy
 
 import renderer from 'react-test-renderer';
 
+import { gray } from '../src/theme/colorPalette';
+
 import React from 'react';
 import TopicView from '../src/screen/topic/TopicView';
 import styles from '../src/screen/topic/styles';
@@ -58,7 +60,7 @@ describe('<TopicCreate />', () => {
     expect(wrapper.find('Comments').at(0)).toHaveProp('setTopic');
     expect(wrapper.find('Comments').at(0)).toHaveProp('user');
     expect(wrapper.find('Comments').at(0)).toHaveProp('like');
-    expect(wrapper.find('Comments').at(0)).toHaveProp('deslike');
+    expect(wrapper.find('Comments').at(0)).toHaveProp('dislike');
     expect(wrapper.find('Comments').at(0)).toHaveProp('topicisLiked');
   });
   it('renders View correctly', () => {
@@ -90,22 +92,22 @@ describe('<TopicCreate />', () => {
   it('renders Icon correctly', () => {
     expect(wrapper.find('Icon').at(2)).toHaveProp('name', 'arrowup');
     expect(wrapper.find('Icon').at(2)).toHaveProp('size', 18);
-    expect(wrapper.find('Icon').at(2)).toHaveProp('color', 'black');
+    expect(wrapper.find('Icon').at(2)).toHaveProp('color', gray.shark());
     expect(wrapper.find('Icon').at(2)).toHaveProp('onPress');
     expect(wrapper.find('Icon').at(3)).toHaveProp('name', 'arrowdown');
     expect(wrapper.find('Icon').at(3)).toHaveProp('size', 18);
-    expect(wrapper.find('Icon').at(3)).toHaveProp('color', 'black');
+    expect(wrapper.find('Icon').at(3)).toHaveProp('color', gray.shark());
     expect(wrapper.find('Icon').at(3)).toHaveProp('onPress');
     expect(wrapper.find('Icon').at(4)).toHaveProp('name', 'edit');
     expect(wrapper.find('Icon').at(4)).toHaveProp('size', 18);
-    expect(wrapper.find('Icon').at(4)).toHaveProp('color', 'black');
+    expect(wrapper.find('Icon').at(4)).toHaveProp('color', gray.shark());
     expect(wrapper.find('Icon').at(4)).toHaveProp('onPress');
     expect(wrapper.find('Icon').at(5)).toHaveProp('name', 'corner-up-right');
     expect(wrapper.find('Icon').at(5)).toHaveProp('size', 15);
-    expect(wrapper.find('Icon').at(5)).toHaveProp('color', 'black');
+    expect(wrapper.find('Icon').at(5)).toHaveProp('color', gray.shark());
     expect(wrapper.find('Icon').at(6)).toHaveStyle(styles.commentsBarIcon);
     expect(wrapper.find('Icon').at(6)).toHaveProp('name', 'triangle-right');
     expect(wrapper.find('Icon').at(6)).toHaveProp('size', 15);
-    expect(wrapper.find('Icon').at(6)).toHaveProp('color', 'black');
+    expect(wrapper.find('Icon').at(6)).toHaveProp('color', gray.shark());
   });
 });

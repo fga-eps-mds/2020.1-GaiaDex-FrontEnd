@@ -1,5 +1,7 @@
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 
+import { gray, highlight } from '../src/theme/colorPalette';
+
 import { mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
@@ -56,33 +58,33 @@ describe('<Config />', () => {
   it('renders Switch correctly', () => {
     expect(wrapper.find('Switch').at(0)).toExist();
     expect(wrapper.find('Switch').at(0)).toHaveProp('trackColor', {
-      false: '#767577',
-      true: '#81b0ff',
+      false: gray.rollingStone(),
+      true: highlight.lochmara(),
     });
     expect(wrapper.find('Switch').at(0)).toHaveProp('thumbColor');
     expect(wrapper.find('Switch').at(0)).toHaveProp(
       'ios_backgroundColor',
-      '#3e3e3e'
+      gray.outerSpace()
     );
     expect(wrapper.find('Switch').at(1)).toExist();
     expect(wrapper.find('Switch').at(1)).toHaveProp('trackColor', {
-      false: '#767577',
-      true: '#81b0ff',
+      false: gray.rollingStone(),
+      true: highlight.lochmara(),
     });
     expect(wrapper.find('Switch').at(1)).toHaveProp('thumbColor');
     expect(wrapper.find('Switch').at(1)).toHaveProp(
       'ios_backgroundColor',
-      '#3e3e3e'
+      gray.outerSpace()
     );
     expect(wrapper.find('Switch').at(2)).toExist();
     expect(wrapper.find('Switch').at(2)).toHaveProp('trackColor', {
-      false: '#767577',
-      true: '#81b0ff',
+      false: gray.rollingStone(),
+      true: highlight.lochmara(),
     });
     expect(wrapper.find('Switch').at(2)).toHaveProp('thumbColor');
     expect(wrapper.find('Switch').at(2)).toHaveProp(
       'ios_backgroundColor',
-      '#3e3e3e'
+      gray.outerSpace()
     );
   });
   it('renders Logout', () => {

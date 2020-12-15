@@ -2,6 +2,8 @@ import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/asy
 
 import renderer from 'react-test-renderer';
 
+import { gray } from '../src/theme/colorPalette';
+
 import React from 'react';
 import camera from '../src/screen/scanner/index';
 import styles from '../src/screen/scanner/styles';
@@ -80,7 +82,7 @@ describe('<Scamera />', () => {
   it('renders Icon correctly', () => {
     expect(wrapper.find('Icon').at(1)).toHaveProp('name', 'camerao');
     expect(wrapper.find('Icon').at(1)).toHaveProp('size', 36);
-    expect(wrapper.find('Icon').at(1)).toHaveProp('color', '#FFF');
+    expect(wrapper.find('Icon').at(1)).toHaveProp('color', gray.iron());
   });
   it('renders Text correctly', () => {
     expect(wrapper.find('Text').at(5)).toHaveText('Flor');

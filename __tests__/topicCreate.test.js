@@ -2,6 +2,8 @@ import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/asy
 
 import renderer from 'react-test-renderer';
 
+import { gray } from '../src/theme/colorPalette';
+
 import React from 'react';
 import TopicCreate from '../src/screen/topic/TopicCreate';
 import styles from '../src/screen/topic/styles';
@@ -42,7 +44,7 @@ describe('<TopicCreate />', () => {
   });
   it('renders Text correctly', () => {
     expect(wrapper.find('Text').at(2)).toHaveStyle({
-      color: 'white',
+      color: gray.iron(),
       fontSize: 15,
     });
     expect(wrapper.find('Text').at(6)).toHaveStyle(
@@ -61,7 +63,7 @@ describe('<TopicCreate />', () => {
   it('renders Icon correctly', () => {
     expect(wrapper.find('Icon').at(1)).toHaveProp('name', 'send');
     expect(wrapper.find('Icon').at(1)).toHaveProp('size', 24);
-    expect(wrapper.find('Icon').at(1)).toHaveProp('color', 'white');
+    expect(wrapper.find('Icon').at(1)).toHaveProp('color', gray.iron());
     expect(wrapper.find('Icon').at(1)).toHaveProp('style', { marginRight: 20 });
   });
   it('renders Text Input correctly', () => {

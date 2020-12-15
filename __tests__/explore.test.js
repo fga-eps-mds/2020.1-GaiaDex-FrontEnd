@@ -2,6 +2,8 @@ import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/asy
 
 import renderer from 'react-test-renderer';
 
+import { gray } from '../src/theme/colorPalette';
+
 import React from 'react';
 import Explore from '../src/screen/explore/explore';
 import styles from '../src/screen/explore/styles';
@@ -39,7 +41,7 @@ describe('<Explore />', () => {
   it('renders Icon correctly', () => {
     expect(wrapper.find('Icon').at(0)).toHaveProp('name', 'search');
     expect(wrapper.find('Icon').at(0)).toHaveProp('size', 45);
-    expect(wrapper.find('Icon').at(0)).toHaveProp('color', 'black');
+    expect(wrapper.find('Icon').at(0)).toHaveProp('color', gray.shark());
   });
   it('renders Text correctly', () => {
     expect(wrapper.find('Text').at(0)).toHaveStyle(styles.exploreText);

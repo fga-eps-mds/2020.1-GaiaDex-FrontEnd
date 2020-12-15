@@ -2,6 +2,8 @@ import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/asy
 
 import renderer from 'react-test-renderer';
 
+import { gray } from '../src/theme/colorPalette';
+
 import React from 'react';
 import Login from '../src/screen/login/login';
 
@@ -87,7 +89,7 @@ describe('<Login />', () => {
   it('renders Icon correctly', () => {
     expect(wrapper.find('Icon').at(0)).toHaveProp('name', 'arrowright');
     expect(wrapper.find('Icon').at(0)).toHaveProp('size', 35);
-    expect(wrapper.find('Icon').at(0)).toHaveProp('color', 'white');
+    expect(wrapper.find('Icon').at(0)).toHaveProp('color', gray.iron());
     expect(wrapper.find('Icon').at(0)).toHaveProp('style', styles.arrow);
     expect(wrapper.find('Icon').at(1)).toHaveProp('name', 'facebook');
     expect(wrapper.find('Icon').at(1)).toHaveProp('size', 24);
