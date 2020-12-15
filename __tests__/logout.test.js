@@ -17,8 +17,8 @@ describe('<Logout />', () => {
   });
 
   it('renders everything', () => {
-    const tree = renderer.create(<Logout />).toJSON();
-    expect(tree).toMatchSnapshot();
+    let wrapperSnap = shallow(<Logout />)
+    expect(wrapperSnap).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(4);
     expect(wrapper.find('Text').length).toBe(2);
     expect(wrapper.find('TouchableOpacity').length).toBe(1);
