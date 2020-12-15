@@ -1,7 +1,6 @@
 const ENDPOINTS = {
   API: {
-    //base_url: `https://gaiadex-backend-homolog.herokuapp.com`,
-    base_url: `http://192.168.0.107:3000`,
+    base_url: `https://gaiadex-backend-homolog.herokuapp.com`,
     auth: {
       user: {
         route: '/auth/user',
