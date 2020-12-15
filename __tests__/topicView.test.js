@@ -61,7 +61,7 @@ describe('<TopicCreate />', () => {
     expect(wrapper.find('Comments').at(0)).toHaveProp('user');
     expect(wrapper.find('Comments').at(0)).toHaveProp('like');
     expect(wrapper.find('Comments').at(0)).toHaveProp('dislike');
-    expect(wrapper.find('Comments').at(0)).toHaveProp('topicisLiked');
+    expect(wrapper.find('Comments').at(0)).toHaveProp('topicIsLiked');
   });
   it('renders View correctly', () => {
     expect(wrapper.find('View').at(8)).toHaveStyle(styles.container);
