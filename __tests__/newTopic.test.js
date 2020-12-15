@@ -15,8 +15,8 @@ describe('<NewTopic />', () => {
   });
 
   it('renders everything', () => {
-    const tree = renderer.create(<NewTopic />).toJSON();
-    expect(tree).toMatchSnapshot();
+    let wrapperSnap = shallow(<NewTopic />)
+    expect(wrapperSnap).toMatchSnapshot();
     expect(wrapper.find('TouchableOpacity').length).toBe(0);
     expect(wrapper.find('ImageBackground').length).toBe(0);
     expect(wrapper.find('View').length).toBe(2);
