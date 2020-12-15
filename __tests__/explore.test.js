@@ -18,8 +18,8 @@ describe('<Explore />', () => {
   });
 
   it('renders everything', () => {
-    const tree = renderer.create(<Explore />).toJSON();
-    expect(tree).toMatchSnapshot();
+    let wrapperSnap = shallow(<Explore />)
+    expect(wrapperSnap).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(34);
     expect(wrapper.find('TouchableOpacity').length).toBe(1);
     expect(wrapper.find('Icon').length).toBe(6);
