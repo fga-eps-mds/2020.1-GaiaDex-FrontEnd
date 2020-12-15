@@ -1,6 +1,7 @@
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 
 import renderer from 'react-test-renderer';
+import { highlight } from '../src/theme/colorPalette';
 
 import React from 'react';
 import DeleteMyAccount from '../src/screen/login/deleteMyAccount';
@@ -17,9 +18,8 @@ describe('<DeleteMyAccount />', () => {
   });
 
   it('renders everything', () => {
-    const tree = renderer.create(<DeleteMyAccount />).toJSON();
-    expect(tree).toMatchSnapshot();
-    expect(wrapper).toMatchSnapshot();
+    let wrapperSnap = shallow(<DeleteMyAccount />)
+    expect(wrapperSnap).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(4);
     expect(wrapper.find('Text').length).toBe(2);
     expect(wrapper.find('TouchableOpacity').length).toBe(1);
@@ -31,7 +31,7 @@ describe('<DeleteMyAccount />', () => {
   it('renders TouchableOpacity correctly', () => {
     expect(wrapper.find('TouchableOpacity').at(0)).toHaveProp('style', [
       styles.btnButtonLogoutDelete,
-      { borderWidth: 1, borderColor: 'red' },
+      { borderWidth: 1, borderColor: highlight.cinnabar() },
     ]);
     expect(wrapper.find('TouchableOpacity').at(0)).toHaveProp('onPress');
   });
