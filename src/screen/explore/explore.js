@@ -4,14 +4,15 @@ import { EvilIcons } from '@expo/vector-icons';
 import { FlatList } from 'react-native-gesture-handler';
 import styles from './styles';
 import MenuBar from '../../assets/components/menuBar';
-import { getUserLogado, getPlants } from '../../services/backEnd';
+import { getUserLogged, getPlants } from '../../services';
+import { gray } from '../../theme/colorPalette';
 
 export default function Explore({ navigation }) {
   const [user, setUser] = useState({});
   const [plants, setPlants] = useState({});
   useEffect(() => {
     getPlants().then((dado) => setPlants(dado));
-    getUserLogado().then((res) => setUser(res));
+    getUserLogged().then((res) => setUser(res));
   }, []);
 
   const Popular = ({ item }) => (
@@ -50,7 +51,7 @@ export default function Explore({ navigation }) {
     <View style={styles.container}>
       <View style={styles.exploreContainer}>
         <Text style={styles.exploreText}>Explorar</Text>
-        <EvilIcons name="search" size={45} color="black" />
+        <EvilIcons name="search" size={45} color={gray.shark()} />
       </View>
       <View style={styles.popularContainer}>
         <View style={styles.popularTabs}>

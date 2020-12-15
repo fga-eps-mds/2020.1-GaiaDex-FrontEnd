@@ -1,27 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect, useState } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  StatusBar as sBar,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { AntDesign, Entypo } from '@expo/vector-icons';
-import { UserUpdate } from '../../services/backEnd';
+import { UserUpdate } from '../../services';
 import styles from './style';
+import { gray, purple } from '../../theme/colorPalette';
 
 export default function Update({ navigation }) {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
+  const [password, setPassword] = useState('');
   const update = () => {
     const user = {
       username,
       email,
-      password: senha,
+      password,
     };
     UserUpdate(user).then((res) => {
       if (res.Error) {
@@ -57,9 +50,8 @@ export default function Update({ navigation }) {
         style={styles.textinputRegform}
         secureTextEntry
         placeholder="Senha:"
-        secureTextEntry
         underlineColorAndroid="transparent"
-        onChangeText={(valor) => setSenha(valor)}
+        onChangeText={(valor) => setPassword(valor)}
       />
 
       <View style={styles.direction}>
@@ -68,7 +60,7 @@ export default function Update({ navigation }) {
           <AntDesign
             name="arrowright"
             size={35}
-            color="white"
+            color={gray.iron()}
             style={styles.arrow}
           />
         </TouchableOpacity>
@@ -79,7 +71,7 @@ export default function Update({ navigation }) {
           <Entypo
             name="facebook"
             size={24}
-            color="#38143E"
+            color={purple.grapeDark()}
             style={styles.iconBtnFbGoogle}
           />
           <Text style={styles.txtBtnFbGoogleRegform}>
@@ -93,7 +85,7 @@ export default function Update({ navigation }) {
           <AntDesign
             name="google"
             size={24}
-            color="#38143E"
+            color={purple.grapeDark()}
             style={styles.iconBtnFbGoogle}
           />
           <Text style={styles.txtBtnFbGoogleRegform}>
@@ -106,6 +98,7 @@ export default function Update({ navigation }) {
         <Text style={styles.txtBtnOthersRegform}>Login</Text>
       </TouchableOpacity>
 
+      {/* eslint-disable-next-line react/style-prop-object */}
       <StatusBar style="auto" />
     </View>
   );

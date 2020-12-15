@@ -1,24 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect, useState } from 'react';
-import {
-  Text,
-  View,
-  StatusBar as sBar,
-  TextInput,
-  TouchableOpacity,
-  Alert,
-} from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { AntDesign, Entypo } from '@expo/vector-icons';
 import styles from './style';
 import { UserLogin } from '../../services/backEnd';
+import { gray, purple } from '../../theme/colorPalette';
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
+  const [password, setPassword] = useState('');
   const login = () => {
     const user = {
       email,
-      password: senha,
+      password,
     };
     UserLogin(user).then((res) => {
       if (res.Error) {
@@ -34,42 +28,37 @@ export default function Login({ navigation }) {
       <View style={styles.circle3} />
       <View style={styles.circle2} />
       <View style={styles.circle1} />
-
       <Text style={styles.headerLogin}>Seja bem-vindo</Text>
-
       <TextInput
         style={styles.textinputLogin}
         placeholder="Seu e-mail:"
         underlineColorAndroid="transparent"
         onChangeText={(valor) => setEmail(valor)}
       />
-
       <TextInput
         style={styles.textinputLogin}
         placeholder="Sua senha:"
         secureTextEntry
         underlineColorAndroid="transparent"
-        onChangeText={(valor) => setSenha(valor)}
+        onChangeText={(valor) => setPassword(valor)}
       />
-
       <View style={styles.direction}>
         <Text style={styles.midTxt}>Login</Text>
         <TouchableOpacity style={styles.midBtn} onPress={() => login()}>
           <AntDesign
             name="arrowright"
             size={35}
-            color="white"
+            color={gray.iron()}
             style={styles.arrow}
           />
         </TouchableOpacity>
       </View>
-
       <TouchableOpacity style={styles.btnFbGoogleLogin}>
         <View style={styles.viewbtnFbGoogle}>
           <Entypo
             name="facebook"
             size={24}
-            color="#F2E0F5"
+            color={purple.frenchLilacLighter()}
             style={styles.iconBtnFbGoogle}
           />
           <Text style={styles.txtBtnFbGoogleLogin}>
@@ -77,13 +66,12 @@ export default function Login({ navigation }) {
           </Text>
         </View>
       </TouchableOpacity>
-
       <TouchableOpacity style={styles.btnFbGoogleLogin}>
         <View style={styles.viewbtnFbGoogle}>
           <AntDesign
             name="google"
             size={24}
-            color="#F2E0F5"
+            color={purple.frenchLilacLighter()}
             style={styles.iconBtnFbGoogle}
           />
           <Text style={styles.txtBtnFbGoogleLogin}>
@@ -91,7 +79,6 @@ export default function Login({ navigation }) {
           </Text>
         </View>
       </TouchableOpacity>
-
       <View style={styles.direction}>
         <TouchableOpacity onPress={() => navigation.push('Signup')}>
           <Text style={styles.txtBtnOthersLogin}>Cadastro</Text>
@@ -101,7 +88,7 @@ export default function Login({ navigation }) {
           <Text style={styles.txtBtnOthersLogin}>Esqueci a senha</Text>
         </TouchableOpacity>
       </View>
-
+      {/* eslint-disable-next-line react/style-prop-object */}
       <StatusBar style="auto" />
     </View>
   );

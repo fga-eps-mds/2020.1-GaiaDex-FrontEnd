@@ -1,24 +1,20 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { gray, purple } from '../../../theme/colorPalette';
 
-import Constants from 'expo-constants';
-import { ceil, round } from 'react-native-reanimated';
-import { NONE } from 'apisauce';
-
-const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
+const { width } = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   containerView: {
     flexDirection: 'column',
-    backgroundColor: '#D6DADF',
-    width: largura,
-    backgroundColor: '#242528',
+    backgroundColor: gray.iron(),
+    width,
+    // backgroundColor: gray.shark(),
     flex: 0.8,
   },
   containerHeader: {
     flex: 0.15,
-    backgroundColor: '#242528',
-    width: largura,
+    backgroundColor: gray.shark(),
+    width,
     alignSelf: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -30,18 +26,18 @@ const styles = StyleSheet.create({
   },
   containerPlant: {
     flex: 0.3,
-    backgroundColor: '#242528',
+    backgroundColor: gray.shark(),
     flexDirection: 'column',
   },
   plantImg: {
     flex: 0.5,
-    width: largura / 2.1,
+    width: width / 2.1,
     alignSelf: 'center',
     marginTop: '-15%',
   },
   plantInfo: {
-    backgroundColor: '#242528',
-    width: largura / 1.3,
+    backgroundColor: gray.shark(),
+    width: width / 1.3,
     flex: 0.25,
     flexDirection: 'column',
     alignItems: 'flex-start',
@@ -49,13 +45,13 @@ const styles = StyleSheet.create({
   },
   plantInfoTitle: {
     flex: 0.6,
-    color: '#D6DADF',
+    color: gray.iron(),
     fontSize: 23,
   },
   plantInfoStats: {
     flex: 0.4,
     flexDirection: 'row',
-    width: largura / 1.3,
+    width: width / 1.3,
     justifyContent: 'space-between',
     alignContent: 'center',
     alignItems: 'center',
@@ -67,56 +63,56 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   plantInfoText: {
-    color: '#D6DADF',
+    color: gray.iron(),
     fontSize: 10,
   },
   plantText: {
-    backgroundColor: '#242528',
+    backgroundColor: gray.shark(),
     flex: 0.375,
-    width: largura / 1.3,
+    width: width / 1.3,
     alignSelf: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
   },
   plantTextDescription: {
-    color: '#D6DADF',
+    color: gray.iron(),
     textAlign: 'left',
     padding: '4%',
     fontSize: 10,
   },
   containerBody: {
     flex: 0.6,
-    backgroundColor: '#F9F6F4',
+    backgroundColor: purple.frenchLilacLighter(),
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
   },
   bodyPlants: {
-    width: largura / 1.1,
+    width: width / 1.1,
     alignSelf: 'center',
     padding: 10,
     flex: 0.28,
   },
   bodyPlantsTitle: {
-    color: '#242528',
+    color: gray.shark(),
     fontSize: 16,
     marginBottom: 10,
   },
   userDiv: {
     padding: 5,
-    width: largura / 5,
+    width: width / 5,
     alignItems: 'center',
   },
   UserImg: {
-    width: largura / 6,
-    height: largura / 6,
+    width: width / 6,
+    height: width / 6,
   },
   userName: {
     fontSize: 12,
     textAlign: 'center',
   },
   bodyTopics: {
-    width: largura / 1.2,
+    width: width / 1.2,
     alignSelf: 'center',
     justifyContent: 'space-around',
     flex: 0.75,
@@ -126,11 +122,11 @@ const styles = StyleSheet.create({
   },
   descriptionContainer: {
     flex: 0.7,
-    width: largura / 1.25,
+    width: width / 1.25,
     padding: 5,
-    backgroundColor: 'white',
+    backgroundColor: gray.iron(),
     borderWidth: 1,
-    borderColor: '#A8AFB9',
+    borderColor: gray.grayChateau(),
     borderTopRightRadius: 5,
     borderTopLeftRadius: 5,
     alignSelf: 'center',
@@ -138,23 +134,23 @@ const styles = StyleSheet.create({
   },
   descriptionContainerTextOpen: {
     flex: 1,
-    width: largura / 1.25,
+    width: width / 1.25,
     padding: 5,
-    backgroundColor: 'white',
+    backgroundColor: gray.iron(),
     borderWidth: 1,
-    borderColor: '#A8AFB9',
+    borderColor: gray.grayChateau(),
     alignSelf: 'center',
     justifyContent: 'center',
   },
   button: {
     height: 20,
-    width: largura / 1.25,
-    backgroundColor: '#E5E5E5',
+    width: width / 1.25,
+    backgroundColor: gray.iron(),
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#A8AFB9',
+    borderColor: gray.grayChateau(),
     borderBottomRightRadius: 5,
     borderBottomLeftRadius: 5,
   },
@@ -175,10 +171,10 @@ const styles = StyleSheet.create({
     fontSize: 8,
     fontWeight: '300',
     textAlign: 'left',
-    width: largura / 2.6,
+    width: width / 2.6,
     borderWidth: 1,
-    borderColor: '#A8AFB9',
-    backgroundColor: 'white',
+    borderColor: gray.grayChateau(),
+    backgroundColor: gray.iron(),
     borderRadius: 5,
     padding: 10,
     justifyContent: 'space-around',

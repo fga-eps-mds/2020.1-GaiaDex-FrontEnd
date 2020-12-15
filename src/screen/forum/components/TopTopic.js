@@ -3,6 +3,7 @@ import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import { FontAwesome5, AntDesign } from '@expo/vector-icons';
 import { FlatList } from 'react-native-gesture-handler';
 import styles from '../styles';
+import { gray } from '../../../theme/colorPalette';
 
 export default function TopTopic({ navigation, topTopic }) {
   const TopPost = ({ item }) => (
@@ -25,11 +26,15 @@ export default function TopTopic({ navigation, topTopic }) {
             <Text style={styles.postData}>{item?.createdAt}</Text>
             <View style={styles.posStatus}>
               <View style={styles.postLikes}>
-                <FontAwesome5 name="comment-alt" size={20} color="white" />
+                <FontAwesome5
+                  name="comment-alt"
+                  size={20}
+                  color={gray.iron()}
+                />
                 <Text style={styles.postTitle}>{item?.comments.length}</Text>
               </View>
               <View style={styles.postLikes}>
-                <AntDesign name="arrowup" size={20} color="white" />
+                <AntDesign name="arrowup" size={20} color={gray.iron()} />
                 <Text style={styles.postTitle}>{item?.likes.length}</Text>
               </View>
             </View>

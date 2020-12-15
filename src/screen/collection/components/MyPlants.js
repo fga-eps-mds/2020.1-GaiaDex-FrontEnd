@@ -3,13 +3,14 @@ import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import { FlatList } from 'react-native-gesture-handler';
 import styles from '../styles';
-import { favoritePlant, deleteMyPlant } from '../../../services/backEnd';
+import { favoritePlant, deleteMyPlant } from '../../../services';
+import { purple, highlight } from '../../../theme/colorPalette';
 
 export default function MyPlants({
   navigation,
   user,
   setUser,
-  setPlantToEdit,
+  setPlantToUpdate,
   setEditingText,
   setPlantTab,
 }) {
@@ -35,18 +36,18 @@ export default function MyPlants({
         <View
           style={styles.myplantInfo}
           onPress={() => {
-            setPlantToEdit(item);
-            setEdit(true);
+            setPlantToUpdate(item);
+            setEditingText(true);
           }}
         >
           <Text style={styles.plantText}>{item?.nickname}</Text>
           <AntDesign
             name="edit"
             size={24}
-            color="#F2E0F5"
+            color={purple.frenchLilacLighter()}
             onPress={() => {
               setEditingText(true);
-              setPlantToEdit(item);
+              setPlantToUpdate(item);
             }}
           />
         </View>
@@ -60,13 +61,13 @@ export default function MyPlants({
           <AntDesign
             name="star"
             size={28}
-            color="#E0AC00"
+            color={highlight.lightningYellow()}
             onPress={() => favoritar(item?.plant?._id)}
           />
           <FontAwesome
             name="trash"
             size={28}
-            color="#E4572E"
+            color={highlight.cinnabar()}
             onPress={() => deletar(item?._id)}
           />
         </View>

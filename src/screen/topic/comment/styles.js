@@ -1,7 +1,7 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { gray, purple } from '../../../theme/colorPalette';
 
-const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
+const { height, width } = Dimensions.get('screen');
 const styles = StyleSheet.create({
   topicDivLikes: {
     flexDirection: 'row',
@@ -18,17 +18,17 @@ const styles = StyleSheet.create({
   commentsBarDiv: {
     flex: 1,
     marginTop: 20,
-    backgroundColor: 'white',
+    backgroundColor: gray.iron(),
   },
   commentsListDiv: {
     flex: 5,
-    backgroundColor: '#D8A3E0',
+    backgroundColor: purple.lightWisteriaLighter(),
     justifyContent: 'center',
     flexWrap: 'nowrap',
   },
   commentsBar: {
     flex: 5,
-    backgroundColor: '#D8A3E0',
+    backgroundColor: purple.lightWisteriaLighter(),
     alignContent: 'flex-start',
     flexDirection: 'row',
   },
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
     alignSelf: 'flex-start',
-    paddingLeft: largura / 10,
+    paddingLeft: width / 10,
     paddingTop: 12,
   },
   commentsBarIcon: {
@@ -46,17 +46,17 @@ const styles = StyleSheet.create({
   },
   commentsList: {
     flex: 1,
-    backgroundColor: '#D6DADF',
+    backgroundColor: gray.iron(),
   },
   commentIcon: {
     flexDirection: 'row',
   },
   commentItemDiv: {
-    backgroundColor: 'white',
+    backgroundColor: gray.iron(),
     flexDirection: 'column',
     alignSelf: 'center',
-    width: largura / 1.1,
-    height: altura / 7,
+    width: width / 1.1,
+    height: height / 7,
     marginVertical: 5,
     borderRadius: 5,
     paddingTop: 10,
@@ -69,17 +69,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignSelf: 'flex-end',
     flex: 4,
-    backgroundColor: 'white',
-    maxHeight: altura / 30,
+    backgroundColor: gray.iron(),
+    maxHeight: height / 30,
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'space-between',
-    width: largura / 1.8,
+    width: width / 1.8,
   },
   imgUserComment: {
     marginLeft: 10,
-    width: largura / 8,
-    height: largura / 8,
+    width: width / 8,
+    height: width / 8,
     borderRadius: 50,
   },
   commentUsername: {

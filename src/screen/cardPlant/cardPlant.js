@@ -3,10 +3,11 @@ import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import { Feather, FontAwesome5, Octicons } from '@expo/vector-icons';
 import Header from './header';
 import styles from './styles';
-import { getPlant } from '../../services/backEnd';
+import { getPlant } from '../../services';
 import NewTopic from './plantTopic/newTopic';
 import PlantCardInfo from './plantInfo/myPlantCard';
 import PlantCardTopic from './plantTopic/cardPlantTopic';
+import { gray, green } from '../../theme/colorPalette';
 
 export default function PlantCard({ navigation }) {
   const plantID = navigation.getParam('itemID', '5fcc46c17940a300617a93ab'); // Recebe ID da planta a ser exibida ou apresenta valor default
@@ -28,13 +29,13 @@ export default function PlantCard({ navigation }) {
           <Text style={styles.plantInfoTitle}>{plant?.scientificName}</Text>
           <View style={styles.plantInfoStats}>
             <View style={styles.plantInfoDiv}>
-              <Feather name="users" size={15} color="white" />
+              <Feather name="users" size={15} color={gray.iron()} />
               <Text style={styles.plantInfoText}>
                 {plant?.topics?.length} Usuários
               </Text>
             </View>
             <View style={styles.plantInfoDiv}>
-              <FontAwesome5 name="comment" size={14} color="white" />
+              <FontAwesome5 name="comment" size={14} color={gray.iron()} />
               <Text style={styles.plantInfoText}>
                 {plant?.topics?.length} Tópicos
               </Text>
@@ -45,7 +46,7 @@ export default function PlantCard({ navigation }) {
           <Feather
             name="check-circle"
             size={18}
-            color="green"
+            color={green.malachite()}
             style={{ paddingBottom: 10 }}
           />
           <Text style={styles.plantTextDescription}>
@@ -62,7 +63,7 @@ export default function PlantCard({ navigation }) {
             <Octicons
               name="primitive-dot"
               size={20}
-              color={stateCard ? 'green' : 'white'}
+              color={stateCard ? 'green' : gray.iron()}
             />
           </TouchableOpacity>
           <TouchableOpacity
@@ -73,7 +74,7 @@ export default function PlantCard({ navigation }) {
             <Octicons
               name="primitive-dot"
               size={20}
-              color={stateCard ? 'white' : 'green'}
+              color={stateCard ? gray.iron() : 'green'}
             />
           </TouchableOpacity>
         </View>

@@ -1,12 +1,12 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { gray, green, highlight, purple } from '../../theme/colorPalette';
 
-const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
+const { height, width } = Dimensions.get('screen');
 const styles = StyleSheet.create({
   TopicCreateheader: {
-    backgroundColor: 'black',
+    backgroundColor: gray.shark(),
     flexDirection: 'row',
-    width: largura,
+    width,
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 10,
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   TopicCreatepublicarText: {
     marginTop: 2.5,
     marginRight: 20,
-    color: 'white',
+    color: gray.iron(),
     fontSize: 15,
     fontWeight: '100',
   },
@@ -33,11 +33,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flex: 1,
     marginBottom: 30,
-    width: largura / 1.2,
+    width: width / 1.2,
   },
   TopicCreateimgUser: {
-    width: largura / 5,
-    height: largura / 5,
+    width: width / 5,
+    height: width / 5,
     borderRadius: 50,
   },
   TopicCreatenameUser: {
@@ -47,26 +47,26 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
   },
   TopicCreatetopicComment: {
-    backgroundColor: '#D6DADF',
+    backgroundColor: gray.iron(),
     borderRadius: 10,
-    height: altura / 2.1,
-    width: largura / 1.2,
+    height: height / 2.1,
+    width: width / 1.2,
     alignSelf: 'center',
     textAlignVertical: 'top',
     paddingLeft: 20,
     paddingTop: 10,
   },
   TopicCreatetituloTopic: {
-    backgroundColor: '#D6DADF',
+    backgroundColor: gray.iron(),
     borderRadius: 10,
-    height: altura / 15,
+    height: height / 15,
     paddingLeft: 20,
   },
   TopicCreatetituloDiv: {
-    backgroundColor: 'skyblue',
-    marginBottom: altura / 20,
+    backgroundColor: highlight.lochmara(),
+    marginBottom: height / 20,
     borderRadius: 10,
-    width: largura / 1.2,
+    width: width / 1.2,
     alignSelf: 'center',
   },
   TopicCreatecontainer: {
@@ -74,26 +74,26 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexWrap: 'nowrap',
     flex: 8,
-    width: largura,
+    width,
     alignSelf: 'center',
-    backgroundColor: 'white',
+    backgroundColor: gray.iron(),
   },
   TopicCreatemasterView: {
     flexDirection: 'column',
     justifyContent: 'center',
     flexWrap: 'nowrap',
     flex: 1,
-    width: largura,
+    width,
     alignSelf: 'center',
   },
   TopicCreatescrollView: {
-    height: altura / 16,
+    height: height / 16,
     marginLeft: 10,
   },
   TopicCreatescrollDiv: {
-    width: largura / 1.2,
+    width: width / 1.2,
     alignSelf: 'center',
-    backgroundColor: '#19BB53',
+    backgroundColor: green.mountainMeadow(),
     borderRadius: 10,
     marginTop: 20,
     marginBottom: 40,
@@ -104,11 +104,11 @@ const styles = StyleSheet.create({
   UserDiv: {
     flexDirection: 'row',
     flex: 0.6,
-    marginTop: altura / 50,
+    marginTop: height / 50,
   },
   imgUser: {
-    width: largura / 5,
-    height: largura / 5,
+    width: width / 5,
+    height: width / 5,
     borderRadius: 50,
   },
   nameUser: {
@@ -134,12 +134,12 @@ const styles = StyleSheet.create({
   },
   scrollViewDescription: {
     marginTop: 5,
-    maxHeight: altura / 8,
+    maxHeight: height / 8,
   },
   imgDescription: {
     alignSelf: 'center',
-    width: largura / 1.2,
-    height: largura / 1.2,
+    width: width / 1.2,
+    height: width / 1.2,
     margin: 10,
   },
   topicDescriptionInput: {
@@ -152,17 +152,17 @@ const styles = StyleSheet.create({
     marginBottom: 0,
   },
   saveButton: {
-    backgroundColor: '#D8A3E0',
+    backgroundColor: purple.lightWisteriaLighter(),
     alignSelf: 'flex-end',
     justifyContent: 'center',
     margin: 10,
-    height: largura / 12,
-    width: largura / 4,
+    height: width / 12,
+    width: width / 4,
     borderRadius: 10,
   },
   saveButtonText: {
     fontSize: 16,
-    color: 'black',
+    color: gray.shark(),
     textAlign: 'center',
     textAlignVertical: 'center',
   },
@@ -175,8 +175,8 @@ const styles = StyleSheet.create({
   topicContainer: {
     flexDirection: 'row',
     flex: 6,
-    backgroundColor: '#D6DADF',
-    maxHeight: altura / 20,
+    backgroundColor: gray.iron(),
+    maxHeight: height / 20,
     borderRadius: 8,
     marginTop: 20,
     alignItems: 'center',
@@ -197,17 +197,17 @@ const styles = StyleSheet.create({
   commentsBarDiv: {
     flex: 1,
     marginTop: 20,
-    backgroundColor: 'white',
+    backgroundColor: gray.iron(),
   },
   commentsListDiv: {
     flex: 5,
-    backgroundColor: '#D8A3E0',
+    backgroundColor: purple.lightWisteriaLighter(),
     justifyContent: 'center',
     flexWrap: 'nowrap',
   },
   commentsBar: {
     flex: 5,
-    backgroundColor: '#D8A3E0',
+    backgroundColor: purple.lightWisteriaLighter(),
     alignContent: 'flex-start',
     flexDirection: 'row',
   },
@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
     alignSelf: 'flex-start',
-    paddingLeft: largura / 10,
+    paddingLeft: width / 10,
     paddingTop: 12,
   },
   commentsBarIcon: {
@@ -225,17 +225,17 @@ const styles = StyleSheet.create({
   },
   commentsList: {
     flex: 1,
-    backgroundColor: '#D6DADF',
+    backgroundColor: gray.iron(),
   },
   commentIcon: {
     flexDirection: 'row',
   },
   commentItemDiv: {
-    backgroundColor: 'white',
+    backgroundColor: gray.iron(),
     flexDirection: 'column',
     alignSelf: 'center',
-    width: largura / 1.1,
-    height: altura / 7,
+    width: width / 1.1,
+    height: height / 7,
     marginVertical: 5,
     borderRadius: 5,
     paddingTop: 10,
@@ -246,8 +246,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     flexWrap: 'nowrap',
-    width: largura / 1.2,
-    height: altura,
+    width: width / 1.2,
+    height,
     alignSelf: 'center',
   },
   containerMaster: {
@@ -255,8 +255,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     flexWrap: 'nowrap',
-    width: largura,
-    height: altura,
+    width,
+    height,
   },
   commentContent: {
     flexDirection: 'column',
@@ -265,9 +265,9 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   commentDescriptionInput: {
-    backgroundColor: 'white',
-    height: altura / 5,
-    width: largura / 1.2,
+    backgroundColor: gray.iron(),
+    height: height / 5,
+    width: width / 1.2,
     alignSelf: 'center',
     borderRadius: 5,
     padding: 10,

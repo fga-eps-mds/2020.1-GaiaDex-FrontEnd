@@ -9,9 +9,12 @@ import {
 
 import { AntDesign } from '@expo/vector-icons';
 import styles from './style';
-import { getPlant } from '../../../services/backEnd';
+import { getPlant } from '../../../services';
+import { gray } from '../../../theme/colorPalette';
 
-export default function PlantCardInfo({ navigation, plantID }) {
+const userDefaultImg = require('../../../assets/userDefault.png');
+
+export default function PlantCardInfo({ plantID }) {
   const [plant, setPlant] = useState({});
   const [isClick, setIsClick] = useState(false);
   useEffect(() => {
@@ -22,9 +25,7 @@ export default function PlantCardInfo({ navigation, plantID }) {
     <View style={styles.userDiv}>
       <ImageBackground
         source={
-          plant?.user?.photo
-            ? { uri: plant?.user?.photo }
-            : require('../../../assets/userDefault.png')
+          plant?.user?.photo ? { uri: plant?.user?.photo } : userDefaultImg
         }
         style={styles.UserImg}
         imageStyle={{ borderRadius: 50 }}
@@ -50,7 +51,7 @@ export default function PlantCardInfo({ navigation, plantID }) {
                 style={styles.button}
                 onPress={() => setIsClick(!isClick)}
               >
-                <AntDesign name="down" size={15} color="black" />
+                <AntDesign name="down" size={15} color={gray.shark()} />
               </TouchableOpacity>
             </>
           ) : (
@@ -67,7 +68,7 @@ export default function PlantCardInfo({ navigation, plantID }) {
                 style={styles.button}
                 onPress={() => setIsClick(!isClick)}
               >
-                <AntDesign name="up" size={18} color="black" />
+                <AntDesign name="up" size={18} color={gray.shark()} />
               </TouchableOpacity>
             </>
           )}

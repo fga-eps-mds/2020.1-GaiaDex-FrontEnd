@@ -8,35 +8,47 @@ import {
 } from 'react-native';
 import { EvilIcons, FontAwesome, Entypo } from '@expo/vector-icons';
 import MenuBar from '../../assets/components/menuBar';
-import { getUserLogado } from '../../services';
+import { getUserLogged } from '../../services';
 import styles from './styles';
+import { gray, green } from '../../theme/colorPalette';
 
-const altura = Dimensions.get('screen').height;
+const { height } = Dimensions.get('screen');
 
-const sort = (user) => {
-  let i;
-  let d1;
-  let d2;
-  let countT = user?.topics?.length;
-  let countP = user?.myPlants?.length;
-  const activity = new Array();
-  for (i = 0; i < 6 && countT + countP > 0; i++) {
-    if (countT > 0 && countP > 0) {
-      d1 = new Date(user?.topics[countT - 1]?.createdAt);
-      d2 = new Date(user?.myPlants[countP - 1]?.createdAt);
-      if (d1 - d2 > 0) {
-        activity.push(user?.topics[--countT]);
+function getDateFromLast(obj, total) {
+  const last = total - 1;
+  return new Date(obj[last]?.createdAt);
+}
+
+function sort(user) {
+  let countTopics = user?.topics?.length;
+  let countMyPlants = user?.myPlants?.length;
+  const activity = [];
+
+  for (let i = 0; i < 6 && countTopics + countMyPlants > 0; i += 1) {
+    if (countTopics > 0 && countMyPlants > 0) {
+      const topicDate = getDateFromLast(user?.topics, countTopics);
+      const myPlantDate = getDateFromLast(user?.myPlants, countMyPlants);
+      if (topicDate - myPlantDate > 0) {
+        countTopics -= 1;
+        activity.push(user?.topics[countTopics]);
       } else {
-        activity.push(user?.myPlants[--countP]);
+        countMyPlants -= 1;
+        activity.push(user?.myPlants[countMyPlants]);
       }
-    } else if (countT > 0) {
-      activity.push(user?.topics[--countT]);
-    } else if (countP > 0) {
-      activity.push(user?.myPlants[--countP]);
+    } else if (countTopics > 0) {
+      countTopics -= 1;
+      activity.push(user?.topics[countTopics]);
+    } else if (countMyPlants > 0) {
+      countMyPlants -= 1;
+      activity.push(user?.myPlants[countMyPlants]);
     }
   }
+
   return activity;
-};
+}
+
+const backgroundVector = require('../../assets/Vector.png');
+const userDefaultImg = require('../../assets/userDefault.png');
 
 function Item({ title, nickname, tempo }) {
   const agora = new Date();
@@ -67,7 +79,7 @@ export default function myProfile({ navigation }) {
   const [activityLog, setActivitLog] = useState([]);
   const [user, setUser] = useState({});
   useEffect(() => {
-    getUserLogado()
+    getUserLogged()
       .then((res) => {
         setUser(res);
         return sort(res);
@@ -90,23 +102,16 @@ export default function myProfile({ navigation }) {
           <Text style={styles.perfilText}>Perfil</Text>
           <EvilIcons
             name="gear"
-            size={altura / 16}
-            color="white"
+            size={height / 16}
+            color={gray.iron()}
             onPress={() => navigation.push('Config')}
           />
         </View>
-        <ImageBackground
-          style={styles.vector}
-          source={require('../../assets/Vector.png')}
-        >
+        <ImageBackground style={styles.vector} source={backgroundVector}>
           <ImageBackground
             style={styles.photoView}
             imageStyle={styles.photo}
-            source={
-              user?.photo
-                ? { uri: user.photo }
-                : require('../../assets/userDefault.png')
-            }
+            source={user?.photo ? { uri: user.photo } : { userDefaultImg }}
           />
           <Text style={styles.name}>{`${user?.username}\n${user?.email}`}</Text>
         </ImageBackground>
@@ -115,48 +120,50 @@ export default function myProfile({ navigation }) {
         <View
           style={[
             styles.sumaryComponents,
-            { borderRightColor: 'black', borderRightWidth: 3 },
+            { borderRightColor: gray.shark(), borderRightWidth: 3 },
           ]}
         >
           <View style={{ flexDirection: 'row' }}>
             <FontAwesome
               name="twitch"
               size={30}
-              color="#094820"
+              color={green.darkFern()}
               style={{ marginRight: 13 }}
             />
-            <Text style={{ color: '#E5E5E5' }}>{user?.topics?.length}</Text>
+            <Text style={{ color: gray.iron() }}>{user?.topics?.length}</Text>
           </View>
-          <Text style={{ marginTop: 10, color: '#E5E5E5' }}>Tópicos</Text>
+          <Text style={{ marginTop: 10, color: gray.iron() }}>Tópicos</Text>
         </View>
         <View
           style={[
             styles.sumaryComponents,
-            { borderRightColor: 'black', borderRightWidth: 3 },
+            { borderRightColor: gray.shark(), borderRightWidth: 3 },
           ]}
         >
           <View style={{ flexDirection: 'row' }}>
             <FontAwesome
               name="star-o"
               size={30}
-              color="#094820"
+              color={green.darkFern()}
               style={{ marginRight: 13 }}
             />
-            <Text style={{ color: '#E5E5E5' }}>{user?.favorites?.length}</Text>
+            <Text style={{ color: gray.iron() }}>
+              {user?.favorites?.length}
+            </Text>
           </View>
-          <Text style={{ marginTop: 10, color: '#E5E5E5' }}>Favoritos</Text>
+          <Text style={{ marginTop: 10, color: gray.iron() }}>Favoritos</Text>
         </View>
         <View style={styles.sumaryComponents}>
           <View style={{ flexDirection: 'row' }}>
             <Entypo
               name="flower"
               size={30}
-              color="#094820"
+              color={green.darkFern()}
               style={{ marginRight: 13 }}
             />
-            <Text style={{ color: '#E5E5E5' }}>{user?.myPlants?.length}</Text>
+            <Text style={{ color: gray.iron() }}>{user?.myPlants?.length}</Text>
           </View>
-          <Text style={{ marginTop: 10, color: '#E5E5E5' }}>Plantas</Text>
+          <Text style={{ marginTop: 10, color: gray.iron() }}>Plantas</Text>
         </View>
       </View>
       <View style={styles.frameDown}>

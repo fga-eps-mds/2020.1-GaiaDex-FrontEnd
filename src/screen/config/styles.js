@@ -1,12 +1,12 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { gray } from '../../theme/colorPalette';
 
-const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
+const { width } = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   containerView: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: gray.iron(),
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     flex: 0.2,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: largura,
+    width,
     paddingRight: '8%',
   },
   containerHeaderIcon: {
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 32,
-    color: '#242528',
+    color: gray.shark(),
   },
   notificationContainer: {
     flex: 0.7,
@@ -33,12 +33,12 @@ const styles = StyleSheet.create({
     marginVertical: '3%',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: largura / 1.2,
+    width: width / 1.2,
   },
   notificationText: {
     fontSize: 15,
     fontWeight: '500',
-    color: '#242528',
+    color: gray.shark(),
   },
 });
 

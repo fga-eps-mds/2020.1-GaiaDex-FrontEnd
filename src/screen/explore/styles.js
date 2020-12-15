@@ -1,21 +1,20 @@
 import { StyleSheet, Dimensions } from 'react-native';
-
 import Constants from 'expo-constants';
+import { gray, purple } from '../../theme/colorPalette';
 
-const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
+const { height, width } = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#F2E0F5',
+    backgroundColor: purple.frenchLilacLighter(),
     paddingTop: Constants.statusBarHeight,
   },
   exploreContainer: {
     flexDirection: 'row',
     alignSelf: 'center',
-    width: largura / 1.1,
+    width: width / 1.1,
     flex: 0.22,
     justifyContent: 'space-between',
     alignContent: 'center',
@@ -24,12 +23,12 @@ const styles = StyleSheet.create({
   exploreText: {
     fontSize: 40,
     fontWeight: '600',
-    color: '#31353A',
+    color: gray.outerSpace(),
   },
   popularContainer: {
     flexDirection: 'column',
     alignSelf: 'center',
-    width: largura / 1.1,
+    width: width / 1.1,
     flex: 0.35,
     justifyContent: 'flex-start',
   },
@@ -42,18 +41,18 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     textDecorationLine: 'underline',
     textDecorationStyle: 'solid',
-    textDecorationColor: '#000',
+    textDecorationColor: gray.shark(),
   },
   popularContent: {
     flex: 0.8,
   },
   FavoritePlant: {
-    width: largura / 2.7,
-    height: altura / 4,
+    width: width / 2.7,
+    height: height / 4,
     flexDirection: 'column-reverse',
     borderRadius: 30,
     marginRight: 15,
-    backgroundColor: 'rgba(52, 9, 37, 0.91)',
+    backgroundColor: purple.grapeDark(0.9),
   },
   FavoritePlantImg: {
     width: '100%',
@@ -62,48 +61,48 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   plantInfo: {
-    backgroundColor: 'rgba(52, 9, 37, 0.91)',
+    backgroundColor: purple.grapeDark(0.9),
     flex: 0.2,
     borderBottomRightRadius: 20,
     borderBottomLeftRadius: 20,
-    width: largura / 2.7,
+    width: width / 2.7,
     alignSelf: 'center',
   },
   myPlantsContainer: {
     flexDirection: 'column',
     alignSelf: 'center',
-    width: largura / 1.1,
+    width: width / 1.1,
     flex: 0.3,
     justifyContent: 'flex-start',
   },
   myPlantsText: {
     paddingTop: 30,
-    color: '#31353A',
+    color: gray.outerSpace(),
     fontSize: 26,
     fontWeight: '600',
   },
   myplantPlant: {
     marginTop: 10,
-    height: altura / 6,
-    width: largura / 4.5,
+    height: height / 6,
+    width: width / 4.5,
     flexDirection: 'column-reverse',
     borderRadius: 20,
     marginRight: 15,
     backgroundColor: 'brown',
   },
   myplantInfo: {
-    backgroundColor: 'rgba(52, 9, 37, 0.91)',
+    backgroundColor: purple.grapeDark(0.9),
     flex: 0.3,
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
-    width: largura / 4.5,
+    width: width / 4.5,
     alignSelf: 'center',
   },
   plantText: {
     padding: 5,
     textAlign: 'center',
     fontSize: 10,
-    color: 'white',
+    color: gray.iron(),
   },
 });
 export default styles;

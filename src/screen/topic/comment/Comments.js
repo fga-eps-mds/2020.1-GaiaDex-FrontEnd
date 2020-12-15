@@ -3,10 +3,11 @@ import { View, Text, Image, ScrollView, FlatList } from 'react-native';
 import { AntDesign, Feather } from '@expo/vector-icons';
 import { TextInput } from 'react-native-gesture-handler';
 import userDefault from '../../../assets/userDefault.png';
-import { updateComment, deleteComment } from '../../../services/backEnd';
+import { updateComment, deleteComment } from '../../../services';
 import styles from './styles';
+import { gray } from '../../../theme/colorPalette';
 
-export default function Comments({ topic, setTopic, user, like, deslike }) {
+export default function Comments({ topic, setTopic, user, like, dislike }) {
   function Comment({ description, username, userID, id, likes }) {
     const [isEditing, setIsEditing] = useState(false);
     const [topicEditing, setTopicEditing] = useState('');
@@ -50,7 +51,7 @@ export default function Comments({ topic, setTopic, user, like, deslike }) {
           />
           <ScrollView>
             <Text style={styles.commentUsername}>{username}</Text>
-            {topicEditing != id ? (
+            {topicEditing !== id ? (
               <Text style={styles.commentDescription}>{description}</Text>
             ) : (
               <TextInput
@@ -69,24 +70,24 @@ export default function Comments({ topic, setTopic, user, like, deslike }) {
             <AntDesign
               name="arrowup"
               size={17}
-              color="black"
+              color={gray.shark()}
               onPress={() => like('comment', id)}
             />
             <Text>{likes}</Text>
             <AntDesign
               name="arrowdown"
               size={17}
-              color="black"
-              onPress={() => deslike('comment', id)}
+              color={gray.shark()}
+              onPress={() => dislike('comment', id)}
             />
           </View>
-          {user?._id == userID && (
+          {user?._id === userID && (
             <>
               <View style={styles.commentIcon}>
                 <Feather
                   name="edit"
                   size={17}
-                  color={isEditing ? 'green' : 'black'}
+                  color={isEditing ? 'green' : gray.shark()}
                   onPress={() => EditComment(isEditing)}
                 />
               </View>
@@ -96,7 +97,7 @@ export default function Comments({ topic, setTopic, user, like, deslike }) {
                   style={{ marginRight: 10 }}
                   name="trash-2"
                   size={18}
-                  color="black"
+                  color={gray.shark()}
                   onPress={() => delComment()}
                 />
               </View>

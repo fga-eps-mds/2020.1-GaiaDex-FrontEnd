@@ -8,7 +8,10 @@ import {
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import styles from '../styles';
-import { getPlant } from '../../../services/backEnd';
+import { getPlant } from '../../../services';
+import { gray } from '../../../theme/colorPalette';
+
+const userDefaultImg = require('../../../assets/userDefault.png');
 
 export default function PlantCardTopic({ navigation, plantID }) {
   const [plant, setPlant] = useState({});
@@ -21,9 +24,7 @@ export default function PlantCardTopic({ navigation, plantID }) {
     <TouchableOpacity style={styles.userDiv}>
       <ImageBackground
         source={
-          plant?.user?.photo
-            ? { uri: plant?.user?.photo }
-            : require('../../../assets/userDefault.png')
+          plant?.user?.photo ? { uri: plant?.user?.photo } : userDefaultImg
         }
         style={styles.UserImg}
         imageStyle={{ borderRadius: 50 }}
@@ -47,7 +48,7 @@ export default function PlantCardTopic({ navigation, plantID }) {
           <MaterialCommunityIcons
             name="comment-outline"
             size={18}
-            color="white"
+            color={gray.iron()}
           />
           <Text
             style={[

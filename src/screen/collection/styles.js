@@ -1,23 +1,23 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { gray, highlight, purple } from '../../theme/colorPalette';
 
-const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
+const { height, width } = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#F2E0F5',
+    backgroundColor: purple.frenchLilacLighter(),
     // paddingTop: Constants.statusBarHeight,
   },
   editView: {
-    backgroundColor: '#F2E0F5',
-    width: (largura * 4) / 5,
-    height: (altura * 2) / 9,
-    marginTop: (altura * 5) / 36,
-    marginLeft: largura / 10,
+    backgroundColor: purple.frenchLilacLighter(),
+    width: (width * 4) / 5,
+    height: (height * 2) / 9,
+    marginTop: (height * 5) / 36,
+    marginLeft: width / 10,
     borderRadius: 10,
-    shadowColor: '#000',
+    shadowColor: gray.shark(),
     shadowOffset: {
       width: 0,
       height: 2,
@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 50,
-    paddingHorizontal: largura / 25,
-    paddingVertical: altura / 90,
+    paddingHorizontal: width / 25,
+    paddingVertical: height / 90,
     justifyContent: 'space-between',
   },
   editTitle: {
@@ -34,19 +34,19 @@ const styles = StyleSheet.create({
   },
   editTextInput: {
     height: 40,
-    width: (largura * 4) / 5 - (largura * 2) / 25,
-    borderBottomColor: '#38143E',
+    width: (width * 4) / 5 - (width * 2) / 25,
+    borderBottomColor: purple.grapeDark(),
     borderBottomWidth: 1,
   },
   editButton: {
     fontSize: 14,
-    color: '#0582CA',
-    marginLeft: (largura * 9) / 125,
+    color: highlight.lochmara(),
+    marginLeft: (width * 9) / 125,
   },
   exploreContainer: {
     flexDirection: 'row',
     alignSelf: 'center',
-    width: largura / 1.1,
+    width: width / 1.1,
     flex: 0.22,
     justifyContent: 'space-between',
     alignContent: 'center',
@@ -55,18 +55,18 @@ const styles = StyleSheet.create({
   exploreText: {
     fontSize: 40,
     fontWeight: '600',
-    color: '#31353A',
+    color: gray.outerSpace(),
   },
   popularContainer: {
     flexDirection: 'column',
     alignSelf: 'center',
-    width: largura / 1.1,
+    width: width / 1.1,
     flex: 0.7,
     justifyContent: 'flex-start',
   },
   tabContainer: {
     flexDirection: 'row',
-    width: largura / 1.7,
+    width: width / 1.7,
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: '10%',
@@ -75,12 +75,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '400',
   },
-  tabTextactivate: {
+  tabTextActive: {
     fontSize: 18,
     fontWeight: '500',
     textDecorationLine: 'underline',
     textDecorationStyle: 'solid',
-    textDecorationColor: '#000',
+    textDecorationColor: gray.shark(),
   },
   popularTabs: {
     flexDirection: 'row',
@@ -91,18 +91,18 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     textDecorationLine: 'underline',
     textDecorationStyle: 'solid',
-    textDecorationColor: '#000',
+    textDecorationColor: gray.shark(),
   },
   popularContent: {
     flex: 0.8,
   },
   FavoritePlant: {
-    width: largura / 3,
+    width: width / 3,
     flex: 1,
     flexDirection: 'column-reverse',
     borderRadius: 30,
     marginRight: 15,
-    backgroundColor: 'rgba(52, 9, 37, 0.91)',
+    backgroundColor: purple.grapeDark(0.9),
   },
   FavoritePlantImg: {
     width: '100%',
@@ -112,41 +112,41 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   plantInfo: {
-    backgroundColor: 'rgba(52, 9, 37, 0.91)',
+    backgroundColor: purple.grapeDark(0.9),
     flex: 0.3,
     borderBottomRightRadius: 30,
     borderBottomLeftRadius: 30,
-    width: largura / 3,
+    width: width / 3,
     alignSelf: 'center',
   },
   myPlantsContainer: {
     flexDirection: 'column',
     alignSelf: 'center',
-    width: largura / 1.1,
+    width: width / 1.1,
     flex: 1,
     justifyContent: 'flex-start',
   },
   myPlantsText: {
     paddingTop: 30,
-    color: '#31353A',
+    color: gray.outerSpace(),
     fontSize: 26,
     fontWeight: '600',
   },
   myplantPlant: {
     marginTop: 10,
-    width: largura / 2.3,
-    height: altura / 4,
+    width: width / 2.3,
+    height: height / 4,
     flexDirection: 'column-reverse',
     borderRadius: 20,
     marginRight: 15,
     backgroundColor: 'brown',
   },
   myplantInfo: {
-    backgroundColor: 'rgba(52, 9, 37, 0.91)',
+    backgroundColor: purple.grapeDark(0.9),
     flex: 0.3,
     borderBottomRightRadius: 20,
     borderBottomLeftRadius: 20,
-    width: largura / 2.3,
+    width: width / 2.3,
     alignItems: 'center',
     justifyContent: 'space-around',
     flexDirection: 'row',
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     padding: 5,
     fontSize: 10,
     textAlign: 'center',
-    color: '#F2E0F5',
+    color: purple.frenchLilacLighter(),
   },
 });
 export default styles;

@@ -12,17 +12,18 @@ import {
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import styles from './styles';
 import stylesEdit from '../collection/styles';
-import { registerPlant, addMyPlant } from '../../services';
+import { createPlant, createMyPlant } from '../../services';
+import { gray } from '../../theme/colorPalette';
 
-export default function ({ setOpen, capturedPhoto, plants, navigation }) {
+export default function Result({ setOpen, capturedPhoto, plants, navigation }) {
   const [editingText, setEditingText] = useState(false);
   const [text, setText] = useState('');
-  const [plantToEdit, SetPlantToEdit] = useState({});
+  const [plantToUpdate, SetPlantToUpdate] = useState({});
   const register = async (plant, nickName) => {
     try {
       // registra a planta no banco
-      registerPlant(plant)
-        .then((res) => addMyPlant(res._id, nickName))
+      await createPlant(plant)
+        .then((res) => createMyPlant(res._id, nickName))
         .then(() => setOpen(false))
         .then(() => navigation.push('MyProfile'));
     } catch (err) {
@@ -34,7 +35,7 @@ export default function ({ setOpen, capturedPhoto, plants, navigation }) {
     <TouchableOpacity
       style={styles.lista}
       onPress={() => {
-        SetPlantToEdit(item);
+        SetPlantToUpdate(item);
         setEditingText(true);
       }}
     >
@@ -67,7 +68,7 @@ export default function ({ setOpen, capturedPhoto, plants, navigation }) {
           <View style={{ flexDirection: 'row-reverse' }}>
             <TouchableOpacity
               onPress={() => {
-                register(plantToEdit, text);
+                register(plantToUpdate, text);
                 setEditingText(false);
               }}
             >
@@ -83,7 +84,7 @@ export default function ({ setOpen, capturedPhoto, plants, navigation }) {
         <MaterialCommunityIcons
           name="close-circle-outline"
           size={24}
-          color="black"
+          color={gray.shark()}
         />
       </TouchableOpacity>
       <Image style={styles.imagem} source={{ uri: capturedPhoto }} />

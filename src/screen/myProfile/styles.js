@@ -1,14 +1,12 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import Constants from 'expo-constants';
+import { gray, green, purple } from '../../theme/colorPalette';
 
-const altura = Dimensions.get('screen').height;
-const largura = Dimensions.get('screen').width;
-
+const { height, width } = Dimensions.get('screen');
 const styles = StyleSheet.create({
   framePerfil: {
     // paddingTop:Constants.statusBarHeight,
     flex: 1,
-    backgroundColor: '#242528',
+    backgroundColor: gray.shark(),
     // justifyContent: "center",
   },
   perfilTextView: {
@@ -16,45 +14,45 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignSelf: 'center',
-    width: largura / 1.2,
+    width: width / 1.2,
   },
   perfilText: {
-    fontSize: altura / 20,
-    color: '#D6DADF',
+    fontSize: height / 20,
+    color: gray.iron(),
     fontWeight: '500',
   },
   vector: {
     // alignSelf:"center",
     marginTop: 10,
-    height: (altura * 4) / 11,
-    width: largura,
+    height: (height * 4) / 11,
+    width,
   },
   photoView: {
-    marginLeft: largura / 2 - (largura * 3) / 16,
-    marginTop: (altura * 2) / 11 - (largura * 3) / 16 - (largura * 1) / 8,
+    marginLeft: width / 2 - (width * 3) / 16,
+    marginTop: (height * 2) / 11 - (width * 3) / 16 - (width * 1) / 8,
   },
   photo: {
-    height: (largura * 3) / 8,
-    width: (largura * 3) / 8,
-    borderRadius: (largura * 3) / 16,
+    height: (width * 3) / 8,
+    width: (width * 3) / 8,
+    borderRadius: (width * 3) / 16,
   },
   name: {
-    marginTop: (largura * 3) / 8 + 7,
-    color: '#E5E5E5',
+    marginTop: (width * 3) / 8 + 7,
+    color: gray.iron(),
     fontSize: 13,
     textAlign: 'center',
   },
   frameDown: {
     flex: 1,
-    backgroundColor: '#F2E0F5',
+    backgroundColor: purple.frenchLilacLighter(),
   },
   sumary: {
     position: 'absolute',
-    backgroundColor: '#19BB53',
-    width: (largura * 10) / 11,
-    height: altura / 9,
-    marginHorizontal: (largura - (largura * 10) / 11) / 2,
-    marginTop: altura / 2 - altura / 9,
+    backgroundColor: green.mountainMeadow(),
+    width: (width * 10) / 11,
+    height: height / 9,
+    marginHorizontal: (width - (width * 10) / 11) / 2,
+    marginTop: height / 2 - height / 9,
     borderRadius: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -62,38 +60,38 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
   sumaryComponents: {
-    height: altura / 11,
-    width: (largura * 10) / 33,
+    height: height / 11,
+    width: (width * 10) / 33,
     paddingTop: 25,
     alignItems: 'center',
   },
   minhasAtividades: {
     marginTop: 50,
-    marginLeft: (largura - (largura * 10) / 11) / 2,
+    marginLeft: (width - (width * 10) / 11) / 2,
     fontSize: 18,
     fontWeight: '600',
   },
   item: {
-    height: altura * (5 / 61),
-    marginHorizontal: (largura - (largura * 10) / 11) / 2,
+    height: height * (5 / 61),
+    marginHorizontal: (width - (width * 10) / 11) / 2,
     borderRadius: 5,
     marginBottom: 10,
     padding: 6,
     justifyContent: 'space-between',
   },
   plantItem: {
-    backgroundColor: '#B7F5CD',
+    backgroundColor: green.magicMint(),
   },
   topicItem: {
-    backgroundColor: '#D8A3E0',
+    backgroundColor: purple.lightWisteriaLighter(),
   },
   time: {
     fontSize: 10,
-    color: 'rgba(0,0,0,0.3)',
+    color: gray.shark(0.3),
   },
   list: {
     marginTop: 10,
-    height: altura / 4,
+    height: height / 4,
   },
 });
 // ruan@outlook.com.br

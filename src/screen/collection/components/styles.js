@@ -1,17 +1,17 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { gray, green, highlight, purple } from '../../../theme/colorPalette';
 
-const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
+const { height, width } = Dimensions.get('screen');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#F2E0F5',
+    backgroundColor: purple.frenchLilacLighter(),
   },
   header: {
     flex: 0.25,
     flexDirection: 'column',
-    width: largura / 1.1,
+    width: width / 1.1,
     alignSelf: 'center',
   },
   headerIcon: {
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     flex: 0.6,
   },
   headerTitle: {
-    width: largura / 1.2,
+    width: width / 1.2,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -39,8 +39,8 @@ const styles = StyleSheet.create({
   },
   plant: {
     flex: 0.45,
-    maxHeight: altura / 3,
-    width: largura / 1.2,
+    maxHeight: height / 3,
+    width: width / 1.2,
     flexDirection: 'row',
     marginBottom: '10%',
   },
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   },
   plantDescription: {
     flex: 1,
-    backgroundColor: '#59A44D',
+    backgroundColor: green.mountainMeadow(),
     fontWeight: '600',
     height: '50%',
     alignSelf: 'center',
@@ -62,13 +62,13 @@ const styles = StyleSheet.create({
   },
   plantDescriptionTitle: {
     fontSize: 14,
-    color: 'white',
+    color: gray.iron(),
     paddingBottom: 5,
     textAlign: 'center',
   },
   plantDescriptionText: {
     fontSize: 12,
-    color: 'white',
+    color: gray.iron(),
     textAlign: 'center',
   },
   plantButtonDiv: {
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   deleteButton: {
     width: '45%',
     height: '80%',
-    backgroundColor: 'red',
+    backgroundColor: highlight.cinnabar(),
     alignSelf: 'flex-start',
     margin: 5,
     marginTop: '5%',
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   },
   deleteButtonText: {
     fontSize: 12,
-    color: 'white',
+    color: gray.iron(),
   },
 });
 export default styles;
