@@ -2,7 +2,7 @@ import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/asy
 
 import renderer from 'react-test-renderer';
 
-import { gray } from '../src/theme/colorPalette';
+import { gray, purple } from '../src/theme/colorPalette';
 
 import React from 'react';
 import Signup from '../src/screen/login/signup';
@@ -43,7 +43,7 @@ describe('<Signup />', () => {
       'placeholder',
       'Seu e-mail:'
     );
-    expect(wrapper.find('TextInput').at(2)).toHaveProp('placeholder', 'Senha:');
+    expect(wrapper.find('TextInput').at(2)).toHaveProp('placeholder', 'Sua senha:');
     expect(wrapper.find('TextInput').at(0)).toHaveProp(
       'underlineColorAndroid',
       'transparent'
@@ -105,14 +105,14 @@ describe('<Signup />', () => {
     expect(wrapper.find('Icon').at(0)).toHaveProp('style', styles.arrow);
     expect(wrapper.find('Icon').at(1)).toHaveProp('name', 'facebook');
     expect(wrapper.find('Icon').at(1)).toHaveProp('size', 24);
-    expect(wrapper.find('Icon').at(1)).toHaveProp('color', '#38143E');
+    expect(wrapper.find('Icon').at(1)).toHaveProp('color', purple.grapeDark());
     expect(wrapper.find('Icon').at(1)).toHaveProp(
       'style',
       styles.iconBtnFbGoogle
     );
     expect(wrapper.find('Icon').at(2)).toHaveProp('name', 'google');
     expect(wrapper.find('Icon').at(2)).toHaveProp('size', 24);
-    expect(wrapper.find('Icon').at(2)).toHaveProp('color', '#38143E');
+    expect(wrapper.find('Icon').at(2)).toHaveProp('color', purple.grapeDark());
     expect(wrapper.find('Icon').at(2)).toHaveProp(
       'style',
       styles.iconBtnFbGoogle
