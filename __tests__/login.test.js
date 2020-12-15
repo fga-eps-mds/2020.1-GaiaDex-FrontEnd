@@ -2,7 +2,8 @@ import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/asy
 
 import renderer from 'react-test-renderer';
 
-import { gray } from '../src/theme/colorPalette';
+import { gray, purple } from '../src/theme/colorPalette';
+
 
 import React from 'react';
 import Login from '../src/screen/login/login';
@@ -93,14 +94,14 @@ describe('<Login />', () => {
     expect(wrapper.find('Icon').at(0)).toHaveProp('style', styles.arrow);
     expect(wrapper.find('Icon').at(1)).toHaveProp('name', 'facebook');
     expect(wrapper.find('Icon').at(1)).toHaveProp('size', 24);
-    expect(wrapper.find('Icon').at(1)).toHaveProp('color', '#F2E0F5');
+    expect(wrapper.find('Icon').at(1)).toHaveProp('color', purple.frenchLilacLighter());
     expect(wrapper.find('Icon').at(1)).toHaveProp(
       'style',
       styles.iconBtnFbGoogle
     );
     expect(wrapper.find('Icon').at(2)).toHaveProp('name', 'google');
     expect(wrapper.find('Icon').at(2)).toHaveProp('size', 24);
-    expect(wrapper.find('Icon').at(2)).toHaveProp('color', '#F2E0F5');
+    expect(wrapper.find('Icon').at(2)).toHaveProp('color', purple.frenchLilacLighter());
     expect(wrapper.find('Icon').at(2)).toHaveProp(
       'style',
       styles.iconBtnFbGoogle
