@@ -21,10 +21,10 @@ describe('<Config />', () => {
   });
 
   it('renders everything', () => {
-    const tree = renderer.create(<Config />).toJSON();
-    expect(tree).toMatchSnapshot();
-    const tree2 = renderer.create(<Header />).toJSON();
-    expect(tree2).toMatchSnapshot();
+    let wrapperSnap = shallow(<Config />)
+    expect(wrapperSnap).toMatchSnapshot();
+    let wrapperSnap2 = shallow(<Header />)
+    expect(wrapperSnap2).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(24);
     expect(wrapper.find('Header').length).toBe(1);
     expect(wrapper.find('Switch').length).toBe(3);
@@ -63,7 +63,7 @@ describe('<Config />', () => {
     });
     expect(wrapper.find('Switch').at(0)).toHaveProp('thumbColor');
     expect(wrapper.find('Switch').at(0)).toHaveProp(
-      'ios_backgroundColor',
+      'ios_backgroundcolor',
       gray.outerSpace()
     );
     expect(wrapper.find('Switch').at(1)).toExist();
@@ -73,7 +73,7 @@ describe('<Config />', () => {
     });
     expect(wrapper.find('Switch').at(1)).toHaveProp('thumbColor');
     expect(wrapper.find('Switch').at(1)).toHaveProp(
-      'ios_backgroundColor',
+      'ios_backgroundcolor',
       gray.outerSpace()
     );
     expect(wrapper.find('Switch').at(2)).toExist();
@@ -83,7 +83,7 @@ describe('<Config />', () => {
     });
     expect(wrapper.find('Switch').at(2)).toHaveProp('thumbColor');
     expect(wrapper.find('Switch').at(2)).toHaveProp(
-      'ios_backgroundColor',
+      'ios_backgroundcolor',
       gray.outerSpace()
     );
   });
