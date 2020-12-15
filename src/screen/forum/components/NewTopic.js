@@ -25,7 +25,14 @@ export default function NewTopic({ navigation, topTopic }) {
             </Text>
             <Text style={styles.postData}>{item?.createdAt}</Text>
             <View style={styles.posStatus}>
-              <FontAwesome5 name="comment-alt" size={20} color={gray.iron()} />
+              <View style={styles.postLikes}>
+                <FontAwesome5
+                  name="comment-alt"
+                  size={20}
+                  color={gray.iron()}
+                />
+                <Text style={styles.postTitle}>{item?.comments.length}</Text>
+              </View>
               <View style={styles.postLikes}>
                 <AntDesign name="arrowup" size={20} color={gray.iron()} />
                 <Text style={styles.postTitle}>{item?.likes.length}</Text>
