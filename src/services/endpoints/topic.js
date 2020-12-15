@@ -1,11 +1,12 @@
 import { ENDPOINTS, baseHeaders, getToken } from './index';
 
-export const createTopic = (topicID, topicBody) => {
+export const createTopic = async (topicID, topicBody) => {
   const TOPIC = ENDPOINTS.API.topic;
+  const token = await getToken();
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + TOPIC.create.route(topicID), {
       method: TOPIC.create.method,
-      headers: baseHeaders(getToken()),
+      headers: baseHeaders(token),
       body: JSON.stringify({
         title: topicBody.title,
         description: topicBody.description,
@@ -46,12 +47,13 @@ export const updateTopic = (topicID, body) => {
   });
 };
 
-export const likeTopic = (topicID) => {
+export const likeTopic = async (topicID) => {
   const TOPIC = ENDPOINTS.API.topic;
+  const token = await getToken();
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + TOPIC.like.route(topicID), {
       method: TOPIC.like.method,
-      headers: baseHeaders(getToken()),
+      headers: baseHeaders(token),
     })
       .then((res) => res.json())
       .then(resolve)
@@ -59,12 +61,13 @@ export const likeTopic = (topicID) => {
   });
 };
 
-export const dislikeTopic = (topicID) => {
+export const dislikeTopic = async (topicID) => {
   const TOPIC = ENDPOINTS.API.topic;
+  const token = await getToken();
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + TOPIC.dislike.route(topicID), {
       method: TOPIC.dislike.method,
-      headers: baseHeaders(getToken()),
+      headers: baseHeaders(token),
     })
       .then((res) => res.json())
       .then(resolve)

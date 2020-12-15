@@ -9,7 +9,7 @@ import { gray } from '../../theme/colorPalette';
 const userDefaultImg = require('../../assets/userDefault.png');
 
 export default function TopicCreate({ navigation }) {
-  const plantID = navigation.getParam('itemID', '5fd1585e7ecf46002731738f');
+  const plantID = navigation.getParam('itemID');
 
   // consts post
   const [user, setUser] = useState({});
@@ -21,7 +21,7 @@ export default function TopicCreate({ navigation }) {
     getUserLogged().then((res) => setUser(res));
     getPlant(plantID).then((res) => setPlant(res.plant));
   }, []);
-  const postTopic = async () => {
+  const postTopic = () => {
     console.log(title, description);
     const body = {
       title,
