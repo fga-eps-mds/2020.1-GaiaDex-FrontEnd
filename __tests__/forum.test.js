@@ -17,8 +17,8 @@ describe('<Forum />', () => {
   });
 
   it('renders everything', () => {
-    const tree = renderer.create(<Forum />).toJSON();
-    expect(tree).toMatchSnapshot();
+    let wrapperSnap = shallow(<Forum />)
+    expect(wrapperSnap).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(34);
     expect(wrapper.find('Text').length).toBe(22);
     expect(wrapper.find('TouchableOpacity').length).toBe(1);
