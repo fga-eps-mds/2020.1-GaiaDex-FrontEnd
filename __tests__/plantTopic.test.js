@@ -1,10 +1,12 @@
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 
 import { mount } from 'enzyme';
+import renderer from 'react-test-renderer';
+
+import React from 'react';
 import PlantCardTopic from '../src/screen/cardPlant/plantTopic/cardPlantTopic';
 import NewTopic from '../src/screen/cardPlant/plantTopic/newTopic';
 import styles from '../src/screen/cardPlant/styles';
-import renderer from 'react-test-renderer';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
@@ -12,15 +14,12 @@ let wrapper;
 let wrapperNewTopic;
 
 describe('<PlantCardTopic />', () => {
-
   beforeEach(() => {
     wrapper = mount(<PlantCardTopic />);
   });
 
   it('renders everything in PlantCardTopic', () => {
-    const tree = renderer
-      .create(<PlantCardTopic></PlantCardTopic>)
-      .toJSON();
+    const tree = renderer.create(<PlantCardTopic />).toJSON();
     expect(tree).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(10);
     expect(wrapper.find('Text').length).toBe(4);
@@ -43,15 +42,12 @@ describe('<PlantCardTopic />', () => {
 });
 
 describe('<NewTopic />', () => {
-
   beforeEach(() => {
     wrapperNewTopic = mount(<NewTopic />);
   });
 
   it('renders everything in NewTopic', () => {
-    const tree2 = renderer
-      .create(<NewTopic></NewTopic>)
-      .toJSON();
+    const tree2 = renderer.create(<NewTopic />).toJSON();
     expect(tree2).toMatchSnapshot();
     expect(wrapperNewTopic.find('View').length).toBe(4);
   });

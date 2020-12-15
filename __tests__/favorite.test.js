@@ -1,24 +1,22 @@
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 
 import { mount } from 'enzyme';
-import Favorite from '../src/screen/collection/components/Favorite';
-import styles from '../src/screen/collection/styles';
 import renderer from 'react-test-renderer';
+
+import React from 'react';
+import Favorite from '../src/screen/collection/components/Favorite';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
 let wrapper;
 
 describe('<Favorite />', () => {
-
   beforeEach(() => {
     wrapper = mount(<Favorite />);
   });
 
   it('renders everything', () => {
-    const tree = renderer
-      .create(<Favorite></Favorite>)
-      .toJSON();
+    const tree = renderer.create(<Favorite />).toJSON();
     expect(tree).toMatchSnapshot();
     expect(wrapper.find('FlatList').length).toBe(1);
   });
@@ -28,5 +26,4 @@ describe('<Favorite />', () => {
     expect(wrapper.find('FlatList').at(0)).toHaveProp('renderItem');
     expect(wrapper.find('FlatList').at(0)).toHaveProp('keyExtractor');
   });
-  
 });

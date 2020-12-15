@@ -1,24 +1,23 @@
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 
+import renderer from 'react-test-renderer';
+
+import React from 'react';
 import PlantCard from '../src/screen/cardPlant/cardPlant';
 import styles from '../src/screen/cardPlant/styles';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
-import renderer from 'react-test-renderer';
-
-
 let wrapper;
 
 describe('<TopicCreate />', () => {
-
   beforeEach(() => {
     wrapper = mount(<PlantCard navigation={{ getParam: jest.fn() }} />);
   });
 
   it('renders everything', () => {
     const tree = renderer
-      .create(<PlantCard navigation={{ getParam: jest.fn() }}></PlantCard>)
+      .create(<PlantCard navigation={{ getParam: jest.fn() }} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(40);
@@ -49,8 +48,12 @@ describe('<TopicCreate />', () => {
     expect(wrapper.find('Text').at(10)).toHaveStyle(styles.plantInfoText);
     expect(wrapper.find('Text').at(10)).toHaveText(' Tópicos');
 
-    expect(wrapper.find('Text').at(14)).toHaveStyle(styles.plantTextDescription);
-    expect(wrapper.find('Text').at(14)).toHaveText('Esta é uma comunidade certificada/padrão do app. Direcionada para se interagir sobre quaisquer assuntos envolvendo cenouras.');
+    expect(wrapper.find('Text').at(14)).toHaveStyle(
+      styles.plantTextDescription
+    );
+    expect(wrapper.find('Text').at(14)).toHaveText(
+      'Esta é uma comunidade certificada/padrão do app. Direcionada para se interagir sobre quaisquer assuntos envolvendo cenouras.'
+    );
 
     expect(wrapper.find('Text').at(16)).toHaveStyle(styles.menuBarTabText);
     expect(wrapper.find('Text').at(16)).toHaveText('Informações');

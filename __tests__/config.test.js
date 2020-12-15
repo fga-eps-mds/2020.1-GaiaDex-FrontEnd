@@ -1,10 +1,12 @@
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 
 import { mount } from 'enzyme';
+import renderer from 'react-test-renderer';
+
+import React from 'react';
 import Config from '../src/screen/config/config';
 import styles from '../src/screen/config/styles';
 import Header from '../src/screen/config/header';
-import renderer from 'react-test-renderer';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
@@ -12,19 +14,14 @@ let wrapper;
 const wrapperHeader = mount(<Header />);
 
 describe('<Config />', () => {
-
   beforeEach(() => {
     wrapper = mount(<Config />);
   });
 
   it('renders everything', () => {
-    const tree = renderer
-      .create(<Config></Config>)
-      .toJSON();
+    const tree = renderer.create(<Config />).toJSON();
     expect(tree).toMatchSnapshot();
-    const tree2 = renderer
-      .create(<Header></Header>)
-      .toJSON();
+    const tree2 = renderer.create(<Header />).toJSON();
     expect(tree2).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(24);
     expect(wrapper.find('Header').length).toBe(1);

@@ -1,25 +1,23 @@
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 
-jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
-
-import Login from '../src/screen/login/login'
-
-import styles from '../src/screen/login/style'
 import renderer from 'react-test-renderer';
+
+import React from 'react';
+import Login from '../src/screen/login/login';
+
+import styles from '../src/screen/login/style';
+
+jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
 let wrapper;
 
-
 describe('<Login />', () => {
-
   beforeEach(() => {
     wrapper = mount(<Login />);
   });
-  
+
   it('renders everything', () => {
-    const tree = renderer
-      .create(<Login></Login>)
-      .toJSON();
+    const tree = renderer.create(<Login />).toJSON();
     expect(tree).toMatchSnapshot();
     expect(wrapper.find('TextInput').length).toBe(2);
     expect(wrapper.find('View').length).toBe(26);
@@ -31,13 +29,24 @@ describe('<Login />', () => {
   it('renders Text Input correctly', () => {
     expect(wrapper.find('TextInput').at(0)).toHaveStyle(styles.textinputLogin);
     expect(wrapper.find('TextInput').at(1)).toHaveStyle(styles.textinputLogin);
-    expect(wrapper.find('TextInput').at(0)).toHaveProp('placeholder', 'Seu e-mail:');
-    expect(wrapper.find('TextInput').at(1)).toHaveProp('placeholder', 'Sua senha:');
-    expect(wrapper.find('TextInput').at(0)).toHaveProp('underlineColorAndroid', 'transparent');
-    expect(wrapper.find('TextInput').at(1)).toHaveProp('underlineColorAndroid', 'transparent');
+    expect(wrapper.find('TextInput').at(0)).toHaveProp(
+      'placeholder',
+      'Seu e-mail:'
+    );
+    expect(wrapper.find('TextInput').at(1)).toHaveProp(
+      'placeholder',
+      'Sua senha:'
+    );
+    expect(wrapper.find('TextInput').at(0)).toHaveProp(
+      'underlineColorAndroid',
+      'transparent'
+    );
+    expect(wrapper.find('TextInput').at(1)).toHaveProp(
+      'underlineColorAndroid',
+      'transparent'
+    );
     expect(wrapper.find('TextInput').at(0)).toHaveProp('onChangeText');
     expect(wrapper.find('TextInput').at(1)).toHaveProp('onChangeText');
-
   });
 
   it('renders View correctly', () => {
@@ -48,7 +57,6 @@ describe('<Login />', () => {
     expect(wrapper.find('View').at(8)).toHaveStyle(styles.direction);
     expect(wrapper.find('View').at(14)).toHaveStyle(styles.viewbtnFbGoogle);
     expect(wrapper.find('View').at(20)).toHaveStyle(styles.direction);
-
   });
   it('renders Text correctly', () => {
     expect(wrapper.find('Text').at(0)).toHaveStyle(styles.headerLogin);
@@ -67,35 +75,33 @@ describe('<Login />', () => {
   it('renders TouchableOpacity correctly', () => {
     expect(wrapper.find('TouchableOpacity').at(0)).toHaveStyle(styles.midBtn);
     expect(wrapper.find('TouchableOpacity').at(0)).toHaveProp('onPress');
-    expect(wrapper.find('TouchableOpacity').at(1)).toHaveStyle(styles.btnFbGoogleLogin);
-    expect(wrapper.find('TouchableOpacity').at(2)).toHaveStyle(styles.btnFbGoogleLogin);
+    expect(wrapper.find('TouchableOpacity').at(1)).toHaveStyle(
+      styles.btnFbGoogleLogin
+    );
+    expect(wrapper.find('TouchableOpacity').at(2)).toHaveStyle(
+      styles.btnFbGoogleLogin
+    );
     expect(wrapper.find('TouchableOpacity').at(3)).toHaveProp('onPress');
     expect(wrapper.find('TouchableOpacity').at(4)).toHaveProp('onPress');
-
   });
   it('renders Icon correctly', () => {
-    expect(wrapper.find('Icon').at(0)).toHaveProp('name','arrowright');
+    expect(wrapper.find('Icon').at(0)).toHaveProp('name', 'arrowright');
     expect(wrapper.find('Icon').at(0)).toHaveProp('size', 35);
-    expect(wrapper.find('Icon').at(0)).toHaveProp('color','white');
-    expect(wrapper.find('Icon').at(0)).toHaveProp('style',styles.arrow);
-    expect(wrapper.find('Icon').at(1)).toHaveProp('name','facebook');
+    expect(wrapper.find('Icon').at(0)).toHaveProp('color', 'white');
+    expect(wrapper.find('Icon').at(0)).toHaveProp('style', styles.arrow);
+    expect(wrapper.find('Icon').at(1)).toHaveProp('name', 'facebook');
     expect(wrapper.find('Icon').at(1)).toHaveProp('size', 24);
-    expect(wrapper.find('Icon').at(1)).toHaveProp('color','#F2E0F5');
-    expect(wrapper.find('Icon').at(1)).toHaveProp('style',styles.iconBtnFbGoogle);
-    expect(wrapper.find('Icon').at(2)).toHaveProp('name','google');
+    expect(wrapper.find('Icon').at(1)).toHaveProp('color', '#F2E0F5');
+    expect(wrapper.find('Icon').at(1)).toHaveProp(
+      'style',
+      styles.iconBtnFbGoogle
+    );
+    expect(wrapper.find('Icon').at(2)).toHaveProp('name', 'google');
     expect(wrapper.find('Icon').at(2)).toHaveProp('size', 24);
-    expect(wrapper.find('Icon').at(2)).toHaveProp('color','#F2E0F5');
-    expect(wrapper.find('Icon').at(2)).toHaveProp('style',styles.iconBtnFbGoogle);
+    expect(wrapper.find('Icon').at(2)).toHaveProp('color', '#F2E0F5');
+    expect(wrapper.find('Icon').at(2)).toHaveProp(
+      'style',
+      styles.iconBtnFbGoogle
+    );
   });
-  /*
-  it('reads input correctly', () => {
-    
-    wrapper.find('TextInput').at(0).simulate('change', { target: { valor: 'abc' }});
-    expect(wrapper.find('TextInput').at(0)).toHaveText('abc');
-
-  });
-  */
-
-  
-
 });

@@ -1,23 +1,22 @@
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 
+import renderer from 'react-test-renderer';
+
+import React from 'react';
 import Collection from '../src/screen/collection/collection';
 import styles from '../src/screen/collection/styles';
-import renderer from 'react-test-renderer';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
 let wrapper;
 
 describe('<Collection />', () => {
-
   beforeEach(() => {
     wrapper = mount(<Collection />);
   });
 
   it('renders everything', () => {
-    const tree = renderer
-      .create(<Collection></Collection>)
-      .toJSON();
+    const tree = renderer.create(<Collection />).toJSON();
     expect(tree).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(42);
     expect(wrapper.find('Text').length).toBe(24);

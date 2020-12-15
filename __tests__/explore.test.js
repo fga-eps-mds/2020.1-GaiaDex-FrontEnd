@@ -1,24 +1,22 @@
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 
-jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
-
-import Explore from '../src/screen/explore/explore';
-import styles from '../src/screen/explore/styles';
 import renderer from 'react-test-renderer';
 
+import React from 'react';
+import Explore from '../src/screen/explore/explore';
+import styles from '../src/screen/explore/styles';
 
-let wrapper ;
+jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
+
+let wrapper;
 
 describe('<Explore />', () => {
-
   beforeEach(() => {
     wrapper = mount(<Explore />);
   });
 
   it('renders everything', () => {
-    const tree = renderer
-      .create(<Explore></Explore>)
-      .toJSON();
+    const tree = renderer.create(<Explore />).toJSON();
     expect(tree).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(34);
     expect(wrapper.find('TouchableOpacity').length).toBe(1);
@@ -34,16 +32,14 @@ describe('<Explore />', () => {
     expect(wrapper.find('View').at(6)).toHaveStyle(styles.popularTabs);
     expect(wrapper.find('View').at(8)).toHaveStyle(styles.popularContent);
     expect(wrapper.find('View').at(12)).toHaveStyle(styles.myPlantsContainer);
-
   });
   it('renders TouchableOpacity correctly', () => {
     expect(wrapper.find('TouchableOpacity').at(0)).toHaveProp('onPress');
-
   });
   it('renders Icon correctly', () => {
-    expect(wrapper.find('Icon').at(0)).toHaveProp('name','search');
+    expect(wrapper.find('Icon').at(0)).toHaveProp('name', 'search');
     expect(wrapper.find('Icon').at(0)).toHaveProp('size', 45);
-    expect(wrapper.find('Icon').at(0)).toHaveProp('color','black');
+    expect(wrapper.find('Icon').at(0)).toHaveProp('color', 'black');
   });
   it('renders Text correctly', () => {
     expect(wrapper.find('Text').at(0)).toHaveStyle(styles.exploreText);
@@ -58,11 +54,8 @@ describe('<Explore />', () => {
     expect(wrapper.find('FlatList').at(0)).toHaveProp('renderItem');
     expect(wrapper.find('FlatList').at(0)).toHaveProp('data');
     expect(wrapper.find('FlatList').at(0)).toHaveProp('keyExtractor');
-
   });
   it('renders MenuBar correctly', () => {
     expect(wrapper.find('MenuBar').at(0)).toHaveProp('navigation');
-
   });
-  
 });

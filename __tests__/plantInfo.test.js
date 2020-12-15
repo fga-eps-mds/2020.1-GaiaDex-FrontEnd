@@ -1,24 +1,23 @@
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 
 import { mount } from 'enzyme';
+import renderer from 'react-test-renderer';
+
+import React from 'react';
 import PlantCardInfo from '../src/screen/cardPlant/plantInfo/myPlantCard';
 import styles from '../src/screen/cardPlant/plantInfo/style';
-import renderer from 'react-test-renderer';
 
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
 let wrapper;
 
 describe('<PlantCardInfo />', () => {
-
   beforeEach(() => {
     wrapper = mount(<PlantCardInfo />);
   });
-  
+
   it('renders everything', () => {
-    const tree = renderer
-      .create(<PlantCardInfo></PlantCardInfo>)
-      .toJSON();
+    const tree = renderer.create(<PlantCardInfo />).toJSON();
     expect(tree).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(22);
     expect(wrapper.find('Text').length).toBe(26);
