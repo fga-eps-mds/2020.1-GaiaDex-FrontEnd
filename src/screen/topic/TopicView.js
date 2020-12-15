@@ -39,7 +39,7 @@ function Data({ time }) {
 }
 
 export default function TopicView({ navigation }) {
-  const topicID = navigation.getParam('itemID', '5fcc409c8e5b3100955db202');
+  const topicID = navigation.getParam('itemID');
   const deletedTopicTitle = 'Topico Deletado';
   const [user, setUser] = useState({});
   const [topic, setTopic] = useState({});

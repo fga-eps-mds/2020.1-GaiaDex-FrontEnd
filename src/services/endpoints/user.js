@@ -72,12 +72,13 @@ export const UserUpdate = (User) => {
   });
 };
 
-export const UserDelete = () => {
+export const UserDelete = async () => {
   const USER = ENDPOINTS.API.auth;
+  const token = await getToken();
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + USER.delete.route, {
       method: USER.delete.method,
-      headers: baseHeaders(getToken()),
+      headers: baseHeaders(token),
     })
       .then((res) => res.json())
       .then(resolve)

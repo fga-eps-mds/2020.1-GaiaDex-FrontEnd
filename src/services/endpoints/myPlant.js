@@ -1,11 +1,12 @@
 import { ENDPOINTS, baseHeaders, getToken } from './index';
 
-export const createMyPlant = (plantId, plantNickname) => {
+export const createMyPlant = async (plantId, plantNickname) => {
   const PLANT = ENDPOINTS.API.myPlant;
+  const token = await getToken();
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + PLANT.create.route(plantId), {
       method: PLANT.create.method,
-      headers: baseHeaders(getToken()),
+      headers: baseHeaders(token),
       body: JSON.stringify({
         nickname: plantNickname,
       }),
