@@ -1,0 +1,952 @@
+[
+    {
+        "metric": "new_development_cost",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "33600.0"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "45750.0"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "94200.0"
+            }
+        ]
+    },
+    {
+        "metric": "effort_to_reach_maintainability_rating_a",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "0"
+            }
+        ]
+    },
+    {
+        "metric": "security_hotspots_reviewed",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "100.0"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "100.0"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "100.0"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "100.0"
+            }
+        ]
+    },
+    {
+        "metric": "ncloc",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "2462"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "3539"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "3904"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "4928"
+            }
+        ]
+    },
+    {
+        "metric": "ncloc_language_distribution",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "js=2392;xml=70"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "js=3469;xml=70"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "js=3845;xml=59"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "js=4928"
+            }
+        ]
+    },
+    {
+        "metric": "classes",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "0"
+            }
+        ]
+    },
+    {
+        "metric": "files",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "39"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "46"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "51"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "58"
+            }
+        ]
+    },
+    {
+        "metric": "functions",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "139"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "234"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "259"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "372"
+            }
+        ]
+    },
+    {
+        "metric": "statements",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "223"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "365"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "395"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "460"
+            }
+        ]
+    },
+    {
+        "metric": "comment_lines",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "54"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "53"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "50"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "57"
+            }
+        ]
+    },
+    {
+        "metric": "comment_lines_density",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "2.1"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "1.5"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "1.3"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "1.1"
+            }
+        ]
+    },
+    {
+        "metric": "complexity",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "172"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "288"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "316"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "436"
+            }
+        ]
+    },
+    {
+        "metric": "line_coverage",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "9.8"
+            }
+        ]
+    },
+    {
+        "metric": "branch_coverage",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "53.8"
+            }
+        ]
+    },
+    {
+        "metric": "false_positive_issues",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "1"
+            }
+        ]
+    },
+    {
+        "metric": "open_issues",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "43"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "43"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "76"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "32"
+            }
+        ]
+    },
+    {
+        "metric": "reopened_issues",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "0"
+            }
+        ]
+    },
+    {
+        "metric": "confirmed_issues",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "0"
+            }
+        ]
+    },
+    {
+        "metric": "code_smells",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "41"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "41"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "74"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "32"
+            }
+        ]
+    },
+    {
+        "metric": "bugs",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "2"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "2"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "2"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "0"
+            }
+        ]
+    },
+    {
+        "metric": "cognitive_complexity",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "58"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "87"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "90"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "98"
+            }
+        ]
+    },
+    {
+        "metric": "coverage",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "10.8"
+            }
+        ]
+    },
+    {
+        "metric": "lines_to_cover",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "541"
+            }
+        ]
+    },
+    {
+        "metric": "info_violations",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "0"
+            }
+        ]
+    },
+    {
+        "metric": "security_hotspots",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "0"
+            }
+        ]
+    },
+    {
+        "metric": "duplicated_lines",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "240"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "358"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "358"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "396"
+            }
+        ]
+    },
+    {
+        "metric": "duplicated_blocks",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "6"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "8"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "8"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "10"
+            }
+        ]
+    },
+    {
+        "metric": "duplicated_files",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "6"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "8"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "8"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "8"
+            }
+        ]
+    },
+    {
+        "metric": "duplicated_lines_density",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "9.1"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "8.4"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "7.7"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "7.6"
+            }
+        ]
+    },
+    {
+        "metric": "violations",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "43"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "43"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "76"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "32"
+            }
+        ]
+    },
+    {
+        "metric": "blocker_violations",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "0"
+            }
+        ]
+    },
+    {
+        "metric": "major_violations",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "2"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "2"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "21"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "9"
+            }
+        ]
+    },
+    {
+        "metric": "minor_violations",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "41"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "41"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "42"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "7"
+            }
+        ]
+    },
+    {
+        "metric": "reliability_remediation_effort",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "10"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "10"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "10"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "0"
+            }
+        ]
+    },
+    {
+        "metric": "reliability_rating",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "3.0"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "3.0"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "3.0"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "1.0"
+            }
+        ]
+    },
+    {
+        "metric": "security_remediation_effort",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "0"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "0"
+            }
+        ]
+    },
+    {
+        "metric": "security_review_rating",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "1.0"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "1.0"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "1.0"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "1.0"
+            }
+        ]
+    },
+    {
+        "metric": "sqale_index",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "103"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "103"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "430"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "310"
+            }
+        ]
+    },
+    {
+        "metric": "sqale_rating",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "1.0"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "1.0"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "1.0"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "1.0"
+            }
+        ]
+    },
+    {
+        "metric": "development_cost",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "73860"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "106170"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "117120"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "147840"
+            }
+        ]
+    },
+    {
+        "metric": "sqale_debt_ratio",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "0.1"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "0.1"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "0.4"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "0.2"
+            }
+        ]
+    },
+    {
+        "metric": "new_sqale_debt_ratio",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "0.0"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "0.240437158469945"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "0.171974522292994"
+            }
+        ]
+    },
+    {
+        "metric": "security_rating",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "1.0"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "1.0"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "1.0"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "1.0"
+            }
+        ]
+    },
+    {
+        "metric": "alert_status",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "ERROR"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "ERROR"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "ERROR"
+            }
+        ]
+    },
+    {
+        "metric": "quality_gate_details",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "{\"level\":\"ERROR\",\"conditions\":[{\"metric\":\"new_reliability_rating\",\"op\":\"GT\",\"period\":1,\"error\":\"1\",\"actual\":\"1\",\"level\":\"OK\"},{\"metric\":\"new_security_rating\",\"op\":\"GT\",\"period\":1,\"error\":\"1\",\"actual\":\"1\",\"level\":\"OK\"},{\"metric\":\"new_maintainability_rating\",\"op\":\"GT\",\"period\":1,\"error\":\"1\",\"actual\":\"1\",\"level\":\"OK\"},{\"metric\":\"new_duplicated_lines_density\",\"op\":\"GT\",\"period\":1,\"error\":\"3\",\"actual\":\"7.078584283143371\",\"level\":\"ERROR\"},{\"metric\":\"new_security_hotspots_reviewed\",\"op\":\"LT\",\"period\":1,\"error\":\"100\",\"actual\":\"100.0\",\"level\":\"OK\"}],\"ignoredConditions\":false}"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "{\"level\":\"ERROR\",\"conditions\":[{\"metric\":\"new_reliability_rating\",\"op\":\"GT\",\"period\":1,\"error\":\"1\",\"actual\":\"1\",\"level\":\"OK\"},{\"metric\":\"new_security_rating\",\"op\":\"GT\",\"period\":1,\"error\":\"1\",\"actual\":\"1\",\"level\":\"OK\"},{\"metric\":\"new_maintainability_rating\",\"op\":\"GT\",\"period\":1,\"error\":\"1\",\"actual\":\"1\",\"level\":\"OK\"},{\"metric\":\"new_duplicated_lines_density\",\"op\":\"GT\",\"period\":1,\"error\":\"3\",\"actual\":\"5.643232902917265\",\"level\":\"ERROR\"},{\"metric\":\"new_security_hotspots_reviewed\",\"op\":\"LT\",\"period\":1,\"error\":\"100\",\"actual\":\"100.0\",\"level\":\"OK\"}],\"ignoredConditions\":false}"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "{\"level\":\"ERROR\",\"conditions\":[{\"metric\":\"new_reliability_rating\",\"op\":\"GT\",\"period\":1,\"error\":\"1\",\"actual\":\"1\",\"level\":\"OK\"},{\"metric\":\"new_security_rating\",\"op\":\"GT\",\"period\":1,\"error\":\"1\",\"actual\":\"1\",\"level\":\"OK\"},{\"metric\":\"new_maintainability_rating\",\"op\":\"GT\",\"period\":1,\"error\":\"1\",\"actual\":\"1\",\"level\":\"OK\"},{\"metric\":\"new_coverage\",\"op\":\"LT\",\"period\":1,\"error\":\"80\",\"actual\":\"11.822660098522167\",\"level\":\"ERROR\"},{\"metric\":\"new_duplicated_lines_density\",\"op\":\"GT\",\"period\":1,\"error\":\"3\",\"actual\":\"6.5907729179149195\",\"level\":\"ERROR\"},{\"metric\":\"new_security_hotspots_reviewed\",\"op\":\"LT\",\"period\":1,\"error\":\"100\",\"actual\":\"100.0\",\"level\":\"OK\"}],\"ignoredConditions\":false}"
+            }
+        ]
+    },
+    {
+        "metric": "quality_profiles",
+        "history": [
+            {
+                "date": "2020-12-07T20:41:27+0100",
+                "value": "[{\"key\":\"AXWvpRVnsLNi72AWVd8l\",\"language\":\"js\",\"name\":\"Sonar way\",\"rulesUpdatedAt\":\"2020-11-16T08:31:07+0000\"},{\"key\":\"AXWvpRVnsLNi72AWVd8j\",\"language\":\"xml\",\"name\":\"Sonar way\",\"rulesUpdatedAt\":\"2019-01-28T10:23:13+0000\"}]"
+            },
+            {
+                "date": "2020-12-10T02:08:23+0100",
+                "value": "[{\"key\":\"AXWvpRVnsLNi72AWVd8l\",\"language\":\"js\",\"name\":\"Sonar way\",\"rulesUpdatedAt\":\"2020-11-16T08:31:07+0000\"},{\"key\":\"AXWvpRVnsLNi72AWVd8j\",\"language\":\"xml\",\"name\":\"Sonar way\",\"rulesUpdatedAt\":\"2019-01-28T10:23:13+0000\"}]"
+            },
+            {
+                "date": "2020-12-13T01:46:37+0100",
+                "value": "[{\"key\":\"AXWvpRVnsLNi72AWVd8o\",\"language\":\"js\",\"name\":\"Sonar way Recommended\",\"rulesUpdatedAt\":\"2020-11-16T08:31:48+0000\"},{\"key\":\"AXWvpRVnsLNi72AWVd8j\",\"language\":\"xml\",\"name\":\"Sonar way\",\"rulesUpdatedAt\":\"2019-01-28T10:23:13+0000\"}]"
+            },
+            {
+                "date": "2020-12-15T02:48:44+0100",
+                "value": "[{\"key\":\"AXWvpRVnsLNi72AWVd8o\",\"language\":\"js\",\"name\":\"Sonar way Recommended\",\"rulesUpdatedAt\":\"2020-11-16T08:31:48+0000\"}]"
+            }
+        ]
+    }
+]
