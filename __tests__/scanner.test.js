@@ -20,8 +20,8 @@ describe('<Scamera />', () => {
   });
 
   it('renders everything', () => {
-    const tree = renderer.create(<Scamera />).toJSON();
-    expect(tree).toMatchSnapshot();
+    let wrapperSnap = shallow(<Scamera />)
+    expect(wrapperSnap).toMatchSnapshot();
     expect(wrapper.find('View').length).toBe(16);
     expect(wrapper.find('Camera').length).toBe(1);
     expect(wrapper.find('TouchableOpacity').length).toBe(5);
