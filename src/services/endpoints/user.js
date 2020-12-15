@@ -1,11 +1,12 @@
 import { ENDPOINTS, baseHeaders, getToken, setToken } from './index';
 
-export const getUserLogged = () => {
+export const getUserLogged = async () => {
   const USER = ENDPOINTS.API.auth;
+  const token = await getToken();
   return new Promise((resolve, reject) => {
     fetch(ENDPOINTS.API.base_url + USER.getUser.route, {
       method: USER.getUser.method,
-      headers: baseHeaders(getToken()),
+      headers: baseHeaders(token),
     })
       .then((res) => res.json())
       .then(resolve)
