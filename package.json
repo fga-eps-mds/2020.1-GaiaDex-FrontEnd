@@ -89,12 +89,5 @@
     "prettier": "^2.1.2",
     "react-test-renderer": "^17.0.1"
   },
-  "jest": {
-    "preset": "jest-expo",
-    "setupFilesAfterEnv": [
-      "jest-enzyme"
-    ],
-    "testEnvironment": "enzyme"
-  },
   "private": true
 }

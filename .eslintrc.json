@@ -1,6 +1,7 @@
 {
   "globals": {
-        "mount": true
+        "mount": true,
+        "shallow": true
     },
   "extends": [
     "airbnb",

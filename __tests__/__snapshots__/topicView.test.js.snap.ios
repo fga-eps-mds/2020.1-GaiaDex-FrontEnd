@@ -1,0 +1,316 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TopicCreate /> renders everything 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "flex": 1,
+      "flexDirection": "column",
+      "flexWrap": "nowrap",
+      "height": 1334,
+      "justifyContent": "center",
+      "width": 750,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignContent": "space-between",
+        "alignItems": "center",
+        "backgroundColor": "rgba(36,37,40,1.0)",
+        "flex": 1.5,
+        "flexDirection": "row",
+        "paddingTop": 15,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 0.1,
+        }
+      }
+    >
+      <Text />
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 0.9,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(214,218,223,1.0)",
+            "fontSize": 18,
+          }
+        }
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignSelf": "center",
+        "flex": 7,
+        "flexDirection": "column",
+        "flexWrap": "nowrap",
+        "height": 1334,
+        "justifyContent": "center",
+        "width": 625,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 0.6,
+          "flexDirection": "row",
+          "marginTop": 26.68,
+        }
+      }
+    >
+      <Image
+        defaultSource={1}
+        source={
+          Object {
+            "uri": undefined,
+          }
+        }
+        style={
+          Object {
+            "borderRadius": 50,
+            "height": 150,
+            "width": 150,
+          }
+        }
+      />
+      <View>
+        <Text
+          style={
+            Object {
+              "fontSize": 18,
+              "fontWeight": "400",
+              "paddingLeft": 10,
+              "paddingTop": 5,
+            }
+          }
+        />
+        <Text
+          style={
+            Object {
+              "fontSize": 12,
+              "fontWeight": "200",
+              "paddingLeft": 10,
+              "paddingTop": 0,
+            }
+          }
+        >
+          NaN
+           minutos atrás
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignContent": "space-between",
+          "flex": 1.4,
+          "flexDirection": "column",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "marginTop": 10,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 18,
+              "fontWeight": "600",
+            }
+          }
+        />
+      </View>
+      <RCTScrollView
+        style={
+          Object {
+            "marginTop": 5,
+            "maxHeight": 166.75,
+          }
+        }
+      >
+        <View>
+          <Text
+            style={
+              Object {
+                "fontSize": 12,
+                "fontWeight": "400",
+                "paddingTop": 20,
+              }
+            }
+          />
+        </View>
+      </RCTScrollView>
+      <Text />
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgba(214,218,223,1.0)",
+            "borderRadius": 8,
+            "flex": 6,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginTop": 20,
+            "maxHeight": 66.7,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "flex-start",
+              "paddingLeft": 10,
+            }
+          }
+        >
+          <Text />
+          <Text />
+          <Text />
+        </View>
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text />
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "flex-end",
+              "paddingHorizontal": 10,
+            }
+          }
+        >
+          <Text />
+          <Text
+            style={
+              Object {
+                "fontSize": 10,
+              }
+            }
+          >
+            Compartilhar
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "rgba(214,218,223,1.0)",
+        "flex": 1,
+        "marginTop": 20,
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignContent": "flex-start",
+          "backgroundColor": "rgba(216,163,224,1.0)",
+          "flex": 5,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "fontSize": 16,
+            "fontWeight": "500",
+            "paddingLeft": 75,
+            "paddingTop": 12,
+          }
+        }
+      >
+        Novo Comentário
+      </Text>
+      <Text />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(216,163,224,1.0)",
+        "flex": 5,
+        "flexWrap": "nowrap",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(214,218,223,1.0)",
+          "flex": 1,
+        }
+      }
+    >
+      <RCTScrollView
+        disableVirtualization={false}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        horizontal={false}
+        initialNumToRender={10}
+        keyExtractor={[Function]}
+        maxToRenderPerBatch={10}
+        onContentSizeChange={[Function]}
+        onEndReachedThreshold={2}
+        onLayout={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        removeClippedSubviews={false}
+        renderItem={[Function]}
+        scrollEventThrottle={50}
+        stickyHeaderIndices={Array []}
+        updateCellsBatchingPeriod={50}
+        viewabilityConfigCallbackPairs={Array []}
+        windowSize={21}
+      >
+        <View />
+      </RCTScrollView>
+    </View>
+  </View>
+</View>
+`;

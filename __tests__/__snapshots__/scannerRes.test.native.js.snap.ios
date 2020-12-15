@@ -1,0 +1,206 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Scamera /> renders everything 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "rgba(242,224,245,1.0)",
+      "flex": 1,
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <Modal
+    animationType="fade"
+    hardwareAccelerated={false}
+    transparent={true}
+    visible={false}
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(242,224,245,1.0)",
+          "borderRadius": 10,
+          "elevation": 50,
+          "height": 296.44444444444446,
+          "justifyContent": "space-between",
+          "marginLeft": 75,
+          "marginTop": 185.27777777777777,
+          "paddingHorizontal": 30,
+          "paddingVertical": 14.822222222222223,
+          "shadowColor": "rgba(36,37,40,1.0)",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.25,
+          "shadowRadius": 3.84,
+          "width": 600,
+        }
+      }
+    >
+      <View>
+        <Text
+          style={
+            Object {
+              "fontSize": 17,
+            }
+          }
+        >
+          Digite o novo nome para sua planta:
+        </Text>
+        <TextInput
+          allowFontScaling={true}
+          autoFocus={true}
+          onChangeText={[Function]}
+          rejectResponderTermination={true}
+          style={
+            Object {
+              "borderBottomColor": "rgba(56,20,62,1.0)",
+              "borderBottomWidth": 1,
+              "height": 40,
+              "width": 540,
+            }
+          }
+          underlineColorAndroid="transparent"
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row-reverse",
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "rgba(5,130,202,1.0)",
+                "fontSize": 14,
+                "marginLeft": 54,
+              }
+            }
+          >
+            FEITO
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "rgba(5,130,202,1.0)",
+                "fontSize": 14,
+                "marginLeft": 54,
+              }
+            }
+          >
+            CANCELAR
+          </Text>
+        </View>
+      </View>
+    </View>
+  </Modal>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "margin": 10,
+        "opacity": 1,
+      }
+    }
+  >
+    <Text />
+  </View>
+  <Image
+    source={
+      Object {
+        "uri": undefined,
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 20,
+        "height": 333.5,
+        "width": 720,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "alignSelf": "flex-start",
+        "fontSize": 20,
+        "marginHorizontal": 15,
+        "marginVertical": 37.5,
+      }
+    }
+  >
+    Esses são os resultados para a sua foto:
+  </Text>
+  <RCTScrollView
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    onContentSizeChange={[Function]}
+    onEndReachedThreshold={2}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View />
+  </RCTScrollView>
+</View>
+`;
