@@ -52,7 +52,9 @@ export default function Comments({ topic, setTopic, user, like, dislike }) {
           <ScrollView>
             <Text style={styles.commentUsername}>{username}</Text>
             {topicEditing !== id ? (
-              <Text style={styles.commentDescription}>{description}</Text>
+              <Text style={styles.commentDescription} numberOfLines={3}>
+                {description}
+              </Text>
             ) : (
               <TextInput
                 blurOnSubmit
@@ -81,7 +83,7 @@ export default function Comments({ topic, setTopic, user, like, dislike }) {
               onPress={() => dislike('comment', id)}
             />
           </View>
-          {user?._id === userID && (
+          {!!(user?._id === userID) && (
             <>
               <View style={styles.commentIcon}>
                 <Feather

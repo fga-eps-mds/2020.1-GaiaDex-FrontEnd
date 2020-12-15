@@ -34,10 +34,19 @@ export default function TopicCreate({ navigation }) {
   return (
     <View style={styles.TopicCreatemasterView}>
       <View style={styles.TopicCreateheader}>
-        <AntDesign name="left" size={24} color={gray.iron()} />
-        <Text style={{ color: gray.iron(), fontSize: 15 }}>
-          {plant?.scientificName}
-        </Text>
+        <TouchableOpacity
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+          onPress={() => navigation.push('PlantCard', { itemID: plantID })}
+        >
+          <AntDesign name="left" size={24} color={gray.iron()} />
+          <Text style={{ color: gray.iron(), fontSize: 15 }}>
+            {plant?.scientificName}
+          </Text>
+        </TouchableOpacity>
         <TouchableOpacity
           style={styles.TopicCreatepublicarDiv}
           onPress={() => postTopic()}

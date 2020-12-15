@@ -18,6 +18,18 @@ export const createTopic = async (topicID, topicBody) => {
   });
 };
 
+export const topTopic = () => {
+  const TOPIC = ENDPOINTS.API.topic;
+  return new Promise((resolve, reject) => {
+    fetch(ENDPOINTS.API.base_url + TOPIC.listTop.route, {
+      method: TOPIC.listTop.method,
+    })
+      .then((res) => res.json())
+      .then(resolve)
+      .catch(reject);
+  });
+};
+
 export const getTopic = (topicID) => {
   const TOPIC = ENDPOINTS.API.topic;
   return new Promise((resolve, reject) => {

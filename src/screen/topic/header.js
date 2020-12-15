@@ -1,23 +1,16 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { gray } from '../../theme/colorPalette';
 
 export default function Header({ title, onPress }) {
   return (
     <View style={styles.header}>
-      <View style={{ flex: 0.1 }}>
-        <AntDesign
-          name="left"
-          size={24}
-          color={gray.iron()}
-          onPress={onPress}
-        />
-      </View>
-      <View style={{ flex: 0.9 }}>
+      <TouchableOpacity style={styles.headerNav} onPress={onPress}>
+        <AntDesign name="left" size={24} color={gray.iron()} />
         <Text style={{ color: gray.iron(), fontSize: 18 }}>{title}</Text>
-      </View>
+      </TouchableOpacity>
+      <View style={{ flex: 0.2 }} />
     </View>
   );
 }
@@ -29,6 +22,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'space-between',
     paddingTop: 15,
+  },
+  headerNav: {
+    flex: 0.8,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   publicarDiv: {
     flexDirection: 'row',
