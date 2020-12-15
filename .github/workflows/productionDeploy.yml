@@ -33,7 +33,7 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: apk
-          path: ./android/app/build/outputs/apk/release/
+          path: ./android/app/build/outputs/apk/release/app-release.apk
 
   tagged-release:
     name: "Tagged Release"
@@ -45,6 +45,7 @@ jobs:
         uses: actions/download-artifact@master
         with:
           name: apk
+          path: ./
       - name: Add Github Release
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
