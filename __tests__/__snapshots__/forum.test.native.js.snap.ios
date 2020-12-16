@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Forum /> renders everything 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgba(242,224,245,1.0)",
+      "flex": 1,
+      "flexDirection": "column",
+      "paddingTop": 44,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignContent": "center",
+        "alignItems": "center",
+        "alignSelf": "center",
+        "flex": 0.2,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "width": 681.8181818181818,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "rgba(49,53,58,1.0)",
+          "fontSize": 40,
+          "fontWeight": "600",
+        }
+      }
+    >
+      Fórum
+    </Text>
+    <Icon
+      allowFontScaling={false}
+      color="rgba(36,37,40,1.0)"
+      name="search"
+      size={45}
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "alignSelf": "center",
+        "flex": 0.28,
+        "flexDirection": "column",
+        "justifyContent": "flex-start",
+        "width": 681.8181818181818,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 0.2,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingRight": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(49,53,58,1.0)",
+            "fontSize": 22,
+            "fontWeight": "400",
+            "textDecorationColor": "rgba(36,37,40,1.0)",
+            "textDecorationLine": "underline",
+            "textDecorationStyle": "solid",
+          }
+        }
+      >
+        Meus Fórums
+      </Text>
+      <Icon
+        allowFontScaling={false}
+        color="rgba(36,37,40,1.0)"
+        name="ios-add-circle-outline"
+        onPress={[Function]}
+        size={30}
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 0.8,
+        }
+      }
+    >
+      <ForwardRef
+        horizontal={true}
+        keyExtractor={[Function]}
+        renderItem={[Function]}
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignSelf": "center",
+        "flex": 0.4,
+        "flexDirection": "column",
+        "justifyContent": "flex-end",
+        "width": 681.8181818181818,
+      }
+    }
+  >
+    <ForwardRef
+      onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "flex-start",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "width": 375,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "rgba(49,53,58,1.0)",
+            "fontSize": 18,
+            "fontWeight": "600",
+            "paddingTop": 16,
+            "textDecorationColor": "rgba(36,37,40,1.0)",
+            "textDecorationLine": "underline",
+            "textDecorationStyle": "solid",
+          }
+        }
+      >
+        Top posts
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "rgba(49,53,58,1.0)",
+            "fontSize": 16,
+            "fontWeight": "400",
+            "paddingTop": 16,
+          }
+        }
+      >
+        Novos
+      </Text>
+    </ForwardRef>
+    <TopTopic />
+  </View>
+  <MenuBar />
+</View>
+`;

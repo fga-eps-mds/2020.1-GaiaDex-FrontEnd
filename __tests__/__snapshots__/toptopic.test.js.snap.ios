@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Config /> renders everything 1`] = `
+<TopTopic>
+  <ForwardRef
+    keyExtractor={[Function]}
+    renderItem={[Function]}
+  >
+    <FlatList
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onEndReachedThreshold={2}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      renderScrollComponent={[Function]}
+      scrollEventThrottle={50}
+      updateCellsBatchingPeriod={50}
+      windowSize={21}
+    >
+      <VirtualizedList
+        disableVirtualization={false}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        horizontal={false}
+        initialNumToRender={10}
+        keyExtractor={[Function]}
+        maxToRenderPerBatch={10}
+        onEndReachedThreshold={2}
+        removeClippedSubviews={false}
+        renderItem={[Function]}
+        renderScrollComponent={[Function]}
+        scrollEventThrottle={50}
+        updateCellsBatchingPeriod={50}
+        viewabilityConfigCallbackPairs={Array []}
+        windowSize={21}
+      >
+        <ScrollView
+          disableVirtualization={false}
+          getItem={[Function]}
+          getItemCount={[Function]}
+          horizontal={false}
+          initialNumToRender={10}
+          keyExtractor={[Function]}
+          maxToRenderPerBatch={10}
+          onContentSizeChange={[Function]}
+          onEndReachedThreshold={2}
+          onLayout={[Function]}
+          onMomentumScrollEnd={[Function]}
+          onScroll={[Function]}
+          onScrollBeginDrag={[Function]}
+          onScrollEndDrag={[Function]}
+          removeClippedSubviews={false}
+          renderItem={[Function]}
+          renderScrollComponent={[Function]}
+          scrollEventThrottle={50}
+          stickyHeaderIndices={Array []}
+          updateCellsBatchingPeriod={50}
+          viewabilityConfigCallbackPairs={Array []}
+          windowSize={21}
+        >
+          <NativeViewGestureHandler
+            disallowInterruption={true}
+            shouldCancelWhenOutside={false}
+          >
+            <ScrollView
+              collapsable={false}
+              disableVirtualization={false}
+              getItem={[Function]}
+              getItemCount={[Function]}
+              horizontal={false}
+              initialNumToRender={10}
+              keyExtractor={[Function]}
+              maxToRenderPerBatch={10}
+              onContentSizeChange={[Function]}
+              onEndReachedThreshold={2}
+              onGestureHandlerEvent={[Function]}
+              onGestureHandlerStateChange={[Function]}
+              onLayout={[Function]}
+              onMomentumScrollEnd={[Function]}
+              onScroll={[Function]}
+              onScrollBeginDrag={[Function]}
+              onScrollEndDrag={[Function]}
+              removeClippedSubviews={false}
+              renderItem={[Function]}
+              renderScrollComponent={[Function]}
+              scrollEventThrottle={50}
+              stickyHeaderIndices={Array []}
+              updateCellsBatchingPeriod={50}
+              viewabilityConfigCallbackPairs={Array []}
+              windowSize={21}
+            >
+              <RCTScrollView
+                collapsable={false}
+                disableVirtualization={false}
+                getItem={[Function]}
+                getItemCount={[Function]}
+                horizontal={false}
+                initialNumToRender={10}
+                keyExtractor={[Function]}
+                maxToRenderPerBatch={10}
+                onContentSizeChange={[Function]}
+                onEndReachedThreshold={2}
+                onGestureHandlerEvent={[Function]}
+                onGestureHandlerStateChange={[Function]}
+                onLayout={[Function]}
+                onMomentumScrollEnd={[Function]}
+                onScroll={[Function]}
+                onScrollBeginDrag={[Function]}
+                onScrollEndDrag={[Function]}
+                removeClippedSubviews={false}
+                renderItem={[Function]}
+                renderScrollComponent={[Function]}
+                scrollEventThrottle={50}
+                stickyHeaderIndices={Array []}
+                updateCellsBatchingPeriod={50}
+                viewabilityConfigCallbackPairs={Array []}
+                windowSize={21}
+              >
+                <RCTScrollView
+                  collapsable={false}
+                  disableVirtualization={false}
+                  getItem={[Function]}
+                  getItemCount={[Function]}
+                  horizontal={false}
+                  initialNumToRender={10}
+                  keyExtractor={[Function]}
+                  maxToRenderPerBatch={10}
+                  onContentSizeChange={[Function]}
+                  onEndReachedThreshold={2}
+                  onGestureHandlerEvent={[Function]}
+                  onGestureHandlerStateChange={[Function]}
+                  onLayout={[Function]}
+                  onMomentumScrollEnd={[Function]}
+                  onScroll={[Function]}
+                  onScrollBeginDrag={[Function]}
+                  onScrollEndDrag={[Function]}
+                  removeClippedSubviews={false}
+                  renderItem={[Function]}
+                  renderScrollComponent={[Function]}
+                  scrollEventThrottle={50}
+                  stickyHeaderIndices={Array []}
+                  updateCellsBatchingPeriod={50}
+                  viewabilityConfigCallbackPairs={Array []}
+                  windowSize={21}
+                >
+                  <View>
+                    <View />
+                  </View>
+                </RCTScrollView>
+              </RCTScrollView>
+            </ScrollView>
+          </NativeViewGestureHandler>
+        </ScrollView>
+      </VirtualizedList>
+    </FlatList>
+  </ForwardRef>
+</TopTopic>
+`;

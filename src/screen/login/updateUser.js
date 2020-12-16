@@ -1,39 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useEffect, useState } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  StatusBar as sBar,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
-import { UserUpdate } from '../../services/backEnd';
+import React, { useState } from 'react';
+import { Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { AntDesign, Entypo } from '@expo/vector-icons';
+import { UserUpdate } from '../../services';
 import styles from './style';
-import { AntDesign } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
+import { gray, purple } from '../../theme/colorPalette';
 
-export default function Update({navigation}) {
+export default function Update({ navigation }) {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
+  const [password, setPassword] = useState('');
   const update = () => {
     const user = {
-      'username': username,
-      'email': email,
-      'password': senha,
-    }
-    UserUpdate(user)
-    .then(res => {
-      if(res.Error){
-        Alert.alert(res.Error)
+      username,
+      email,
+      password,
+    };
+    UserUpdate(user).then((res) => {
+      if (res.Error) {
+        Alert.alert(res.Error);
+      } else {
+        navigation.push('Login');
       }
-      else{
-        navigation.push('Login')
-      }
-    })
-  }
+    });
+  };
 
   return (
     <View style={styles.containerRegform}>
@@ -60,30 +50,44 @@ export default function Update({navigation}) {
         style={styles.textinputRegform}
         secureTextEntry
         placeholder="Senha:"
-        secureTextEntry
         underlineColorAndroid="transparent"
-        onChangeText={(valor) => setSenha(valor)}
+        onChangeText={(valor) => setPassword(valor)}
       />
 
       <View style={styles.direction}>
         <Text style={styles.midTxt}>Alterar</Text>
         <TouchableOpacity style={styles.midBtn} onPress={() => update()}>
-          <AntDesign name="arrowright" size={35} color="white" style={styles.arrow}/>
+          <AntDesign
+            name="arrowright"
+            size={35}
+            color={gray.iron()}
+            style={styles.arrow}
+          />
         </TouchableOpacity>
       </View>
 
       <TouchableOpacity style={styles.btnFbGoogleRegform}>
         <View style={styles.viewbtnFbGoogle}>
-          <Entypo name="facebook" size={24} color="#38143E" style={styles.iconBtnFbGoogle}/>
+          <Entypo
+            name="facebook"
+            size={24}
+            color={purple.grapeDark()}
+            style={styles.iconBtnFbGoogle}
+          />
           <Text style={styles.txtBtnFbGoogleRegform}>
             Fazer login com o Facebook
           </Text>
-        </View >
+        </View>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.btnFbGoogleRegform}>
         <View style={styles.viewbtnFbGoogle}>
-          <AntDesign name="google" size={24} color="#38143E" style={styles.iconBtnFbGoogle}/>
+          <AntDesign
+            name="google"
+            size={24}
+            color={purple.grapeDark()}
+            style={styles.iconBtnFbGoogle}
+          />
           <Text style={styles.txtBtnFbGoogleRegform}>
             Fazer login com o Google
           </Text>
@@ -94,6 +98,7 @@ export default function Update({navigation}) {
         <Text style={styles.txtBtnOthersRegform}>Login</Text>
       </TouchableOpacity>
 
+      {/* eslint-disable-next-line react/style-prop-object */}
       <StatusBar style="auto" />
     </View>
   );

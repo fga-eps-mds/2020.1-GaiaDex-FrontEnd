@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Scamera /> renders everything 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgba(242,224,245,1.0)",
+      "flex": 1,
+      "justifyContent": "center",
+      "paddingTop": 44,
+    }
+  }
+>
+  <Camera
+    faceDetectorSettings={Object {}}
+    flashMode="off"
+    focusDepth={0}
+    ratio="4:3"
+    style={
+      Object {
+        "flex": 6,
+      }
+    }
+    zoom={0}
+  >
+    <View
+      style={
+        Object {
+          "alignSelf": "flex-end",
+          "backgroundColor": "transparent",
+          "flex": 1,
+          "flexDirection": "row",
+          "marginTop": 20,
+          "position": "absolute",
+        }
+      }
+    >
+      <ForwardRef
+        onPress={[Function]}
+        style={
+          Object {
+            "marginRight": 20,
+          }
+        }
+      >
+        <Icon
+          allowFontScaling={false}
+          color="rgba(214,218,223,1.0)"
+          name="flash-off"
+          size={36}
+        />
+      </ForwardRef>
+      <ForwardRef
+        onPress={[Function]}
+        style={
+          Object {
+            "marginRight": 20,
+          }
+        }
+      >
+        <Icon
+          allowFontScaling={false}
+          color="rgba(214,218,223,1.0)"
+          name="camerao"
+          size={36}
+        />
+      </ForwardRef>
+    </View>
+  </Camera>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <ForwardRef
+      onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(75,231,130,1.0)",
+          "borderRadius": 10,
+          "height": 62.5,
+          "justifyContent": "center",
+          "width": 125,
+        }
+      }
+    >
+      <Text>
+        Flor
+      </Text>
+    </ForwardRef>
+    <ForwardRef
+      onPress={[Function]}
+    >
+      <Icon
+        allowFontScaling={false}
+        color="rgba(25,187,83,1.0)"
+        name="circle-slice-8"
+        size={187.5}
+      />
+    </ForwardRef>
+    <ForwardRef
+      onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(229,194,235,1.0)",
+          "borderRadius": 10,
+          "height": 62.5,
+          "justifyContent": "center",
+          "width": 125,
+        }
+      }
+    >
+      <Text>
+        Folha
+      </Text>
+    </ForwardRef>
+  </View>
+</View>
+`;

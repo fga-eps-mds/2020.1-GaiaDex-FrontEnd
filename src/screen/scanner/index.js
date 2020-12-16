@@ -11,16 +11,15 @@ import {
   Platform,
   Alert,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/AntDesign';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, AntDesign as Icon } from '@expo/vector-icons';
 import Result from './result';
 import styles from './styles';
 import { scannerPlant } from '../../services';
+import { gray, green } from '../../theme/colorPalette';
 
-const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
+const { width } = Dimensions.get('screen');
 
-export default function camera() {
+export default function camera({ navigation }) {
   const camRef = useRef(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
   const [hasPermission, setHasPermission] = useState(null);
@@ -29,7 +28,7 @@ export default function camera() {
   const [isLoading, setIsLoading] = useState(false);
   const [plants, setPlants] = useState([]);
   const [plantType, setPlantType] = useState(true);
-  const falshTypes = [
+  const flashTypes = [
     'off',
     'auto',
     'on',
@@ -43,7 +42,6 @@ export default function camera() {
 
   useEffect(() => {
     (async () => {
-      // seta permissao
       const { status } = await Camera.requestPermissionsAsync();
       setHasPermission(status === 'granted');
       if (!hasPermission) {
@@ -53,6 +51,7 @@ export default function camera() {
           </View>
         );
       }
+      return null;
     })();
   }, []);
 
@@ -80,11 +79,12 @@ export default function camera() {
           mime: 'jpg',
           plantType: plantType ? 'flower' : 'leaf',
           data: data.base64,
-        }
+        };
         scannerPlant(body)
-        .then(res => setPlants(res.results))
-        .then(setOpen(true))
-        .then(setIsLoading(false))
+          .then((res) => setPlants(res.results))
+          .then(setOpen(true))
+          .then(setIsLoading(false));
+        return null;
       } catch (err) {
         console.log(err);
         setIsLoading(false);
@@ -95,6 +95,10 @@ export default function camera() {
           { cancelable: false }
         );
       }
+    } else {
+      return Alert.alert('Erro ao inicializar a câmera.', [{ text: 'OK' }], {
+        cancelable: false,
+      });
     }
   };
   const switchPlantType = () => {
@@ -105,8 +109,8 @@ export default function camera() {
       {isLoading && (
         <View style={styles.loadingContainer}>
           <ActivityIndicator
-            size={Platform.OS === 'ios' ? 'large' : largura / 3}
-            color="#19BB53"
+            size={Platform.OS === 'ios' ? 'large' : width / 3}
+            color={green.mountainMeadow()}
           />
         </View>
       )}
@@ -114,18 +118,18 @@ export default function camera() {
         style={styles.camera}
         type={type}
         ref={camRef}
-        flashMode={falshTypes[flash]}
+        flashMode={flashTypes[flash]}
       >
         <View style={styles.botoesConteinerTop}>
           <TouchableOpacity style={styles.buttonFlip} onPress={switchFlash}>
             <MaterialCommunityIcons
-              name={falshTypes[flash + 4]}
+              name={flashTypes[flash + 4]}
               size={36}
-              color="#FFF"
+              color={gray.iron()}
             />
           </TouchableOpacity>
           <TouchableOpacity style={styles.buttonFlip} onPress={switchCamera}>
-            <Icon name="camerao" size={36} color="#FFF" />
+            <Icon name="camerao" size={36} color={gray.iron()} />
           </TouchableOpacity>
         </View>
       </Camera>
@@ -139,8 +143,8 @@ export default function camera() {
         <TouchableOpacity onPress={takePhoto}>
           <MaterialCommunityIcons
             name="circle-slice-8"
-            size={largura / 4}
-            color="#19BB53"
+            size={width / 4}
+            color={green.mountainMeadow()}
           />
         </TouchableOpacity>
         <TouchableOpacity
@@ -156,6 +160,7 @@ export default function camera() {
             setOpen={setOpen}
             capturedPhoto={capturedPhoto}
             plants={plants}
+            navigation={navigation}
           />
         </Modal>
       )}

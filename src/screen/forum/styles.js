@@ -1,0 +1,172 @@
+import { StyleSheet, Dimensions } from 'react-native';
+import Constants from 'expo-constants';
+import { gray, green, purple } from '../../theme/colorPalette';
+
+const { height, width } = Dimensions.get('screen');
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: purple.frenchLilacLighter(),
+    paddingTop: Constants.statusBarHeight,
+  },
+  forumContainer: {
+    flexDirection: 'row',
+    alignSelf: 'center',
+    width: width / 1.1,
+    flex: 0.2,
+    justifyContent: 'space-between',
+    alignContent: 'center',
+    alignItems: 'center',
+  },
+  forumText: {
+    fontSize: 40,
+    fontWeight: '600',
+    color: gray.outerSpace(),
+  },
+  myforumsContainer: {
+    flexDirection: 'column',
+    alignSelf: 'center',
+    width: width / 1.1,
+    flex: 0.28,
+    justifyContent: 'flex-start',
+  },
+  myforumsTabs: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    flex: 0.2,
+    paddingRight: 10,
+  },
+  myforumsTab: {
+    fontSize: 22,
+    fontWeight: '400',
+    color: gray.outerSpace(),
+    textDecorationLine: 'underline',
+    textDecorationStyle: 'solid',
+    textDecorationColor: gray.shark(),
+  },
+  myforumsContent: {
+    flex: 0.8,
+  },
+  FavoritePlant: {
+    width: width / 4,
+    height: width / 3.5,
+    flexDirection: 'column',
+    marginRight: 15,
+    marginTop: 15,
+  },
+  FavoriteTopicImg: {
+    flex: 0.95,
+    width: '100%',
+    alignSelf: 'center',
+    borderRadius: 60,
+    backgroundColor: gray.shark(),
+  },
+  FavoriteTopicText: {
+    fontSize: 8,
+    color: gray.outerSpace(),
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  plantInfo: {
+    backgroundColor: purple.grapeDark(0.9),
+    borderBottomRightRadius: 30,
+    borderBottomLeftRadius: 30,
+    width: width / 2.7,
+    alignSelf: 'center',
+  },
+  plantText: {
+    padding: 5,
+    fontSize: 13,
+    color: gray.iron(),
+  },
+  topPostContainer: {
+    flexDirection: 'column',
+    alignSelf: 'center',
+    width: width / 1.1,
+    flex: 0.4,
+    justifyContent: 'flex-end',
+  },
+  topPostTabs: {
+    width: width / 2,
+    alignSelf: 'flex-start',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  topPostText: {
+    paddingTop: 16,
+    color: gray.outerSpace(),
+    fontSize: 16,
+    fontWeight: '400',
+  },
+  topPostTextactive: {
+    paddingTop: 16,
+    color: gray.outerSpace(),
+    fontSize: 18,
+    fontWeight: '600',
+    textDecorationLine: 'underline',
+    textDecorationStyle: 'solid',
+    textDecorationColor: gray.shark(),
+  },
+  topPostPlant: {
+    marginTop: 15,
+    height: height / 3.6,
+    width: width / 1.1,
+    flexDirection: 'column-reverse',
+    borderRadius: 30,
+  },
+  topPostInfo: {
+    backgroundColor: green.jewel(0.9),
+    flex: 0.6,
+    borderBottomRightRadius: 20,
+    borderBottomLeftRadius: 20,
+    width: width / 1.1,
+    alignSelf: 'center',
+  },
+  topPostBack: {
+    borderRadius: 20,
+    marginVertical: 10,
+    backgroundColor: green.jewel(0.9),
+    flex: 1,
+    borderBottomRightRadius: 20,
+    borderBottomLeftRadius: 20,
+    width: width / 1.1,
+    alignSelf: 'center',
+  },
+  postTitle: {
+    padding: 5,
+    flex: 0.2,
+    fontSize: 16,
+    color: gray.iron(),
+  },
+  postDescription: {
+    padding: 5,
+    flex: 0.2,
+    fontSize: 12,
+    color: gray.iron(),
+  },
+  postData: {
+    padding: 6,
+    flex: 0.2,
+    fontSize: 8,
+    color: gray.iron(),
+  },
+  posStatus: {
+    flex: 0.7,
+    paddingHorizontal: 15,
+    flexDirection: 'row',
+    backgroundColor: green.zuccini(0.95),
+    borderBottomRightRadius: 20,
+    borderBottomLeftRadius: 20,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  postLikes: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+});
+export default styles;

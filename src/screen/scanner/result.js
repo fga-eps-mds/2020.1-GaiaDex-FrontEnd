@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   View,
@@ -6,49 +6,85 @@ import {
   TouchableOpacity,
   Image,
   FlatList,
-  ScrollView,
+  Modal,
+  TextInput,
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
 import styles from './styles';
-import {ENDPOINTS} from '../../settings'
+import stylesEdit from '../collection/styles';
+import { createPlant, createMyPlant } from '../../services';
+import { gray } from '../../theme/colorPalette';
 
-const register = async (plant) => {
-  try {
-    registerPlant(plant)
-    // .then();
-    // redirecionar para pagina minha planta com id do response.id
-  } catch (err) {
-    console.log(err);
-  }
-};
+export default function Result({ setOpen, capturedPhoto, plants, navigation }) {
+  const [editingText, setEditingText] = useState(false);
+  const [text, setText] = useState('');
+  const [plantToUpdate, SetPlantToUpdate] = useState({});
+  const register = async (plant, nickName) => {
+    try {
+      // registra a planta no banco
+      await createPlant(plant)
+        .then((res) => createMyPlant(res._id, nickName))
+        .then(() => setOpen(false))
+        .then(() => navigation.push('MyProfile'));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-const Item = ({ item }) => (
-  <TouchableOpacity
-    style={styles.lista}
-    onPress={() => {
-      register(item);
-    }}
-  >
-    <Text style={styles.textList}>
-      Nome cientifico: {item.species.scientificNameWithoutAuthor}
-    </Text>
-    <Text style={styles.textList}>
-      Nomes comum: {item.species.commonNames.join(', ')}
-    </Text>
-    <Text style={styles.textList}>Score: {item.score}</Text>
-  </TouchableOpacity>
-);
+  const Item = ({ item }) => (
+    <TouchableOpacity
+      style={styles.lista}
+      onPress={() => {
+        SetPlantToUpdate(item);
+        setEditingText(true);
+      }}
+    >
+      <Text style={styles.textList}>
+        Nome cientifico: {item.species.scientificNameWithoutAuthor}
+      </Text>
+      <Text style={styles.textList}>
+        Nomes comum: {item.species.commonNames.join(', ')}
+      </Text>
+      <Text style={styles.textList}>Score: {item.score}</Text>
+    </TouchableOpacity>
+  );
 
-export default function ({ setOpen, capturedPhoto, plants }) {
   const renderItem = ({ item }) => <Item item={item} />;
+
   return (
     <View style={styles.result}>
+      <Modal visible={editingText} transparent animationType="fade">
+        <View style={stylesEdit.editView}>
+          <View>
+            <Text style={stylesEdit.editTitle}>
+              Digite o novo nome para sua planta:
+            </Text>
+            <TextInput
+              autoFocus
+              onChangeText={(val) => setText(val)}
+              style={stylesEdit.editTextInput}
+            />
+          </View>
+          <View style={{ flexDirection: 'row-reverse' }}>
+            <TouchableOpacity
+              onPress={() => {
+                register(plantToUpdate, text);
+                setEditingText(false);
+              }}
+            >
+              <Text style={stylesEdit.editButton}>FEITO</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setEditingText(false)}>
+              <Text style={stylesEdit.editButton}>CANCELAR</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
       <TouchableOpacity style={{ margin: 10 }} onPress={() => setOpen(false)}>
         <MaterialCommunityIcons
           name="close-circle-outline"
           size={24}
-          color="black"
+          color={gray.shark()}
         />
       </TouchableOpacity>
       <Image style={styles.imagem} source={{ uri: capturedPhoto }} />

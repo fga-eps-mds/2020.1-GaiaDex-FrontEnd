@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DeleteMyAccount /> renders everything 1`] = `
+<View>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    delayLongPress={600}
+    extraButtonProps={
+      Object {
+        "rippleColor": "transparent",
+      }
+    }
+    onPress={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(214,218,223,1.0)",
+        "borderColor": "rgba(228,87,46,1.0)",
+        "borderRadius": 10,
+        "borderWidth": 1,
+        "height": 66.7,
+        "justifyContent": "center",
+        "width": 300,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 12,
+          "textAlign": "center",
+        }
+      }
+    >
+      Deletar minha conta
+    </Text>
+  </TouchableOpacity>
+</View>
+`;

@@ -1,3 +1,5 @@
-export const ROUTES = {
+const ROUTES = {
   scanner: 'Scanner',
-}
+};
+
+export default ROUTES;

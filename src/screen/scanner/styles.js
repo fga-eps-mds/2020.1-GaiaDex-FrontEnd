@@ -1,14 +1,13 @@
 import { StyleSheet, Dimensions } from 'react-native';
-
 import Constants from 'expo-constants';
+import { gray, green, purple } from '../../theme/colorPalette';
 
-const largura = Dimensions.get('screen').width;
-const altura = Dimensions.get('screen').height;
+const { height, width } = Dimensions.get('screen');
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F2E0F5',
+    backgroundColor: purple.frenchLilacLighter(),
     justifyContent: 'center',
     paddingTop: Constants.statusBarHeight,
   },
@@ -19,9 +18,9 @@ const styles = StyleSheet.create({
     left: 0,
     justifyContent: 'center',
     alignItems: 'center',
-    width: largura,
-    height: altura,
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    width,
+    height,
+    backgroundColor: gray.shark(0.5),
   },
   camera: {
     flex: 6,
@@ -44,17 +43,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonDisabled: {
-    backgroundColor: '#E5C2EB',
-    height: largura / 12,
-    width: largura / 6,
+    backgroundColor: purple.frenchLilacMedium(),
+    height: width / 12,
+    width: width / 6,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 10,
   },
   buttonActived: {
-    backgroundColor: '#28E269',
-    height: largura / 12,
-    width: largura / 6,
+    backgroundColor: green.pastelGreen(),
+    height: width / 12,
+    width: width / 6,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 10,
@@ -63,28 +62,28 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
-    backgroundColor: '#F2E0F5',
+    backgroundColor: purple.frenchLilacLighter(),
   },
   imagem: {
-    height: (altura * 1) / 4,
-    width: largura - largura / 25,
+    height: (height * 1) / 4,
+    width: width - width / 25,
     borderRadius: 20,
   },
   titulo: {
     fontSize: 20,
-    marginVertical: largura / 20,
+    marginVertical: width / 20,
     alignSelf: 'flex-start',
-    marginHorizontal: largura / 50,
+    marginHorizontal: width / 50,
   },
   lista: {
-    backgroundColor: '#E5C2EB',
-    marginVertical: largura / 60,
-    marginHorizontal: largura / 50,
+    backgroundColor: purple.frenchLilacMedium(),
+    marginVertical: width / 60,
+    marginHorizontal: width / 50,
     borderRadius: 20,
   },
   textList: {
-    marginVertical: largura / 240,
-    marginHorizontal: largura / 50,
+    marginVertical: width / 240,
+    marginHorizontal: width / 50,
   },
 });
 

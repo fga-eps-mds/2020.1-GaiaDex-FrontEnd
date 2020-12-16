@@ -1,87 +1,143 @@
-
-export const ENDPOINTS = {
+const ENDPOINTS = {
   API: {
-    base_url: `http://192.168.0.40:3000`,
+    base_url: `https://gaiadex-backend-homolog.herokuapp.com`,
     auth: {
+      user: {
+        route: '/auth/user',
+        method: 'GET',
+      },
       delete: {
-        route: `/auth/update`,
-        method: `PUT`,
-        body: (userBody) => userBody,
+        route: '/auth/delete',
+        method: 'DELETE',
       },
       update: {
-        route: `/auth/update`,
-        method: `POST`,
+        route: '/auth/update',
+        method: 'POST',
         body: (userBody) => userBody,
       },
-      signup: {
-        route: `/auth/signup`,
-        method: `POST`,
+      findOne: {
+        route: (userID) => `/auth/user/${userID}`,
+        method: 'GET',
+      },
+      create: {
+        route: '/auth/signup',
+        method: 'POST',
         body: (userBody) => userBody,
       },
       login: {
-        route: `/auth/login`,
-        method: `POST`,
+        route: '/auth/login',
+        method: 'POST',
         body: (userBody) => userBody,
       },
+      getUser: {
+        route: '/auth/user',
+        method: 'GET',
+      },
     },
+
     plant: {
-      register: {
-        route: `/plant/register`,
-        method: `POST`,
-      },
-      getPlant: {
-        route: (plantID) => `/plant/${plantID}`,
-        method: `GET`
-      },
-      getAllPlants: {
-        route: `/plant/`,
-        method: `GET`
-      }
-    },
-    topic: {
       create: {
-        route: (topicID) => `/topic/create/${topicID}`,
-        method: `POST`,
+        route: '/plant/register',
+        method: 'POST',
+        body: (plantBody) => plantBody,
+      },
+      find: {
+        route: (plantID) => `/plant/${plantID}`,
+        method: 'GET',
+      },
+      list: {
+        route: '/plant',
+        method: 'GET',
+      },
+    },
+
+    myPlant: {
+      create: {
+        route: (plantId) => `/myplants/add/${plantId}`,
+        method: 'POST',
+      },
+      update: {
+        route: (myPlantID) => `/myplants/edit/${myPlantID}`,
+        method: 'PUT',
+      },
+      delete: {
+        route: (myPlantID) => `/myplants/delete/${myPlantID}`,
+        method: 'DELETE',
+        body: (nickname) => nickname,
+      },
+    },
+
+    favorite: {
+      create: {
+        route: (plantID) => `/favorites/add/${plantID}`,
+        method: 'POST',
+      },
+      list: {
+        route: '/favorites/list',
+        method: 'GET',
+      },
+      delete: {
+        route: (plantID) => `/favorites/delete/${plantID}`,
+        method: 'DELETE',
+      },
+    },
+
+    topic: {
+      find: {
+        route: (topicID) => `/topic/find/${topicID}`,
+        method: 'GET',
+      },
+      create: {
+        route: (plantID) => `/topic/create/${plantID}`,
+        method: 'POST',
+        body: (topicBody) => topicBody,
       },
       update: {
         route: (topicID) => `/topic/update/${topicID}`,
-        method: `PUT`,
+        method: 'PUT',
+        body: (topicBody) => topicBody,
       },
-      like:{
+      like: {
         route: (topicID) => `/topic/like/${topicID}`,
-        method: `POST`
+        method: 'POST',
       },
-      dislike:{
-        route: (topicID) => `/topic/dislike/${topicID}`,
-        method: `POST`
-      }
+      dislike: {
+        route: (plantID) => `/topic/dislike/${plantID}`,
+        method: 'POST',
+      },
     },
+
     comment: {
       create: {
         route: (commentID) => `/comment/create/${commentID}`,
-        method: `POST`
+        method: 'POST',
+        body: (commentBody) => commentBody,
       },
       update: {
         route: (commentID) => `/comment/update/${commentID}`,
-        method: `PUT`
+        method: 'PUT',
+        body: (commentBody) => commentBody,
       },
-      delete:{
+      delete: {
         route: (commentID) => `/comment/delete/${commentID}`,
-        method: `DELETE`
+        method: 'DELETE',
       },
-      like:{
+      like: {
         route: (commentID) => `/comment/like/${commentID}`,
-        method: `POST`
+        method: 'POST',
       },
-      dislike:{
+      dislike: {
         route: (commentID) => `/comment/dislike/${commentID}`,
-        method: `POST`
-      } 
+        method: 'POST',
+      },
     },
-    scanner:{
-      route: `/scanner/`,
-      method: `POST`,
-      body:(scannerBody) => scannerBody
-    }
+
+    scanner: {
+      route: '/scanner/',
+      method: 'POST',
+      body: (scannerBody) => scannerBody,
+    },
   },
 };
+
+export default ENDPOINTS;

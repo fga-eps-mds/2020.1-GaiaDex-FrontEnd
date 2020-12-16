@@ -1,5 +1,20 @@
-node_modules
 .vscode/
-__tests__
 .env
 .expo
+
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+
+# node.js
+#
+node_modules/
+npm-debug.log
+yarn-error.log
+
+test-report.xml
+coverage

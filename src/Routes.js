@@ -2,11 +2,18 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import Scanner from './screen/scanner';
-import PlantView from './screen/plant/plantView';
 import Login from './screen/login/login';
 import Signup from './screen/login/signup';
 import Update from './screen/login/updateUser';
 import DeleteMyAccount from './screen/login/deleteMyAccount';
+import MyProfile from './screen/myProfile';
+import PlantCard from './screen/cardPlant/cardPlant';
+import TopicView from './screen/topic/TopicView';
+import TopicCreate from './screen/topic/TopicCreate';
+import Config from './screen/config/config';
+import Collection from './screen/collection/collection';
+import Explore from './screen/explore/explore';
+import Forum from './screen/forum/forum';
 
 const AuthStack = createStackNavigator({
   Login: {
@@ -40,16 +47,65 @@ const AuthStack = createStackNavigator({
 });
 
 const AppStack = createStackNavigator({
-  Scanner: {
-    screen: Scanner,
-    path: 'Scanner',
+  MyProfile: {
+    screen: MyProfile,
+    path: 'MyProfile',
     navigationOptions: {
       headerShown: false,
     },
   },
-  Plant: {
-    screen: PlantView,
-    path: 'Plant',
+  Collection: {
+    screen: Collection,
+    path: 'Collection',
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  Config: {
+    screen: Config,
+    path: 'Config',
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  Explore: {
+    screen: Explore,
+    path: 'Explore',
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  Forum: {
+    screen: Forum,
+    path: 'Forum',
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  PlantCard: {
+    screen: PlantCard,
+    path: 'PlantCard',
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  TopicView: {
+    screen: TopicView,
+    path: 'TopicView',
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  TopicCreate: {
+    screen: TopicCreate,
+    path: 'TopicCreate',
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  Scanner: {
+    screen: Scanner,
+    path: 'Scanner',
     navigationOptions: {
       headerShown: false,
     },

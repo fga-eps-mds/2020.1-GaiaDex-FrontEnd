@@ -1,22 +1,21 @@
-import React, {useEffect, useState } from 'react';
+import React from 'react';
 import { Alert, View, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import styles from './style';
-import { UserDelete } from '../../services/backEnd';
+import { UserDelete } from '../../services';
+import { highlight } from '../../theme/colorPalette';
 
-export default function DeleteMyAccount({navigation}) {
-  function userdelete() {
-    UserDelete()
-    .then(res => {
-      if(res.Error){
-        Alert.alert(res.Error)
+export default function DeleteMyAccount({ navigation }) {
+  function userDelete() {
+    UserDelete().then((res) => {
+      if (res.Error) {
+        Alert.alert(res.Error);
+      } else {
+        navigation.push('Login');
       }
-      else{
-        navigation.push('Signup')
-      }
-    })
+    });
   }
-  
+
   function pressDelete() {
     Alert.alert(
       'Deletar minha conta',
@@ -28,7 +27,7 @@ export default function DeleteMyAccount({navigation}) {
         },
         {
           text: 'Deletar',
-          onPress: () => userdelete(),
+          onPress: () => userDelete(),
         },
       ]
     );
@@ -36,8 +35,14 @@ export default function DeleteMyAccount({navigation}) {
 
   return (
     <View>
-      <TouchableOpacity onPress={() => pressDelete()}>
-        <Text style={styles.txtBtnOthersLogin}>Deletar minha conta</Text>
+      <TouchableOpacity
+        style={[
+          styles.btnButtonLogoutDelete,
+          { borderWidth: 1, borderColor: highlight.cinnabar() },
+        ]}
+        onPress={() => pressDelete()}
+      >
+        <Text style={styles.txtBtnDeleteLogout}>Deletar minha conta</Text>
       </TouchableOpacity>
     </View>
   );
