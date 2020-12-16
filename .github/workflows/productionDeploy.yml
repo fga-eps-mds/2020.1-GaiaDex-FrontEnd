@@ -1,6 +1,9 @@
 name: Production Continuous Delivery
 
 on:
+  push:
+    branches: 
+      - master
   pull_request:
     branches: 
       - master
