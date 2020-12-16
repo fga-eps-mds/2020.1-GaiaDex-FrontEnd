@@ -22,9 +22,9 @@ describe('<TopicCreate />', () => {
       .create(<TopicCreate navigation={{ getParam: jest.fn() }} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
-    expect(wrapper.find('View').length).toBe(18);
+    expect(wrapper.find('View').length).toBe(16);
     expect(wrapper.find('Text').length).toBe(10);
-    expect(wrapper.find('TouchableOpacity').length).toBe(2);
+    expect(wrapper.find('TouchableOpacity').length).toBe(1);
     expect(wrapper.find('Icon').length).toBe(2);
     expect(wrapper.find('TextInput').length).toBe(2);
   });
@@ -33,12 +33,12 @@ describe('<TopicCreate />', () => {
       styles.TopicCreatemasterView
     );
     expect(wrapper.find('View').at(2)).toHaveStyle(styles.TopicCreateheader);
-    expect(wrapper.find('View').at(8)).toHaveStyle(styles.TopicCreatecontainer);
-    expect(wrapper.find('View').at(10)).toHaveStyle(styles.TopicCreateUserDiv);
-    expect(wrapper.find('View').at(12)).toHaveStyle(
+    expect(wrapper.find('View').at(6)).toHaveStyle(styles.TopicCreatecontainer);
+    expect(wrapper.find('View').at(8)).toHaveStyle(styles.TopicCreateUserDiv);
+    expect(wrapper.find('View').at(10)).toHaveStyle(
       styles.TopicCreatetituloDiv
     );
-    expect(wrapper.find('View').at(16)).toHaveStyle(
+    expect(wrapper.find('View').at(14)).toHaveStyle(
       styles.TopicCreatescrollDiv
     );
   });
@@ -55,6 +55,9 @@ describe('<TopicCreate />', () => {
     expect(wrapper.find('Text').at(8)).toHaveText('username');
   });
   it('renders TouchableOpacity correctly', () => {
+    expect(wrapper.find('TouchableOpacity').at(0)).toHaveStyle(
+      styles.TopicCreatepublicarDiv
+    );
     expect(wrapper.find('TouchableOpacity').at(0)).toHaveProp('onPress');
   });
   it('renders Icon correctly', () => {

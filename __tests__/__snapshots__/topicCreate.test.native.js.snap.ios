@@ -27,35 +27,15 @@ exports[`<TopicCreate /> renders everything 1`] = `
       }
     }
   >
-    <View
-      accessible={true}
-      focusable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
+    <Text />
+    <Text
       style={
         Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "opacity": 1,
+          "color": "rgba(214,218,223,1.0)",
+          "fontSize": 15,
         }
       }
-    >
-      <Text />
-      <Text
-        style={
-          Object {
-            "color": "rgba(214,218,223,1.0)",
-            "fontSize": 15,
-          }
-        }
-      />
-    </View>
+    />
     <View
       accessible={true}
       focusable={true}

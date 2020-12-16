@@ -27,18 +27,15 @@ import { gray, highlight } from '../../theme/colorPalette';
 
 function Data({ time }) {
   const now = new Date();
-  const tmp = Math.trunc((now - time) / 1000 / 60);
+  const action = new Date(time);
+  const tmp = Math.trunc((now - action) / 1000 / 60);
   if (tmp / 60 > 24) {
-    return (
-      <Text style={styles.dataTopic}>{Math.trunc(tmp / 24)} dias atrás</Text>
-    );
+    return <Text style={styles.dataTopic}>{tmp / 24} dias atrás</Text>;
   }
   if (tmp / 3600 > 24) {
-    return (
-      <Text style={styles.dataTopic}>{Math.trunc(tmp / 60)} horas atrás</Text>
-    );
+    return <Text style={styles.dataTopic}>{tmp / 24} horas atrás</Text>;
   }
-  return <Text style={styles.dataTopic}>{Math.trunc(tmp)} minutos atrás</Text>;
+  return <Text style={styles.dataTopic}>{tmp} minutos atrás</Text>;
 }
 
 export default function TopicView({ navigation }) {
@@ -48,7 +45,7 @@ export default function TopicView({ navigation }) {
   const [topic, setTopic] = useState({});
   const [isNewComment, setIsNewComment] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
-  const [isEditable, setIsEditable] = useState(false);
+  const [isEditable, setIsEditable] = useState(true);
   const [commentText, setCommentText] = useState('');
   const [topicIsLiked, setTopicIsLiked] = useState(false);
   const [topicIsNotLiked, setTopicIsNotLiked] = useState(false);
@@ -160,7 +157,7 @@ export default function TopicView({ navigation }) {
           />
           <View>
             <Text style={styles.nameUser}>{topic?.user?.username}</Text>
-            <Data time={topicDate} />
+            <Data tempo={topicDate} />
           </View>
         </View>
         <View style={styles.topicDiv}>

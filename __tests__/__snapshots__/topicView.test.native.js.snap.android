@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TopicView /> renders everything 1`] = `
+exports[`<TopicCreate /> renders everything 1`] = `
 <View
   onLayout={[Function]}
   style={
@@ -27,25 +27,21 @@ exports[`<TopicView /> renders everything 1`] = `
     }
   >
     <View
-      accessible={true}
-      focusable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "flex": 0.8,
-          "flexDirection": "row",
-          "opacity": 1,
+          "flex": 0.1,
         }
       }
     >
       <Text />
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 0.9,
+        }
+      }
+    >
       <Text
         style={
           Object {
@@ -55,13 +51,6 @@ exports[`<TopicView /> renders everything 1`] = `
         }
       />
     </View>
-    <View
-      style={
-        Object {
-          "flex": 0.2,
-        }
-      }
-    />
   </View>
   <View
     style={
@@ -121,8 +110,8 @@ exports[`<TopicView /> renders everything 1`] = `
             }
           }
         >
-          1116717
-           dias atrás
+          NaN
+           minutos atrás
         </Text>
       </View>
     </View>
@@ -171,6 +160,7 @@ exports[`<TopicView /> renders everything 1`] = `
           />
         </View>
       </RCTScrollView>
+      <Text />
       <View
         style={
           Object {
@@ -197,6 +187,15 @@ exports[`<TopicView /> renders everything 1`] = `
         >
           <Text />
           <Text />
+          <Text />
+        </View>
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
           <Text />
         </View>
         <View
